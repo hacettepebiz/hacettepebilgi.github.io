@@ -2,107 +2,71 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Hacettepe Üniversitesi öğrencileri için Beytepe ve Sıhhiye kampüslerindeki barınma olanakları, yurt ve öğrenci evleri bilgileri.">
-    <meta name="keywords" content="Hacettepe Üniversitesi, barınma, yurt, öğrenci evi, KYK, konukevi">
-    <meta name="robots" content="index, follow">
-    <title>Hacettepe Üniversitesi Barınma | Kampüs İçi ve Çevre Konaklama Seçenekleri</title>
-    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
-    <link rel="shortcut icon" type="image/png" href="../assets/img/favicon.png">
+    <link rel="icon" type="image/png" href="../assets/img/favicon.svg">
+    <link rel="shortcut icon" type="image/png" href="../assets/img/favicon.svg">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <meta name="description" content="Hacettepe Üniversitesi barınma olanakları, KYK yurtları, özel yurtlar, ödeme bilgileri ve barınma birimleri hakkında detaylı bilgi, barınma birimleri başvuru, hacettepe barınma başvuru.">
-    <meta name="keywords" content="hacettepe barınma, beytepe kyk, hacettepe yurt, hacettepe barınma ödeme, barınma olanakları hacettepe, beytepe kyk kız öğrenci yurdu, hacettepe barınma başvuru, hacettepe yurt başvuru, hacettepe öğrenci evleri başvuru">
-    
-    <meta property="og:title" content="Hacettepe Üniversitesi Barınma Rehberi">
-    <meta property="og:description" content="Hacettepe Üniversitesi öğrencileri için kapsamlı barınma rehberi. Kampüs içi ve çevre konaklama seçenekleri.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://hacettepe.biz/page/barinma.html">
-    <meta property="og:image" content="https://hacettepe.biz/assets/img/barinma-og.jpg">
-    <meta property="og:site_name" content="Hacettepe Bilgi">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Hacettepe Üniversitesi Barınma Rehberi">
-    <meta name="twitter:description" content="Hacettepe Üniversitesi öğrencileri için kapsamlı barınma rehberi.">
-    <meta name="twitter:image" content="https://hacettepe.biz/assets/img/barinma-og.jpg">
-    
-    <link rel="canonical" href="https://hacettepe.biz/page/barinma.html">
-    
-    <meta name="robots" content="index, follow">
-    
-    <meta name="author" content="Hacettepe Bilgi">
-    <meta name="language" content="Turkish">
-    
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Hacettepe Üniversitesi Barınma Rehberi",
-        "description": "Hacettepe Üniversitesi öğrencileri için kapsamlı barınma rehberi. Kampüs içi ve çevre konaklama seçenekleri.",
-        "author": {
-            "@type": "Organization",
-            "name": "Hacettepe.biz"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Hacettepe.biz",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://hacettepe.biz/assets/img/logo.png"
-            }
-        },
-        "datePublished": "2025-04-26",
-        "dateModified": "2025-04-26",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://hacettepe.biz/page/barinma.html"
-        }
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [{
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Ana Sayfa",
-            "item": "https://hacettepe.biz"
-        },{
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Barınma",
-            "item": "https://hacettepe.biz/page/barinma.html"
-        }]
-    }
-    </script>
-
     <style>
         body {
             font-family: 'Inter', sans-serif;
         }
-
         .bg-pattern {
             background-color: #ffffff;
             background-image: radial-gradient(#ff000008 1px, transparent 1px);
             background-size: 24px 24px;
         }
-
         .card-hover {
             transition: all 0.2s ease;
         }
-
         .card-hover:hover {
             transform: translateY(-3px);
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
+        a:focus-visible, button:focus-visible, input:focus-visible {
+            outline: 2px solid #dc2626;
+            outline-offset: 2px;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
     </style>
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Hacettepe Bilgi">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://hacettepe.biz/assets/img/og-default.svg">
+    <meta property="og:site_name" content="Hacettepe Bilgilendirme">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://hacettepe.biz/assets/img/og-default.svg">
+    <title>Hacettepe Barınma Olanakları | Yurt, KYK ve Öğrenci Evleri</title>
+    <meta name="description" content="Hacettepe barınma olanakları: Beytepe ve Sıhhiye yurt seçenekleri, KYK bilgileri, öğrenci evleri ve başvuru bağlantıları.">
+    <meta property="og:title" content="Hacettepe Barınma Olanakları | Yurt, KYK ve Öğrenci Evleri">
+    <meta property="og:description" content="Hacettepe barınma olanakları: Beytepe ve Sıhhiye yurt seçenekleri, KYK bilgileri, öğrenci evleri ve başvuru bağlantıları.">
+    <meta property="og:url" content="https://hacettepe.biz/page/barinma.html">
+    <meta name="twitter:title" content="Hacettepe Barınma Olanakları | Yurt, KYK ve Öğrenci Evleri">
+    <meta name="twitter:description" content="Hacettepe barınma olanakları: Beytepe ve Sıhhiye yurt seçenekleri, KYK bilgileri, öğrenci evleri ve başvuru bağlantıları.">
+    <link rel="canonical" href="https://hacettepe.biz/page/barinma.html">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Hacettepe Barınma Olanakları",
+  "description": "Hacettepe barınma olanakları: Beytepe ve Sıhhiye yurt seçenekleri, KYK bilgileri, öğrenci evleri ve başvuru bağlantıları.",
+  "url": "https://hacettepe.biz/page/barinma.html"
+}
+    </script>
 </head>
 <body class="bg-pattern min-h-screen">
     <div id="app" class="min-h-screen flex flex-col">
         <!-- Navbar -->
-        <div id="app" class="min-h-screen flex flex-col">
             <nav class="navbar sticky top-0 bg-white/90 backdrop-blur-md border-b border-gray-100 z-50 shadow-sm" role="navigation" aria-label="Ana menü">
                 <div class="container mx-auto px-4">
                     <div class="flex justify-between items-center h-16">
@@ -123,14 +87,18 @@
         <!-- Header -->
         <header class="bg-white border-b border-gray-100 py-8">
             <div class="container mx-auto px-4">
-                <h1 class="text-3xl font-bold text-gray-900 text-center">Barınma Olanakları</h1>
+                <h1 class="text-3xl font-bold text-gray-900 text-center">Hacettepe Barınma Olanakları</h1>
                 <p class="mt-4 text-gray-600 text-center max-w-2xl mx-auto">
-                    Hacettepe Üniversitesi'nin Beytepe ve Sıhhiye kampüslerinde sunduğu tüm barınma seçenekleri, yurt imkanları ve başvuru süreçleri hakkında detaylı bilgiler.
+                    Hacettepe barınma olanakları kapsamında Beytepe ve Sıhhiye yurt seçenekleri, KYK bilgileri ve başvuru süreçlerini karşılaştırın.
                 </p>
             </div>
         </header>
 
         <main class="flex-grow container mx-auto px-4 py-8">
+            <section class="bg-red-50 border border-red-100 rounded-xl p-5 mb-6" aria-label="Hızlı özet">
+                <h2 class="text-lg font-semibold text-gray-900 mb-2">Hızlı Özet</h2>
+                <p class="text-gray-700 text-sm">Barınma seçeneklerini kampüs bazında karşılaştırıp başvuru adımlarına hızlı erişim sağlayabilirsiniz.</p>
+            </section>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div v-for="option in housingOptions" :key="option.title" 
                      class="bg-white rounded-xl border border-gray-100 p-6 card-hover">
@@ -169,6 +137,15 @@
                     </div>
                 </div>
             </div>
+        
+                <section class="bg-white rounded-xl border border-gray-100 p-6 card-hover">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-3">İlgili İçerikler</h2>
+                    <ul class="space-y-2">
+                    <li><a href="akademik-takvim.html" class="text-red-600 hover:text-red-700">Hacettepe Akademik Takvim 2025-2026</a></li>
+                    <li><a href="cevredeki-kyklar.html" class="text-red-600 hover:text-red-700">Çevredeki KYK'lar</a></li>
+                    <li><a href="fakulte-yuksekokul-lokasyonlari.html" class="text-red-600 hover:text-red-700">Fakülte ve Yüksekokul Lokasyonları</a></li>
+                    </ul>
+                </section>
         </main>
 
         <!-- Footer -->

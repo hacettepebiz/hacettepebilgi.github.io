@@ -2,22 +2,14 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Hacettepe Üniversitesi öğrencileri için kapsamlı bilgilendirme platformu. Kayıt işlemleri, barınma olanakları, akademik takvim, hazırlık sınıfı, öğrenci toplulukları ve daha fazlası.">
-    <meta name="keywords" content="Hacettepe Üniversitesi, Hacettepe, Hacettepe Üniversitesi öğrenci, Hacettepe Üniversitesi kayıt, Hacettepe Üniversitesi barınma, Hacettepe Üniversitesi KYK, Hacettepe Üniversitesi akademik takvim, Hacettepe Üniversitesi hazırlık, Hacettepe Üniversitesi topluluklar">
-    <meta name="author" content="Akıner Kısa">
-    <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Hacettepe Üniversitesi Bilgilendirme">
-    <meta property="og:description" content="Hacettepe Üniversitesi öğrencileri için kapsamlı bilgilendirme platformu">
-    <meta property="og:url" content="https://hacettepe.biz">
-    <link rel="canonical" href="https://hacettepe.biz" />
-    <title>Hacettepe Üniversitesi Bilgilendirme | Öğrenci Rehberi</title>
-    <link rel="icon" type="image/png" href="assets/img/favicon.png">
-    <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
+    <link rel="icon" type="image/png" href="assets/img/favicon.svg">
+    <link rel="shortcut icon" type="image/png" href="assets/img/favicon.svg">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
     <style>
         :root {
             --primary-color: #ef4444;
@@ -34,7 +26,6 @@
             --transition-spring: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             --transition-elastic: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
-        
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--bg-color);
@@ -44,22 +35,18 @@
             background-size: 100px 100px;
             color: var(--text-color);
         }
-
         .bg-pattern {
             background-color: #ffffff;
             background-image: radial-gradient(#ff000008 1px, transparent 1px);
             background-size: 24px 24px;
         }
-
         .card-hover {
             transition: var(--transition-smooth);
         }
-
         .card-hover:hover {
             transform: translateY(-5px);
             box-shadow: var(--card-shadow-hover);
         }
-
         .loading {
             opacity: 0;
             transition: opacity 0.3s ease-in-out;
@@ -67,7 +54,6 @@
         .loading.active {
             opacity: 1;
         }
-
         .skip-link {
             position: absolute;
             top: -100px;
@@ -83,11 +69,9 @@
         .skip-link:focus {
             top: 0;
         }
-        
         html {
             scroll-behavior: smooth;
         }
-        
         .search-wrapper {
             max-width: 700px;
             margin: 0 auto;
@@ -99,7 +83,6 @@
             pointer-events: none;
             transform: scale(0.95);
         }
-        
         .search-wrapper.visible {
             max-height: 200px;
             opacity: 1;
@@ -107,7 +90,6 @@
             margin-bottom: 2rem;
             transform: scale(1);
         }
-        
         .search-box {
             background-color: white;
             border-radius: 20px;
@@ -118,24 +100,20 @@
             border: 2px solid #f1f5f9;
             transition: var(--transition-spring);
         }
-        
         .search-box:focus-within {
             border-color: var(--primary-color);
             box-shadow: 0 10px 30px -5px rgba(239, 68, 68, 0.15);
             transform: translateY(-3px);
         }
-        
         .search-icon {
             color: var(--primary-color);
             margin-right: 16px;
             flex-shrink: 0;
             transition: var(--transition-elastic);
         }
-        
         .search-box:focus-within .search-icon {
             transform: scale(1.15) rotate(5deg);
         }
-        
         .search-input {
             border: none;
             background: transparent;
@@ -144,16 +122,13 @@
             color: var(--text-color);
             font-weight: 500;
         }
-        
         .search-input:focus {
             outline: none;
         }
-        
         .search-input::placeholder {
             color: var(--text-light);
             font-weight: 400;
         }
-        
         .category-tag {
             display: inline-block;
             padding: 8px 16px;
@@ -166,21 +141,18 @@
             color: var(--text-light);
             box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
         }
-        
         .category-tag:hover {
             background-color: var(--primary-light);
             color: var(--primary-color);
             transform: translateY(-4px);
             box-shadow: 0 4px 6px -1px rgba(239, 68, 68, 0.1);
         }
-
         .category-tag.active {
             background-color: var(--primary-color);
             color: white;
             box-shadow: 0 4px 6px -1px rgba(239, 68, 68, 0.2);
             transform: translateY(-3px);
         }
-        
         .info-card {
             transition: var(--transition-spring);
             border: 1px solid var(--border-color);
@@ -191,29 +163,23 @@
             flex-direction: column;
             background-color: white;
         }
-        
         .info-card:hover {
             transform: translateY(-5px);
             box-shadow: var(--card-shadow-hover);
             border-color: var(--primary-light);
         }
-        
         .info-card-icon {
             transition: var(--transition-elastic);
         }
-        
         .info-card:hover .info-card-icon {
             transform: scale(1.2) rotate(5deg);
         }
-        
         .info-card-link {
             transition: var(--transition-smooth);
         }
-        
         .info-card:hover .info-card-link {
             color: var(--primary-dark);
         }
-        
         .header-gradient {
             background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
             position: relative;
@@ -222,7 +188,6 @@
             border-bottom: 1px solid var(--border-color);
             padding: 2rem 0;
         }
-        
         .header-gradient::before {
             content: '';
             position: absolute;
@@ -233,22 +198,18 @@
             background: radial-gradient(circle at 50% 0%, rgba(239, 68, 68, 0.05) 0%, transparent 70%);
             z-index: 0;
         }
-        
         .header-content {
             position: relative;
             z-index: 1;
         }
-        
         .navbar {
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             transition: var(--transition-smooth);
         }
-        
         .navbar.scrolled {
             box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.1);
         }
-        
         .scroll-down-btn {
             position: relative;
             background-color: white;
@@ -265,26 +226,21 @@
             z-index: 10;
             margin: 0 auto;
         }
-        
         .scroll-down-btn:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
             background-color: var(--primary-color);
             color: white;
         }
-        
         .scroll-down-btn svg {
             transition: var(--transition-elastic);
         }
-        
         .scroll-down-btn:hover svg {
             transform: translateY(3px);
         }
-        
         .scroll-down-btn.rotated svg {
             transform: rotate(90deg);
         }
-        
         .content-section {
             transition: var(--transition-spring);
             max-height: 0;
@@ -292,13 +248,11 @@
             overflow: hidden;
             pointer-events: none;
         }
-        
         .content-section.visible {
             max-height: 2000px;
             opacity: 1;
             pointer-events: auto;
         }
-        
         .main-content {
             background-color: white;
             border-radius: 0;
@@ -308,27 +262,22 @@
             position: relative;
             z-index: 2;
         }
-        
         .footer {
             background: linear-gradient(to bottom, #ffffff, #fafafa);
             border-top: 1px solid var(--border-color);
         }
-        
         @media (max-width: 768px) {
             .search-box {
                 padding: 14px 20px;
             }
-            
             .category-tag {
                 padding: 8px 16px;
             }
-            
             .main-content {
                 padding: 1.5rem;
                 margin-top: -1.5rem;
             }
         }
-        
         .header-text {
             transition: var(--transition-spring);
             opacity: 1;
@@ -336,7 +285,6 @@
             height: auto;
             margin-bottom: 1.5rem;
         }
-        
         .header-text.hidden {
             opacity: 0;
             transform: translateY(-20px);
@@ -345,11 +293,39 @@
             overflow: hidden;
             pointer-events: none;
         }
-        
         .header-gradient.shrink {
             padding: 1rem 0;
         }
+        a:focus-visible, button:focus-visible, input:focus-visible {
+            outline: 2px solid #dc2626;
+            outline-offset: 2px;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
     </style>
+    <title>Hacettepe Üniversitesi Öğrenci Rehberi | Kayıt, Barınma ve Akademik Takvim</title>
+    <meta name="description" content="Hacettepe Üniversitesi öğrenci rehberi: kayıt işlemleri, barınma olanakları, akademik takvim, kampüs yaşamı ve yeni kazananlar için güncel bilgiler.">
+    <meta property="og:title" content="Hacettepe Üniversitesi Öğrenci Rehberi | Kayıt, Barınma ve Akademik Takvim">
+    <meta property="og:description" content="Hacettepe Üniversitesi öğrenci rehberi: kayıt işlemleri, barınma olanakları, akademik takvim, kampüs yaşamı ve yeni kazananlar için güncel bilgiler.">
+    <meta property="og:url" content="https://hacettepe.biz/">
+    <meta name="twitter:title" content="Hacettepe Üniversitesi Öğrenci Rehberi | Kayıt, Barınma ve Akademik Takvim">
+    <meta name="twitter:description" content="Hacettepe Üniversitesi öğrenci rehberi: kayıt işlemleri, barınma olanakları, akademik takvim, kampüs yaşamı ve yeni kazananlar için güncel bilgiler.">
+    <link rel="canonical" href="https://hacettepe.biz/">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Hacettepe Üniversitesi Öğrenci Rehberi",
+  "description": "Hacettepe Üniversitesi öğrenci rehberi: kayıt işlemleri, barınma olanakları, akademik takvim, kampüs yaşamı ve yeni kazananlar için güncel bilgiler.",
+  "url": "https://hacettepe.biz/"
+}
+    </script>
 </head>
 <body class="bg-pattern min-h-screen">
     <a href="#main-content" class="skip-link">Ana içeriğe git</a>
@@ -376,7 +352,7 @@
             <div class="container mx-auto px-4 header-content">
                 <div class="header-text" :class="{ 'hidden': showSearch }">
                     <h1 class="text-4xl md:text-5xl font-bold text-gray-900 text-center mb-4">Hacettepe Üniversitesi Öğrenci Rehberi</h1>
-                    <p class="text-gray-600 text-center max-w-2xl mx-auto text-lg mb-6">Hacettepe Üniversitesi öğrencileri için kapsamlı bilgilendirme platformu. Kayıt işlemleri, barınma olanakları, akademik takvim ve daha fazlası.</p>
+                    <p class="text-gray-600 text-center max-w-2xl mx-auto text-lg mb-6">Hacettepe Üniversitesi öğrenci rehberi ile kayıt işlemleri, barınma olanakları, akademik takvim ve kampüs yaşamına dair güncel bilgilere hızlıca ulaşın.</p>
                 </div>
                 
                 <div class="scroll-down-btn mb-6" 
@@ -405,6 +381,21 @@
 
         <main id="main-content" class="flex-grow container mx-auto px-4 py-4" role="main">
             <div class="main-content">
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8" aria-label="Hızlı başlangıç yolları">
+                    <a href="page/yeni-kazananlar-2025.html" class="bg-white border border-red-100 rounded-xl p-4 hover:border-red-300 transition-colors">
+                        <h2 class="font-semibold text-gray-900 mb-1">Yeni Kazananlar</h2>
+                        <p class="text-sm text-gray-600">Kayıt tarihleri, e-devlet adımları ve ilk hafta bilgileri.</p>
+                    </a>
+                    <a href="page/kayit-islemleri.html" class="bg-white border border-red-100 rounded-xl p-4 hover:border-red-300 transition-colors">
+                        <h2 class="font-semibold text-gray-900 mb-1">Kayıt Süreci</h2>
+                        <p class="text-sm text-gray-600">Gerekli belgeler, süreç akışı ve kritik noktalar.</p>
+                    </a>
+                    <a href="page/barinma.html" class="bg-white border border-red-100 rounded-xl p-4 hover:border-red-300 transition-colors">
+                        <h2 class="font-semibold text-gray-900 mb-1">Barınma ve Kampüs</h2>
+                        <p class="text-sm text-gray-600">Yurt, KYK ve kampüs içi yaşam seçenekleri.</p>
+                    </a>
+                </div>
                 <div class="mb-6 flex flex-wrap gap-3 justify-center">
                     <button v-for="category in categories" 
                             :key="category"
@@ -414,7 +405,7 @@
                     </button>
                 </div>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12" id="info-container">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12" id="info-container">
                     <div v-for="(info, index) in filteredInfoBoxes" 
                          :key="info.title" 
                          class="info-card p-6 shadow-sm">
@@ -492,22 +483,22 @@
                     showContent: false,
                     showSearch: false,
                     infoBoxes: [ 
-                        { title: 'Yeni Kazananlar 2025', description: '2025 YKS ile yerleşen adaylar için kayıt bilgileri ve önemli tarihler.', link: 'page/yeni-kazananlar-2025.html', linkText: 'Yeni Kazanan Bilgilerini Gör', category: 'Kayıt' },
-                        { title: 'Akademik Takvim', description: 'Güncel akademik yıl takvimi ve önemli tarihler.', link: 'page/akademik-takvim.html', linkText: 'Akademik Takvimi Gör', category: 'Akademik' },
-                        { title: 'Sıkça Sorulan Sorular', description: 'Öğrencilerin en çok merak ettiği konular hakkında bilgiler.', link: 'page/sss.html', linkText: 'Sıkça Sorulan Soruları Gör', category: 'Akademik' },
-                        { title: 'Tercih Dönemi', description: 'Üniversite tercih dönemine ilişkin önemli bilgiler ve tarihler.', link: 'page/tercih-donemi.html', linkText: 'Tercih Bilgilerini Gör', category: 'Kayıt' },
-                        { title: 'Fakülte ve Yüksekokul Lokasyonları', description: 'Tüm fakülte ve yüksekokulların kampüs bazlı listesi.', link: 'page/fakulte-yuksekokul-lokasyonlari.html', linkText: 'Lokasyonları Gör', category: 'Kayıt' },
-                        { title: 'Bölüm Sıralamaları', description: '2025 yılı bölüm sıralamaları ve taban puanları.', link: 'page/siralamalar.html', linkText: 'Sıralamaları Gör', category: 'Kayıt' },
-                        { title: 'Kayıt İşlemleri', description: 'Yeni öğrenciler için kayıt prosedürleri ve gerekli belgeler.', link: 'page/kayit-islemleri.html', linkText: 'Kayıt Bilgilerini Gör', category: 'Kayıt' },
-                        { title: 'Barınma Olanakları', description: 'Beytepe kampüs içi konaklama seçenekleri hakkında bilgiler.', link: 'page/barinma.html', linkText: 'Barınma Olanaklarını Gör', category: 'Barınma' },
-                        { title: "Beytepe Çevresindeki KYK'lar", description: 'Beytepe kampüsü çevresindeki KYK yurtlarını inceleyin', link: 'page/cevredeki-kyklar.html', linkText: "KYK'ları Gör", category: 'Barınma' },
-                        { title: "Sıhhiye Çevresindeki KYK'lar", description: 'Sıhhiye kampüsü çevresindeki KYK yurtlarını inceleyin', link: 'page/s-cevredeki-kyklar.html', linkText: "KYK'ları Gör", category: 'Barınma' },
-                        { title: 'Spor Olanakları', description: 'Üniversitemizdeki spor tesisleri ve aktiviteleri.', link: 'page/spor-olanaklari.html', linkText: 'Spor Olanaklarını Gör', category: 'Kampüs' },
-                        { title: 'Hazırlık Sınıfı', description: 'Yabancı dil hazırlık eğitimi hakkında bilgiler ve program detayları.', link: 'page/hazirlik.html', linkText: 'Hazırlık Programı Hakkında Bilgi', category: 'Akademik' },
-                        { title: 'Kampüs Olanakları', description: 'Kütüphane, yemekhane ve diğer öğrenci hizmetleri.', link: 'page/kampus-olanaklari.html', linkText: 'Kampüs Olanaklarını Gör', category: 'Kampüs' },
-                        { title: 'Öğrenci Toplulukları', description: 'Aktif öğrenci toplulukları ve toplulukların iletişim bilgileri.', link: 'page/ogrenci-topluluklari.html', linkText: 'Toplulukları Gör', category: 'Öğrenci' },
-                        { title: 'Kampüs Haritası', description: 'Beytepe ve Sıhhiye kampüslerinin interaktif haritaları ve önemli noktalar.', link: 'page/kampus-haritasi.html', linkText: 'Kampüs Haritasını Gör', category: 'Kampüs' },
-                        { title: 'İletişim', description: 'Beytepe ve Sıhhiye kampüslerinin iletişim bilgileri ve sosyal medya hesapları.', link: 'page/iletisim.html', linkText: 'İletişim Bilgilerini Gör', category: 'Kampüs' }
+                        { title: 'Yeni Kazananlar 2025', description: 'Hacettepe yeni kazananlar 2025 için kayıt adımları, e-devlet süreci ve önemli tarihler.', link: 'page/yeni-kazananlar-2025.html', linkText: 'Hacettepe Yeni Kazananlar 2025 Rehberi', category: 'Kayıt' },
+                        { title: 'Akademik Takvim', description: 'Hacettepe akademik takvim, ders kayıt tarihleri ve sınav dönemleri.', link: 'page/akademik-takvim.html', linkText: 'Hacettepe Akademik Takvim 2025-2026', category: 'Akademik' },
+                        { title: 'Sıkça Sorulan Sorular', description: 'Öğrencilerin en çok merak ettiği konular hakkında bilgiler.', link: 'page/sss.html', linkText: 'Hacettepe Sıkça Sorulan Sorular', category: 'Akademik' },
+                        { title: 'Tercih Dönemi', description: 'Üniversite tercih dönemine ilişkin önemli bilgiler ve tarihler.', link: 'page/tercih-donemi.html', linkText: 'Hacettepe Tercih Dönemi Rehberi', category: 'Kayıt' },
+                        { title: 'Fakülte ve Yüksekokul Lokasyonları', description: 'Tüm fakülte ve yüksekokulların kampüs bazlı listesi.', link: 'page/fakulte-yuksekokul-lokasyonlari.html', linkText: 'Hacettepe Fakülte Lokasyonları', category: 'Kayıt' },
+                        { title: 'Bölüm Sıralamaları', description: '2025 yılı bölüm sıralamaları ve taban puanları.', link: 'page/siralamalar.html', linkText: 'Hacettepe Bölüm Sıralamaları 2025', category: 'Kayıt' },
+                        { title: 'Kayıt İşlemleri', description: 'Hacettepe kayıt işlemleri, gerekli belgeler ve öğrenci işleri süreçleri.', link: 'page/kayit-islemleri.html', linkText: 'Hacettepe Kayıt İşlemleri Rehberi', category: 'Kayıt' },
+                        { title: 'Barınma Olanakları', description: 'Hacettepe barınma olanakları, yurt seçenekleri ve başvuru bağlantıları.', link: 'page/barinma.html', linkText: 'Hacettepe Barınma Olanakları Rehberi', category: 'Barınma' },
+                        { title: "Beytepe Çevresindeki KYK'lar", description: 'Beytepe kampüsü çevresindeki KYK yurtlarını inceleyin', link: 'page/cevredeki-kyklar.html', linkText: "Beytepe ve Sıhhiye KYK Yurtları", category: 'Barınma' },
+                        { title: "Sıhhiye Çevresindeki KYK'lar", description: 'Sıhhiye kampüsü çevresindeki KYK yurtlarını inceleyin', link: 'page/s-cevredeki-kyklar.html', linkText: "Beytepe ve Sıhhiye KYK Yurtları", category: 'Barınma' },
+                        { title: 'Spor Olanakları', description: 'Üniversitemizdeki spor tesisleri ve aktiviteleri.', link: 'page/spor-olanaklari.html', linkText: 'Hacettepe Spor Olanakları', category: 'Kampüs' },
+                        { title: 'Hazırlık Sınıfı', description: 'Yabancı dil hazırlık eğitimi hakkında bilgiler ve program detayları.', link: 'page/hazirlik.html', linkText: 'Hacettepe Hazırlık Sınıfı Rehberi', category: 'Akademik' },
+                        { title: 'Kampüs Olanakları', description: 'Kütüphane, yemekhane ve diğer öğrenci hizmetleri.', link: 'page/kampus-olanaklari.html', linkText: 'Hacettepe Kampüs Olanakları', category: 'Kampüs' },
+                        { title: 'Öğrenci Toplulukları', description: 'Aktif öğrenci toplulukları ve toplulukların iletişim bilgileri.', link: 'page/ogrenci-topluluklari.html', linkText: 'Hacettepe Öğrenci Toplulukları', category: 'Öğrenci' },
+                        { title: 'Kampüs Haritası', description: 'Beytepe ve Sıhhiye kampüslerinin interaktif haritaları ve önemli noktalar.', link: 'page/kampus-haritasi.html', linkText: 'Hacettepe Kampüs Haritası', category: 'Kampüs' },
+                        { title: 'İletişim', description: 'Beytepe ve Sıhhiye kampüslerinin iletişim bilgileri ve sosyal medya hesapları.', link: 'page/iletisim.html', linkText: 'Hacettepe İletişim Bilgileri', category: 'Kampüs' }
                     ]
                 }
             },

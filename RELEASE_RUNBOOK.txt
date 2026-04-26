@@ -1,0 +1,36 @@
+Hacettepe.biz GitHub Pages Release Runbook
+
+1) Push Oncesi Freeze
+- Yeni degisiklikleri durdur.
+- Sadece release sorumlusu push yapsin.
+
+2) Push Oncesi Kontrol
+- Yerel sunucu acik mi kontrol et.
+- Ana sayfa ve kritik sayfalar aciliyor mu:
+  /, /page/yeni-kazananlar-2025.html, /page/kayit-islemleri.html,
+  /page/akademik-takvim.html, /page/barinma.html
+- Tüm sayfalarda title/description/canonical/jsonld var mi kontrol et.
+- Kırık iç link kontrolünü calistir.
+
+3) Release Commit
+- Sadece gerekli dosyalari stage et.
+- Commit mesaji release kapsamini net anlatsin.
+
+4) Push ve Canliya Alma
+- main branch'e push et.
+- GitHub Pages deploy tamamlanana kadar 1-3 dakika bekle.
+
+5) Push Sonrasi Smoke Test
+- https://hacettepe.biz aciliyor mu?
+- Kritik 5 sayfa 200 donuyor mu?
+- robots.txt ve sitemap.xml erisilebilir mi?
+
+6) Rollback Kriteri
+- Kritik sayfa acilmiyorsa,
+- Yanlis kritik bilgi yayindaysa,
+- Icerik yapisi ciddi bozulduysa rollback yap.
+
+7) Rollback Yontemi
+- Son stabil commit'e revert commit olustur.
+- Revert'i main'e push et.
+

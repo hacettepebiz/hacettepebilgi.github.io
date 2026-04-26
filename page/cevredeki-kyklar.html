@@ -2,13 +2,11 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Çevredeki KYK'lar - Hacettepe Üniversitesi Beytepe Kampüsü</title>
-    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
-    <link rel="shortcut icon" type="image/png" href="../assets/img/favicon.png">
-    <meta name="description" content="Hacettepe Üniversitesi Beytepe Kampüsü çevresindeki KYK yurtları, toplu taşıma mesafeleri ve detaylı bilgileri.">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://hacettepe.biz/page/cevredeki-kyklar.html" />
+    <link rel="icon" type="image/png" href="../assets/img/favicon.svg">
+    <link rel="shortcut icon" type="image/png" href="../assets/img/favicon.svg">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -25,7 +23,43 @@
             transform: translateY(-3px);
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
+        a:focus-visible, button:focus-visible, input:focus-visible {
+            outline: 2px solid #dc2626;
+            outline-offset: 2px;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
     </style>
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Hacettepe Bilgi">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://hacettepe.biz/assets/img/og-default.svg">
+    <meta property="og:site_name" content="Hacettepe Bilgilendirme">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://hacettepe.biz/assets/img/og-default.svg">
+    <title>Beytepe Çevresindeki KYK Yurtları | Hacettepe Barınma Rehberi</title>
+    <meta name="description" content="Beytepe çevresindeki KYK yurtları: Hacettepe öğrencileri için barınma, ulaşım ve kampüse yakınlık bilgileri.">
+    <meta property="og:title" content="Beytepe Çevresindeki KYK Yurtları | Hacettepe Barınma Rehberi">
+    <meta property="og:description" content="Beytepe çevresindeki KYK yurtları: Hacettepe öğrencileri için barınma, ulaşım ve kampüse yakınlık bilgileri.">
+    <meta property="og:url" content="https://hacettepe.biz/page/cevredeki-kyklar.html">
+    <meta name="twitter:title" content="Beytepe Çevresindeki KYK Yurtları | Hacettepe Barınma Rehberi">
+    <meta name="twitter:description" content="Beytepe çevresindeki KYK yurtları: Hacettepe öğrencileri için barınma, ulaşım ve kampüse yakınlık bilgileri.">
+    <link rel="canonical" href="https://hacettepe.biz/page/cevredeki-kyklar.html">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Beytepe Çevresindeki KYK Yurtları",
+  "description": "Beytepe çevresindeki KYK yurtları: Hacettepe öğrencileri için barınma, ulaşım ve kampüse yakınlık bilgileri.",
+  "url": "https://hacettepe.biz/page/cevredeki-kyklar.html"
+}
+    </script>
 </head>
 <body class="bg-pattern min-h-screen">
     <div class="min-h-screen flex flex-col">
@@ -51,10 +85,8 @@
         <!-- Header -->
         <header class="bg-white border-b border-gray-100 py-8">
             <div class="container mx-auto px-4">
-                <h1 class="text-3xl font-bold text-gray-900 text-center">Çevredeki KYK'lar</h1>
-                <p class="mt-4 text-gray-600 text-center max-w-2xl mx-auto">
-                    Hacettepe Üniversitesi Beytepe Kampüsü çevresindeki KYK yurtları, <strong>toplu taşıma mesafeleri</strong> ve detaylı bilgileri.
-                </p>
+                <h1 class="text-3xl font-bold text-gray-900 text-center">Beytepe Çevresindeki KYK Yurtları</h1>
+                <p class="text-gray-600 mt-4 text-center max-w-2xl mx-auto">Beytepe çevresindeki KYK yurtlarını kampüse yakınlık ve ulaşım açısından karşılaştırın.</p>
                 <div class="mt-4 text-center">
                     <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">
                         <svg class="w-4 h-4 mr-1" viewBox="0 0 24 24" fill="none">
@@ -1592,6 +1624,15 @@
                     </div>
                 </div>
             </div>
+        
+                <section class="bg-white rounded-xl border border-gray-100 p-6 card-hover">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-3">İlgili İçerikler</h2>
+                    <ul class="space-y-2">
+                    <li><a href="akademik-takvim.html" class="text-red-600 hover:text-red-700">Hacettepe Akademik Takvim 2025-2026</a></li>
+                    <li><a href="barinma.html" class="text-red-600 hover:text-red-700">Barınma</a></li>
+                    <li><a href="fakulte-yuksekokul-lokasyonlari.html" class="text-red-600 hover:text-red-700">Fakülte ve Yüksekokul Lokasyonları</a></li>
+                    </ul>
+                </section>
         </main>
     </div>
 

@@ -2,13 +2,11 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sayfa Bulunamadı | Hacettepe Üniversitesi Bilgilendirme</title>
-    <meta name="description" content="Aradığınız sayfa bulunamadı. Hacettepe Üniversitesi öğrenci rehberi ana sayfasına dönün.">
-    <meta name="robots" content="noindex, nofollow">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
     <style>
         :root {
             --primary-color: #ef4444;
@@ -16,13 +14,11 @@
             --bg-color: #f9fafb;
             --text-color: #1f2937;
         }
-        
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
         }
-
         .error-container {
             min-height: 100vh;
             display: flex;
@@ -32,7 +28,6 @@
             text-align: center;
             padding: 2rem;
         }
-
         .error-code {
             font-size: 8rem;
             font-weight: 700;
@@ -41,13 +36,11 @@
             margin-bottom: 1rem;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
-
         .error-message {
             font-size: 1.5rem;
             margin-bottom: 2rem;
             color: var(--text-color);
         }
-
         .home-button {
             display: inline-flex;
             align-items: center;
@@ -58,17 +51,53 @@
             font-weight: 500;
             transition: all 0.3s ease;
         }
-
         .home-button:hover {
             background-color: #dc2626;
             transform: translateY(-2px);
         }
-
         .home-button svg {
             margin-right: 0.5rem;
         }
+    
+        a:focus-visible, button:focus-visible, input:focus-visible {
+            outline: 2px solid #dc2626;
+            outline-offset: 2px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
     </style>
-</head>
+
+    <title>Sayfa Bulunamadı | Hacettepe Üniversitesi Bilgilendirme</title>
+    <meta name="description" content="Aradığınız sayfa bulunamadı. Hacettepe Üniversitesi öğrenci rehberi ana sayfasına dönün.">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="author" content="Hacettepe Bilgi">
+    <meta property="og:title" content="Sayfa Bulunamadı | Hacettepe Üniversitesi Bilgilendirme">
+    <meta property="og:description" content="Aradığınız sayfa bulunamadı. Hacettepe Üniversitesi öğrenci rehberi ana sayfasına dönün.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hacettepe.biz/404.html">
+    <meta property="og:image" content="https://hacettepe.biz/assets/img/og-default.svg">
+    <meta property="og:site_name" content="Hacettepe Bilgilendirme">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sayfa Bulunamadı | Hacettepe Üniversitesi Bilgilendirme">
+    <meta name="twitter:description" content="Aradığınız sayfa bulunamadı. Hacettepe Üniversitesi öğrenci rehberi ana sayfasına dönün.">
+    <meta name="twitter:image" content="https://hacettepe.biz/assets/img/og-default.svg">
+    <link rel="canonical" href="https://hacettepe.biz/404.html">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "404",
+  "description": "Aradığınız sayfa bulunamadı. Hacettepe Üniversitesi öğrenci rehberi ana sayfasına dönün.",
+  "url": "https://hacettepe.biz/404.html"
+}
+    </script></head>
 <body>
     <div class="error-container">
         <h1 class="error-code">404</h1>

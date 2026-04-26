@@ -2,69 +2,34 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Hacettepe Üniversitesi Kampüs Haritası | Beytepe ve Sıhhiye Kampüsleri</title>
-    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
-    <link rel="shortcut icon" type="image/png" href="../assets/img/favicon.png">
-    <meta name="description" content="Hacettepe Üniversitesi Beytepe ve Sıhhiye kampüslerinin interaktif haritası. Fakülteler, yurtlar, kütüphane, yemekhane ve diğer önemli noktaların konumları.">
-    <meta name="keywords" content="hacettepe kampüs haritası, beytepe kampüsü, sıhhiye kampüsü, hacettepe fakülteler, beytepe kyk, hacettepe yurt, hacettepe barınma, hacettepe kütüphane">
-    <meta property="og:title" content="Hacettepe Üniversitesi Kampüs Haritası">
-    <meta property="og:description" content="Hacettepe Üniversitesi Beytepe ve Sıhhiye kampüslerinin interaktif haritası. Tüm önemli noktaların konumlarını keşfedin.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://hacettepe.biz/page/kampus-haritasi.html">
-    <link rel="canonical" href="https://hacettepe.biz/page/kampus-haritasi.html">
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="Hacettepe Bilgi">
-    <meta name="language" content="Turkish">
-    
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Hacettepe Üniversitesi Kampüs Haritası",
-        "description": "Hacettepe Üniversitesi Beytepe ve Sıhhiye kampüslerinin interaktif haritası",
-        "publisher": {
-            "@type": "Organization",
-            "name": "Hacettepe.biz"
-
-        },
-        "mainEntity": {
-            "@type": "Map",
-            "name": "Hacettepe Kampüs Haritası",
-            "about": "Beytepe ve Sıhhiye Kampüsleri"
-        }
-    }
-    </script>
-
+    <link rel="icon" type="image/png" href="../assets/img/favicon.svg">
+    <link rel="shortcut icon" type="image/png" href="../assets/img/favicon.svg">
     <script src="https://unpkg.com/vue@3.4.15/dist/vue.global.prod.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    
     <style>
         [v-cloak] {
             display: none;
         }
-
         :root {
             --primary-color: #ef4444;
             --primary-light: #fee2e2;
             --border-color: #e5e7eb;
         }
-
         body {
             font-family: 'Inter', sans-serif;
         }
-
         #map {
             height: 600px;
             width: 100%;
             border-radius: 12px;
             z-index: 1;
         }
-
         .map-container {
             height: 600px;
             border-radius: 12px;
@@ -72,54 +37,82 @@
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             position: relative;
         }
-
         .campus-button {
             transition: all 0.3s ease;
             border: 2px solid var(--border-color);
         }
-
         .campus-button:hover, .campus-button.active {
             background-color: var(--primary-light);
             border-color: var(--primary-color);
             color: var(--primary-color);
         }
-
         .location-button {
             transition: all 0.3s ease;
             border: 1px solid var(--border-color);
         }
-
         .location-button:hover {
             background-color: var(--primary-light);
             border-color: var(--primary-color);
             color: var(--primary-color);
         }
-
         .leaflet-container {
             width: 100%;
             height: 100%;
         }
-
         .leaflet-popup-content-wrapper {
             border-radius: 8px;
         }
-
         .leaflet-popup-content {
             margin: 12px;
             font-family: 'Inter', sans-serif;
         }
-
         .leaflet-popup-content b {
             color: var(--primary-color);
             display: block;
             margin-bottom: 4px;
         }
+        a:focus-visible, button:focus-visible, input:focus-visible {
+            outline: 2px solid #dc2626;
+            outline-offset: 2px;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
     </style>
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Hacettepe Bilgi">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://hacettepe.biz/assets/img/og-default.svg">
+    <meta property="og:site_name" content="Hacettepe Bilgilendirme">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://hacettepe.biz/assets/img/og-default.svg">
+    <title>Hacettepe Kampüs Haritası | Beytepe ve Sıhhiye Ulaşım Rehberi</title>
+    <meta name="description" content="Hacettepe kampüs haritası: Beytepe ve Sıhhiye yerleşkelerinde fakülte, durak ve temel noktaların konum bilgileri.">
+    <meta property="og:title" content="Hacettepe Kampüs Haritası | Beytepe ve Sıhhiye Ulaşım Rehberi">
+    <meta property="og:description" content="Hacettepe kampüs haritası: Beytepe ve Sıhhiye yerleşkelerinde fakülte, durak ve temel noktaların konum bilgileri.">
+    <meta property="og:url" content="https://hacettepe.biz/page/kampus-haritasi.html">
+    <meta name="twitter:title" content="Hacettepe Kampüs Haritası | Beytepe ve Sıhhiye Ulaşım Rehberi">
+    <meta name="twitter:description" content="Hacettepe kampüs haritası: Beytepe ve Sıhhiye yerleşkelerinde fakülte, durak ve temel noktaların konum bilgileri.">
+    <link rel="canonical" href="https://hacettepe.biz/page/kampus-haritasi.html">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Hacettepe Kampüs Haritası",
+  "description": "Hacettepe kampüs haritası: Beytepe ve Sıhhiye yerleşkelerinde fakülte, durak ve temel noktaların konum bilgileri.",
+  "url": "https://hacettepe.biz/page/kampus-haritasi.html"
+}
+    </script>
 </head>
 <body class="bg-gray-50">
     <div id="app" v-cloak>
         <!-- Navbar -->
-        <div id="app" class="min-h-screen flex flex-col">
+        <div  class="min-h-screen flex flex-col">
             <nav class="navbar sticky top-0 bg-white/90 backdrop-blur-md border-b border-gray-100 z-50 shadow-sm" role="navigation" aria-label="Ana menü">
                 <div class="container mx-auto px-4">
                     <div class="flex justify-between items-center h-16">
@@ -139,7 +132,7 @@
 
         <main class="container mx-auto px-4 py-8">
             <a id="beytepe"></a>
-            <h1 class="text-3xl font-bold text-center mb-8">Kampüs Haritası</h1>
+            <h1 class="text-3xl font-bold text-center mb-8">Hacettepe Kampüs Haritası</h1>
             
             <div class="flex justify-center space-x-4 mb-6">
                 <button 
@@ -163,7 +156,7 @@
                             @click="showLocation(location)"
                             class="location-button p-3 rounded-lg text-left bg-white">
                             <h3 class="font-medium mb-1">{{ location.name }}</h3>
-                            <p class="text-sm text-gray-600">{{ location.description }}</p>
+                            <p>Hacettepe kampüs haritası ile Beytepe ve Sıhhiye yerleşkelerinde aradığınız noktaya hızlıca ulaşın.</p>
                         </button>
                     </div>
                 </div>
@@ -175,6 +168,15 @@
                     </div>
                 </div>
             </div>
+        
+                <section class="bg-white rounded-xl border border-gray-100 p-6 card-hover">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-3">İlgili İçerikler</h2>
+                    <ul class="space-y-2">
+                    <li><a href="akademik-takvim.html" class="text-red-600 hover:text-red-700">Hacettepe Akademik Takvim 2025-2026</a></li>
+                    <li><a href="barinma.html" class="text-red-600 hover:text-red-700">Barınma</a></li>
+                    <li><a href="cevredeki-kyklar.html" class="text-red-600 hover:text-red-700">Çevredeki KYK'lar</a></li>
+                    </ul>
+                </section>
         </main>
 
         <!-- Footer -->

@@ -2,13 +2,11 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tercih Dönemi - Hacettepe Üniversitesi</title>
-    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
-    <link rel="shortcut icon" type="image/png" href="../assets/img/favicon.png">
-    <meta name="robots" content="index, follow">
-    <meta name="description" content="Hacettepe Üniversitesi 2025-2026 tercih dönemi bilgileri ve güncellemeleri.">
-    <link rel="canonical" href="https://hacettepe.biz/page/tercih-donemi.html" />
+    <link rel="icon" type="image/png" href="../assets/img/favicon.svg">
+    <link rel="shortcut icon" type="image/png" href="../assets/img/favicon.svg">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
@@ -16,12 +14,48 @@
         body {
             font-family: 'Inter', sans-serif;
         }
+        a:focus-visible, button:focus-visible, input:focus-visible {
+            outline: 2px solid #dc2626;
+            outline-offset: 2px;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
     </style>
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Hacettepe Bilgi">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://hacettepe.biz/assets/img/og-default.svg">
+    <meta property="og:site_name" content="Hacettepe Bilgilendirme">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://hacettepe.biz/assets/img/og-default.svg">
+    <title>Hacettepe Tercih Dönemi Rehberi | Bölüm Seçimi ve Yerleşim İpuçları</title>
+    <meta name="description" content="Hacettepe tercih dönemi rehberi: bölüm seçimi, kampüs yaşamı beklentisi ve yerleşim sürecine dair temel bilgiler.">
+    <meta property="og:title" content="Hacettepe Tercih Dönemi Rehberi | Bölüm Seçimi ve Yerleşim İpuçları">
+    <meta property="og:description" content="Hacettepe tercih dönemi rehberi: bölüm seçimi, kampüs yaşamı beklentisi ve yerleşim sürecine dair temel bilgiler.">
+    <meta property="og:url" content="https://hacettepe.biz/page/tercih-donemi.html">
+    <meta name="twitter:title" content="Hacettepe Tercih Dönemi Rehberi | Bölüm Seçimi ve Yerleşim İpuçları">
+    <meta name="twitter:description" content="Hacettepe tercih dönemi rehberi: bölüm seçimi, kampüs yaşamı beklentisi ve yerleşim sürecine dair temel bilgiler.">
+    <link rel="canonical" href="https://hacettepe.biz/page/tercih-donemi.html">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Hacettepe Tercih Dönemi Rehberi",
+  "description": "Hacettepe tercih dönemi rehberi: bölüm seçimi, kampüs yaşamı beklentisi ve yerleşim sürecine dair temel bilgiler.",
+  "url": "https://hacettepe.biz/page/tercih-donemi.html"
+}
+    </script>
 </head>
 <body class="bg-gray-50">
     <div id="app" class="min-h-screen flex flex-col">
         <!-- Navigation -->
-        <div id="app" class="min-h-screen flex flex-col">
+        <div class="min-h-screen flex flex-col">
             <nav class="navbar sticky top-0 bg-white/90 backdrop-blur-md border-b border-gray-100 z-50 shadow-sm" role="navigation" aria-label="Ana menü">
                 <div class="container mx-auto px-4">
                     <div class="flex justify-between items-center h-16">
@@ -42,8 +76,8 @@
         <!-- Header -->
         <div class="bg-white border-b border-gray-100">
             <div class="container mx-auto px-4 py-16">
-                <h1 class="text-4xl font-bold text-gray-900 text-center mb-4">Tercih Dönemi</h1>
-                <p class="text-gray-600 text-center max-w-2xl mx-auto">Hacettepe Üniversitesi tercih dönemi bilgileri ve güncellemeleri.</p>
+                <h1 class="text-4xl font-bold text-gray-900 text-center mb-4">Hacettepe Tercih Dönemi Rehberi</h1>
+                <p class="text-gray-600 mt-4 text-center max-w-2xl mx-auto">Hacettepe tercih dönemi için bölüm seçimi ve yerleşim sürecinde dikkat edilmesi gereken temel noktaları bu sayfada bulabilirsiniz.</p>
             </div>
         </div>
 
@@ -63,6 +97,15 @@
                     </div>
                 </div>
             </div>
+        
+                <section class="bg-white rounded-xl border border-gray-100 p-6 card-hover">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-3">İlgili İçerikler</h2>
+                    <ul class="space-y-2">
+                    <li><a href="akademik-takvim.html" class="text-red-600 hover:text-red-700">Hacettepe Akademik Takvim 2025-2026</a></li>
+                    <li><a href="barinma.html" class="text-red-600 hover:text-red-700">Barınma</a></li>
+                    <li><a href="cevredeki-kyklar.html" class="text-red-600 hover:text-red-700">Çevredeki KYK'lar</a></li>
+                    </ul>
+                </section>
         </main>
 
         <!-- Footer -->

@@ -2,115 +2,109 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://hacettepe.biz/</loc>
-    <lastmod>2025-04-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-    <url>
-    <loc>https://hacettepe.biz/index.html</loc>
-    <lastmod>2025-04-26</lastmod>
+    <lastmod>2026-04-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://hacettepe.biz/page/akademik-takvim</loc>
-    <lastmod>2025-12-17</lastmod>
+    <loc>https://hacettepe.biz/page/akademik-takvim.html</loc>
+    <lastmod>2026-04-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://hacettepe.biz/page/barinma.html</loc>
-    <lastmod>2025-04-26</lastmod>
+    <lastmod>2026-04-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://hacettepe.biz/page/cevredeki-kyklar</loc>
-    <lastmod>2025-04-26</lastmod>
+    <loc>https://hacettepe.biz/page/cevredeki-kyklar.html</loc>
+    <lastmod>2026-04-26</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://hacettepe.biz/page/hazirlik.html</loc>
-    <lastmod>2025-04-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://hacettepe.biz/page/iletisim.html</loc>
-    <lastmod>2025-04-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-    <url>
-    <loc>https://hacettepe.biz/page/kampus-haritasi.html</loc>
-    <lastmod>2025-04-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-    <url>
-    <loc>https://hacettepe.biz/page/kampus-olanaklari.html</loc>
-    <lastmod>2025-04-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-    <url>
-    <loc>https://hacettepe.biz/page/kayit-islemleri.html</loc>
-    <lastmod>2025-04-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-    <url>
-    <loc>https://hacettepe.biz/page/ogrenci-topluluklari.html</loc>
-    <lastmod>2025-04-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-    <url>
-    <loc>https://hacettepe.biz/page/s-cevredeki-kyklar.html</loc>
-    <lastmod>2025-04-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-    <url>
-    <loc>https://hacettepe.biz/page/spor-olanaklari.html</loc>
-    <lastmod>2025-04-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-    <url>
-    <loc>https://hacettepe.biz/page/sss.html</loc>
-    <lastmod>2025-04-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-    <url>
-    <loc>https://hacettepe.biz/page/tercih-donemi.html</loc>
-    <lastmod>2025-04-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-    <url>
-    <loc>https://hacettepe.biz/page/siralamalar.html</loc>
-    <lastmod>2025-12-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-    <url>
-    <loc>https://hacettepe.biz/hakkinda.html</loc>
-    <lastmod>2025-04-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://hacettepe.biz/page/fakulte-yuksekokul-lokasyonlari.html</loc>
-    <lastmod>2025-07-23</lastmod>
+    <lastmod>2026-04-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-    <url>
+  <url>
+    <loc>https://hacettepe.biz/page/hazirlik.html</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hacettepe.biz/page/iletisim.html</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hacettepe.biz/page/kampus-haritasi.html</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hacettepe.biz/page/kampus-olanaklari.html</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hacettepe.biz/page/kayit-islemleri.html</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hacettepe.biz/page/ogrenci-topluluklari.html</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hacettepe.biz/page/s-cevredeki-kyklar.html</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hacettepe.biz/page/siralamalar.html</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hacettepe.biz/page/spor-olanaklari.html</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hacettepe.biz/page/sss.html</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hacettepe.biz/page/tercih-donemi.html</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://hacettepe.biz/page/yeni-kazananlar-2025.html</loc>
-    <lastmod>2025-08-25</lastmod>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hacettepe.biz/hakkinda.html</loc>
+    <lastmod>2026-04-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
