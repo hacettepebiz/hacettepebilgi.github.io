@@ -1,0 +1,13 @@
+{
+  "$schema": "https://agentskills.io/spec/v0.2.0/discovery.json",
+  "version": "0.2.0",
+  "skills": [
+    {
+      "name": "hacettepebiz-site-overview",
+      "type": "Skill",
+      "description": "Hacettepe.biz statik sitesi: genel bakış, HTML/Markdown ile gezinme ve sayfa keşfi (araç veya API iddiası yok).",
+      "url": "https://hacettepe.biz/.well-known/agent-skills/site-overview.skill.md",
+      "sha256": "0dc0bcc017cf2c73301af80bfc0909090f0833aa33d643e96532dd1f0fdfb4f5"
+    }
+  ]
+}

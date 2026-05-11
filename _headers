@@ -1,0 +1,8 @@
+/
+  Link: </.well-known/api-catalog>; rel="api-catalog"
+  Link: </docs/api.html>; rel="service-doc"
+  Link: </homepage.md>; rel="alternate"; type="text/markdown"
+  Vary: Accept
+
+/homepage.md
+  Content-Type: text/markdown; charset=utf-8

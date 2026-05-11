@@ -1,0 +1,18 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://hacettepe.biz/",
+      "item": [
+        {
+          "href": "https://hacettepe.biz/docs/api.html",
+          "rel": "service-doc"
+        },
+        {
+          "href": "https://hacettepe.biz/homepage.md",
+          "rel": "alternate",
+          "type": "text/markdown"
+        }
+      ]
+    }
+  ]
+}
