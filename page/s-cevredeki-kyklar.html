@@ -2,98 +2,112 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/apple-touch-icon.png">
+    <link rel="icon" href="../assets/img/favicon.ico">
+    <link rel="manifest" href="../assets/img/site.webmanifest">
+    <meta name="theme-color" content="#dc2626">
+    <link rel="stylesheet" href="../assets/hbiz.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="../assets/img/favicon.svg">
-    <link rel="shortcut icon" type="image/png" href="../assets/img/favicon.svg">
-    <script src="https://cdn.tailwindcss.com"></script>
+            <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
         }
-        .bg-pattern {
-            background-color: #ffffff;
-            background-image: radial-gradient(#ff000008 1px, transparent 1px);
-            background-size: 24px 24px;
-        }
-        .card-hover {
-            transition: all 0.2s ease;
-        }
-        .card-hover:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        }
-        a:focus-visible, button:focus-visible, input:focus-visible {
-            outline: 2px solid #dc2626;
-            outline-offset: 2px;
-        }
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-                scroll-behavior: auto !important;
-            }
-        }
     </style>
     <meta name="robots" content="index, follow">
     <meta name="author" content="Hacettepe Bilgi">
     <meta property="og:type" content="article">
-    <meta property="og:image" content="https://hacettepe.biz/assets/img/og-default.svg">
+    <meta property="og:image" content="https://hacettepe.biz/assets/img/logo.png">
     <meta property="og:site_name" content="Hacettepe Bilgilendirme">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://hacettepe.biz/assets/img/og-default.svg">
-    <title>Sıhhiye Çevresindeki KYK Yurtları | Hacettepe Barınma Rehberi</title>
-    <meta name="description" content="Sıhhiye çevresindeki KYK yurtları: Hacettepe öğrencileri için konum, ulaşım ve barınma karşılaştırma bilgileri.">
-    <meta property="og:title" content="Sıhhiye Çevresindeki KYK Yurtları | Hacettepe Barınma Rehberi">
-    <meta property="og:description" content="Sıhhiye çevresindeki KYK yurtları: Hacettepe öğrencileri için konum, ulaşım ve barınma karşılaştırma bilgileri.">
+    <meta name="twitter:image" content="https://hacettepe.biz/assets/img/logo.png">
+    <title>Sıhhiye Çevresindeki KYK Yurtları & Ücretleri | Hacettepe Barınma</title>
+    <meta name="description" content="Sıhhiye Kampüsü çevresindeki KYK kız ve erkek öğrenci yurtları, konum, dolmuş/otobüs/metro ulaşımı ve Hacettepe Tıp/Diş/Eczacılık barınma rehberi.">
+    <meta name="keywords" content="sıhhiye kyk yurtları, hacettepe tıp kyk yurdu, sıhhiye barınma, hacettepe sıhhiye yurtlar, ankara kyk yurtları">
+    <meta property="og:title" content="Sıhhiye Çevresindeki KYK Yurtları & Ücretleri | Hacettepe Barınma">
+    <meta property="og:description" content="Sıhhiye Kampüsü çevresindeki KYK kız ve erkek öğrenci yurtları, konum, dolmuş/otobüs/metro ulaşımı ve Hacettepe Tıp/Diş/Eczacılık barınma rehberi.">
     <meta property="og:url" content="https://hacettepe.biz/page/s-cevredeki-kyklar.html">
-    <meta name="twitter:title" content="Sıhhiye Çevresindeki KYK Yurtları | Hacettepe Barınma Rehberi">
-    <meta name="twitter:description" content="Sıhhiye çevresindeki KYK yurtları: Hacettepe öğrencileri için konum, ulaşım ve barınma karşılaştırma bilgileri.">
+    <meta name="twitter:title" content="Sıhhiye Çevresindeki KYK Yurtları & Ücretleri | Hacettepe Barınma">
+    <meta name="twitter:description" content="Sıhhiye Kampüsü çevresindeki KYK kız ve erkek öğrenci yurtları, konum, dolmuş/otobüs/metro ulaşımı ve Hacettepe Tıp/Diş/Eczacılık barınma rehberi.">
     <link rel="canonical" href="https://hacettepe.biz/page/s-cevredeki-kyklar.html">
     <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Sıhhiye Çevresindeki KYK Yurtları",
-  "description": "Sıhhiye çevresindeki KYK yurtları: Hacettepe öğrencileri için konum, ulaşım ve barınma karşılaştırma bilgileri.",
-  "url": "https://hacettepe.biz/page/s-cevredeki-kyklar.html"
-}
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Sıhhiye Çevresindeki KYK Yurtları",
+    "description": "Sıhhiye Kampüsü çevresindeki KYK kız ve erkek öğrenci yurtları, konum, dolmuş/otobüs/metro ulaşımı ve Hacettepe Tıp/Diş/Eczacılık barınma rehberi.",
+    "url": "https://hacettepe.biz/page/s-cevredeki-kyklar.html"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Ana Sayfa",
+        "item": "https://hacettepe.biz/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Sıhhiye KYK Yurtları",
+        "item": "https://hacettepe.biz/page/s-cevredeki-kyklar.html"
+      }
+    ]
+  }
+]
     </script>
 </head>
 <body class="bg-pattern min-h-screen">
     <div class="min-h-screen flex flex-col">
         <!-- Navbar -->
         <div id="app" class="min-h-screen flex flex-col">
-            <nav class="navbar sticky top-0 bg-white/90 backdrop-blur-md border-b border-gray-100 z-50 shadow-sm" role="navigation" aria-label="Ana menü">
-                <div class="container mx-auto px-4">
-                    <div class="flex justify-between items-center h-16">
-                        <a href="../index.html" class="flex items-center space-x-4 group" aria-label="Ana sayfaya dön">
-                            <svg class="w-6 h-6 text-red-600 transition-transform group-hover:rotate-12" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <span class="text-gray-900 font-medium">Hacettepe Bilgilendirme</span>
-                        </a>
-                        <div class="flex space-x-4">
-                            <a href="../index.html" class="text-gray-600 hover:text-red-600 px-3 py-2 rounded-md text-sm transition-colors">Ana Sayfa</a>
-                    </div>
-                </div>
-            </nav>
-
-        <!-- Header -->
-        <header class="bg-white border-b border-gray-100 py-8">
-            <div class="container mx-auto px-4">
-                <h1 class="text-3xl font-bold text-gray-900 text-center">Sıhhiye Çevresindeki KYK Yurtları</h1>
-                <p class="text-gray-600 mt-4 text-center max-w-2xl mx-auto">Sıhhiye çevresindeki KYK yurtlarını Hacettepe öğrencileri için konum ve ulaşım açısından karşılaştırın.</p>
+            <!-- hbiz Navbar -->
+        <nav class="hb-nav" role="navigation" aria-label="Ana menü">
+            <div class="hb-nav-inner">
+                <a href="/" class="hb-nav-logo" aria-label="Ana sayfaya dön">
+                    <img src="../assets/img/logo.png" alt="Hacettepe.biz logosu">
+                    <span>Hacettepe.biz</span>
+                </a>
+                <button class="hb-nav-toggle" aria-label="Menüyü aç/kapat" onclick="this.nextElementSibling.classList.toggle('open')">
+                    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+                <ul class="hb-nav-links">
+                    <li><a href="/">Ana Sayfa</a></li>
+                    <li><a href="/page/akademik-takvim.html">Akademik Takvim</a></li>
+                    <li><a href="/page/barinma.html">Barınma</a></li>
+                    <li><a href="/page/siralamalar.html">Bölüm Sıralamaları</a></li>
+                    <li><a href="/page/kampus-olanaklari.html">Kampüs</a></li>
+                    <li><a href="/page/ogrenci-topluluklari.html">Topluluklar</a></li>
+                </ul>
             </div>
-        </header>
+        </nav>
+        <!-- Breadcrumb -->
+        <nav class="hb-breadcrumb" aria-label="Sayfa konumu">
+            <div class="hb-breadcrumb-inner">
+                <a href="/">Ana Sayfa</a>
+                <span class="sep" aria-hidden="true">›</span>
+                <span class="current">KYK Yurtları (Sıhhiye)</span>
+            </div>
+        </nav>
+
+        <!-- hbiz Hero -->
+        <div class="hb-hero">
+            <div class="hb-hero-inner">
+                <h1>Sıhhiye Çevresindeki KYK Yurtları</h1>
+                <p>Sıhhiye çevresindeki KYK yurtlarını Hacettepe öğrencileri için konum ve ulaşım açısından karşılaştırın.</p>
+            </div>
+        </div>
 
         <div class="container mx-auto px-4 py-8">
-            <div class="bg-white rounded-xl border border-gray-100 p-6 card-hover">
+            <div class="hb-card">
                     <div class="flex items-start space-x-4">
                         <div class="bg-red-50 rounded-lg p-2 mt-1">
                             <svg class="w-6 h-6 text-red-600" viewBox="0 0 24 24" fill="none">
@@ -103,7 +117,7 @@
                         <div class="flex-1">
                             <h2 class="text-xl font-semibold text-gray-900 mb-4 border-b border-gray-100 pb-2">Önemli Notlar</h2>
                         <ul class="space-y-3">
-                            <li class="text-gray-600">Not 1: Beytepe kampüsü içinde sayılan Emine Şerife Hanım Kız KYK Öğrenci Yurdu ve kampüs içinde olan Beytepe KYK Kız KYK Öğrenci Yurdu listeye dahil edilmemiştir. Onlar hakkındaki bilgilere <a href="barinma.html" class="text-red-600 hover:text-red-700">barınma</a> sayfasından ulaşabilirsiniz.</li>
+                            <li class="text-gray-600">Not 1: Beytepe kampüsü içinde sayılan Emine Şerife Hanım Kız KYK Yurdu ve kampüs içindeki Alev Alatlı Kız KYK Öğrenci Yurdu (Eski adıyla Beytepe Kız KYK) listeye dahil edilmemiştir. Onlar hakkındaki bilgilere <a href="/page/barinma.html" class="text-red-600 hover:text-red-700">barınma</a> sayfasından ulaşabilirsiniz.</li>
                             <li class="text-gray-600">Not 2: Belirtilen uzaklık ölçümleri çizgi ölçüm değildir. Ortalama yol uzunluklarıdır.</li>
                             <li class="text-gray-600">Not 3: Mobilden giriyorsanız kampüse uzaklık linkinde maps uygulaması açıldığında yol gözükmeyebilir. Haritada gör yazısınıza basılı tutup gizli sekmede aç diyerek sorunu çözebilirsiniz.</li>
                             </ul>
@@ -112,9 +126,9 @@
                 </div>
         </div>
 
-        <main class="flex-grow container mx-auto px-4 py-8">
+        <main class="flex-grow container mx-auto px-4 pt-6 pb-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="bg-white rounded-xl border border-gray-100 p-6 card-hover">
+                <div class="hb-card">
                     <div class="flex items-start space-x-4">
                         <div class="bg-red-50 rounded-lg p-2 mt-1">
                             <svg class="w-6 h-6 text-red-600" viewBox="0 0 24 24" fill="none">
@@ -207,7 +221,7 @@
                         </div>
                     </div>
 
-                <div class="bg-white rounded-xl border border-gray-100 p-6 card-hover">
+                <div class="hb-card">
                     <div class="flex items-start space-x-4">
                         <div class="bg-red-50 rounded-lg p-2 mt-1">
                             <svg class="w-6 h-6 text-red-600" viewBox="0 0 24 24" fill="none">
@@ -328,32 +342,46 @@
                 </div>
             </div>
         
-                <section class="bg-white rounded-xl border border-gray-100 p-6 card-hover">
+                <section class="hb-card">
                     <h2 class="text-xl font-semibold text-gray-900 mb-3">İlgili İçerikler</h2>
                     <ul class="space-y-2">
-                    <li><a href="akademik-takvim.html" class="text-red-600 hover:text-red-700">Hacettepe Akademik Takvim 2025-2026</a></li>
-                    <li><a href="barinma.html" class="text-red-600 hover:text-red-700">Barınma</a></li>
+                    <li><a href="/page/akademik-takvim.html" class="text-red-600 hover:text-red-700">Hacettepe Akademik Takvim 2025-2026</a></li>
+                    <li><a href="/page/barinma.html" class="text-red-600 hover:text-red-700">Barınma</a></li>
                     <li><a href="cevredeki-kyklar.html" class="text-red-600 hover:text-red-700">Çevredeki KYK'lar</a></li>
                     </ul>
                 </section>
         </main>
 
-        <!-- Footer -->
-        <footer class="bg-white border-t border-gray-100 py-8 mt-12">
-            <div class="container mx-auto px-4">
-                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-                    <div class="flex items-center space-x-4">
-                        <svg class="w-6 h-6 text-red-600" viewBox="0 0 24 24" fill="none">
-                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        <span class="text-gray-600 text-sm">Hacettepe Bilgilendirme</span>
+        <!-- hbiz Footer -->
+        <footer class="hb-footer" role="contentinfo">
+            <div class="hb-footer-inner">
+                <div class="hb-footer-grid">
+                    <div class="hb-footer-brand">
+                        <img src="../assets/img/logo.png" alt="Hacettepe Bilgilendirme Logosu">
+                        <p>Hacettepe Üniversitesi öğrencileri ve adayları için<br>bağımsız, güncel ve doğru bilgi kaynağı.</p>
                     </div>
-                    <div class="flex space-x-6">
-                        <a href="https://akiner.net" class="text-gray-600 hover:text-red-600 text-sm transition-colors">Akıner Kısa</a>
-                        <a href="../hakkinda.html" class="text-gray-600 hover:text-red-600 text-sm transition-colors">Site Hakkında</a>
+                    <div>
+                        <h4>Hızlı Erişim</h4>
+                        <ul>
+                            <li><a href="/page/akademik-takvim.html">Akademik Takvim 2026-2027</a></li>
+                            <li><a href="/page/siralamalar.html">Bölüm Sıralamaları</a></li>
+                            <li><a href="/page/barinma.html">Barınma Olanakları</a></li>
+                            <li><a href="/page/kampus-haritasi.html">Kampüs Haritası</a></li>
+                            <li><a href="/page/ogrenci-topluluklari.html">Öğrenci Toplulukları</a></li>
+                        </ul>
                     </div>
+                    <div>
+                        <h4>Site</h4>
+                        <ul>
+                            <li><a href="/hakkinda.html">Site Hakkında</a></li>
+                            <li><a href="/page/iletisim.html">İletişim</a></li>
+                            <li><a href="https://github.com/hacettepebilgi/hacettepe.biz" target="_blank">GitHub</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="hb-footer-bottom">
+                    <span>© 2026 Hacettepe Bilgilendirme · Bağımsız Öğrenci Kaynağı</span>
+                    <a href="/hakkinda.html">Site Hakkında</a>
                 </div>
             </div>
         </footer>

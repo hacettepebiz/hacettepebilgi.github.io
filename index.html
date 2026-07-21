@@ -2,11 +2,16 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+    <link rel="icon" href="assets/img/favicon.ico">
+    <link rel="manifest" href="assets/img/site.webmanifest">
+    <meta name="theme-color" content="#dc2626">
+    <link rel="stylesheet" href="assets/hbiz.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="assets/img/favicon.svg">
-    <link rel="shortcut icon" type="image/png" href="assets/img/favicon.svg">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -15,119 +20,8 @@
             --primary-color: #ef4444;
             --primary-light: #fee2e2;
             --primary-dark: #dc2626;
-            --bg-color: #f9fafb;
-            --text-color: #1f2937;
-            --text-light: #6b7280;
-            --border-color: #e5e7eb;
-            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --card-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
             --transition-smooth: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-            --transition-bounce: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-            --transition-spring: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             --transition-elastic: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        }
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
-            background-image: 
-                radial-gradient(circle at 25px 25px, rgba(239, 68, 68, 0.05) 2%, transparent 0%),
-                radial-gradient(circle at 75px 75px, rgba(239, 68, 68, 0.05) 2%, transparent 0%);
-            background-size: 100px 100px;
-            color: var(--text-color);
-        }
-        .bg-pattern {
-            background-color: #ffffff;
-            background-image: radial-gradient(#ff000008 1px, transparent 1px);
-            background-size: 24px 24px;
-        }
-        .card-hover {
-            transition: var(--transition-smooth);
-        }
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--card-shadow-hover);
-        }
-        .loading {
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-        }
-        .loading.active {
-            opacity: 1;
-        }
-        .skip-link {
-            position: absolute;
-            top: -100px;
-            left: 0;
-            padding: 8px;
-            background: #fff;
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
-            transition: top 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-            border-radius: 0 0 8px 0;
-            z-index: 100;
-        }
-        .skip-link:focus {
-            top: 0;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        .search-wrapper {
-            max-width: 700px;
-            margin: 0 auto;
-            position: relative;
-            transition: var(--transition-spring);
-            max-height: 0;
-            opacity: 0;
-            overflow: hidden;
-            pointer-events: none;
-            transform: scale(0.95);
-        }
-        .search-wrapper.visible {
-            max-height: 200px;
-            opacity: 1;
-            pointer-events: auto;
-            margin-bottom: 2rem;
-            transform: scale(1);
-        }
-        .search-box {
-            background-color: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
-            padding: 16px 24px;
-            display: flex;
-            align-items: center;
-            border: 2px solid #f1f5f9;
-            transition: var(--transition-spring);
-        }
-        .search-box:focus-within {
-            border-color: var(--primary-color);
-            box-shadow: 0 10px 30px -5px rgba(239, 68, 68, 0.15);
-            transform: translateY(-3px);
-        }
-        .search-icon {
-            color: var(--primary-color);
-            margin-right: 16px;
-            flex-shrink: 0;
-            transition: var(--transition-elastic);
-        }
-        .search-box:focus-within .search-icon {
-            transform: scale(1.15) rotate(5deg);
-        }
-        .search-input {
-            border: none;
-            background: transparent;
-            width: 100%;
-            font-size: 18px;
-            color: var(--text-color);
-            font-weight: 500;
-        }
-        .search-input:focus {
-            outline: none;
-        }
-        .search-input::placeholder {
-            color: var(--text-light);
-            font-weight: 400;
         }
         .category-tag {
             display: inline-block;
@@ -138,184 +32,34 @@
             transition: var(--transition-elastic);
             cursor: pointer;
             background-color: #f3f4f6;
-            color: var(--text-light);
+            color: #6b7280;
             box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
         }
         .category-tag:hover {
             background-color: var(--primary-light);
             color: var(--primary-color);
-            transform: translateY(-4px);
+            transform: translateY(-3px);
             box-shadow: 0 4px 6px -1px rgba(239, 68, 68, 0.1);
         }
         .category-tag.active {
             background-color: var(--primary-color);
             color: white;
             box-shadow: 0 4px 6px -1px rgba(239, 68, 68, 0.2);
-            transform: translateY(-3px);
+            transform: translateY(-2px);
         }
-        .info-card {
-            transition: var(--transition-spring);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            overflow: hidden;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            background-color: white;
-        }
-        .info-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--card-shadow-hover);
-            border-color: var(--primary-light);
-        }
-        .info-card-icon {
-            transition: var(--transition-elastic);
-        }
-        .info-card:hover .info-card-icon {
-            transform: scale(1.2) rotate(5deg);
-        }
-        .info-card-link {
-            transition: var(--transition-smooth);
-        }
-        .info-card:hover .info-card-link {
-            color: var(--primary-dark);
-        }
-        .header-gradient {
-            background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
-            position: relative;
-            overflow: hidden;
-            transition: var(--transition-spring);
-            border-bottom: 1px solid var(--border-color);
-            padding: 2rem 0;
-        }
-        .header-gradient::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 50% 0%, rgba(239, 68, 68, 0.05) 0%, transparent 70%);
-            z-index: 0;
-        }
-        .header-content {
-            position: relative;
-            z-index: 1;
-        }
-        .navbar {
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            transition: var(--transition-smooth);
-        }
-        .navbar.scrolled {
-            box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.1);
-        }
-        .scroll-down-btn {
-            position: relative;
-            background-color: white;
-            color: var(--primary-color);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-            transition: var(--transition-spring);
-            z-index: 10;
-            margin: 0 auto;
-        }
-        .scroll-down-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-            background-color: var(--primary-color);
-            color: white;
-        }
-        .scroll-down-btn svg {
-            transition: var(--transition-elastic);
-        }
-        .scroll-down-btn:hover svg {
-            transform: translateY(3px);
-        }
-        .scroll-down-btn.rotated svg {
-            transform: rotate(90deg);
-        }
-        .content-section {
-            transition: var(--transition-spring);
-            max-height: 0;
-            opacity: 0;
-            overflow: hidden;
-            pointer-events: none;
-        }
-        .content-section.visible {
-            max-height: 2000px;
-            opacity: 1;
-            pointer-events: auto;
-        }
-        .main-content {
-            background-color: white;
-            border-radius: 0;
-            box-shadow: none;
-            padding: 2rem;
-            margin-top: 0;
-            position: relative;
-            z-index: 2;
-        }
-        .footer {
-            background: linear-gradient(to bottom, #ffffff, #fafafa);
-            border-top: 1px solid var(--border-color);
-        }
-        @media (max-width: 768px) {
-            .search-box {
-                padding: 14px 20px;
-            }
-            .category-tag {
-                padding: 8px 16px;
-            }
-            .main-content {
-                padding: 1.5rem;
-                margin-top: -1.5rem;
-            }
-        }
-        .header-text {
-            transition: var(--transition-spring);
-            opacity: 1;
-            transform: translateY(0);
-            height: auto;
-            margin-bottom: 1.5rem;
-        }
-        .header-text.hidden {
-            opacity: 0;
-            transform: translateY(-20px);
-            height: 0;
-            margin: 0;
-            overflow: hidden;
-            pointer-events: none;
-        }
-        .header-gradient.shrink {
-            padding: 1rem 0;
-        }
-        a:focus-visible, button:focus-visible, input:focus-visible {
-            outline: 2px solid #dc2626;
-            outline-offset: 2px;
-        }
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-                scroll-behavior: auto !important;
-            }
-        }
+        .info-card-icon { transition: var(--transition-elastic); }
+        .info-card:hover .info-card-icon { transform: scale(1.15) rotate(4deg); }
+        .info-card:hover .info-card-link { color: var(--primary-dark); }
     </style>
-    <title>Hacettepe Üniversitesi Öğrenci Rehberi | Kayıt, Barınma ve Akademik Takvim</title>
-    <meta name="description" content="Hacettepe Üniversitesi öğrenci rehberi: kayıt işlemleri, barınma olanakları, akademik takvim, kampüs yaşamı ve yeni kazananlar için güncel bilgiler.">
-    <meta property="og:title" content="Hacettepe Üniversitesi Öğrenci Rehberi | Kayıt, Barınma ve Akademik Takvim">
-    <meta property="og:description" content="Hacettepe Üniversitesi öğrenci rehberi: kayıt işlemleri, barınma olanakları, akademik takvim, kampüs yaşamı ve yeni kazananlar için güncel bilgiler.">
+    <title>Hacettepe Üniversitesi Öğrenci Rehberi | Bölüm Sıralamaları, Yurt ve Takvim</title>
+    <meta name="description" content="Hacettepe Üniversitesi öğrenci ve aday rehberi: 2025-2026 YKS bölüm sıralamaları, taban puanlar, barınma & KYK yurtları, akademik takvim ve kampüs haritası.">
+    <meta name="keywords" content="hacettepe, hacettepe üniversitesi, hacettepe sıralama, hacettepe taban puanları, hacettepe tıp sıralama, hacettepe akademik takvim, beytepe yurtlar">
+    <meta property="og:image" content="https://hacettepe.biz/assets/img/logo.png">
+    <meta property="og:title" content="Hacettepe Üniversitesi Öğrenci Rehberi | Bölüm Sıralamaları, Yurt ve Takvim">
+    <meta property="og:description" content="Hacettepe Üniversitesi öğrenci ve aday rehberi: 2025-2026 YKS bölüm sıralamaları, taban puanlar, barınma & KYK yurtları, akademik takvim ve kampüs haritası.">
     <meta property="og:url" content="https://hacettepe.biz/">
-    <meta name="twitter:title" content="Hacettepe Üniversitesi Öğrenci Rehberi | Kayıt, Barınma ve Akademik Takvim">
-    <meta name="twitter:description" content="Hacettepe Üniversitesi öğrenci rehberi: kayıt işlemleri, barınma olanakları, akademik takvim, kampüs yaşamı ve yeni kazananlar için güncel bilgiler.">
+    <meta name="twitter:title" content="Hacettepe Üniversitesi Öğrenci Rehberi | Bölüm Sıralamaları, Yurt ve Takvim">
+    <meta name="twitter:description" content="Hacettepe Üniversitesi öğrenci ve aday rehberi: 2025-2026 YKS bölüm sıralamaları, taban puanlar, barınma & KYK yurtları, akademik takvim ve kampüs haritası.">
     <link rel="canonical" href="https://hacettepe.biz/">
     <link rel="api-catalog" href="/.well-known/api-catalog">
     <link rel="service-doc" href="/docs/api.html">
@@ -324,9 +68,15 @@
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "Hacettepe Üniversitesi Öğrenci Rehberi",
-  "description": "Hacettepe Üniversitesi öğrenci rehberi: kayıt işlemleri, barınma olanakları, akademik takvim, kampüs yaşamı ve yeni kazananlar için güncel bilgiler.",
-  "url": "https://hacettepe.biz/"
+  "name": "Hacettepe Bilgilendirme",
+  "alternateName": "Hacettepe Üniversitesi Öğrenci Rehberi",
+  "description": "Hacettepe Üniversitesi öğrenci ve aday rehberi: 2025-2026 YKS bölüm sıralamaları, taban puanlar, barınma & KYK yurtları, akademik takvim ve kampüs haritası.",
+  "url": "https://hacettepe.biz/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://hacettepe.biz/?s={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
 }
     </script>
 </head>
@@ -334,68 +84,54 @@
     <a href="#main-content" class="skip-link">Ana içeriğe git</a>
 
     <div id="app" class="min-h-screen flex flex-col">
-        <nav class="navbar sticky top-0 bg-white/90 backdrop-blur-md border-b border-gray-100 z-50 shadow-sm" role="navigation" aria-label="Ana menü">
-            <div class="container mx-auto px-4">
-                <div class="flex justify-between items-center h-16">
-                    <a href="index.html" class="flex items-center space-x-4 group" aria-label="Ana sayfaya dön">
-                        <svg class="w-6 h-6 text-red-600 transition-transform group-hover:rotate-12" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        <span class="text-gray-900 font-medium">Hacettepe Bilgilendirme</span>
-                    </a>
-                    <div class="flex space-x-4">
-                        <a href="index.html" class="text-gray-600 hover:text-red-600 px-3 py-2 rounded-md text-sm transition-colors">Ana Sayfa</a>
-                </div>
+        <!-- hbiz Navbar -->
+        <nav class="hb-nav" role="navigation" aria-label="Ana menü">
+            <div class="hb-nav-inner">
+                <a href="/" class="hb-nav-logo" aria-label="Ana sayfaya dön">
+                    <img src="assets/img/logo.png" alt="Hacettepe.biz logosu">
+                    <span>Hacettepe.biz</span>
+                </a>
+                <button class="hb-nav-toggle" aria-label="Menüyü aç/kapat" onclick="this.nextElementSibling.classList.toggle('open')">
+                    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+                <ul class="hb-nav-links">
+                    <li><a href="/">Ana Sayfa</a></li>
+                    <li><a href="/page/akademik-takvim.html">Akademik Takvim</a></li>
+                    <li><a href="/page/barinma.html">Barınma</a></li>
+                    <li><a href="/page/siralamalar.html">Bölüm Sıralamaları</a></li>
+                    <li><a href="/page/kampus-olanaklari.html">Kampüs</a></li>
+                    <li><a href="/page/ogrenci-topluluklari.html">Topluluklar</a></li>
+                </ul>
             </div>
         </nav>
 
-        <header class="header-gradient relative" :class="{ 'shrink': showSearch }">
-            <div class="container mx-auto px-4 header-content">
-                <div class="header-text" :class="{ 'hidden': showSearch }">
-                    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 text-center mb-4">Hacettepe Üniversitesi Öğrenci Rehberi</h1>
-                    <p class="text-gray-600 text-center max-w-2xl mx-auto text-lg mb-6">Hacettepe Üniversitesi öğrenci rehberi ile kayıt işlemleri, barınma olanakları, akademik takvim ve kampüs yaşamına dair güncel bilgilere hızlıca ulaşın.</p>
-                </div>
-                
-                <div class="scroll-down-btn mb-6" 
-                     @click="toggleSearch" 
-                     :class="{ 'rotated': showSearch }"
-                     aria-label="Arama kutusunu göster">
-                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                    </svg>
-                </div>
-                
-                <div class="search-wrapper" :class="{ 'visible': showSearch }">
-                    <div class="search-box">
-                        <svg class="search-icon w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                        </svg>
-                        <input type="search" 
-                               v-model="searchQuery"
-                               placeholder="Hacettepe Üniversitesi hakkında bilgi ara..." 
-                               class="search-input"
-                               aria-label="Bilgi kutusu içinde arama yap">
+        <header class="hb-hero">
+            <div class="hb-hero-inner">
+                <h1>Hacettepe Üniversitesi <em>Öğrenci Rehberi</em></h1>
+                <p>Kayıt işlemleri, barınma olanakları, akademik takvim ve kampüs yaşamına dair güncel bilgilere hızlıca ulaşın.</p>
+                <div class="hb-search-wrapper">
+                    <div class="hb-search-box">
+                        <svg class="hb-search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                        <input type="search" v-model="searchQuery" placeholder="Hacettepe Üniversitesi hakkında bilgi ara..." class="hb-search-input" aria-label="Sitede arama yap">
                     </div>
                 </div>
             </div>
         </header>
 
-        <main id="main-content" class="flex-grow container mx-auto px-4 py-4" role="main">
-            <div class="main-content">
+        <main id="main-content" class="flex-grow container mx-auto px-4 pt-6 pb-8" role="main">
+            <div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8" aria-label="Hızlı başlangıç yolları">
-                    <a href="page/yeni-kazananlar-2025.html" class="bg-white border border-red-100 rounded-xl p-4 hover:border-red-300 transition-colors">
-                        <h2 class="font-semibold text-gray-900 mb-1">Yeni Kazananlar</h2>
+                    <a href="/page/yeni-kazananlar-2025.html" class="hb-card block no-underline">
+                        <h2 class="font-semibold text-gray-900 mb-1 text-base">Yeni Kazananlar</h2>
                         <p class="text-sm text-gray-600">Kayıt tarihleri, e-devlet adımları ve ilk hafta bilgileri.</p>
                     </a>
-                    <a href="page/kayit-islemleri.html" class="bg-white border border-red-100 rounded-xl p-4 hover:border-red-300 transition-colors">
-                        <h2 class="font-semibold text-gray-900 mb-1">Kayıt Süreci</h2>
+                    <a href="/page/kayit-islemleri.html" class="hb-card block no-underline">
+                        <h2 class="font-semibold text-gray-900 mb-1 text-base">Kayıt Süreci</h2>
                         <p class="text-sm text-gray-600">Gerekli belgeler, süreç akışı ve kritik noktalar.</p>
                     </a>
-                    <a href="page/barinma.html" class="bg-white border border-red-100 rounded-xl p-4 hover:border-red-300 transition-colors">
-                        <h2 class="font-semibold text-gray-900 mb-1">Barınma ve Kampüs</h2>
+                    <a href="/page/barinma.html" class="hb-card block no-underline">
+                        <h2 class="font-semibold text-gray-900 mb-1 text-base">Barınma ve Kampüs</h2>
                         <p class="text-sm text-gray-600">Yurt, KYK ve kampüs içi yaşam seçenekleri.</p>
                     </a>
                 </div>
@@ -411,31 +147,68 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12" id="info-container">
                     <div v-for="(info, index) in filteredInfoBoxes" 
                          :key="info.title" 
-                         class="info-card p-6 shadow-sm">
+                         class="hb-card info-card">
                         <div class="mb-5">
                             <div class="bg-red-50 rounded-xl p-3 w-fit info-card-icon">
-                                <svg v-if="info.title.includes('Haber')" class="w-7 h-7 text-red-600" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                    <path d="M19 20H5V9L12 4L19 9V20ZM9 16V18H15V16H9Z" stroke="currentColor" stroke-width="2"/>
+                                <!-- Yeni Kazananlar -->
+                                <svg v-if="info.title.includes('Kazanan')" class="w-7 h-7 text-red-600" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                    <path d="M6 9V2H18V9C18 12.3137 15.3137 15 12 15C8.68629 15 6 12.3137 6 9ZM6 9H3.5C2.67157 9 2 8.32843 2 7.5C2 6.67157 2.67157 6 3.5 6H6M18 9H20.5C21.3284 9 22 8.32843 22 7.5C22 6.67157 21.3284 6 20.5 6H18M12 15V18M8 21H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
-                                <svg v-else-if="info.title.includes('SSS')" class="w-7 h-7 text-red-600" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                    <path d="M8 10H8.01M12 10H12.01M16 10H16.01M9 16H15M7 8H17M19 4H5C3.89543 4 3 4.89543 3 6V20L7 16H19C20.1046 16 21 15.1046 21 14V6C21 4.89543 20.1046 4 19 4Z" 
-                                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <!-- Akademik Takvim -->
+                                <svg v-else-if="info.title.includes('Akademik')" class="w-7 h-7 text-red-600" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                    <path d="M8 7V3M16 7V3M7 11H17M5 21H19C20.1046 21 21 20.1046 21 19V7C21 5.89543 20.1046 5 19 5H5C3.89543 5 3 5.89543 3 7V19C3 20.1046 3.89543 21 5 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
+                                <!-- Sıkça Sorulan Sorular -->
+                                <svg v-else-if="info.title.includes('Sıkça')" class="w-7 h-7 text-red-600" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                    <path d="M8.228 9C8.656 7.655 10.105 6.85 11.525 7.06C12.945 7.27 14.001 8.52 14.001 10C14.001 11.667 12.668 12.667 11.001 13M12 17H12.01M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <!-- Tercih Dönemi -->
+                                <svg v-else-if="info.title.includes('Tercih')" class="w-7 h-7 text-red-600" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                    <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <!-- Fakülte / Lokasyon -->
+                                <svg v-else-if="info.title.includes('Fakülte') || info.title.includes('Lokasyon')" class="w-7 h-7 text-red-600" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                    <path d="M17.6569 16.6569C16.7202 17.5935 14.7616 19.5521 13.4138 20.8999C12.6327 21.6809 11.3677 21.6814 10.5866 20.9003C9.26234 19.5761 7.34159 17.6553 6.34315 16.6569C3.21895 13.5327 3.21895 8.46734 6.34315 5.34315C9.46734 2.21895 14.5327 2.21895 17.6569 5.34315C20.781 8.46734 20.781 13.5327 17.6569 16.6569ZM15 11C15 12.6569 13.6569 14 12 14C10.3431 14 9 12.6569 9 11C9 9.34315 10.3431 8 12 8C13.6569 8 15 9.34315 15 11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <!-- Bölüm Sıralamaları -->
+                                <svg v-else-if="info.title.includes('Sıralama')" class="w-7 h-7 text-red-600" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                    <path d="M18 20V10M12 20V4M6 20V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <!-- Kayıt İşlemleri -->
                                 <svg v-else-if="info.title.includes('Kayıt')" class="w-7 h-7 text-red-600" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                    <path d="M9 12H15M9 16H15M17 21H7C5.89543 21 5 20.1046 5 19V5C5 3.89543 5.89543 3 7 3H12.5858C12.851 3 13.1054 3.10536 13.2929 3.29289L18.7071 8.70711C18.8946 8.89464 19 9.149 19 9.41421V19C19 20.1046 18.1046 21 17 21Z" 
-                                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M9 12H15M9 16H15M17 21H7C5.89543 21 5 20.1046 5 19V5C5 3.89543 5.89543 3 7 3H12.5858C12.851 3 13.1054 3.10536 13.2929 3.29289L18.7071 8.70711C18.8946 8.89464 19 9.149 19 9.41421V19C19 20.1046 18.1046 21 17 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
+                                <!-- Barınma / KYK -->
                                 <svg v-else-if="info.title.includes('Barınma') || info.title.includes('KYK')" class="w-7 h-7 text-red-600" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                    <path d="M3 21H21M6 18V9.99998M6 10L12 5L18 10M18 18V10M10 18V14C10 13.4477 10.4477 13 11 13H13C13.5523 13 14 13.4477 14 14V18" 
-                                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M3 21H21M6 18V9.99998M6 10L12 5L18 10M18 18V10M10 18V14C10 13.4477 10.4477 13 11 13H13C13.5523 13 14 13.4477 14 14V18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
+                                <!-- Spor Olanakları -->
                                 <svg v-else-if="info.title.includes('Spor')" class="w-7 h-7 text-red-600" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                    <path d="M16 5L19 8M19 8L22 11M19 8L16 11M19 8L16 5M13 3L10 2L7 3M4 5L2 8L4 11M7 13L10 14L13 13M11 22L12 19L11 16M4 5L7 3M4 11L7 13M16 11L13 13M13 3L16 5" 
-                                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M22 12H18L15 21L9 3L6 12H2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
+                                <!-- Hazırlık Sınıfı -->
+                                <svg v-else-if="info.title.includes('Hazırlık')" class="w-7 h-7 text-red-600" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                    <path d="M12 14L6.16237 10.8377M12 14L17.8376 10.8377M12 14V21M2 10.5L12 3L22 10.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <!-- Kampüs Olanakları -->
+                                <svg v-else-if="info.title.includes('Kampüs Ola')" class="w-7 h-7 text-red-600" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                    <path d="M3 21H21M5 21V7L12 3L19 7V21M9 21V15H15V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <!-- Öğrenci Toplulukları -->
+                                <svg v-else-if="info.title.includes('Topluluk')" class="w-7 h-7 text-red-600" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                    <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13M16 3.13C16.8604 3.35031 17.623 3.85071 18.1676 4.55232C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89317 18.7122 8.75608 18.1676 9.45768C17.623 10.1593 16.8604 10.6597 16 10.88M13 7C13 9.20914 11.2091 11 9 11C6.79086 11 5 9.20914 5 7C5 4.79086 6.79086 3 9 3C11.2091 3 13 4.79086 13 7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <!-- Kampüs Haritası -->
+                                <svg v-else-if="info.title.includes('Harita')" class="w-7 h-7 text-red-600" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                    <path d="M3 6L10 3L14 5L21 3V18L14 21L10 19L3 21V6ZM10 3V19M14 5V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <!-- İletişim -->
+                                <svg v-else-if="info.title.includes('İletişim')" class="w-7 h-7 text-red-600" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                    <path d="M3 5C3 3.89543 3.89543 3 5 3H8.27924C8.70967 3 9.09181 3.27543 9.22792 3.68377L10.7257 8.17721C10.8831 8.64932 10.6694 9.16531 10.2243 9.38787L7.96701 10.5165C9.06925 12.9612 11.0388 14.9308 13.4835 16.033L14.6121 13.7757C14.8347 13.3306 15.3507 13.1169 15.8228 13.2743L20.3162 14.7721C20.7246 14.9082 21 15.2903 21 15.7208V19C21 20.1046 20.1046 21 19 21H18C9.71573 21 3 14.2843 3 6V5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <!-- fallback -->
                                 <svg v-else class="w-7 h-7 text-red-600" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                    <path d="M12 6V12L16 14M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" 
-                                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12 6V12L16 14M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </div>
                         </div>
@@ -454,21 +227,36 @@
             </div>
         </main>
 
-        <footer class="footer py-10 mt-16" role="contentinfo">
-            <div class="container mx-auto px-4">
-                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-                    <div class="flex items-center space-x-4">
-                        <svg class="w-6 h-6 text-red-600" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        <span class="text-gray-600 text-sm">Hacettepe Bilgilendirme</span>
+        <!-- hbiz Footer -->
+        <footer class="hb-footer" role="contentinfo">
+            <div class="hb-footer-inner">
+                <div class="hb-footer-grid">
+                    <div class="hb-footer-brand">
+                        <img src="assets/img/logo.png" alt="Hacettepe Bilgilendirme Logosu">
+                        <p>Hacettepe Üniversitesi öğrencileri ve adayları için<br>bağımsız, güncel ve doğru bilgi kaynağı.</p>
                     </div>
-                    <div class="flex space-x-6">
-                        <a href="https://akiner.net" class="text-gray-600 hover:text-red-600 text-sm transition-colors">Akıner Kısa</a>
-                        <a href="hakkinda.html" class="text-gray-600 hover:text-red-600 text-sm transition-colors">Site Hakkında</a>
+                    <div>
+                        <h4>Hızlı Erişim</h4>
+                        <ul>
+                            <li><a href="/page/akademik-takvim.html">Akademik Takvim 2026-2027</a></li>
+                            <li><a href="/page/siralamalar.html">Bölüm Sıralamaları</a></li>
+                            <li><a href="/page/barinma.html">Barınma Olanakları</a></li>
+                            <li><a href="/page/kampus-haritasi.html">Kampüs Haritası</a></li>
+                            <li><a href="/page/ogrenci-topluluklari.html">Öğrenci Toplulukları</a></li>
+                        </ul>
                     </div>
+                    <div>
+                        <h4>Site</h4>
+                        <ul>
+                            <li><a href="/hakkinda.html">Site Hakkında</a></li>
+                            <li><a href="/page/iletisim.html">İletişim</a></li>
+                            <li><a href="https://github.com/hacettepebilgi/hacettepe.biz" target="_blank">GitHub</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="hb-footer-bottom">
+                    <span>© 2026 Hacettepe Bilgilendirme · Bağımsız Öğrenci Kaynağı</span>
+                    <a href="/hakkinda.html">Site Hakkında</a>
                 </div>
             </div>
         </footer>
@@ -483,8 +271,6 @@
                     searchQuery: '',
                     selectedCategory: 'Tümü',
                     categories: ['Tümü', 'Kayıt', 'Barınma', 'Akademik', 'Kampüs', 'Öğrenci'],
-                    showContent: false,
-                    showSearch: false,
                     infoBoxes: [ 
                         { title: 'Yeni Kazananlar 2025', description: 'Hacettepe yeni kazananlar 2025 için kayıt adımları, e-devlet süreci ve önemli tarihler.', link: 'page/yeni-kazananlar-2025.html', linkText: 'Hacettepe Yeni Kazananlar 2025 Rehberi', category: 'Kayıt' },
                         { title: 'Akademik Takvim', description: 'Hacettepe akademik takvim, ders kayıt tarihleri ve sınav dönemleri.', link: 'page/akademik-takvim.html', linkText: 'Hacettepe Akademik Takvim 2025-2026', category: 'Akademik' },
@@ -525,33 +311,9 @@
                 }
             },
             methods: {
-                filterInfoBoxes() {
-                },
                 filterByCategory(category) {
                     this.selectedCategory = category;
-                },
-                toggleContent() {
-                    this.showContent = !this.showContent;
-                },
-                toggleSearch() {
-                    this.showSearch = !this.showSearch;
-                    
-                    if (this.showSearch) {
-                        setTimeout(() => {
-                            this.showContent = true;
-                        }, 500);
-                    }
                 }
-            },
-            mounted() {
-                window.addEventListener('scroll', () => {
-                    const navbar = document.querySelector('.navbar');
-                    if (window.scrollY > 50) {
-                        navbar.classList.add('scrolled');
-                    } else {
-                        navbar.classList.remove('scrolled');
-                    }
-                });
             }
         }).mount('#app')
     </script>

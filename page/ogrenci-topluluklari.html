@@ -2,159 +2,212 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/apple-touch-icon.png">
+    <link rel="icon" href="../assets/img/favicon.ico">
+    <link rel="manifest" href="../assets/img/site.webmanifest">
+    <meta name="theme-color" content="#dc2626">
+    <link rel="stylesheet" href="../assets/hbiz.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="../assets/img/favicon.svg">
-    <link rel="shortcut icon" type="image/png" href="../assets/img/favicon.svg">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+            <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/vue@3.4.15/dist/vue.global.prod.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        [v-cloak] { display: none; }
         body {
             font-family: 'Inter', sans-serif;
-        }
-        .bg-pattern {
-            background-color: #ffffff;
-            background-image: radial-gradient(#ff000008 1px, transparent 1px);
-            background-size: 24px 24px;
-        }
-        .card-hover {
-            transition: all 0.2s ease;
-        }
-        .card-hover:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        }
-        a:focus-visible, button:focus-visible, input:focus-visible {
-            outline: 2px solid #dc2626;
-            outline-offset: 2px;
-        }
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-                scroll-behavior: auto !important;
-            }
         }
     </style>
     <meta name="robots" content="index, follow">
     <meta name="author" content="Hacettepe Bilgi">
     <meta property="og:type" content="article">
-    <meta property="og:image" content="https://hacettepe.biz/assets/img/og-default.svg">
+    <meta property="og:image" content="https://hacettepe.biz/assets/img/logo.png">
     <meta property="og:site_name" content="Hacettepe Bilgilendirme">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://hacettepe.biz/assets/img/og-default.svg">
-    <title>Hacettepe Öğrenci Toplulukları | Kulüpler ve Etkinlikler</title>
-    <meta name="description" content="Hacettepe öğrenci toplulukları: aktif kulüpler, etkinlik alanları ve üniversite hayatını geliştiren sosyal fırsatlar.">
-    <meta property="og:title" content="Hacettepe Öğrenci Toplulukları | Kulüpler ve Etkinlikler">
-    <meta property="og:description" content="Hacettepe öğrenci toplulukları: aktif kulüpler, etkinlik alanları ve üniversite hayatını geliştiren sosyal fırsatlar.">
+    <meta name="twitter:image" content="https://hacettepe.biz/assets/img/logo.png">
+    <title>Hacettepe Öğrenci Toplulukları & Kulüpleri Listesi (140+ Aktif Kulüp)</title>
+    <meta name="description" content="Hacettepe Üniversitesi aktif 140+ öğrenci topluluğu ve kulübü. Resmi kulüp sayfaları, başvuru ve üyelik bağlantıları, iletişim detayları.">
+    <meta name="keywords" content="hacettepe topluluklar, hacettepe öğrenci kulüpleri, hacettepe kulüp listesi, hacettepe acm, hacettepe ieee, hacettepe topluluk kayit">
+    <meta property="og:title" content="Hacettepe Öğrenci Toplulukları & Kulüpleri Listesi (140+ Aktif Kulüp)">
+    <meta property="og:description" content="Hacettepe Üniversitesi aktif 140+ öğrenci topluluğu ve kulübü. Resmi kulüp sayfaları, başvuru ve üyelik bağlantıları, iletişim detayları.">
     <meta property="og:url" content="https://hacettepe.biz/page/ogrenci-topluluklari.html">
-    <meta name="twitter:title" content="Hacettepe Öğrenci Toplulukları | Kulüpler ve Etkinlikler">
-    <meta name="twitter:description" content="Hacettepe öğrenci toplulukları: aktif kulüpler, etkinlik alanları ve üniversite hayatını geliştiren sosyal fırsatlar.">
+    <meta name="twitter:title" content="Hacettepe Öğrenci Toplulukları & Kulüpleri Listesi (140+ Aktif Kulüp)">
+    <meta name="twitter:description" content="Hacettepe Üniversitesi aktif 140+ öğrenci topluluğu ve kulübü. Resmi kulüp sayfaları, başvuru ve üyelik bağlantıları, iletişim detayları.">
     <link rel="canonical" href="https://hacettepe.biz/page/ogrenci-topluluklari.html">
     <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Hacettepe Öğrenci Toplulukları",
-  "description": "Hacettepe öğrenci toplulukları: aktif kulüpler, etkinlik alanları ve üniversite hayatını geliştiren sosyal fırsatlar.",
-  "url": "https://hacettepe.biz/page/ogrenci-topluluklari.html"
-}
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Hacettepe Öğrenci Toplulukları",
+    "description": "Hacettepe Üniversitesi aktif 140+ öğrenci topluluğu ve kulübü. Resmi kulüp sayfaları, başvuru ve üyelik bağlantıları, iletişim detayları.",
+    "url": "https://hacettepe.biz/page/ogrenci-topluluklari.html"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Ana Sayfa",
+        "item": "https://hacettepe.biz/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Öğrenci Toplulukları",
+        "item": "https://hacettepe.biz/page/ogrenci-topluluklari.html"
+      }
+    ]
+  }
+]
     </script>
 </head>
 <body class="bg-pattern min-h-screen">
-    <div id="app" class="min-h-screen flex flex-col">
-        <!-- Navbar -->
-            <nav class="navbar sticky top-0 bg-white/90 backdrop-blur-md border-b border-gray-100 z-50 shadow-sm" role="navigation" aria-label="Ana menü">
-                <div class="container mx-auto px-4">
-                    <div class="flex justify-between items-center h-16">
-                        <a href="../index.html" class="flex items-center space-x-4 group" aria-label="Ana sayfaya dön">
-                            <svg class="w-6 h-6 text-red-600 transition-transform group-hover:rotate-12" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <div id="app" v-cloak class="min-h-screen flex flex-col">
+        <!-- hbiz Navbar -->
+        <nav class="hb-nav" role="navigation" aria-label="Ana menü">
+            <div class="hb-nav-inner">
+                <a href="/" class="hb-nav-logo" aria-label="Ana sayfaya dön">
+                    <img src="../assets/img/logo.png" alt="Hacettepe.biz logosu">
+                    <span>Hacettepe.biz</span>
+                </a>
+                <button class="hb-nav-toggle" aria-label="Menüyü aç/kapat" onclick="this.nextElementSibling.classList.toggle('open')">
+                    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+                <ul class="hb-nav-links">
+                    <li><a href="/">Ana Sayfa</a></li>
+                    <li><a href="/page/akademik-takvim.html">Akademik Takvim</a></li>
+                    <li><a href="/page/barinma.html">Barınma</a></li>
+                    <li><a href="/page/siralamalar.html">Bölüm Sıralamaları</a></li>
+                    <li><a href="/page/kampus-olanaklari.html">Kampüs</a></li>
+                    <li><a href="/page/ogrenci-topluluklari.html">Topluluklar</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Breadcrumb -->
+        <nav class="hb-breadcrumb" aria-label="Sayfa konumu">
+            <div class="hb-breadcrumb-inner">
+                <a href="/">Ana Sayfa</a>
+                <span class="sep" aria-hidden="true">›</span>
+                <span class="current">Öğrenci Toplulukları</span>
+            </div>
+        </nav>
+
+        <!-- hbiz Hero -->
+        <div class="hb-hero">
+            <div class="hb-hero-inner">
+                <h1>Hacettepe Öğrenci Toplulukları</h1>
+                                <p>Hacettepe Üniversitesi bünyesindeki 140'tan fazla resmi öğrenci topluluğunu keşfedin, detaylı inceleyin ve etkinliklere katılın.</p>
+                <div class="hb-search-wrapper">
+                    <div class="hb-search-box">
+                        <svg class="hb-search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                        <input type="search" v-model="searchQuery" placeholder="Topluluk adı veya ilgi alanı ara (örn. ACM, Robot)..." class="hb-search-input" aria-label="Topluluklarda ara">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <main class="flex-grow container mx-auto px-4 pt-6 pb-8">
+            <p class="text-center text-xs text-gray-500 mb-6">Toplam {{ filteredClubs.length }} topluluk listeleniyor</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                <div v-for="club in filteredClubs" :key="club.name" 
+                     class="hb-card flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center space-x-4 mb-4 pb-3 border-b border-gray-100">
+                            <div class="flex-shrink-0">
+                                <img v-if="club.logo" :src="club.logo" :alt="club.name + ' logosu'" class="w-14 h-14 object-contain rounded-lg border border-gray-50 p-1 bg-gray-50/30" loading="lazy">
+                                <div v-else class="bg-red-50 rounded-lg p-2 w-14 h-14 flex items-center justify-center">
+                                    <svg class="w-7 h-7 text-red-600" viewBox="0 0 24 24" fill="none">
+                                        <path d="M17 20H7C5.89543 20 5 19.1046 5 18V7C5 5.89543 5.89543 5 7 5H17C18.1046 5 19 5.89543 19 7V18C19 19.1046 18.1046 20 17 20ZM7 7V18H17V7H7ZM15 16H9V14H15V16ZM15 12H9V10H15V12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <h2 class="text-base font-bold text-gray-900 leading-snug" :title="club.name">{{ club.name }}</h2>
+                                <span class="inline-block bg-red-50 text-red-600 text-xs px-2 py-0.5 rounded font-semibold mt-1">Öğrenci Topluluğu</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-xs leading-relaxed mb-4">{{ club.description }}</p>
+                    </div>
+
+                    <div class="pt-3 border-t border-gray-100 space-y-2 mt-auto">
+                        <a v-if="club.website && club.website !== '#'" :href="club.website" target="_blank" 
+                           class="flex items-center text-xs font-semibold text-red-600 hover:text-red-700 transition-colors group">
+                            <svg class="w-4 h-4 mr-1.5 transform transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none">
+                                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            <span class="text-gray-900 font-medium">Hacettepe Bilgilendirme</span>
+                            Resmi Topluluk Sayfası / İncele →
                         </a>
-                        <div class="flex space-x-4">
-                            <a href="../index.html" class="text-gray-600 hover:text-red-600 px-3 py-2 rounded-md text-sm transition-colors">Ana Sayfa</a>
-                    </div>
-                </div>
-            </nav>
-
-        <!-- Header -->
-        <header class="bg-white border-b border-gray-100 py-8">
-            <div class="container mx-auto px-4">
-                <h1 class="text-3xl font-bold text-gray-900 text-center">Hacettepe Öğrenci Toplulukları</h1>
-                <p class="text-gray-600 mt-4 text-center max-w-2xl mx-auto">Hacettepe öğrenci toplulukları ve kulüp etkinlikleriyle sosyal üniversite yaşamını planlayın.</p>
-            </div>
-        </header>
-
-        <main class="flex-grow container mx-auto px-4 py-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div v-for="club in clubs" :key="club.name" 
-                     class="bg-white rounded-xl border border-gray-100 p-6 card-hover">
-                    <div class="flex items-start space-x-4">
-                        <div class="flex-shrink-0">
-                            <img v-if="club.logo" :src="club.logo" :alt="club.name + ' logosu'" class="w-16 h-16 object-contain">
-                            <div v-else class="bg-red-50 rounded-lg p-2 w-16 h-16 flex items-center justify-center">
-                                <svg class="w-8 h-8 text-red-600" viewBox="0 0 24 24" fill="none">
-                                    <path d="M17 20H7C5.89543 20 5 19.1046 5 18V7C5 5.89543 5.89543 5 7 5H17C18.1046 5 19 5.89543 19 7V18C19 19.1046 18.1046 20 17 20ZM7 7V18H17V7H7ZM15 16H9V14H15V16ZM15 12H9V10H15V12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="flex-1">
-                            <h2 class="text-xl font-semibold text-gray-900 mb-4 border-b border-gray-100 pb-2">{{ club.name }}</h2>
-                            <p class="text-gray-600 mb-4">{{ club.description }}</p>
-                            <div class="space-y-3">
-                                <a v-if="club.website && club.website !== '#'" :href="club.website" target="_blank" 
-                                   class="flex items-center text-gray-600 hover:text-red-600 transition-colors group">
-                                    <svg class="w-4 h-4 mr-2 transform transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none">
-                                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                    Web Sitesi
-                                </a>
-                                <a v-if="club.instagram" :href="club.instagram" target="_blank" 
-                                   class="flex items-center text-gray-600 hover:text-red-600 transition-colors group">
-                                    <svg class="w-4 h-4 mr-2 transform transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none">
-                                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                    Instagram
-                                </a>
-                            </div>
-                        </div>
+                        <a v-if="club.instagram" :href="club.instagram" target="_blank" 
+                           class="flex items-center text-xs font-medium text-gray-600 hover:text-red-600 transition-colors group">
+                            <svg class="w-4 h-4 mr-1.5" viewBox="0 0 24 24" fill="none">
+                                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Instagram Hesabı
+                        </a>
                     </div>
                 </div>
             </div>
-        
-                <section class="bg-white rounded-xl border border-gray-100 p-6 card-hover">
-                    <h2 class="text-xl font-semibold text-gray-900 mb-3">İlgili İçerikler</h2>
-                    <ul class="space-y-2">
-                    <li><a href="akademik-takvim.html" class="text-red-600 hover:text-red-700">Hacettepe Akademik Takvim 2025-2026</a></li>
-                    <li><a href="barinma.html" class="text-red-600 hover:text-red-700">Barınma</a></li>
-                    <li><a href="cevredeki-kyklar.html" class="text-red-600 hover:text-red-700">Çevredeki KYK'lar</a></li>
-                    </ul>
-                </section>
+
+            <div v-if="filteredClubs.length === 0" class="text-center py-12 text-gray-500 bg-white rounded-xl border border-gray-100 p-8">
+                Aradığınız isimde bir öğrenci topluluğu bulunamadı.
+            </div>
+
+            <!-- Source & Date Badge -->
+            <div class="bg-blue-50/70 border border-blue-100 rounded-xl p-4 mb-8 flex flex-col md:flex-row justify-between items-center text-xs text-blue-900 gap-2">
+                <div class="flex items-center space-x-2">
+                    <span>ℹ️ <strong>Kaynak:</strong> <a href="https://topluluklar.hacettepe.edu.tr/topluluk-listesi" target="_blank" class="underline hover:text-blue-700">Hacettepe Üniversitesi Sağlık Kültür ve Spor Daire Başkanlığı (SKSDB) Resmi Portalı</a></span>
+                </div>
+                <div class="text-blue-700 font-medium">
+                    📅 Veri Güncelleme Tarihi: 20 Temmuz 2026
+                </div>
+            </div>
+
+            <section class="hb-card">
+                <h2 class="text-xl font-semibold text-gray-900 mb-3">İlgili İçerikler</h2>
+                <ul class="space-y-2">
+                    <li><a href="/page/akademik-takvim.html" class="text-red-600 hover:text-red-700 font-medium">Hacettepe Akademik Takvim 2026-2027</a></li>
+                    <li><a href="/page/barinma.html" class="text-red-600 hover:text-red-700 font-medium">Barınma Olanakları ve Yurt Ücretleri</a></li>
+                    <li><a href="cevredeki-kyklar.html" class="text-red-600 hover:text-red-700 font-medium">Çevredeki KYK Yurtları</a></li>
+                </ul>
+            </section>
         </main>
 
-        <!-- Footer -->
-        <footer class="bg-white border-t border-gray-100 py-8 mt-12">
-            <div class="container mx-auto px-4">
-                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-                    <div class="flex items-center space-x-4">
-                        <svg class="w-6 h-6 text-red-600" viewBox="0 0 24 24" fill="none">
-                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        <span class="text-gray-600 text-sm">Hacettepe Bilgilendirme</span>
+        <!-- hbiz Footer -->
+        <footer class="hb-footer" role="contentinfo">
+            <div class="hb-footer-inner">
+                <div class="hb-footer-grid">
+                    <div class="hb-footer-brand">
+                        <img src="../assets/img/logo.png" alt="Hacettepe Bilgilendirme Logosu">
+                        <p>Hacettepe Üniversitesi öğrencileri ve adayları için<br>bağımsız, güncel ve doğru bilgi kaynağı.</p>
                     </div>
-                    <div class="flex space-x-6">
-                        <a href="https://akiner.net" class="text-gray-600 hover:text-red-600 text-sm transition-colors">Akıner Kısa</a>
-                        <a href="../hakkinda.html" class="text-gray-600 hover:text-red-600 text-sm transition-colors">Site Hakkında</a>
+                    <div>
+                        <h4>Hızlı Erişim</h4>
+                        <ul>
+                            <li><a href="/page/akademik-takvim.html">Akademik Takvim 2026-2027</a></li>
+                            <li><a href="/page/siralamalar.html">Bölüm Sıralamaları</a></li>
+                            <li><a href="/page/barinma.html">Barınma Olanakları</a></li>
+                            <li><a href="/page/kampus-haritasi.html">Kampüs Haritası</a></li>
+                            <li><a href="/page/ogrenci-topluluklari.html">Öğrenci Toplulukları</a></li>
+                        </ul>
                     </div>
+                    <div>
+                        <h4>Site</h4>
+                        <ul>
+                            <li><a href="/hakkinda.html">Site Hakkında</a></li>
+                            <li><a href="/page/iletisim.html">İletişim</a></li>
+                            <li><a href="https://github.com/hacettepebilgi/hacettepe.biz" target="_blank">GitHub</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="hb-footer-bottom">
+                    <span>© 2026 Hacettepe Bilgilendirme · Bağımsız Öğrenci Kaynağı</span>
+                    <a href="/hakkinda.html">Site Hakkında</a>
                 </div>
             </div>
         </footer>
@@ -166,99 +219,883 @@
         createApp({
             data() {
                 return {
+                    searchQuery: '',
                     clubs: [
-                        {
-                            name: 'Bilgilendirme',
-                            description: 'Buradan topluluğunuzu kaldırmak yada topluluğunuzu eklemek istiyorsanız github üzerinden pr request açabilir veya bana yazabilirsiniz.',
-                            website: 'https://github.com/hacettepebilgi/hacettepe.biz',
-                            instagram: 'https://www.instagram.com/akiner1337/',
-                            logo: '../assets/img/favicon.svg'
-                        },
-                        {
-                            name: 'ACM Hacettepe',
-                            description: 'ACM(Association For Computing Machinery) Hacettepe Topluluğu',
-                            website: 'https://acmhacettepe.com',
-                            instagram: 'https://www.instagram.com/acmhacettepe/',
-                            logo: '../assets/topluluklar/acm.png'
-                        },
-                        {
-                            name: 'Genç Mühendisler Topluluğu',
-                            description: 'Hacettepe Genç Mühendisler Topluluğu(GMT).',
-                            website: 'https://linktr.ee/hacettepegmt',
-                            instagram: 'https://www.instagram.com/gmthacettepe/',
-                            logo: '../assets/topluluklar/gmt.png'
-                        },
-                        {
-                            name: 'Hacettepe Ekonomi Topluluğu',
-                            description: 'Hacettepe Ekonomi Topluluğu(HEK).',
-                            website: 'https://linktr.ee/hekweb',
-                            instagram: 'https://www.instagram.com/hek.web/',
-                            logo: '../assets/topluluklar/hek.png'
-                        },
-                        {
-                            name: 'Hacettepe Endüstri Topluluğu',
-                            description: 'Hacettepe Endüstri Topluluğu(HENDS).',
-                            website: '#',
-                            instagram: 'https://www.instagram.com/hendshacettepe/',
-                            logo: '../assets/topluluklar/hends.png'
-                        },
-                        {
-                            name: 'Hacettepe İşletme Topluluğu',
-                            description: 'Hacettepe İşletme Topluluğu(HİT).',
-                            website: 'https://linktr.ee/hacettepehityt',
-                            instagram: 'https://www.instagram.com/hacettepehit/',
-                            logo: '../assets/topluluklar/hit.png'
-                        },
-                        {
-                            name: 'Hacettepe Kültür Sanat Topluluğu',
-                            description: 'Hacettepe Kültür Sanat Topluluğu.',
-                            website: 'https://linktr.ee/hukultursanat',
-                            instagram: 'https://www.instagram.com/hukultursanat/',
-                            logo: '../assets/topluluklar/hukultursanat.png'
-                        },
-                        {
-                            name: 'Hacettepe Otomotiv Topluluğu',
-                            description: 'Hacettepe Otomotiv Topluluğu.',
-                            website: '#',
-                            instagram: 'https://www.instagram.com/otomotivtoplulugu/',
-                            logo: '../assets/topluluklar/otomotiv.png'
-                        },
-                        {
-                            name: 'IEEE Hacettepe',
-                            description: 'IEEE (Institute of Electrical and Electronics Engineers) Hacettepe Topluluğu.',
-                            website: 'https://www.ieeehacettepe.com/',
-                            instagram: 'https://www.instagram.com/ieeehacettepe/',
-                            logo: '../assets/topluluklar/ieee.png'
-                        },
-                        {
-                            name: 'Hacettepe Girişim ve Yatırım Topluluğu',
-                            description: 'Hacettepe GİYAT(Girişim ve Yatırım Topluluğu) Topluluğu.',
-                            website: 'http://www.hacettepegiyat.com/',
-                            instagram: 'https://www.instagram.com/hacettepegiyat/',
-                            logo: '../assets/topluluklar/giyat.png'
-                        },
-                        {
-                            name: 'Hacettepe İnsansız Hava Araçları Topluluğu',
-                            description: 'Hacettepe İHA(İnsansız Hava Araçları) Topluluğu.',
-                            website: '#',
-                            instagram: 'https://www.instagram.com/iha.hacettepe/',
-                            logo: '../assets/topluluklar/iha.png'
-                        },
-                        {
-                            name: 'Hacettepe Yapay Zeka Topluluğu',
-                            description: 'Hacettepe Yapay Zeka Topluluğu / Hacettepe AI Club.',
-                            website: 'https://www.hacettepeaiclub.com/',
-                            instagram: 'https://www.instagram.com/hacettepeaiclub/',
-                            logo: '../assets/topluluklar/ai.png'
-                        },
-                        {
-                            name: 'Hacettepe Robot Topluluğu',
-                            description: 'Hacettepe Robot Topluluğu.',
-                            website: '#',
-                            instagram: 'https://www.instagram.com/hacetteperobot/',
-                            logo: '../assets/topluluklar/robot.png'
-                        }
-                    ]
+  {
+    "name": "ACM Öğrenci Topluluğu",
+    "description": "ACM Hacettepe; yazılım geliştirme, algoritmalar, yapay zekâ, veri bilimi, siber güvenlik ve benzeri birçok teknik alanda eğitimler, workshoplar, teknik etkinlikler ve proje odaklı çalışmalar düzenlemektedir. Bunun yanı sıra sektörün önde gelen isimlerini, akademisyenleri ve alanında uzman konuşmacıları üniversitemiz öğrencileriyle buluşturarak üyelerimizin sektörel vizyon kazanmasına katkı sağlamaktadır.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/acm-ogrenci-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/acm-ogrenci-toplulugu_698c6a4c403c0.png"
+  },
+  {
+    "name": "Afet ve Acil Durum Yönetim Topluluğu",
+    "description": "Afet ve Acil Durum Yönetim Topluluğu, Hacettepe Üniversitesi Sağlık Kültür ve Spor Daire Başkanlığına bağlı olarak faaliyet gösteren resmi öğrenci topluluğudur.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/afet-ve-acil-durum-yonetim-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/frontend/img/default_hacettepe_logo.jpg"
+  },
+  {
+    "name": "Aile ve Tüketici Topluluğu",
+    "description": "Aile yapısının güçlendirilmesi, Tüketici  bilincinin artırılması ve gençlerin sosyal sorumluluk bilinciyle yetişmesine katkı sağlamak amacıyla kurulmuştur. Topluluk akademik bilgi ve saha deneyimini bir araya getirerek mesleki gelişimlerini desteklenmeyi toplumsal farkındalık oluşturmayı ve kamu yararını gözeten projeleri üretmeyi hedefler. Devlet, Millet bütünlüğü çerçevesinde topluma katkı sunmayı esas alan topluluğumuz güçlü aile, bilinçli tüketici ve bilinçli birey anlayışını yaygınlaştırmayı amaçlamaktadır.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/aile-ve-tuketici-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/aile-ve-tuketici-toplulugu_69a375deb17f7.jpeg"
+  },
+  {
+    "name": "AKUT Arama ve Kurtarma Öğrenci Topluluğu",
+    "description": "AKUT Arama ve Kurtarma topluluğu ülkemizde ve üniversitemizde afet bilincini arttırmak amaçlı etkinlikler düzenler.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/akut-arama-ve-kurtarma-ogrenci-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/akut-arama-ve-kurtarma-ogrenci-toplulugu_6a1ea84216d26.png"
+  },
+  {
+    "name": "Alman Kültür Topluluğu(AKT)",
+    "description": "Alman kültürünü Hacettepe Üniversitemize tanıtıp yaşatmak adına kurulmuş olan topluluk",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/alman-kultur-topluluguakt",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/alman-kultur-topluluguakt_69a588d43753c.jpeg"
+  },
+  {
+    "name": "Amerikan Futbolu Topluluğu",
+    "description": "Türkiye Ragbi Federasyonu ve Türkiye Üniversite Sporları Federasyonu'nun düzenlediği liglerde resmi olarak Hacettepe Üniversitesi'ni temsil etmek.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/amerikan-futbolu-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/amerikan-futbolu-toplulugu_698a345fa296a.png"
+  },
+  {
+    "name": "Anime Manga Topluluğu (HÜMAT)",
+    "description": "Anime Manga Topluluğu (HÜMAT), Hacettepe Üniversitesi Sağlık Kültür ve Spor Daire Başkanlığına bağlı olarak faaliyet gösteren resmi öğrenci topluluğudur.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/anime-manga-toplulugu-humat",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/anime-ve-manga-toplulugu-humat_698ba89715997.png"
+  },
+  {
+    "name": "Araştırma ve Geliştirme Topluluğu (HARGET)",
+    "description": "Hacettepe Üniversitesi Ar-Ge Topluluğu",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/arastirma-ve-gelistirme-toplulugu-harget",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/arastirma-ve-gelistirme-toplulugu-harget_698d941a84c8f.png"
+  },
+  {
+    "name": "Arkeoloji Topluluğu (HÜARK)",
+    "description": "Hacettepe Üniversitesi Arkeoloji Topluluğu olarak tarihe yapılan yolculuklarımızda hepinizi aramızda görmekten mutluluk duyarız. Kültürlü kalın.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/arkeoloji-toplulugu-huark",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/arkeoloji-toplulugu-huark_698ca26954fd9.jpeg"
+  },
+  {
+    "name": "Atatürkçü Düşünce Topluluğu",
+    "description": "Hacettepe Üniversitesi Atatürkçü Düşünce Topluluğu; Türk Devrimi’ni, laik ve demokratik Cumhuriyet’i, Atatürk’ü ve Atatürkçü düşünceyi doğru biçimde tanıtmayı ve benimsetmeyi amaçlayan bir öğrenci topluluğudur. Başta siyasal ve ekonomik alanda tam bağımsızlık, ulusal egemenlik, Lozan Barış Antlaşması, eğitim ve öğretim birliği olmak üzere Atatürk’ün ilke, devrim ve yapıtlarını tarihsel, bilimsel ve çağdaş bir bakış açısıyla ele alır. Cumhuriyet’in kazanımlarını yıpratmaya veya kötüye kullanmaya yönelik her türlü söz, tutum ve girişim karşısında bilinçli, tutarlı ve kararlı bir duruş sergilemeyi hedefler. Atatürk’ün düşüncesinin özünü açıklamak, değerlendirmek ve savunmak temel sorumluluklarımız arasındadır. Topluluğumuz, Türk üniversite gençliğinin Cumhuriyet’i ve Atatürk ilke ve devrimlerini koruyan aydın bir kuşak olarak en ön saflarda yer almasını sağlamak; bilinçli, sorgulayan ve aktif bireyler olarak toplumsal yaşama katılmalarını desteklemek amacıyla çalışmalarını sürdürür.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/ataturkcu-dusunce-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/ataturkcu-dusunce-toplulugu_6994dd97c065d.png"
+  },
+  {
+    "name": "Beslenme ve Diyet Topluluğu (BDT)",
+    "description": "Beslenme ve Diyet Topluluğu olarak temel amacımız farklı sınıflardan beslenme ve diyetetik öğrencilerini bir araya getirerek aralarındaki iletişimi ve etkileşimi güçlendirmektir. Aynı zamanda akademik gelişimimizi desteklemek, fakültemizdeki hocalarımızı daha yakından tanımak, diyetisyen adayları olarak meslektaşlarımızın deneyimlerinden faydalanmak gibi amaçlarla çeşitli etkinlikler düzenlemekteyiz. Bu sayede beslenme ve diyetetik alanındaki güncel konuları takip ederken, aynı zamanda birbirimizden öğrenme fırsatı da buluyoruz.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/beslenme-ve-diyet-toplulugu-bdt",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/beslenme-ve-diyet-toplulugu-bdt_698cbbd9d4ed0.jpg"
+  },
+  {
+    "name": "Bilgi Topluluğu (HÜBİL)",
+    "description": "Bilgi Topluluğu (HÜBİL), bilgiye erişim ve bilginin etkin kullanımı alanlarında öğrencilerin yetkinliklerini geliştirmeyi amaçlayan bir öğrenci topluluğudur. Kodlama ve teknoloji temelli atölyeler, akademik ve mesleki söyleşiler, yayın faaliyetleri ve öğrenci dergisi çalışmalarıyla; farklı disiplinlerden öğrencileri üretim ve paylaşım odağında bir araya getirir.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/bilgi-toplulugu-hubil",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/bilgi-toplulugu-hubil_6989d3365ebfb.jpg"
+  },
+  {
+    "name": "Binicilik Topluluğu",
+    "description": "Binicilik Topluluğu, Hacettepe Üniversitesi Sağlık Kültür ve Spor Daire Başkanlığına bağlı olarak faaliyet gösteren resmi öğrenci topluluğudur.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/binicilik-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/binicilik-toplulugu_698c593d1766f.png"
+  },
+  {
+    "name": "Biyoarkeoloji Topluluğu (HÜBAT)",
+    "description": "Temel amacımız, disiplinler arası etkileşimi teşvik ederek öğrenciler için nitelikli bir bilgi üretim ve tartışma ortamı sağlamaktır. Akademik gezilerden tematik okumalara kadar geniş bir etkinlik yelpazesi sunan topluluğumuz, bu alanlara ilgi duyan tüm öğrencilere kapılarını açmaktadır. Güncel projelerimiz ve etkinlik takvimimiz için instagram sayfamızı ziyaret edebilirsiniz: @hubiyoarkeoloji",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/biyoarkeoloji-toplulugu-hubat",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/biyoarkeoloji-toplulugu-hubat_698ddf901fa0c.jpg"
+  },
+  {
+    "name": "Biyoloji Topluluğu (HÜBİTO)",
+    "description": "Bilimsel merakı saha tecrübesi ile birleştirmeye odaklanan topluluğumuz, biyoçeşitliliğin korunması ve tanınması adına arazi çalışmaları gerçekleştirmektedir bu saha araştırmaları ve akademik etkinlikler aracılığıyla ekolojik farkındalık kazandırmayı tüm alt dallarından nitelikli bir akademik paylaşım Platformu sunmayı hedeflemektedir.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/biyoloji-toplulugu-hubito",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/biyoloji-toplulugu-hubito_6989b80ef2c10.jpg"
+  },
+  {
+    "name": "Çeviri Topluluğu (HÜÇEV)",
+    "description": "Hacettepe Üniversitesi Çeviri Topluluğu (HÜÇEV), 2000 yılında Mütercim-Tercümanlık Bölümü öğrencileri tarafından kurulmuştur. Kurulduğu günden bu yana topluluğumuz; çeviri ve dil öğrenimi alanında seminerler, atölyeler ve söyleşiler düzenlemekte, her yıl birçok dilde konuşma kulüpleri ve dil bilgisi atölyeleri ile üyelerimizin akademik ve sosyal gelişimlerine katkı sağlamaktadır. Topluluğumuz, dillerle ilgilenen, çeviriyle bağ kurmak isteyen ve üniversite hayatını aktif yaşamak isteyen öğrencilerin buluşma noktasıdır. Düzenlediğimiz etkinlikler sayesinde çeviri dünyasını yakından tanırken, aynı zamanda sosyalleşebileceğiniz, üretken ve samimi bir topluluk ortamının parçası olursunuz. Dil öğrenmek, çeviri alanını keşfetmek ve keyifli bir üniversite deneyimi yaşamak isteyen herkesi topluluğumuza bekliyoruz.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/ceviri-toplulugu-hucev",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/ceviri-toplulugu-hucev_698b2797da456.jfif"
+  },
+  {
+    "name": "Çevre Topluluğu (HÜÇET)",
+    "description": "Hacettepe Çevre Topluluğu, 2008 yılında kurulmuş olup; 2008 yılından 2026 yılına dek aktifliğini sürdürmüş ve hala sürdürmeye devam etmekte olan; çevre sorunları, çevre felaketleri, küresel ısınma ve iklim değişikliği gibi önem arz eden konularda eğitimler vermek, çevre hakkında insanlara bilinç kazandırmak amacıyla; çevre ile kolektif şekilde insan hayatlarını ilerletebilmek için bir araya gelmiş Hacettepe Üniversitesi öğrencilerince kurulmuş bir topluluktur.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/cevre-toplulugu-hucet",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/cevre-toplulugu-hucet_6989c9e681ec0.png"
+  },
+  {
+    "name": "Çocuğun İzinde Topluluğu(HÜ-ÇİT)",
+    "description": "Üniversitemizin temelleri İhsan Doğramacı Çocuk Hastanesi ile atılmış olmasına rağmen üniversitemizde çocuk sağlığına her açıdan odaklanan bir topluluk olmadığını fark ettik. Bunun çocuk sağlığı üzerine bu kadar köklü ve kapsamlı bir hizmet verilirken çocuk sağlığı üzerine bütüncül bakan bir topluluğun olmamasını bir eksiklik olduğunu düşündük.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/cocugun-izinde-topluluguhu-cit",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/cocugun-izinde-topluluguhu-cit_6991ce3f87cc1.jpg"
+  },
+  {
+    "name": "Çocuk Gelişimi ve Eğitimi Topluluğu (HÜÇGET)",
+    "description": "“Bir çocuk gelişir, dünya değişir” düşüncesinden hareketle; çocukların gelişimini merkeze alan, sahada aktif çalışmalar yürüten bir topluluk olarak faaliyet göstermekteyiz. Düzenlediğimiz akademik ve sosyal etkinlikler, alan gezileri ve şehir dışı programlarla mesleki gelişimi desteklemeyi ve çocukların üstün yararı doğrultusunda toplumsal farkındalık oluşturmayı amaçlıyoruz.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/cocuk-gelisimi-ve-egitimi-toplulugu-hucget",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/cocuk-gelisimi-ve-egitimi-toplulugu-hucget_698b03d77a045.jpg"
+  },
+  {
+    "name": "Cumhuriyet Değerleri Topluluğu",
+    "description": "Topluluğun temel hedefi; Cumhuriyet’in dayandığı düşünsel altyapıyı akademik bir bilinç çerçevesinde ele almak, bu değerleri üniversite ortamında yaşatmak ve gelecek kuşaklara aktarılmasına katkı sağlamaktır. Bu doğrultuda topluluk; millî ve kültürel bayramlar ile özel günlere yönelik organizasyonlar düzenlemekte, alanında yetkin isimlerle söyleşiler gerçekleştirmekte, film gösterimleri, konferanslar, paneller ve çeşitli kültürel etkinlikler aracılığıyla farkındalık çalışmaları yürütmektedir.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/cumhuriyet-degerleri-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/cumhuriyet-degerleri-toplulugu_698e0b0216853.png"
+  },
+  {
+    "name": "Dağcılık ve Doğa Sporları Topluluğu (HÜDDOSK)",
+    "description": "Hacettepe Üniversitesi Dağcılık ve Doğa Sporları Kulübü (HÜDDOSK), 1976 yılından bu yana Türkiye dağcılığına öncülük eden köklü bir öğrenci topluluğudur. Kurucularımız Tanju Sofu ve ekibi, Demirkazık kuzey duvarında yaptıkları ilk rota denemeleriyle; Mete Aygün ve Recep Çatak ise Katırkayası’ndaki duvar tırmanışlarıyla, Aladağlar’dan Ağrı’ya, Kaçkar’dan Cilo’ya uzanan sayısız zirveyle kulübün ruhunu şekillendirdiler.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/dagcilik-ve-doga-sporlari-toplulugu-huddosk",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/dagcilik-ve-doga-sporlari-toplulugu-huddosk_698b3364cded1.jpg"
+  },
+  {
+    "name": "Dans Sporları Topluluğu (HÜDAST)",
+    "description": "Dans Sporları Topluluğu (HÜDAST), Hacettepe Üniversitesi Sağlık Kültür ve Spor Daire Başkanlığına bağlı olarak faaliyet gösteren resmi öğrenci topluluğudur.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/dans-sporlari-toplulugu-hudast",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/dans-sporlari-toplulugu-hudast_698afae1bee6e.png"
+  },
+  {
+    "name": "Dilbilim Topluluğu",
+    "description": "Dilbilim Topluluğu, Hacettepe Üniversitesi Sağlık Kültür ve Spor Daire Başkanlığına bağlı olarak faaliyet gösteren resmi öğrenci topluluğudur.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/dilbilim-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/dilbilim-toplulugu_698ccc16cf725.jpg"
+  },
+  {
+    "name": "Diş Hekimliği Fakültesi Bilimsel Araştırma Topluluğu (HÜDBAT)",
+    "description": "Hacettepe Üniversitesi Diş Hekimliği Fakültesi Bilimsel Araştırma Topluluğu olarak öncelikli amacımız fakültemizde öğrenciler için akademik ve bilimsel bir ortam oluşturabilmek, öğrenciler olarak yaptığımız çalışmalar ve bilimsel araştırmalar ile Hacettepe Üniversitesi Diş Hekimliği Fakültesi ismini daha da yukarılara taşıyabilmektir. Aynı zamanda bir diş hekimliği fakültesi eğitimindeki zorlu süreçte sizlere sosyal bir ortam sunabilmek, fakülte içi ve dışı aktiviteler ile öğrenci motivasyonunu artırmakta hedeflerimiz arasında yer almaktadır. Topluluğumuz faaliyetlerinde üye öğrencilerimiz yaptığımız sosyal sorumluluk projelerinde aktif görev alabilmekte, bir diş hekimi adayı olarak hastalarına ağız diş sağlığı ve bakımı için eğitim verme, toplumu oral hijyen konusunda bilinçlendirme şansını, saha içerisinde deneyimleme imkanı elde edebilmektedir.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/dis-hekimligi-fakultesi-bilimsel-arastirma-toplulugu-hudbat",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/dis-hekimligi-fakultesi-bilimsel-arastirma-toplulugu-hudbat_699b3f8096ebd.png"
+  },
+  {
+    "name": "Doğada Yürüyüş Topluluğu",
+    "description": "Her hafta pazar günü dağlarda yürüyüşler gerçekleştiriyoruz.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/dogada-yuruyus-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/dogada-yuruyus-toplulugu_699377d6c1b4c.jpg"
+  },
+  {
+    "name": "Drama Topluluğu",
+    "description": "Drama Topluluğu için Tiyatro olgunlaşmak için bir araçtır. Topluluğumuz\r\nsergilediği oyunlar yoluyla hem zihinsel hem de bedenen kendi eksikliklerini bulmayı ve\r\nbunları çözmeyi amaçlar. Oyunun sahnelenmesine kadar geçen süreci ve bunun ekip\r\nüstündeki etkilerini önemser ve çalışmalarını bu dönem özelinde şekillendirir. Bu kapsamda\r\nTopluluğumuzda yürütülen drama çalışmaları spor (Cimnastik ve Akrobasi), müzik ve tiyatro\r\nalanlarında özelleşmiştir.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/drama-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/drama-toplulugu_69a02b3e0d692.jpg"
+  },
+  {
+    "name": "Edebiyatta Çağdaş İncelemeler Topluluğu (HEÇİT)",
+    "description": "Edebiyatta Çağdaş İncelemeler Topluluğu, 2023 yılında Prof. Dr. S. Dilek Yalçın Çelik önderliğinde kurulmuştur. Kurulduğumuz günden bu yana çağdaş edebiyat üzerine söyleşiler, öğrenci sempozyumları ve çeşitli etkinlikler düzenlenmiştir.. Son olarak gerçekleştirdiğimiz “Türk Öyküsünün Kadın Sesleri” başlıklı öğrenci sempozyumunu kitaplaştırarak kalıcı bir çalışmaya dönüştürdük. Öğrencilerin yalnızca dinleyen değil, üreten kişiler de olmasını önemsiyoruz.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/edebiyatta-cagdas-incelemeler-toplulugu-hecit",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/edebiyatta-cagdas-incelemeler-toplulugu-hecit_698c6abb26e71.jpg"
+  },
+  {
+    "name": "Eğitime İlk Adım Topluluğu (EİAT)",
+    "description": "Üniversitemiz başta olmak üzere topluma okul öncesi eğitimin farkındalığını kazandırmak, ayrım gözetmeksizin tüm çocukların hayatına dokunmak, meslek hayatımıza katkılar sağlamak ve üniversitemizi her yerde layıkıyla temsil etmek amacıyla çıktığımız bu yolda faaliyetlerimizi tüm hızıyla sürdürüyoruz.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/egitime-ilk-adim-toplulugu-eiat",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/egitime-ilk-adim-toplulugu-eiat_698f76c5235f6.jpg"
+  },
+  {
+    "name": "Ekoloji Grubu Topluluğu (EKOG)",
+    "description": "Bilimsel\r\naraştırma yapmayı, derleme yazıları hazırlamayı ve akademik yazım kurallarını\r\nöğrenmek isteyen üyelerimize Araştırma Ekibimiz bünyesinde rehberlik sağlayarak\r\nonları bilimsel üretime teşvik ediyor; hazırlanan içerikleri topluluk dergimiz\r\nEndemik ve sosyal medya hesaplarımızda paylaşıyoruz. Güncel etkinliklerimizden\r\nhaberdar olmak için Instagram ve Twitter’da @huekog hesabımızı takip edebilir;\r\ndoğaya, bilime ve birlikte öğrenmeye meraklıysanız topluluk serüvenimizin bir\r\nparçası olabilirsiniz!",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/ekoloji-grubu-toplulugu-ekog",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/ekoloji-grubu-toplulugu-ekog_6989dc33df34f.png"
+  },
+  {
+    "name": "Ekonomi Topluluğu (HEK)",
+    "description": "1991 yılında kurulan ve 32 yıldır Ankara'da organizasyonları ile her dalda ayrı markalar oluşturmayı başaran HEK olarak hedefimiz; markalarımızı geliştirmek ve yeni projelerimizle, değerlerimizden ödün vermeden topluluğumuzu daha ileriye taşımaktadır. Hacettepe Ekonomi Topluluğu, Hacettepe Üniversitesi bünyesinde etkinlik gösterip, temel olarak öğrencilerin bireysel gelişiminin sağlanmasına aracılık etmeyi amaçlamaktadır. Bu bağlamda topluluğumuz çeşitli panel, konferans ve söyleşiler düzenlemekte, süreli yayınlar çıkarmaktadır.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/ekonomi-toplulugu-hek",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/ekonomi-toplulugu-hek_698c9068aeca5.jpg"
+  },
+  {
+    "name": "Elektronik Sporlar Topluluğu",
+    "description": "Hacettepe Üniversitesi Elektronik Sporlar Topluluğu (HÜEST), Türkiye Cumhuriyeti'nin zeki, zinde ve sağlıklı gençler yetiştirme hedefiyle bütünleşik bir vizyon benimseyerek , üniversite bünyesindeki espor, dijital oyun ve oyun geliştirme ekosistemini akademik bir disiplin çerçevesinde yönetmeyi amaçlar. Başta HUCON gibi köklü gelenekler olmak üzere kampüs içinde ve dışında düzenlenen ulusal/uluslararası organizasyonlarda Hacettepe Üniversitesi'ni en iyi şekilde temsil etmeyi görev edinen topluluğumuz , üyelerine sadece rekabetçi bir platform sunmakla kalmayıp aynı zamanda dijital okuryazarlık, sektörel network ve etik oyun kültürü konularında gelişim imkânı sağlayan profesyonel bir çatı görevi görür.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/elektronik-sporlar-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/elektronik-sporlar-toplulugu_698b26f797de5.png"
+  },
+  {
+    "name": "Endüstri ve Sistem Topluluğu (HENDS)",
+    "description": "2009-2010 döneminde Hacettepe Üniversitesi Endüstri Mühendisliği Bölümü öğrencileri tarafından kurulan Hacettepe Endüstri ve Sistem Topluluğu (HENDS), üniversite bünyesinde aktif olarak faaliyet gösteren öncü bir öğrenci topluluğudur. HENDS, kurulduğu günden bu yana öğrencilerin akademik gelişimlerine katkı sağlamayı, iş dünyası ile bağlarını güçlendirmeyi ve sosyal farkındalık yaratmayı misyon edinmiştir.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/endustri-ve-sistem-toplulugu-hends",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/endustri-ve-sistem-toplulugu-hends_698b951caec01.png"
+  },
+  {
+    "name": "Enerji Topluluğu (HET)",
+    "description": "Hacettepe Enerji Topluluğu, 2012 yılında kurulmuş olup teknik ve sosyal alanlarda yaptığı projeler, etkinlikler, zirveler, workshoplar ve eğitimler ile başta Hacettepe Üniversitesi öğrencileri olmak üzere ülke çapında üniversite öğrencilerini bir araya getiren Türkiye’nin en büyük enerji topluluğudur. Amacımız, kitlemizin hem teknik ve akademik alanlarda donanım sahibi olmalarına olanak sağlayan hem de sosyal alanlarda yetkin birer birey olmalarına fırsat yaratan bir ortam oluşturmaktır.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/enerji-toplulugu-het",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/enerji-toplulugu-het_698b8620f3d90.png"
+  },
+  {
+    "name": "Engelsiz Hacettepe Topluluğu (EHT)",
+    "description": "Engelsiz Hacettepe Topluluğu olarak 2004 yılından beri kampüsümüzde faaliyet gösteriyoruz. Bizler topluluk olarak engellilik kavramını yardıma muhtaç olmak şeklinde görmüyoruz, asıl engelin kişinin fiziksel özelliklerinde değil, ona uygun düzenlenmemiş çevrelerde ve zihinlerdeki ön yargılarda olduğuna inanıyoruz. Amacımız, kampüsümüzü fiziksel ve sosyal açıdan herkes için eşit ve erişilebilir kılmak. Faaliyetlerimizle ön yargıları kırmayı, empatiyi geliştirmeyi ve farklılıklara saygı duyan bir ortam oluşturmayı hedefliyoruz. Engelsiz Hacettepe Topluluğu olarak, engelli ve engelsiz bireyler arasında köprüler kuruyoruz. Sadece sorunu konuşan değil, çözümün parçası olan bilinçli bireyler yetiştirmek için çalışıyoruz. Herkesin eşit şartlarda var olabildiği bir Hacettepe ideali için, dün olduğu gibi bugün de buradayız. Bu değişimi hep birlikte sağlayabilmemiz için sizleri de aramızda görmeyi çok isteriz.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/engelsiz-hacettepe-toplulugu-eht",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/engelsiz-hacettepe-toplulugu-eht_699184315d608.png"
+  },
+  {
+    "name": "Evrimsel Biyoloji ve Tıp Topluluğu",
+    "description": "Topluluğumuz okulumuzda ve toplumda güncel evrimsel biyoloji, genetik ve evrimsel tıp bilgisine dayalı bilincin oluşturulması, tanıtılması ve konuya ilginin çekilmesi bağlamında çeşitli faaliyetlerde bulunmaktadır. Düzenlediğimiz etkinliklerde başta Hacettepe Üniversitesi öğrencileri olmak üzere diğer üniversitelerdeki öğrenciler ve toplumun her kesiminden insanlar arasında bilimsel konuların konuşulması; öğrencilerin eleştirel düşünme, bilimsel metinleri inceleme ve sorgulama becerilerinin gelişimine yardımcı olunması; ülkemizde ve dünyada yapılan evrim, evrimsel genetik, evrimsel tıp çalışmaları ve güncel gelişmeler hakkında bilgi sahibi olunması; diğer bilim dallarına evrimsel bir perspektiften bakılması gibi temel hususların üzerinde durmaktadır.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/evrimsel-biyoloji-ve-tip-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/evrimsel-biyoloji-ve-tip-toplulugu_6992c83069048.png"
+  },
+  {
+    "name": "Farmasötik Gelişim Topluluğu",
+    "description": "Topluluk; Hacettepe Üniversitesi Eczacılık Fakültesi öğrencilerinin sağlık alanı ile ilgili diğer fakültelerdeki öğrenciler ile birlikte farmasötik eğitimi evrensel seviyelere ulaştırma ve bilgi paylaşımı için fırsat yaratma amacı ile oluşturduğu bir öğrenci topluluğudur.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/farmasotik-gelisim-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/farmasotik-gelisim-toplulugu_698a2c217cfd0.png"
+  },
+  {
+    "name": "Felsefe Topluluğu",
+    "description": "Hacettepe Üniversitesi Felsefe Topluluğu, bir öğrenci topluluğu olarak ismini verdiği \r\ndisiplinin inceleme nesnesi olan bütün konuları, onları farklı kavramsallaştıran bütün fikir \r\nakımlarının ve konseptlerin özgürce dahil olduğu güvenli bir entelektüel zemin oluşturmayı \r\namaçlar. Bu amaca uygun bir şekilde topluluk, seminer, konferans, panel ve benzeri \r\ntoplantıların yanı sıra görsel-işitsel gösteriler, yarışmalar, sergiler, geziler gibi etkinlikler \r\ndüzenleyebileceği gibi benzer öğrenci topluluklarıyla da iş birliği yapabilir. Topluluk tüm bu \r\neylemleri demokratik, katılımcı ve özgürlükçü bir tutum içerisinde, bağlı olduğu yönergeler \r\nile uyum içerisinde gerçekleştirmeyi hedeflemektedir.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/felsefe-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/felsefe-toplulugu_69987a50394bb.jpg"
+  },
+  {
+    "name": "Finansal Okuryazarlık Topluluğu",
+    "description": "Günümüzde finansal bilgi yalnızca ekonomi öğrencileri için değil; her bölümden bireyin hayatında kritik bir yere sahiptir. Bütçe yönetimi, yatırım araçları, tasarruf alışkanlıkları, girişimcilik ve finansal risk yönetimi gibi konular artık modern yaşamın temel becerileri arasında yer almaktadır. Topluluğumuz, bu ihtiyaca cevap vermek için kurulmuştur.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/finansal-okuryazarlik-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/finansal-okuryazarlik-toplulugu_698b0b8dbb279.jpeg"
+  },
+  {
+    "name": "Fizik Topluluğu (HFT)",
+    "description": "Hacettepe Fizik Topluluğu, Hacettepe Üniversitesi bünyesinde faaliyet gösteren ve fizik ile fizik mühendisliği alanlarında bilimsel, akademik ve sosyal çalışmalar yürütmeyi amaçlayan bir öğrenci topluluğudur. Topluluğumuz; bilimsel düşünceyi teşvik etmeyi, öğrencilerin mesleki ve akademik gelişimlerine katkı sağlamayı ve fizik bilimine ilgi duyan öğrenciler arasında güçlü bir iletişim ve dayanışma ortamı oluşturmayı hedeflemektedir.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/fizik-toplulugu-hft",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/fizik-toplulugu-hft_698f9e517afe6.png"
+  },
+  {
+    "name": "Fizyoterapi İlgi Topluluğu (FİT)",
+    "description": "yönelik güncel bilgi ve yaklaşımları içeren, gönüllülük esasıyla katılacak lisans öğrencilerinin",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/fizyoterapi-ilgi-toplulugu-fit",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/fizyoterapi-ilgi-toplulugu-fit_699838f788da1.png"
+  },
+  {
+    "name": "Fotoğraf Topluluğu (HÜFOT)",
+    "description": "Hacettepe Üniversitesi Fotoğraf Topluluğu olarak, kampüsün bitmek bilmeyen koşturmacasında zamanı bir anlığına durdurmaya ve dünyayı kendi vizörümüzden yeniden tanımlamaya geliyoruz. İster elinde profesyonel bir ekipman olsun ister sadece telefonun; bizim için asıl mesele senin o eşsiz bakış açın. Temel eğitimlerden teknik atölyelere, Ankara’nın gri sokaklarından Safranbolu’nun tarihi dokusuna uzanan rotalarda hem ışığın peşinden koşuyor hem de sağlam dostluklar kuruyoruz. Akademik temponun arasında nefes alabileceğin, deklanşör sesinin ritmiyle zihnini dinlendirebileceğin bu samimi ortamda senin hikâyen için her zaman bir kadraj var. Gel, vizörün ardındaki o özgür dünyada birlikte iz bırakalım.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/fotograf-toplulugu-hufot",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/fotograf-toplulugu-hufot_698ef5904b210.png"
+  },
+  {
+    "name": "Fransız Kültür Topluluğu",
+    "description": "Dünya genelinde diplomasiden sanata, sanayiden ticarete kadar pek çok alanda öncü bir rol üstlenen Fransızca, günümüzde kariyer yolculuğuna başlayan öğrenciler için stratejik bir avantaj sağlamaktadır. Beş yıllık faaliyet dönemimizde Fransız markaları, büyükelçilikler, ataşelikler ve çeşitli akademik kurumlarla nitelikli iş birlikleri gerçekleştirdik. Bu süre zarfında ücretsiz Fransızca dersleri verdik, üç dilde hazırlanan yıllık bir dergi yayımladık ve kapsamlı edebiyat ile kariyer sempozyumları düzenledik. Kitap ve sinema kulüplerimizden sosyal sorumluluk projelerine, kermeslerden eğlenceli etkinliklere kadar geniş bir yelpazede topluluk bağlarımızı güçlendirmeye devam ediyoruz. Yeni dönemde de frankofon kültürünün bir parçası olmak isteyen tüm öğrencilerle bu heyecanı paylaşmayı hedefliyoruz.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/fransiz-kultur-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/fransiz-kultur-toplulugu_6996cafda5c8d.png"
+  },
+  {
+    "name": "Genç Kimyacılar Topluluğu",
+    "description": "Genç Kimyacılar Topluluğu, Hacettepe Üniversitesi Sağlık Kültür ve Spor Daire Başkanlığına bağlı olarak faaliyet gösteren resmi öğrenci topluluğudur.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/genc-kimyacilar-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/genc-kimyacilar-toplulugu_698dbe856084b.jpg"
+  },
+  {
+    "name": "Genç Kızılay Topluluğu",
+    "description": "Hacettepe Üniversitesi bünyesinde faaliyet gösteren topluluğumuz; insani yardım, gönüllülük ve toplumsal duyarlılık ilkeleri doğrultusunda projeler geliştirmektedir. Kan bağışı organizasyonları, ihtiyaç sahiplerine yönelik sosyal yardım projeleri ve kişisel gelişim eğitimleri ile öğrencilerimizin sosyal sorumluluk bilincini artırmayı hedefliyoruz. İyiliği kampüsün her köşesine taşımak için çalışan Genç Kızılay Hacettepe ailesi, gönüllü her Hacettepeliyi \"İyiliğin Gücü\" olmaya davet eder.🌙",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/genc-kizilay-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/genc-kizilay-toplulugu_69d03b26aaf00.jpeg"
+  },
+  {
+    "name": "Genç Mühendisler Topluluğu (GMT)",
+    "description": "Genç Mühendisler Topluluğu (GMT), Hacettepe Üniversitesi Sağlık Kültür ve Spor Daire Başkanlığına bağlı olarak faaliyet gösteren resmi öğrenci topluluğudur.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/genc-muhendisler-toplulugu-gmt",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/genc-muhendisler-toplulugu-gmt_6989ebcf1543b.png"
+  },
+  {
+    "name": "Genç Yeryüzü Doktorları Topluluğu",
+    "description": "Topluluk; sağlığı yalnızca hastalık ve tedaviyle sınırlı görmeyerek fiziksel, ruhsal, sosyal ve çevresel sağlık alanlarında farkındalık oluşturmayı amaçlar. Bu doğrultuda toplumda sağlık bilincini artırmaya yönelik çalışmalar yürütür; doğal afetler başta olmak üzere ihtiyaç duyulan durumlarda maddi ve psikososyal destek sağlamayı hedefler. Aynı zamanda farklı kültürleri tanımaya ve küresel farkındalık geliştirmeye yönelik sosyal, eğitsel ve gönüllülük temelli faaliyetler düzenler.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/genc-yeryuzu-doktorlari-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/genc-yeryuzu-doktorlari-toplulugu_698b0a11a5387.png"
+  },
+  {
+    "name": "Genç Yeşilay Topluluğu",
+    "description": "Genç Yeşilay Topluluğu olarak; bağımlılıkla mücadelede bilinçli, sorumluluk sahibi ve sosyal duyarlılığı yüksek bir gençlik inşa etmeyi amaçlıyoruz. Üniversite öğrencilerinin kişisel gelişimini destekleyen eğitimler, farkındalık çalışmaları, saha faaliyetleri ve sosyal sorumluluk projeleri düzenliyoruz.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/genc-yesilay-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/genc-yesilay-toplulugu_699ff7d4dc810.jpeg"
+  },
+  {
+    "name": "Girişim ve Yatırım Topluluğu (GİYAT)",
+    "description": "Girişim ve Yatırım Topluluğu (GİYAT), Hacettepe Üniversitesi Sağlık Kültür ve Spor Daire Başkanlığına bağlı olarak faaliyet gösteren resmi öğrenci topluluğudur.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/girisim-ve-yatirim-toplulugu-giyat",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/girisim-ve-yatirim-toplulugu_6994b068ad2ac.png"
+  },
+  {
+    "name": "Gıda Topluluğu (HGT)",
+    "description": "Hacettepe Gıda Topluluğu, gıdanın tarladan çatala uzanan yolculuğunu bilimsel, teknolojik ve toplumsal boyutlarıyla ele alan bir öğrenci topluluğudur. Akademik etkinlikler, sektör buluşmaları, teknik geziler ve sosyal faaliyetler aracılığıyla gıda alanına ilgi duyan öğrencilerin mesleki gelişimini desteklemeyi ve gıdaya bütüncül bir bakış açısı kazandırmayı amaçlar..",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/gida-toplulugu-hgt",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/gida-toplulugu-hgt_698dd0b25e04b.png"
+  },
+  {
+    "name": "Go Topluluğu(HUGOKU)",
+    "description": "Topluluğumuz bünyesinde her yıl Hacettepe Go Turnuvası düzenlenmekte; üniversite içinden ve dışından oyuncular bir araya gelmektedir. Bunun yanı sıra haftalık düzenli buluşmalar kapsamında, hiç Go bilmeyenlere yönelik tanışma ve temel öğretim buluşmaları ile deneyimli oyunculara yönelik pratik, analiz ve oyun seviyesi geliştirmeye odaklanan buluşmalar gerçekleştirilmektedir. Düzenlenen eğitimler sayesinde katılımcılar seviyelerine uygun içeriklerle Go’yu öğrenme ve derinleştirme imkânı bulur.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/go-topluluguhugoku",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/go-topluluguhugoku_698b2c7d3394c.png"
+  },
+  {
+    "name": "Gönüllülük Topluluğu",
+    "description": "Hacettepe Gönüllülük Topluluğu (HÜGÖN) olarak en büyük amacımız, üyelerimiz arasında güçlü bir gönüllülük bilinci oluşturmak ve bu yola baş koyan genç arkadaşlarımıza rehberlik ederek yeni projeleri hiçbir maddi kaygı gütmeden hayata geçirmektir. Sosyal faydayı merkeze alarak planladığımız her faaliyette gönüllülerimizi teşvik etmeyi ve bu iyilik hareketini sistematik, sürdürülebilir bir yapıya kavuşturmayı hedefliyoruz. Bu vizyon doğrultusunda, Sivil Toplum Kuruluşları ve diğer topluluklarla omuz omuza vererek gönüllülük faaliyetlerimizi büyütmeye ve yaygınlaştırmaya devam ediyoruz.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/gonulluluk-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/gonulluluk-toplulugu_699f41e53057c.jpeg"
+  },
+  {
+    "name": "Hacettepe Genç Tema Topluluğu",
+    "description": "Hacettepe Genç Tema Topluluğu, doğayı koruma bilincini yaymayı, ekolojik farkındalığı artırmayı ve sürdürülebilir bir gelecek için aktif sorumluluk almayı amaçlayan gönüllü bir öğrenci topluluğudur. TEMA Vakfı’nın ilke ve değerleri doğrultusunda; çevre eğitimi, doğa koruma, iklim kriziyle mücadele ve toplumsal farkındalık alanlarında çalışmalar yürütür. Kampüs içinde ve dışında düzenlenen eğitimler, seminerler, saha çalışmaları, fidan dikimleri ve sosyal sorumluluk projeleriyle öğrencilerin doğayla bağ kurmasını ve çevre konusunda bilinçli bireyler olarak yetişmesini hedefler. Doğaya saygılı, duyarlı ve sürdürülebilir yaşamı savunan tüm öğrencileri bu gönüllü hareketin bir parçası olmaya davet eder.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/hacettepe-genc-tema-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/hacettepe-genc-tema-toplulugu_698af7099b7de.JPG"
+  },
+  {
+    "name": "Hacettepe Müzikal Topluluğu",
+    "description": "2016 yılında kurulmuş bir sanat topluluğu.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/hacettepe-muzikal-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/hacettepe-muzikal-toplulugu_69942b50a00e5.jpeg"
+  },
+  {
+    "name": "Hacettepe Running Topluluğu",
+    "description": "Hacettepe'de spor tutkunu öğrencilerle birlikte büyüdüğümüz bu toplulukta spora atılmak isteyen, spor yapabilmek için daha fazla motivasyon arayan birçok öğrenciyi koşuyla buluşturuyor, her Salı, ve Pazar günleri birlikte maraton, okullar arası atletizm yarışlarına hazırlanıyoruz!",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/hacettepe-running-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/hacettepe-running-toplulugu_6995670fce52d.jpg"
+  },
+  {
+    "name": "Hacettepe Teknofest Topluluğu (HU Teknofest)",
+    "description": "Üniversite öğrencilerinin ülkesine ve insanlığa fayda sağlayacak teknolojilerin geliştirilmesi süreçlerine katılımlarını sağlamak; stratejik önemi, yüksek katma değeri ya da küresel rekabet koşulları gereğince milli ve özgün olarak üretilmesi öncelikli olan ürün, sistem ve bileşenlerin üretilmesine dönük araştırma-geliştirme, proje ve faaliyetlerine teşvik etmek; teknoloji alanında girişimcilik kültürünün gelişmesine ve bütün bu alanlarda yapılacak bilimsel çalışmalara katkıda bulunmaktır.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/hacettepe-teknofest-toplulugu-hu-teknofest",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/hacettepe-teknofest-toplulugu-hu-teknofest_69919926c5cb4.png"
+  },
+  {
+    "name": "Havacılık Topluluğu (HÜHAT)",
+    "description": "Hacettepe Havacılık Topluluğu, Hacettepe Üniversitesi öğrencilerine havacılığı sevdirmek, havacılık sporlarını yapmalarına olanak sağlamak, bu sporları ulaşılabilir kılmak, bu hususta hiçbir fedakarlıktan kaçınmamak ve Mustafa Kemal ATATÜRK' ün \"İSTİKBAL GÖKLERDEDİR\" sözünü daima yaşatmak için 1986 yılında kurulmuştur. Topluluğumuz bu alanda kurulan ilk üniversite öğrenci topluluğu olma ve Hacettepe Üniversitesi bünyesinde faaliyet göstermeye başlayan en eski ve köklü topluluklardan birisi olma gururunu taşımaktadır. Topluluğumuz bünyesinde kuruluş tarihinden bu yana; model uçak, planör, serbest paraşüt, balon, yamaç paraşütü ve amatör pilotaj eğitimleri kapsamında birçok topluluk pilotu yetişmiş ve çeşitli hava araçları ile uçuşlar yapılmıştır. 1995 yılından itibaren topluluğumuz yamaç paraşütü üzerine faaliyetlerini arttırmış ve bugüne kadar 1000'i aşkın sporcu topluluğumuzda başlangıç ve ileri düzey yamaç paraşütü eğitimleri ile havacılığa ilk adımını atmıştır.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/havacilik-toplulugu-huhat",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/havacilik-toplulugu-huhat_698b66aa638e3.jpeg"
+  },
+  {
+    "name": "Hayvan Hakları ve Doğayı Koruma Topluluğu (Haydok)",
+    "description": "Topluluğumuz; başta Hacettepe Üniversitesi Beytepe ve Sıhhiye yerleşkeleri olmak üzere kampüslerde bulunan sokak hayvanlarının beslenme, barınma ve sağlık ihtiyaçlarının karşılanmasını sağlamak, doğal yaşam alanlarında insan-hayvan dengesinin korunmasına katkıda bulunmak ve öğrenci, akademisyen ile personelin çevre ve atık yönetimi konularında bilinç düzeyini artırmak amacıyla faaliyet göstermektedir. Yerleşkelerde yaşayan hayvanların fotoğraf ve detaylı bilgileriyle tanıtımını yaparak sahiplendirilmelerini sağlamak ve sahiplendirme sonrası takibini gerçekleştirmek hedefleri arasındadır. Ayrıca hayvanlara yönelik kötü muamele, kazalar ve hastalıklar gibi acil durumlarda 5199 sayılı Hayvanları Koruma Kanunu kapsamında gerekli girişimlerde bulunmak, ilgili veteriner klinikleri ve sağlık kuruluşlarıyla iş birliği yapmak ve topluluğa iletilen şikâyetleri değerlendirerek gerekli incelemeleri yürütmek de faaliyet alanları içerisindedir.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/hayvan-haklari-ve-dogayi-koruma-toplulugu-haydok",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/hayvan-haklari-ve-dogayi-koruma-toplulugu-haydok_69944320b66cb.jpg"
+  },
+  {
+    "name": "Hukuk Topluluğu",
+    "description": "Hukuk Topluluğu, Hacettepe Üniversitesi Sağlık Kültür ve Spor Daire Başkanlığına bağlı olarak faaliyet gösteren resmi öğrenci topluluğudur.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/hukuk-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/hukuk-toplulugu_69a0aa48ab6be.png"
+  },
+  {
+    "name": "IAESTE Hacettepe Uluslararası Staj Topluluğu",
+    "description": "Türkiye’de 1953’ten bu yana faaliyet gösteren IAESTE Türkiye ağının en dinamik temsilcilerinden biri olan LC Hacettepe, üniversitemiz öğrencilerini \"Work, Experience, Discover\" mottosuyla dünya devleriyle buluşturuyor. Yarım asrı aşan bu köklü geleneği Hacettepe ruhuyla harmanlayarak, üyelerimize sadece teknik staj imkanı değil; aynı zamanda prestijli uluslararası konferanslarda üniversitemizi temsil etme fırsatı sunuyoruz. Kampüs içerisinde düzenlediğimiz teknik geziler, kariyer workshopları ve sosyal etkinliklerle profesyonel gelişimi desteklerken; yurt dışından gelen stajyerlerin adaptasyon süreçlerini yöneterek çok kültürlü bir sosyal ekosistem inşa ediyoruz. Siz de akademik birikiminizi küresel bir vizyonla taçlandırmak ve dünyanın dört bir yanındaki 80’den fazla ülkeyle bağ kurmak istiyorsanız, Hacettepe’den dünyaya açılan bu kapıda yerinizi alın!",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/iaeste-hacettepe-uluslararasi-staj-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/iaeste-hacettepe-uluslararasi-staj-toplulugu_699561920fbac.png"
+  },
+  {
+    "name": "IEEE Öğrenci Topluluğu",
+    "description": "IEEE Öğrenci Topluluğu, Hacettepe Üniversitesi Sağlık Kültür ve Spor Daire Başkanlığına bağlı olarak faaliyet gösteren resmi öğrenci topluluğudur.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/ieee-ogrenci-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/ieee-ogrenci-toplulugu_698cbcb41ba6e.jpeg"
+  },
+  {
+    "name": "İletişim Medya Topluluğu (HİMET)",
+    "description": "Teknolojik gelişmelere bağlı olarak her geçen gün önemi artan ve hızlı değişen iletişim olgusu, yaratıcılık, strateji, fikir, yönetim ve organizasyon gibi anahtar kavramları içinde barındırmaktadır. Bu kapsamda başta görsel-işitsel iletişim, teknolojik iletişim, görsel kültür ve iletişim araştırmaları alanlarında strateji, fikir, yaratıcılık, kültür, sanat, yönetim ve organizasyon içeren faaliyetlerin yürütülmesini hedeflemektedir.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/iletisim-medya-toplulugu-himet",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/iletisim-medya-toplulugu-himet_69a1b61d2d832.png"
+  },
+  {
+    "name": "İlköğretim Bölümü Topluluğu",
+    "description": "Bu topluluk\r\nHacettepe Üniversitesi Eğitim Fakültesi Temel Eğitim Bölümü öğrencileri ile\r\nTürkiye'nin 7 coğrafi bölgesinde köy okullarında eğitim gören ilkokul\r\nöğrencilerinin bir araya gelmelerini; bu sayede öğretmen adaylarının\r\nöğretmenlik deneyimi yaşamalarını, ilkokul öğrencilerininse eksik\r\nmateryallerinin karşılanmasını ve topluluk tarafindan düzenlenen çeşitli eğitici\r\nve eğlendirici etkinliklere katılmalarını amaçlamaktadır. Burada esas olan\r\nöğretmenliğe gönül vermiş Eğitim Fakültesi öğrencileri ile köy okullarındaki\r\nöğrenciler arasında manevi bir bağ kurulması ve paylaşımlar yapılmasıdır.\r\nKurulan bu bağ etkinlikler sonrasında da devam etmekte, köy okulu öğretmenleri\r\nve öğrencileri İle İletişimde olmak da topluluğun en önemli esasları\r\narasındadır.AMAÇ",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/ilkogretim-bolumu-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/ilkogretim-bolumu-toplulugu_698af02fb02c3.jpg"
+  },
+  {
+    "name": "İnsansız Hava Araçları Topluluğu (İHA)",
+    "description": "İnsansız Hava Araçları Topluluğu,\r\n(kısa adıyla İHA), Hacettepe Sağlık, Kültür ve Spor Daire Başkanlığı\r\nbünyesinde, Hacettepe Üniversitesi öğrencilerine havacılığı sevdirmek,\r\nhavacılığın amatör, bilimsel ve endüstriyel uğraş alanlarında faaliyet\r\ngöstermek, üyeleri ve üye olmak isteyenleri insansız hava araçlarının (kısaca\r\nİHA’nın) günümüzdeki kullanımı ve önemi hakkında bilgilendirmek ve İHA’lar\r\nhakkında teknik bilgi vermeyi amaçlamaktadır.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/insansiz-hava-araclari-toplulugu-iha",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/insansiz-hava-araclari-toplulugu-iha_69a2ac7ce5cd3.jpeg"
+  },
+  {
+    "name": "İşitme ve Denge Topluluğu (HİDT)",
+    "description": "​Gelenekselleşen 'Uluslararası Katılımlı Odyoloji Öğrenci Kongresi' gibi büyük organizasyonlardan, toplumsal farkındalık yaratan sosyal projelere kadar geniş bir yelpazede faaliyet gösteriyoruz. Amacımız, işitme ve denge sağlığı konusunda bilimsel veriyi toplumla buluştururken, mesleki dayanışmayı en üst seviyeye taşımaktır. HİDT, Hacettepe’nin köklü geçmişini geleceğin enerjisiyle birleştirerek Odyoloji dünyasına değer katmaya devam ediyor.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/isitme-ve-denge-toplulugu-hidt",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/isitme-ve-denge-toplulugu-hidt_6989e77cc01e0.jpeg"
+  },
+  {
+    "name": "İşletme Topluluğu(HİT)",
+    "description": "1993 yılında kurulan Hacettepe İşletme Topluluğu, kurulduğu\r\ngünden bu yana üniversitemiz öğrencilerinin akademik birikimlerini profesyonel\r\nhayatla harmanlamalarına öncülük eden köklü bir organizasyondur. Topluluğumuz,\r\nöğrencilerin kariyer yolculuklarında kendilerini çok yönlü geliştirmelerini\r\nsağlarken, aynı zamanda sosyal açıdan zengin ve nitelikli bir üniversite\r\nkültürü oluşturmayı amaçlamaktadır.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/isletme-topluluguhit",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/isletme-topluluguhit_6991aca93922f.png adlı dosyanın kopyası adlı dosyanın kopyası"
+  },
+  {
+    "name": "İstatistik ve Veri Bilimi Topluluğu",
+    "description": "Günümüzde veri temelli karar alma süreçlerinin öneminin artması, analitik düşünebilen ve istatistiksel bakış açısına sahip bireylere olan ihtiyacı daha da görünür kılmaktadır. HÜİST’in kuruluş gerekçesi; öğrencilerin yalnızca teorik bilgiyle değil, uygulamalı etkinlikler ve sektörel temaslarla desteklenen bütüncül bir gelişim ortamında yetişmelerini sağlamaktır.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/istatistik-ve-veri-bilimi-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/istatistik-ve-veri-bilimi-toplulugu_699481588319d.jpg"
+  },
+  {
+    "name": "İzcilik Topluluğu (HÜİZK)",
+    "description": "Haftalık teorik\r\neğitimlerde; izciliğin tanımı ve tarihi, izcilik ilkeleri ve öğretileri,\r\nkampçılık bilgisi, çadır ve uyku tulumu kullanımı, harita ve pusula, doğada\r\nbarınak yapımı, kol ve düdük komutları gibi birçok başlık ele alınmaktadır. Bu\r\neğitimler, üniversite kampüslerinde gerçekleştirilmekte; izci kamplarının yanı sıra doğa yürüyüşü, oryantiring, teknik iz gibi çeşitli alanlarda da düzenlenen faaliyetlerin büyük\r\nçoğunluğu Ankara ili sınırları içerisinde, bir kısmı ise çevre illerdeki doğal\r\nalanlarda yapılmaktadır.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/izcilik-toplulugu-huizk",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/izcilik-toplulugu-huizk_698f29e8035fe.jpeg"
+  },
+  {
+    "name": "Kadın Çalışmaları Topluluğu (HÜKÇAT)",
+    "description": "Kadın Çalışmaları Topluluğu olarak kadın dayanışmasına duyduğumuz güvenle yola çıktık. 2014 yılında ise resmi bir topluluk olduk.Yüzlerce kadının mücadelesiyle kurulan topluluğumuz cinsiyet eşitsizliği , cinsiyet kimliği ve cinsel yönelimlere dayalı sorunları ve bu sorunlara yönelik çözüm önerileri geliştirmeyi, üniversitelerden başlayarak bu mücadeleyi büyütmeyi ve çözümüne ilişkin faaliyet alanları yaratmayı hedefliyor.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/kadin-calismalari-toplulugu-hukcat",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/kadin-calismalari-toplulugu-hukcat_698b2a9f65fcf.jpeg"
+  },
+  {
+    "name": "Kayak ve Snowboard Topluluğu (HÜKAY)",
+    "description": "Kayak ve Snowboard Topluluğu (HÜKAY), Hacettepe Üniversitesi Sağlık Kültür ve Spor Daire Başkanlığına bağlı olarak faaliyet gösteren resmi öğrenci topluluğudur.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/kayak-ve-snowboard-toplulugu-hukay",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/kayak-ve-snowboard-toplulugu-hukay_6996f972b0003.jpg"
+  },
+  {
+    "name": "Konumsal Bilgi Topluluğu",
+    "description": "2018 yılında temelleri atılan Hacettepe Üniversitesi Konumsal Bilgi Topluluğu, harita mühendisliği disiplininin teknik vizyonunu sosyal dayanışma ile harmanlayarak, sektörü takip eden bir platform olma yolunda kararlılıkla ilerlemektedir. Kuruluşumuzdan bu yana edindiğimiz tecrübeyi, son üç dönemdir yakaladığımız yüksek enerji ve dinamizmle birleştirerek, genç mühendis adaylarımızı mesleki standartların ötesine taşımayı hedefliyoruz.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/konumsal-bilgi-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/konumsal-bilgi-toplulugu_698c56e1325b4.png"
+  },
+  {
+    "name": "Konuşma Ses ve Yutma Topluluğu (HÜKSEY)",
+    "description": "Hacettepe Üniversitesi Konuşma, Ses ve Yutma Topluluğu olarak; iletişim, ses, yutma ve nöroloji gibi hayatın tam kalbindeki unsurları bilimsel merak ve sosyal bir ruhla harmanlıyoruz. Burada akademiyle pratiği, tutkuyla profesyonelliği birleştirerek hem mesleğimizi zirveye taşıyor hem de birlikte gelişmenin tadını çıkarıyoruz. Kendi hikayende fark yaratmak ve bu güçlü sesin bir parçası olmak istiyorsan, seni de aramıza bekliyoruz!",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/konusma-ses-ve-yutma-toplulugu-huksey",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/konusma-ses-ve-yutma-toplulugu-huksey_6989c8e8840a1.png"
+  },
+  {
+    "name": "Kuantum Topluluğu",
+    "description": "QHacettepe'nin temel misyonu;",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/kuantum-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/kuantum-toplulugu_698c7bb127f44.png"
+  },
+  {
+    "name": "Kültür Bilim ve Teknik Topluluğu",
+    "description": "Kültür Bilim ve Teknik Topluluğu, Hacettepe Üniversitesi Sağlık Kültür ve Spor Daire Başkanlığına bağlı olarak faaliyet gösteren resmi öğrenci topluluğudur.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/kultur-bilim-ve-teknik-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/kultur-bilim-ve-teknik-toplulugu_69a591fc5542c.png"
+  },
+  {
+    "name": "Kültür ve Sanat Topluluğu(HKS)",
+    "description": "Başta Hacettepe Üniversitesi olmak üzere Ankara'da bulunan öğrencilerin kültürel, sanatsal, kariyer ve sosyal gelişimine odaklanan en aktif oluşum olarak; ünlü söyleşileri, çeşitli atölye çalışmaları, kariyer etkinlikleri gibi her alandan farklı projelerle kampüs hayatını daha yaratıcı ve eğlenceli bir hale getirmek amacıyla 2010 yılında Hacettepe Kültür Sanat Topluluğu'nu sizlerle buluşturduk.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/kultur-ve-sanat-topluluguhks",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/kultur-ve-sanat-topluluguhks_698f2f2a1e439.png"
+  },
+  {
+    "name": "Lösemili Çocuklara Fayda Topluluğu (HÜLT)",
+    "description": "Lösemili Çocuklara Fayda Topluluğu, lösemiyle mücadele eden çocukların ve ailelerinin yanında olmayı, toplumsal farkındalığı artırmayı ve gönüllülük bilincini yaygınlaştırmayı amaçlayan bir dayanışma oluşumudur. Topluluğumuz; eğitimler, seminerler, sosyal sorumluluk projeleri ve farkındalık kampanyaları aracılığıyla hem üniversite içinde hem de toplum genelinde lösemi konusunda bilinç oluşturmayı hedefler.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/losemili-cocuklara-fayda-toplulugu-hult",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/losemili-cocuklara-fayda-toplulugu-hult_698d963844b32.png"
+  },
+  {
+    "name": "Maden Topluluğu",
+    "description": "Topluluğumuz; sektörle yakın iş birliği içinde çalışarak teknik geziler, seminerler ve workshoplar düzenleyerek öğrencilerin kendilerini hem teknik hem sosyal anlamda geliştirmesini sağlar.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/maden-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/maden-toplulugu_69974a2fa96b8.jpg"
+  },
+  {
+    "name": "Mağara Araştırma Topluluğu (HÜMAK)",
+    "description": "Mağaracılığı hem bilimsel bir çalışma alanı hem de teknik donanım, disiplin ve ekip çalışması gerektiren bir ekstrem spor olarak ele alan HÜMAK; üyelerine tek ip tekniği (SRT), ekipman kullanımı ve kamp faaliyetleri konularında teorik ve uygulamalı eğitimler sunmaktadır. Eğitimlerin ardından gerçekleştirilen mağara ve arazi faaliyetleri ile üyelerin teknik bilgi ve deneyim kazanmaları desteklenmektedir. Türkiye’nin farklı bölgelerinde gerçekleştirilen keşif ve araştırma\r\nfaaliyetleriyle hem bilimsel veri üretmeyi hem de mağaraların korunmasına katkı\r\nsağlamayı hedefler.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/magara-arastirma-toplulugu-humak",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/magara-arastirma-toplulugu-humak_6989c8394f0b8.png"
+  },
+  {
+    "name": "Makina Topluluğu (H-MECH)",
+    "description": "Hacettepe Makina Topluluğu (H-MECH); başta savunma sanayii, havacılık ve otomotiv sektörleri olmak üzere, mühendisliğin farklı dallarında etkin projeler yürütmek ve üyelerine teknik eğitimler ile sektörel yetkinlik kazandırmak amacıyla kurulmuştur. Farklı disiplinlerden üyelerin uyum içinde çalıştığı dinamik bir yapı kurmayı hedefleyen topluluğumuz, uluslararası standartlarda etkinlikler ve uzman kuruluşlarla iş birlikleri gerçekleştirerek üyelerini küresel vizyona sahip, etik değerleri benimsemiş profesyoneller olarak geleceğe hazırlar. Disiplinler arası çalışma kültürünü ve takım ruhunu merkezine alan H-MECH, teorik bilgiyi pratiğe dönüştürmek isteyen tüm öğrencilere ortak bir çalışma alanı sunar.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/makina-toplulugu-h-mech",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/makina-toplulugu-h-mech_698cbe14ec54d.png"
+  },
+  {
+    "name": "Maliye Topluluğu",
+    "description": "Hacettepe Maliye Topluluğu (HMT), 1998 yılından bu yana Hacettepe Üniversitesi İktisadi ve İdari Bilimler Fakültesi bünyesinde faaliyet gösteren köklü ve aktif bir öğrenci topluluğudur. Temel amacı öğrencilerin akademik ve kişisel gelişimlerini destekleyerek teori ile pratik arasındaki bağı kurmak ve onları iş hayatına donanımlı bir şekilde hazırlamaktır. Topluluk; üst düzey bürokratların ve yöneticilerin katıldığı kapsamlı kariyer günleri, önemli kamu kurumlarına düzenlenen geziler, alanında uzman isimlerle yapılan akademik paneller ve sosyalleşmeyi sağlayan eğlenceli etkinlikler aracılığıyla öğrencilere güçlü bir iletişim ağı (network) sunar. Kısacası HMT, kendini kamu ve özel sektör dinamikleri konusunda geliştirmek isteyen tüm öğrenciler için çok yönlü bir gelişim ve kariyer platformudur.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/maliye-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/maliye-toplulugu_699c0e4caad5b.jpeg"
+  },
+  {
+    "name": "Mantar Topluluğu",
+    "description": "Mantar Topluluğu, Hacettepe Üniversitesi Sağlık Kültür ve Spor Daire Başkanlığına bağlı olarak faaliyet gösteren resmi öğrenci topluluğudur.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/mantar-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/mantar-toplulugu_699bf08502d18.png"
+  },
+  {
+    "name": "Masaüstü Kutu ve Zeka Oyunları Topluluğu",
+    "description": "Kutu oyunları oynayarak haftada bir stres atıp eğlenebileceğiniz samimi bir topluluk!",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/masaustu-kutu-ve-zeka-oyunlari-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/masaustu-kutu-ve-zeka-oyunlari-toplulugu_698d9d9f9f082.jpg"
+  },
+  {
+    "name": "Matematiksel Düşünme ve Araştırma Topluluğu (HÜMDAT)",
+    "description": "Matematiği sadece kağıt üzerindeki rakamlardan ibaret görmüyor; onu dünyayı anlamlandırmanın en zarif yolu olarak kabul ediyoruz. HÜMDAT, formüllerin ötesine geçip ispatın estetiğini, araştırmanın heyecanını ve analitik düşünmenin özgürlüğünü paylaşmak isteyenlerin ortak çatısıdır. Amacımız soyut düşüncenin sınırlarını zorlamak, matematiğin her alandaki gizli izini sürmek, matematikle sosyalliği birleştirmek ve akademik merakı samimi bir kültüre dönüştürmektir.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/matematiksel-dusunme-ve-arastirma-toplulugu-humdat",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/matematiksel-dusunme-ve-arastirma-toplulugu-humdat_699bfa2b03cf0.jpg"
+  },
+  {
+    "name": "Medeniyet ve Araştırma Topluluğu (HUMEDAT)",
+    "description": "Köklerinden güç alan, geleceğe bilimle bakan bir topluluk! Medeniyet ve Araştırma Topluluğu, üniversite hayatını sadece derslerle değil; nitelikli okumalar, saha araştırmaları ve entelektüel tartışmalarla zenginleştirmek isteyen öğrenciler için kurulmuştur. Medeniyet değerlerimizi akademik bir süzgeçten geçirerek analiz ediyor, geleceğin vizyoner araştırmacılarını yetiştiriyoruz. Eğer disiplinlerarası bir bakış açısı kazanmak, akademik araştırma yöntemlerini öğrenmek ve fikir dünyanı zenginleştirmek istiyorsan, Teoriyi pratiğe, merakı projeye dönüştürmek için sen de topluluğumuzdaki yerini al.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/medeniyet-ve-arastirma-toplulugu-humedat",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/medeniyet-ve-arastirma-toplulugu-humedat_6992d81253a31.jpeg"
+  },
+  {
+    "name": "Mediclub Topluluğu",
+    "description": "Hacettepe Üniversitesindeki tüm sağlık bölümü öğrencilerini tek bir çatı altında birleştiren öğrenci topluluğudur.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/mediclub-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/mediclub-toplulugu_69a3ef9bac843.png"
+  },
+  {
+    "name": "MEDISEP Topluluğu",
+    "description": "MEDISEP (Medical Students' Exchange and Projects); tıp öğrencilerinin akademik, bilimsel ve sosyal gelişimlerini desteklemek \r\namacıyla kurulmuş bir öğrenci topluluğudur. Topluluk; tıp eğitiminin evrensel niteliğinden \r\nhareketle ulusal ve uluslararası düzeyde öğrenci değişimlerini teşvik etmeyi, ortak projeler \r\nüretmeyi ve disiplinler arası iş birliklerini güçlendirmeyi hedefler. Tıp öğrencilerinin farklı sağlık sistemlerini tanımalarını, bilimsel araştırma ve \r\nproje kültürü kazanmalarını, mesleki vizyonlarını genişletmelerini ve küresel sağlık \r\nperspektifi geliştirmelerini amaçlar. Bu doğrultuda değişim programları, akademik projeler, \r\neğitim etkinlikleri ve sosyal sorumluluk çalışmaları düzenleyerek öğrencilerin hem mesleki \r\nhem de kişisel gelişimlerine katkı sağlamayı temel ilke edinir.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/medisep-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/medisep-toplulugu_698afcd9ba8fc.png"
+  },
+  {
+    "name": "Model Birleşmiş Milletler Topluluğu",
+    "description": "Yabancı dil gelişimine katkıda bulunmaya ek olarak, Birleşmiş Milletler’in temel ilkelerinden olan diplomasi ve demokrasi yoluyla müzakere becerilerini artırmayı ve her sene çeşitli Birleşmiş Milletleri simüle eden etkinlikler düzenleyerek öğrencileri Birleşmiş Milletler’in işleyiş ve yapısı ile aşina olmasını hedefler.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/model-birlesmis-milletler-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/model-birlesmis-milletler-toplulugu_699e31908e731.jpg"
+  },
+  {
+    "name": "Motosiklet Topluluğu (HÜMOT)",
+    "description": "Topluluğumuz bünyesinde düzenlenen faaliyetler arasında güvenli sürüş eğitimleri, teknik atölyeler, uzun ve kısa mesafeli sürüş organizasyonları, sosyal sorumluluk projeleri ve motosiklet kültürünü yaygınlaştırmaya yönelik etkinlikler yer almaktadır. Bu etkinlikler sayesinde üyelerimizin hem bireysel farkındalıklarının artırılması hem de topluluk bilincinin güçlendirilmesi amaçlanmaktadır.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/motosiklet-toplulugu-humot",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/motosiklet-toplulugu-humot_69982494326a1.png"
+  },
+  {
+    "name": "Münazara Topluluğu",
+    "description": "Münazaraya dair en temel tanım şu şekildedir: Münazara, iki farklı kanattaki münazaracıların yaptıkları konuşmalarla argümanlarını sunarak ve karşı tarafın savlarını çürüterek jüriyi kendi taraflarının haklı olduğuna ikna etmeye çalıştıkları bir tartışma biçimidir. Amacımız, münazaraya ilgi duyan herkesin kendini rahatça ifade edebileceği ve zamanla bu becerileri geliştirebileceği bir ortam sağlamaktır. Yıl içerisinde farklı alanlarda eğitimler düzenliyor, haftalık çalışma maçları yapıyor ve başta Ankara ve İstanbul olmak üzere Türkiye’nin birçok yerindeki münazara turnuvalarına katılıyoruz.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/munazara-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/munazara-toplulugu_698cdfd01d559.png"
+  },
+  {
+    "name": "Müzik ve Oyun Deneme Topluluğu",
+    "description": "Müzik  ve  Oyun  Deneme  Topluluğu,  kendi  kültürel  değerlerimizin  bilimsel  temellere dayalı belgelenmesi, işlenmesi, geliştirilmesi ve sanat sunularında kullanılması için çalışmayı; kültürel  müziğimizi  ve oyunlarımızı  kendi  iç değerlerimizle  korumayı,  tanıtmayı ve  işleyerek yüceltmeyi amaçlamıştır. Müzik ve Oyun  Deneme  Topluluğu,  Anadolu  insanının  değerlerini  ve  duygularını (dostluk, hoşgörü, özlem, tutku, hayal, masal, aşk vb.)doğumdan  ölüme  kadar  insan yaşamını  kültürel  müzik  ve oyunlarımızı kullanarak kurgusal anlatımlarla sahneye koymayı amaçlamıştır. Geleneksel, bireysel, işlenmiş  kültürel sunuları; koro, konser, resital, dinleti, gösteri, yayın- yayım vb. yollarla yurtiçinde ve yurtdışında tanıtmak, yaymak ve yaşatmak amacıyla çalışmaktır.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/muzik-ve-oyun-deneme-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/muzik-ve-oyun-deneme-toplulugu_698efe9c58a77.jpeg"
+  },
+  {
+    "name": "Müzikbilim Topluluğu (MBT)",
+    "description": "Müzikbilim Topluluğu (MBT), Hacettepe Üniversitesi Sağlık Kültür ve Spor Daire Başkanlığına bağlı olarak faaliyet gösteren resmi öğrenci topluluğudur.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/muzikbilim-toplulugu-mbt",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/muzikbilim-toplulugu-mbt_698c530715e1b.png"
+  },
+  {
+    "name": "Nörobilim Topluluğu",
+    "description": "Bu doğrultuda yıl boyunca seminerler, sempozyumlar, kurslar ve laboratuvar gezileri düzenlemekte; bilgi yarışmaları ve tartışma grupları gibi interaktif etkinliklerle öğrenmeyi desteklemekteyiz. Ayrıca sosyal sorumluluk projeleri kapsamında okullarda bilimi yaygınlaştırmayı ve genç öğrencilere ilham olmayı hedeflemekteyiz. Yayın ve tasarım ekiplerimiz aracılığıyla ise dijital platformlarda bilgilendirici içerikler üreterek nörobilimi daha geniş kitlelere ulaştırmayı amaçlamaktayız.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/norobilim-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/norobilim-toplulugu_6989c12949929.jpg"
+  },
+  {
+    "name": "Okçuluk Topluluğu",
+    "description": "Hacettepe Üniversitesi Okçuluk Topluluğu (HÜOK), okçuluğu yalnızca bir spor dalı olarak değil; bir disiplin, bir odaklanma sanatı ve köklü bir kültür mirası olarak gören öğrencilerin bir araya geldiği dinamik bir topluluktur. Amacımız, okçuluk sporunu ulaşılabilir kılmak ve üniversite hayatının bir parçası hâline getirerek üyelerimizin hem fiziksel hem de zihinsel gelişimine katkı sağlamaktır.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/okculuk-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/okculuk-toplulugu_6997eddf5fe9f.jpeg"
+  },
+  {
+    "name": "Okuma Topluluğu(HUNOK)",
+    "description": "2007 yılında temelleri atılan Hacettepe Üniversitesi Okuma Topluluğu, üniversite öğrencilerinin akademik ve kültürel birikimlerine katkı sağlamak amacıyla kurulmuştur. Faaliyet alanları; edebi metinlerin analizi, film okumaları ve yaratıcı yazarlık atölyeleri üzerinden şekillenmektedir. Bu etkinlikler aracılığıyla katılımcıların analitik düşünme, eleştirel değerlendirme ve ifade becerilerinin geliştirilmesi hedeflenmektedir.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/okuma-topluluguhunok",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/okuma-topluluguhunok_698b267819c41.png"
+  },
+  {
+    "name": "Ombudsmanlık ve İnsan Hakları Topluluğu (HOMİT)",
+    "description": "HOMİT, ombudsmanlık ilkeleri doğrultusunda insan hakları bilincini yaygınlaştırmayı, adalet ve eşitlik temelli bir toplum anlayışını güçlendirmeyi hedefleyen bir öğrenci topluluğudur.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/ombudsmanlik-ve-insan-haklari-toplulugu-homit",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/ombudsmanlik-ve-insan-haklari-toplulugu_698db68074aed.jpg"
+  },
+  {
+    "name": "Örgü ve El Sanatları Topluluğu (HUCROT)",
+    "description": "Topluluğumuz, atölye ve etkinliklerle öğrencilerin üretkenliklerini artırmayı, örgü kültürünü yaygınlaştırmayı ve herkesin ait hissedebileceği bir alan yaratmayı hedefler.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/orgu-ve-el-sanatlari-toplulugu-hucrot",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/orgu-ve-el-sanatlari-toplulugu-hucrot_698cde8b382e4.jpeg"
+  },
+  {
+    "name": "Oryantiring Topluluğu",
+    "description": "Hacettepe Üniversitesi Oryantiring Topluluğu, çeşitli arazilerde yön bulmayı öğrenmene yardımcı olurken hem fiziksel dayanıklılığını artırmana hem de stratejik düşünme becerini geliştirmene katkı sağlayacaktır. Eğitimler, antrenmanlar, yarışmalar ve keyifli birçok etkinlikle hem spor yapacak hem de güçlü bir ekip ruhunun parçası olacaksın. İster hiç deneyimin olmasın ister kendini geliştirmek iste; bu toplulukta doğayı keşfederken yeni arkadaşlıklar kuracak, sınırlarını zorlayacak ve üniversite hayatına unutulmaz anılar ekleyeceksin!",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/oryantiring-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/oryantiring-toplulugu_69c26d5e06366.jpeg"
+  },
+  {
+    "name": "Otomotiv Topluluğu",
+    "description": "Otomotiv Topluluğu, Hacettepe Üniversitesi Sağlık Kültür ve Spor Daire Başkanlığına bağlı olarak faaliyet gösteren resmi öğrenci topluluğudur.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/otomotiv-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/otomotiv-toplulugu_698c61104a3db.png"
+  },
+  {
+    "name": "Özel Eğitim Topluluğu",
+    "description": "Üniversite bünyesinde özel eğitim alanına yönelik uygulamaların, sosyal sorumluluk faaliyetlerinin ve disiplinler arası iş birliklerinin daha planlı ve sürdürülebilir bir yapı altında yürütülmesine ihtiyaç duyulmaktadır. Bu doğrultuda topluluk; özel gereksinimli bireylerle anlamlı ve etik temelli etkileşimler kuran, öğrencilerin saha deneyimi kazanmalarını sağlayan ve toplumda kapsayıcı eğitim anlayışını destekleyen çalışmalar gerçekleştirmeyi amaçlamaktadır.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/ozel-egitim-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/ozel-egitim-toplulugu_699707d685e36.png"
+  },
+  {
+    "name": "Özgür Yazılım Topluluğu (HÜÖYT)",
+    "description": "Hacettepe Üniversitesi Özgür Yazılım Topluluğu, açık kaynak kültürünü yaygınlaştırmak, üretim odaklı teknik gelişimi desteklemek ve öğrencileri özgür yazılım ekosistemiyle buluşturmak amacıyla kurulmuş teknik bir topluluktur. Topluluğumuz; yalnızca yazılım öğrenmeyi değil, yazılım üretmeyi ve paylaşmayı merkeze alır. Açık kaynak projelere katkı sunmayı, kendi projelerimizi geliştirmeyi ve bilgi paylaşımını sürdürülebilir bir kültüre dönüştürmeyi hedefleriz.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/ozgur-yazilim-toplulugu-huoyt",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/ozgur-yazilim-toplulugu-huoyt_698de4756127f.png"
+  },
+  {
+    "name": "Politika ve Araştırma Topluluğu (P&A)",
+    "description": "Politika & Araştırma Topluluğu (P&A),\r\n1995 yılında kurulmuş bir öğrenci topluluğudur. Hacettepe Üniversitesi İktisadi\r\nve İdari Bilimler Fakültesi, Siyaset Bilimi ve Kamu Yönetimi Bölümü bünyesinde\r\nkurulmuş olmakla birlikte, Hacettepe Üniversitesi’nin tüm bölümlerinden\r\nöğrencilere açık bir yapıya sahiptir. Topluluğumuz; öğrencilerimizin\r\nakademik, entelektüel, sosyal ve mesleki gelişimlerini desteklemek amacıyla,\r\nkatılımcı ilkeler çerçevesinde öğrenciler tarafından yönetilmektedir.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/politika-ve-arastirma-toplulugu-pa",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/politika-ve-arastirma-toplulugu-pa_698caece03d38.png"
+  },
+  {
+    "name": "Psikoloji Topluluğu (HÜPT)",
+    "description": "Hacettepe Üniversitesi Psikoloji Topluluğu, lisans ve lisansüstü psikoloji öğrencileri ve psikolojiye ilgi duyan tüm Hacettepe öğrencilerine ulaşmayı, onların akademik, sosyal ve kültürel açılardan gelişimlerini desteklemeyi ve bunu farklı perspektifler sunarak yapmayı amaçlayan bir öğrenci topluluğudur.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/psikoloji-toplulugu-hupt",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/psikoloji-toplulugu-hupt_698f0ef14e53f.png"
+  },
+  {
+    "name": "Psikolojik Danışma Topluluğu",
+    "description": "Hacettepe Üniversitesi Psikolojik Danışma Topluluğu (HÜPDAT) psikolojik danışmanın tanınması, psikolojik danışmayla ilgili kavramaların öğrenilmesi, bu bağlamda farklı çalışmaların yapılması amacıyla 1992 yılında kurulmuştur.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/psikolojik-danisma-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/psikolojik-danisma-toplulugu_6991fab464929.png"
+  },
+  {
+    "name": "Quidditch Topluluğu",
+    "description": "Farklı fakültelerden öğrencileri ortak bir paydada buluşturan topluluk; dayanışma, eşitlik ve karşılıklı saygı ilkelerini temel alır. Düzenli antrenmanlar, turnuvalar ve sosyal etkinlikler aracılığıyla üyelerinin hem fiziksel gelişimine hem de sosyal bağlarının güçlenmesine katkı sağlar. Strateji, hız ve takım çalışmasını bir araya getiren bu spor sayesinde üyeler; liderlik, iletişim ve koordinasyon becerilerini geliştirme fırsatı bulur.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/quidditch-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/quidditch-toplulugu_69a5412601bc0.png"
+  },
+  {
+    "name": "Ragbi Topluluğu",
+    "description": "ötesinde, bir takımın parçası olma bilincini ve sahada olduğu kadar sosyal hayatta da geçerli",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/ragbi-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/ragbi-toplulugu_698d9046a3f87.jpg"
+  },
+  {
+    "name": "Rekreasyon Topluluğu",
+    "description": "Hacettepe Üniversitesi Rekreasyon Topluluğu, öğrencilerin fiziksel, zihinsel ve sosyal gelişimlerini desteklemek; aktif ve sağlıklı yaşam bilincini yaygınlaştırmak amacıyla kurulmuş bir öğrenci topluluğudur. Spor ve rekreasyon temelli etkinlikler, sosyal sorumluluk projeleri ve çeşitli organizasyonlar aracılığıyla öğrencilerin serbest zamanlarını verimli, eğlenceli ve anlamlı bir şekilde değerlendirmelerine olanak sağlar.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/rekreasyon-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/rekreasyon-toplulugu_698f179e2b5d6.png"
+  },
+  {
+    "name": "Risk ve Aktüerya Topluluğu (HÜRAT)",
+    "description": "Alanında uzman isimlerle düzenlediğimiz etkinlikler ve gelenekselleşen Risk Günleri ile öğrencilerimizi sektördeki güçlü isimlerle bir araya getiriyor; kişisel gelişimlerine katkı sağlamayı, staj ve iş imkânları konusunda farkındalık kazanmalarını hedefliyoruz. Bunun yanında sosyal buluşmalarla üyelerimize dolu dolu bir üniversite deneyimi sunuyoruz.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/risk-ve-aktuerya-toplulugu-hurat",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/risk-ve-aktuerya-toplulugu-hurat_698a049b44668.png"
+  },
+  {
+    "name": "Robot Topluluğu",
+    "description": "Farklı disiplinlerden öğrencilerin bilgi paylaşımıyla güçlü bir öğrenme ve dayanışma ortamı sunar; ekip çalışması, liderlik ve problem çözme becerilerini destekler. Söyleşiler, atölyeler ve mezun buluşmalarıyla kariyer farkındalığını artırırken, ulusal ve uluslararası yarışmalara katılarak tasarım, yazılım ve elektronik alanlarında projeler geliştirir.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/robot-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/robot-toplulugu_699851b725212.jpeg"
+  },
+  {
+    "name": "Rock Topluluğu",
+    "description": "Hacettepe Üniversitesi Rock Topluluğu, öğrencilerin müzik aracılığıyla bir araya geldiği, üretim yaptığı ve kendini geliştirdiği bir kültür ve dayanışma platformudur. Kampüs yaşamını daha canlı ve nitelikli kılmayı hedefleyen topluluk; konserler, eğitimler ve ortak projelerle hem bireysel gelişimi destekler hem de Hacettepe’nin sanatsal birikimine katkı sağlar.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/rock-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/frontend/img/default_hacettepe_logo.jpg"
+  },
+  {
+    "name": "Roket ve Savunma Araştırmaları Topluluğu (HÜRSAT)",
+    "description": "Misyonumuz:\r\nSavunma teknolojileri alanında tekniker ve mühendis adaylarını bir araya getirerek; üretim kabiliyeti yüksek, sahada çözüm üretebilen ve teknik el becerisi gelişmiş bireyler yetiştirmek. Teorik bilgiyi atölye ortamında somut projelere dönüştürerek, sanayinin ihtiyaç duyduğu \"üreten güç\" olmak.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/roket-ve-savunma-arastirmalari-toplulugu-hursat",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/roket-ve-savunma-arastirmalari-toplulugu-hursat_698a30bcbf442.jpeg"
+  },
+  {
+    "name": "Sağlık Yönetimi Topluluğu",
+    "description": "Sağlık Yönetimi Topluluğu, Hacettepe Üniversitesi Sağlık Kültür ve Spor Daire Başkanlığına bağlı olarak faaliyet gösteren resmi öğrenci topluluğudur.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/saglik-yonetimi-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/saglik-yonetimi-toplulugu_6989d6636e8ad.PNG"
+  },
+  {
+    "name": "Satranç Topluluğu",
+    "description": "Topluluk bünyesinde düzenli satranç buluşmaları, eğitim amaçlı oyun analizleri, dostluk maçları ve dönemsel turnuvalar yapılır. Amaç, üyelerin hem bireysel oyun seviyesini yükseltmek hem de kampüs içinde satranç kültürünü canlı tutmaktır. Burada kimse “usta” olduğu için değerli değildir; düşünen, öğrenen ve oynayan herkes değerlidir.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/satranc-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/satranc-toplulugu_699850a768455.jpg"
+  },
+  {
+    "name": "Sinema ve Video Topluluğu(HUSVT)",
+    "description": "Hacettepe Sinema ve Video Topluluğu olarak yaptığımız film gösterileri, atölyeler ve sohbetlerle yeni filmler keşfedip, farklı insanlarla tanışma ortamı sağlıyoruz.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/sinema-ve-video-topluluguhusvt",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/sinema-ve-video-topluluguhusvt_698b29bf5e32e.jpeg"
+  },
+  {
+    "name": "Sosyal Çalışma Topluluğu",
+    "description": "Sosyal Çalışma Topluluğu, Hacettepe Üniversitesi Sağlık Kültür ve Spor Daire Başkanlığına bağlı olarak faaliyet gösteren resmi öğrenci topluluğudur.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/sosyal-calisma-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/sosyal-calisma-toplulugu_699acb39ede06.png"
+  },
+  {
+    "name": "Sualtı Hokeyi Topluluğu",
+    "description": "Sualtı Hokeyi Topluluğu, 2014 yılında sualtı hokeyi sporuna ilgi duyan ya da bu branşı tanımak isteyen öğrencileri bir araya getirmek amacıyla kurulmuştur. Amacımız, sualtı hokeyini üniversite bünyesinde tanıtmak, düzenli antrenmanlarla bu sporu sürdürülebilir hale getirmek ve birlikte spor yapmanın keyfini paylaşmaktır. Topluluk olarak hem yeni başlayanlara hem de deneyimli sporculara açık bir ortam sunmaktayız. Antrenmanlar ve müsabakalar aracılığıyla takım ruhunu, dayanışmayı ve spor kültürünü güçlendirmeyi hedefliyoruz.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/sualti-hokeyi-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/sualti-hokeyi-toplulugu_698b555605fba.png"
+  },
+  {
+    "name": "Sualtı Sporları Topluluğu (HÜSASK)",
+    "description": "HÜSASK (Hacettepe Üniversitesi Su Altı Sporları Topluluğu), 1989 yılında Hacettepe Üniversitesi öğrencileri tarafından kurulmuş, Türkiye'nin en köklü üniversite su altı sporları topluluklarından biridir. 35 yılı aşkın deneyimimizle, su altı sporlarını geliştirmek ve yaygınlaştırmak amacıyla faaliyet göstermekteyiz.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/sualti-sporlari-toplulugu-husask",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/sualti-sporlari-toplulugu-husask_6989c32f96ab6.jpeg"
+  },
+  {
+    "name": "Sürdürülebilir Bisiklet Topluluğu",
+    "description": "Sürdürülebilir Bisiklet Topluluğu, Hacettepe Üniversitesi Sağlık Kültür ve Spor Daire Başkanlığına bağlı olarak faaliyet gösteren resmi öğrenci topluluğudur.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/surdurulebilir-bisiklet-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/surdurulebilir-bisiklet-toplulugu_699c997fbc484.jpeg"
+  },
+  {
+    "name": "Sürdürülebilir Kalkınma Topluluğu(SKT)",
+    "description": "Sürdürülebilir Kalkınma Topluluğu(SKT), Hacettepe Üniversitesi Sağlık Kültür ve Spor Daire Başkanlığına bağlı olarak faaliyet gösteren resmi öğrenci topluluğudur.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/surdurulebilir-kalkinma-topluluguskt",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/surdurulebilir-kalkinma-topluluguskt_698e34b1878a7.png"
+  },
+  {
+    "name": "Tarih Araştırmaları Topluluğu (HÜTAT)",
+    "description": "Tarih Araştırmaları Topluluğu(HÜTAT), üniversitemiz öğrencilerinin tarih disiplinine olan ilgilerini akademik bir zemine taşımak, eleştirel düşünme becerilerini geliştirmek ve bu alandaki bilimsel yetkinliklerini artırmak amacıyla faaliyetlerini sürdürmektedir. Topluluğumuz, düzenlediği akademik söyleşiler, paneller ve seminerler aracılığryla öğrencileri alanında uzman isimlerle buluştururken; gerçekleştirilen teknik ve kültürel gezilerle teorik bilginin saha tecrübesiyle harmanlanmasını hedeflemektedir. Araştırma odaklı bir yaklaşımı benimseyen topluluğumuz, öğrencilerin metodolojik donanımlarını güçlendirerek onları geleceğin nitelikli araştırmacıları olma yolunda desteklemeyi ve üniversitemizin köklü akademik kültürüne katkı sunan aktif bir entelektüel platform oluşturmayı asli görevi kabul etmektedir.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/tarih-arastirmalari-toplulugu-hutat",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/tarih-arastirmalari-toplulugu-hutat_698dc2d26fe30.jpeg"
+  },
+  {
+    "name": "Tarihi Canlandırma Topluluğu",
+    "description": "Hacettepe Üniversitesi Tarihi Canlandırma Topluluğu olarak tarihi hem teorik hem de pratik yönleriyle ele alıyor; geçmiş toplumları ve tarihsel dönemleri araştırıp canlandırmalarla yeniden görünür kılmaya çalışıyoruz. Giyim, yiyecek, el sanatları ve savaş sanatları alanlarında çalışmalar yapıyor, atölyeler ve etkinlikler düzenliyoruz. Amacımız, tarihsel bilgiyi daha somut, deneyimlenebilir ve herkes için erişilebilir hale getirmek. Aynı zamanda üniversite içinde tarih bilincini artırmayı ve geçmiş ile günümüz arasında bilinçli bir bağ kurulmasına katkı sağlamayı hedefliyoruz.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/tarihi-canlandirma-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/tarihi-canlandirma-toplulugu_69981867992b4.png"
+  },
+  {
+    "name": "Tarım Topluluğu (HÜTAR)",
+    "description": "Hacettepe Tarım Topluluğu'nun kapısı; toprakla, bitkilerle, hobi bahçeciliğiyle ve tarımla alakalı her şeyle ilgilenen tüm Hacettepe Üniversitesi öğrencilerine açıktır.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/tarim-toplulugu-hutar",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/tarim-toplulugu-hutar_6989bca67e80e.jpg"
+  },
+  {
+    "name": "Tenis Topluluğu",
+    "description": "Topluluğun amacı, Hacettepe Üniversitesi önlisans, lisans ve\r\nyüksek lisans öğrencilerine tenis sporunu tanıtmak, topluluğumuza üye olarak\r\nbulunanların tenis konusunda gelişimini sağlamak, tenis sporunu geliştirmek,\r\nüyelerin daha sağlıklı bir beden ve ruh yapısına sahip olmalarını sağlamak,\r\nuyum içinde çalışabilme alışkanlığı kazandırmak, karar verme yeteneğine sahip,\r\nüretken bireylerin yetişmesine katkıda bulunmak ve Hacettepe Üniversitesini\r\nyurt içi ve yurt dışı etkinliklerde tanıtmak ve temsil etmektir.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/tenis-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/tenis-toplulugu_69a00ed133cc8.JPG"
+  },
+  {
+    "name": "Tiyatro Topluluğu (HÜTİ)",
+    "description": "Tiyatro Topluluğu (HÜTİ), Hacettepe Üniversitesi Sağlık Kültür ve Spor Daire Başkanlığına bağlı olarak faaliyet gösteren resmi öğrenci topluluğudur.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/tiyatro-toplulugu-huti",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/tiyatro-toplulugu-huti_69a166a5b495e.JPG"
+  },
+  {
+    "name": "Tımbıka Ritim Topluluğu",
+    "description": "​Darbuka, bendir, zilli tef, erbane, asma davul, cajon ve Latin perküsyon enstrümanları (conga, bongo, timbal vb.) kullanılarak hazırlanan kompozisyonlar icra edilmektedir.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/timbika-ritim-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/timbika-ritim-toplulugu_69fb26d7232ea.jpg"
+  },
+  {
+    "name": "Tıp Fakültesi Bilimsel Araştırma Topluluğu",
+    "description": "Hacettepe Üniversitesi Tıp Fakültesi öğrencilerini bilimsel araştırma yapmak, bilimsel çalışma ve tartışmalara katılmak yönünde teşvik etmek; Hacettepe Üniversitesi Tıp Fakültesi öğrencilerinin mesleki yaşamlarında ihtiyaç duyacakları bilimsel bakış açısına sahip olmalarını, bilimsel çalışma yapabilmelerini sağlayacak beceri ve tutum edinmelerini sağlamaktır.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/tip-fakultesi-bilimsel-arastirma-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/tip-fakultesi-bilimsel-arastirma-toplulugu_6996f87feb87f.png"
+  },
+  {
+    "name": "Tıpta Ses Araştırmaları ve Müzik Terapi Topluluğu(HÜTSAMTT)",
+    "description": "HÜTSAT, üniversitemizin Sıhhiye Kampüsünde faaliyet gösteren bir müzik topluluğudur. Her yıl düzenlediğimiz konserlerimiz (önlük giyme töreni, tıp bayramı vs.), açık hava sinemalarımız, özgün tasarımlarımız, amfi etkinliklerimiz ve daha niceleri ile müzik yapmayı ve müzikle iç içe olmayı sevenlerden oluşan bir aileyiz. Merak ettikleriniz için bize ulaşabilirsiniz.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/tipta-ses-arastirmalari-ve-muzik-terapi-topluluguhutsamtt",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/tipta-ses-arastirmalari-ve-muzik-terapi-topluluguhutsamtt_698b91bfe349f.jpeg"
+  },
+  {
+    "name": "Toplum ve Eğitim Gönüllüleri Topluluğu(HÜTEGT)",
+    "description": "Toplum ve Eğitim Gönüllüleri Topluluğu(HÜTEGT), Hacettepe Üniversitesi Sağlık Kültür ve Spor Daire Başkanlığına bağlı olarak faaliyet gösteren resmi öğrenci topluluğudur.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/toplum-ve-egitim-gonulluleri-topluluguhutegt",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/toplum-ve-egitim-gonulluleri-topluluguhutegt_699dbb1f4ab1c.jpg"
+  },
+  {
+    "name": "Toplumsal Katılımda Yaratıcılık Topluluğu (HÜTOKYA)",
+    "description": "HÜTOKYA – Toplumsal Katılımda Yaratıcılık Topluluğu, dezavantajlı bireylerin sosyal hayata katılımını artırmayı ve üniversite öğrencilerinin birlikte etkileşim halinde problem çözme becerilerini geliştirmeyi amaçlayan bir öğrenci topluluğudur. Topluluk, yaratıcılığı ve katılımcı üretimi merkeze alarak öğrencilerin toplumsal sorumluluk bilinciyle hareket etmelerini destekler.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/toplumsal-katilimda-yaraticilik-toplulugu-hutokya",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/toplumsal-katilimda-yaraticilik-toplulugu-hutokya_6989ce274227b.jpeg"
+  },
+  {
+    "name": "Turizm ve Rehberlik Topluluğu (HTR)",
+    "description": "Turizm ve Rehberlik Topluluğu; öğrencilere ülkenin mevcut turizm kaynaklarının tanıtılmasını sağlamak, yurt içi ve yurt dışındaki tarihi ve kültürel miras ile turizm alanına ilişkin bilgi birikimini artırmak, turizm sektörü ve bileşenleri hakkında farkındalık oluşturmak amacıyla kurulmuştur. Topluluk, turizm değerlerinin doğru şekilde tanıtılmasını, bu değerlere yönelik bilinç düzeyinin artırılmasını ve sürdürülebilir turizm anlayışının yaygınlaştırılmasını hedefler.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/turizm-ve-rehberlik-toplulugu-htr",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/turizm-ve-rehberlik-toplulugu-htr_698a04bb5bf1c.png"
+  },
+  {
+    "name": "Türk Devletleri Gençlik Topluluğu (TDGT)",
+    "description": "Bu doğrultuda; sosyal, akademik, eğitim ve kültür-sanat\r\nalanlarında etkinlikler, programlar ve projeler düzenleyerek gençlerin hem\r\nbireysel hem toplumsal gelişimine katkı sunuyoruz. Kültürel buluşmalar, konserler,\r\npaneller, söyleşiler ve atölyelerle Türk gençliğinin entelektüel birikimini\r\nartırmayı ve ortak değerler etrafında bilinçli bir dayanışma ruhu oluşturmayı\r\namaçlıyoruz.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/turk-devletleri-genclik-toplulugu-tdgt",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/turk-devletleri-genclik-toplulugu-tdgt_69937505265c0.png"
+  },
+  {
+    "name": "Türk Dünyası Araştırmaları Topluluğu",
+    "description": "Logomuzda yer alan sekiz köşeli yıldız, Türk tarihini ve köklü medeniyet mirasını simgelemektedir. Yıldızı çevreleyen dairesel form, Türk dünyasının birlik ve bütünlüğünü; etrafındaki yıldızlar ise farklı coğrafyalardaki Türk topluluklarını temsil eder. Kırmızı renk milli kimliği ve tarihi bağları, mavi renk ise gökyüzünü, kültürel sürekliliği ve ortak geleceği ifade etmektedir. Logo bütünlüğü, Türk dünyası arasında akademik dayanışma ve ortak bilinç oluşturma idealimizi yansıtmaktadır.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/turk-dunyasi-arastirmalari-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/turk-dunyasi-arastirmalari-toplulugu_69a493ed768ba.jpeg"
+  },
+  {
+    "name": "Türk Halk Oyunları Topluluğu (HÜHOT)",
+    "description": "Topluluğumuz, 1986 yılında kurulmuş olup, kültürümüzün en önemli unsurlarından biri olan halk oyunlarını üniversite öğrencilerinin öğrenmesi, sergilemesi ve bu sayede gelecek kuşaklara aktarılması amacıyla çalışmalarını sürdürmektedir. Hacettepe Üniversitesi’nin en köklü topluluklarından biri olarak üniversitemizi ve imkânlar dâhilinde ülkemizi hem ulusal hem de uluslararası platformlarda başarıyla temsil etmiştir ve bu çalışmalarına devam etmektedir.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/turk-halk-oyunlari-toplulugu-huhot",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/turk-halk-oyunlari-toplulugu-huhot_698b72fac3e01.jpeg"
+  },
+  {
+    "name": "Türk Halkbilimi Topluluğu",
+    "description": "Türk Halkbilimi Topluluğu; Türk Halkbilimi Bölümü \r\nöğrencileri ve Hacettepe Üniversitesi öğrencilerinin \r\nHalkbilimi konusunda bilgi sahibi olabilmesi çeşitli \r\netkinliklere katılım gösterebilmesi adına faaliyet \r\ngöstermektedir.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/turk-halkbilimi-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/turk-halkbilimi-toplulugu_699c4d7f4c138.jpg"
+  },
+  {
+    "name": "Türk Sanat Müziği Topluluğu",
+    "description": "Bu kültürel mirası canlı tutmak adına şefimiz Özgen Gürbüz rehberliğinde her cumartesi koro çalışmaları gerçekleştiriyor, disiplinli ve keyifli bir hazırlık sürecinin ardından senede iki kez düzenlediğimiz büyük konser etkinliklerimizle sanatseverlerin huzuruna çıkıyoruz. Farklı dönemlerin heyecanını ve birikimini aynı sahnede paylaşıyor; müzik aracılığıyla geçmişten bugüne kuşaklar arası sarsılmaz bir gönül bağı kuruyoruz.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/turk-sanat-muzigi-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/turk-sanat-muzigi-toplulugu_699f487844575.jpg"
+  },
+  {
+    "name": "Türkoloji Araştırmaları Topluluğu (HÜTAT)",
+    "description": "Topluluğumuz Türk dili,edebiyatı,tarihi,folkloru ve kültürünü akademik,sanatsal ve sosyal yönleriyle araştırmak,yaymak ve tanıtmak amacıyla kurulmuştur.Öğrencilerin bilimsel ve kültürel gelişimlerine katkı sağlamayı hedefliyoruz.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/turkoloji-arastirmalari-toplulugu-hutat",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/turkoloji-arastirmalari-toplulugu-hutat_698a4d0333c8a.png"
+  },
+  {
+    "name": "Uluslararası İlişkiler Topluluğu",
+    "description": "Hacettepe Uluslararası İlişkiler Topluluğu (HIRC) Hacettepe Üniversitesi Uluslararası İlişkiler Bölümü'nün 2002 yılında kurulmuş olan öğrenci topluluğudur. Topluluk; uluslararası siyaset ve küresel ilişkiler konularında akademik çalışmalar yapmaya, toplumsal bilinci geliştirmeye ve öğrenci gençlik ağları kurmaya yönelik projeler yürütür. Topluluk; konferans, panel, tanıtım, kongre, toplumsal hizmet gibi organizasyonlar ile Uluslararası İlişkiler bölümünde verilen teorik bilgileri iş dünyası ile birleştirerek hem bölüm hem de üniversitenin tanıtımını yapar. Topluluk ayrıca diğer öğrenci topluluklarıyla yapılan ortak etkinlikler düzenleyerek dayanışma ve işbirliği sağlar.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/uluslararasi-iliskiler-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/uluslararasi-iliskiler-toplulugu_6989d77e76501.jpeg"
+  },
+  {
+    "name": "Ütopya Topluluğu",
+    "description": "Hacettepe Üniversitesi Ütopya Topluluğu, insanlığın binlerce yıllık özlemlerini ve toplumsal tasavvurlarını bugünden tartan ve bu çerçevede sosyal bilimler arasında disiplinler arası bir çalışma yöntemiyle söyleşiler düzenleyen bir topluluktur.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/utopya-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/utopya-toplulugu_698b1f0f7a0a2.jpg"
+  },
+  {
+    "name": "Uzak Doğu Dilleri ve Kültürleri Topluluğu (HUDOT)",
+    "description": "Topluluk bünyesinde verilen Çince, Korece ve Japonca dil dersleri üyelerin hem kültürel gelişimini desteklemekte hem de ilgileri doğrultusunda ilerlemelerinin önünü açmaktadır. Dil derslerinin yanı sıra düzenlenen mutfak ve sanat atölyeleri, film gösterimleri, konuşma kulüpleri, uzak doğu sporları eğitimleri ve çeşitli işbirlikleriyle yapılan çok yönlü aktiviteler öğrencilerin uzak doğu kültürlerini anlama kapasitelerini arttırırken farklı kültür ve arkaplanlardan insanlarla tanışmalarına da olanak sağlamayı hedefler.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/uzak-dogu-dilleri-ve-kulturleri-toplulugu-hudot",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/uzak-dogu-dilleri-ve-kulturleri-toplulugu-hudot_698c3bc53fe28.png"
+  },
+  {
+    "name": "Yapay Zeka Topluluğu",
+    "description": "Hacettepe Üniversitesi bünyesinde yapay zeka ve veri bilimi alanında öncü bir topluluk olma vizyonuyla hareket ediyoruz. Amacımız, üyelerimize teorik ve pratik eğitimler vererek onları geleceğin teknoloji dünyasına hazırlamaktır. Eğitim, Ar-Ge, Medya, Kurumsal İlişkiler ve Organizasyon komisyonlarımızla; projelerden yarışmalara, teknik eğitimlerden kariyer günlerine kadar geniş bir yelpazede faaliyet gösteriyoruz. Siz de yapay zekanın sunduğu sınırsız imkanları keşfetmek ve bu alanda tecrübe kazanmak için aramıza katılın!",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/yapay-zeka-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/yapay-zeka-toplulugu_698ddb1c67d33.png"
+  },
+  {
+    "name": "Yapı Topluluğu",
+    "description": "Hacettepe Üniversitesi Yapı Topluluğu, yapı tasarımı, mimarlık ve inşaat mühendisliği alanlarına ilgi duyan öğrencileri bir araya getiren; bu alanlarda bilgi paylaşımını, iletişimi ve mesleki gelişimi desteklemeyi amaçlayan bir öğrenci topluluğudur. Topluluk; konferans, seminer, teknik gezi ve benzeri etkinlikler düzenleyerek üyelerinin yapı bilimi ve teknolojisi konularında farkındalık kazanmasını sağlar ve yurt içi ile yurt dışı faaliyetlerde Hacettepe Üniversitesi ile İnşaat Mühendisliği Bölümünü temsil eder.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/yapi-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/yapi-toplulugu_699852c5016c5.png"
+  },
+  {
+    "name": "Yelken Topluluğu",
+    "description": "Hacettepe Üniversitesi Yelken Topluluğu, 2007 yılında kurulmuş ve denizcilik ruhunu takım çalışması ile liderlik kültürüyle birleştiren bir öğrenci kulübüdür. Ankara’da denize uzak bir şehirde faaliyet göstermesine rağmen üyelerine yelken sporunu tanıtmak, yaşatmak ve geliştirmek için çalışmalarını sürdürmektedir. Eğitim, yarış, etkinlik ve iletişim birimleriyle üyelerine hem sportif hem de sosyal gelişim fırsatları sunarken; üniversitemizi ulusal ve uluslararası yarışlarda temsil etmekte ve aynı zamanda disiplin, dayanışma ve stratejik düşünmeyi ön plana çıkarmaktadır. Amacımız; öğrencilerimize yelken sporuyla birlikte iş hayatında da gerekli olan vizyon, iş birliği ve kararlılık değerlerini kazandırmak, denizciliği bir yaşam kültürü ve kariyer seçeneği haline getirmelerine katkı sağlamaktır.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/yelken-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/yelken-toplulugu_698da50a9bc36.jpg"
+  },
+  {
+    "name": "Yemek ve Tadım Topluluğu",
+    "description": "Biz Hacettepe Üniversitesi Yemek ve Tadım Topluluğu, kısaca HÜTNAM! Üniversite hayatında tecrübe edilmesi gereken anların kütüphane molalarında içilen kahvelerden ve çalışılan finallerden ibaret olmadığına inanan, farklı lezzetlerle damağınıza ve kaliteli muhabbetle kalbinize hitap etmenin peşinde koşan büyük bir aileyiz. Amacımız, Hacettepe'nin kampüs sınırlarını aşarak Ankara'nın altını üstüne getirmek ve hep beraber en iyi lezzetleri keşfetmek, farklı kültürleri tatmak ve bunları yaparken yeni arkadaşlıklar, dostluklar kurabilmek. Daima senden gelecek önerilere de açığız, denemek istediğin lezzetlerde sana eşlik etmek isteriz. Eğer sen de bizle benzer düşünceleri paylaşıyorsan, seni aramızda görmekten mutluluk duyarız!",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/yemek-ve-tadim-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/yemek-ve-tadim-toplulugu_69a0175368075.jpeg"
+  },
+  {
+    "name": "Yer Bilimleri Topluluğu",
+    "description": "2005 yılında temelleri atılan Yer Bilimleri Topluluğu, yer bilimlerini öğrencilere sevdirmek, bu alandaki farkındalığı artırmak ve öğrencilerin kariyer yolculuklarına güçlü bir rehberlik sunmak amacıyla kurulmuş, dinamik ve vizyoner bir öğrenci topluluğudur. Kurulduğu günden bu yana yer bilimlerinin yalnızca teorik bir alan olmadığını; sahada, sektörde ve sosyal yaşamın içinde aktif bir karşılığı olduğunu benimseyen topluluğumuz, teknik gezilerle öğrencileri mesleğin kalbine taşır, alanında uzman isimlerle gerçekleştirilen söyleşilerle ilham verir ve sosyal etkinliklerle güçlü bir aidiyet duygusu oluşturur. Akademik gelişimi sektörel deneyimle harmanlayan bu yaklaşım sayesinde üyelerimize yalnızca bilgi değil, aynı zamanda bakış açısı, özgüven ve geleceğe dair sağlam bir vizyon kazandırmayı hedefler; yer bilimlerine ilgi duyan herkesi bu yolculuğun bir parçası olmaya davet eder.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/yer-bilimleri-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/yer-bilimleri-toplulugu_699d6585f34fb.jpeg"
+  },
+  {
+    "name": "Yoga Topluluğu",
+    "description": "Yoga Topluluğu; bedensel farkındalığı, zihinsel dengeyi ve topluluk ruhunu bir araya getiren dinamik bir oluşumdur. Amacımız; öğrencilerin fiziksel güç, esneklik ve denge gelişimini desteklerken aynı zamanda stres yönetimi ve zihinsel odaklanma becerilerini artırmaktır.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/yoga-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/yoga-toplulugu_6994e41748032.jpeg"
+  },
+  {
+    "name": "Yönetim Danışmanlığı Topluluğu",
+    "description": "Sektörün öncü isimleriyle gerçekleştirilen networking etkinliklerinden, çözüm odaklı workshoplara ve interaktif vaka kamplarına kadar geniş bir yelpazede faaliyet gösteriyoruz. Amacımız, üyelerimize analitik düşünme yetkinliği ve global bir iş perspektifi kazandırırken, akademi ile iş dünyası arasında sürdürülebilir bir köprü kurmaktır. HacettepeMCC, Hacettepe’nin köklü disiplinini modern iş dünyasının hızıyla birleştirerek, yönetim danışmanlığı ekosistemine değer katmaya ve yarının iş dünyasını bugünden şekillendirmeye devam ediyor.",
+    "website": "https://topluluklar.hacettepe.edu.tr/topluluklar/yonetim-danismanligi-toplulugu",
+    "logo": "https://topluluklar.hacettepe.edu.tr/topluluklar/logo/yonetim-danismanligi-toplulugu_69c6e0886fff1.jpeg"
+  }
+]
+                }
+            },
+            computed: {
+                filteredClubs() {
+                    if (!this.searchQuery) return this.clubs;
+                    const q = this.searchQuery.toLowerCase();
+                    return this.clubs.filter(c => 
+                        c.name.toLowerCase().includes(q) || 
+                        (c.description && c.description.toLowerCase().includes(q))
+                    );
                 }
             }
         }).mount('#app')
