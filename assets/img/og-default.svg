@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Hacettepe Bilgilendirme">
-  <rect width="1200" height="630" fill="#fff5f5"/>
-  <rect x="60" y="60" width="1080" height="510" rx="24" fill="#ffffff" stroke="#fecaca" stroke-width="4"/>
-  <text x="120" y="260" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="700" fill="#b91c1c">Hacettepe Bilgilendirme</text>
-  <text x="120" y="340" font-family="Inter, Arial, sans-serif" font-size="38" fill="#7f1d1d">Ogrenci rehberi ve kampus bilgileri</text>
-  <circle cx="1030" cy="170" r="48" fill="#ef4444"/>
-</svg>

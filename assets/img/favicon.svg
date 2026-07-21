@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Hacettepe Bilgilendirme">
-  <rect width="64" height="64" rx="12" fill="#ffffff"/>
-  <path d="M32 8L8 20L32 32L56 20L32 8Z" fill="#dc2626"/>
-  <path d="M8 40L32 52L56 40" stroke="#dc2626" stroke-width="4" fill="none" stroke-linecap="round"/>
-  <path d="M8 28L32 40L56 28" stroke="#ef4444" stroke-width="4" fill="none" stroke-linecap="round"/>
-</svg>
