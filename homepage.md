@@ -8,7 +8,7 @@ Bu dosya tarayıcıdaki ana sayfanın makine dostu Markdown özetidir. HTML ana 
 
 ## Hızlı bağlantılar
 
-- [Yeni Kazananlar 2025](https://hacettepe.biz/page/yeni-kazananlar-2025.html)
+- [Yeni Kazananlar 2026](https://hacettepe.biz/page/yeni-kazananlar-2026.html)
 - [Kayıt Süreci](https://hacettepe.biz/page/kayit-islemleri.html)
 - [Barınma ve Kampüs](https://hacettepe.biz/page/barinma.html)
 
@@ -16,12 +16,12 @@ Bu dosya tarayıcıdaki ana sayfanın makine dostu Markdown özetidir. HTML ana 
 
 | Başlık | Açıklama | Sayfa |
 | --- | --- | --- |
-| Yeni Kazananlar 2025 | Kayıt adımları, e-devlet süreci ve önemli tarihler. | [Rehber](https://hacettepe.biz/page/yeni-kazananlar-2025.html) |
+| Yeni Kazananlar 2026 | Kayıt adımları, e-devlet süreci ve önemli tarihler. | [Rehber](https://hacettepe.biz/page/yeni-kazananlar-2026.html) |
 | Akademik Takvim | Akademik takvim, ders kayıt tarihleri ve sınav dönemleri. | [Takvim](https://hacettepe.biz/page/akademik-takvim.html) |
 | Sıkça Sorulan Sorular | Öğrencilerin en çok merak ettiği konular. | [SSS](https://hacettepe.biz/page/sss.html) |
 | Tercih Dönemi | Tercih dönemine ilişkin bilgiler ve tarihler. | [Rehber](https://hacettepe.biz/page/tercih-donemi.html) |
 | Fakülte ve Yüksekokul Lokasyonları | Kampüs bazlı fakülte listesi. | [Liste](https://hacettepe.biz/page/fakulte-yuksekokul-lokasyonlari.html) |
-| Bölüm Sıralamaları | Taban puanları ve sıralamalar (2025). | [Liste](https://hacettepe.biz/page/siralamalar.html) |
+| Bölüm Sıralamaları | Taban puanları ve sıralamalar (2026). | [Liste](https://hacettepe.biz/page/siralamalar.html) |
 | Kayıt İşlemleri | Belgeler ve öğrenci işleri süreçleri. | [Rehber](https://hacettepe.biz/page/kayit-islemleri.html) |
 | Barınma Olanakları | Yurt seçenekleri ve başvuru bağlantıları. | [Rehber](https://hacettepe.biz/page/barinma.html) |
 | Beytepe Çevresindeki KYK'lar | Beytepe çevresi KYK yurtları. | [Liste](https://hacettepe.biz/page/cevredeki-kyklar.html) |
