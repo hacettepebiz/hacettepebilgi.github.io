@@ -2,3 +2,10 @@
 !.well-known/**/*.md
 !README.md
 !homepage.md
+
+# Denetim betikleri proje kokundeki tools/ altinda durur ve yayina girmez.
+# Biri yanlislikla web/ icine kopyalarsa commit edilmesin:
+tools/
+_once/
+_sonra/
+*.playwright-mcp/
