@@ -13,7 +13,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -26,14 +25,14 @@
     <meta property="og:site_name" content="Hacettepe Bilgilendirme">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://hacettepe.biz/assets/img/logo.png">
-    <title>Hacettepe Akademik Takvim 2026-2027 | Ders Kayıt ve Sınav Tarihleri</title>
-    <meta name="description" content="Hacettepe Üniversitesi 2026-2027 Ön Lisans, Lisans ve Lisansüstü akademik takvimi. Ders kayıt, ekle-sil, vize, final sınav, yandal/çift anadal ve tatil tarihleri.">
+    <title>Hacettepe Akademik Takvim 2026-2027 | Kayıt ve Sınav Tarihleri</title>
+    <meta name="description" content="Hacettepe 2026-2027 akademik takvimi: ders kayıt, ekle-sil, vize, final sınav, yandal ve çift anadal başvuru ile tatil tarihleri.">
     <meta name="keywords" content="hacettepe akademik takvim, hacettepe akademik takvim 2026, hacettepe akademik takvim 2027, hacettepe ders kayıt tarihleri, hacettepe sınav tarihleri">
-    <meta property="og:title" content="Hacettepe Akademik Takvim 2026-2027 | Ders Kayıt ve Sınav Tarihleri">
-    <meta property="og:description" content="Hacettepe Üniversitesi 2026-2027 Ön Lisans, Lisans ve Lisansüstü akademik takvimi. Ders kayıt, ekle-sil, vize, final sınav, yandal/çift anadal ve tatil tarihleri.">
+    <meta property="og:title" content="Hacettepe Akademik Takvim 2026-2027 | Kayıt ve Sınav Tarihleri">
+    <meta property="og:description" content="Hacettepe 2026-2027 akademik takvimi: ders kayıt, ekle-sil, vize, final sınav, yandal ve çift anadal başvuru ile tatil tarihleri.">
     <meta property="og:url" content="https://hacettepe.biz/page/akademik-takvim.html">
-    <meta name="twitter:title" content="Hacettepe Akademik Takvim 2026-2027 | Ders Kayıt ve Sınav Tarihleri">
-    <meta name="twitter:description" content="Hacettepe Üniversitesi 2026-2027 Ön Lisans, Lisans ve Lisansüstü akademik takvimi. Ders kayıt, ekle-sil, vize, final sınav, yandal/çift anadal ve tatil tarihleri.">
+    <meta name="twitter:title" content="Hacettepe Akademik Takvim 2026-2027 | Kayıt ve Sınav Tarihleri">
+    <meta name="twitter:description" content="Hacettepe 2026-2027 akademik takvimi: ders kayıt, ekle-sil, vize, final sınav, yandal ve çift anadal başvuru ile tatil tarihleri.">
     <link rel="canonical" href="https://hacettepe.biz/page/akademik-takvim.html">
     <script type="application/ld+json">
 [
@@ -41,7 +40,7 @@
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Hacettepe Akademik Takvim 2026-2027",
-    "description": "Hacettepe Üniversitesi 2026-2027 Ön Lisans, Lisans ve Lisansüstü akademik takvimi. Ders kayıt, ekle-sil, vize, final sınav, yandal/çift anadal ve tatil tarihleri.",
+    "description": "Hacettepe 2026-2027 akademik takvimi: ders kayıt, ekle-sil, vize, final sınav, yandal ve çift anadal başvuru ile tatil tarihleri.",
     "url": "https://hacettepe.biz/page/akademik-takvim.html"
   },
   {
@@ -64,8 +63,10 @@
   }
 ]
     </script>
+    <link rel="stylesheet" href="../assets/tailwind.css">
 </head>
 <body class="bg-pattern min-h-screen">
+    <a href="#icerik" class="skip-link">İçeriğe geç</a>
     <div class="min-h-screen flex flex-col">
         <!-- Navbar -->
         <div id="app" class="min-h-screen flex flex-col">
@@ -77,7 +78,7 @@
                     <span>Hacettepe.biz</span>
                 </a>
                 <button class="hb-nav-toggle" aria-label="Menüyü aç/kapat" onclick="this.nextElementSibling.classList.toggle('open')">
-                    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
                 </button>
                 <ul class="hb-nav-links">
                     <li><a href="/">Ana Sayfa</a></li>
@@ -106,7 +107,7 @@
             </div>
         </div>
 
-        <main class="flex-grow container mx-auto px-4 pt-6 pb-8">
+        <main id="icerik" class="flex-grow container mx-auto px-4 pt-6 pb-8">
             <section class="bg-blue-50 border border-blue-100 rounded-xl p-5 mb-6" aria-label="Hızlı özet">
                 <h2 class="text-lg font-semibold text-gray-900 mb-2">Hızlı Özet</h2>
                 <p class="text-gray-700 text-sm">Takvimde ders kayıt, ekle-sil, sınav dönemleri ve resmi tatiller tek sayfada listelenir.</p>
@@ -293,7 +294,7 @@
                 <div class="bg-white rounded-xl border border-gray-100 p-6 text-center card-hover">
                     <p class="text-gray-600">
                         Detaylı akademik takvim için 
-                        <a href="https://fs.hacettepe.edu.tr/oidb/dosyalar/akademik_takvimler/26-27/2026-2027%20Akademik%20Takvim.pdf" target="_blank" 
+                        <a href="https://fs.hacettepe.edu.tr/oidb/dosyalar/akademik_takvimler/26-27/2026-2027%20Akademik%20Takvim.pdf" target="_blank" rel="noopener" 
                            class="text-red-600 hover:text-red-700 font-medium inline-flex items-center group">
                             tıklayınız
                             <svg class="w-4 h-4 ml-1 transform transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none">
@@ -323,21 +324,23 @@
                         <p>Hacettepe Üniversitesi öğrencileri ve adayları için<br>bağımsız, güncel ve doğru bilgi kaynağı.</p>
                     </div>
                     <div>
-                        <h4>Hızlı Erişim</h4>
+                        <h2 class="hb-footer-heading">Hızlı Erişim</h2>
                         <ul>
+                            <li><a href="/page/ogrenci-isleri.html">Öğrenci İşleri</a></li>
                             <li><a href="/page/akademik-takvim.html">Akademik Takvim 2026-2027</a></li>
                             <li><a href="/page/siralamalar.html">Bölüm Sıralamaları</a></li>
                             <li><a href="/page/barinma.html">Barınma Olanakları</a></li>
                             <li><a href="/page/kampus-haritasi.html">Kampüs Haritası</a></li>
+                            <li><a href="/page/dumansiz-kampus.html">Dumansız Kampüs</a></li>
                             <li><a href="/page/ogrenci-topluluklari.html">Öğrenci Toplulukları</a></li>
                         </ul>
                     </div>
                     <div>
-                        <h4>Site</h4>
+                        <h2 class="hb-footer-heading">Site</h2>
                         <ul>
                             <li><a href="/hakkinda.html">Site Hakkında</a></li>
                             <li><a href="/page/iletisim.html">İletişim</a></li>
-                            <li><a href="https://github.com/hacettepebilgi/hacettepe.biz" target="_blank">GitHub</a></li>
+                            <li><a href="https://github.com/hacettepebilgi/hacettepe.biz" target="_blank" rel="noopener">GitHub</a></li>
                         </ul>
                     </div>
                 </div>
@@ -347,6 +350,7 @@
                 </div>
             </div>
         </footer>
+    </div>
     </div>
 </body>
 </html>

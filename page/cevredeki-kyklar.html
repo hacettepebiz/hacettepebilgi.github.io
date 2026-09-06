@@ -13,7 +13,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body { font-family: 'Inter', sans-serif; }
     </style>
@@ -62,8 +61,10 @@
   }
 ]
     </script>
+    <link rel="stylesheet" href="../assets/tailwind.css">
 </head>
 <body class="bg-pattern min-h-screen">
+    <a href="#icerik" class="skip-link">İçeriğe geç</a>
     <div class="min-h-screen flex flex-col">
         <!-- hbiz Navbar -->
         <nav class="hb-nav" role="navigation" aria-label="Ana menü">
@@ -73,7 +74,7 @@
                     <span>Hacettepe.biz</span>
                 </a>
                 <button class="hb-nav-toggle" aria-label="Menüyü aç/kapat" onclick="this.nextElementSibling.classList.toggle('open')">
-                    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
                 </button>
                 <ul class="hb-nav-links">
                     <li><a href="/">Ana Sayfa</a></li>
@@ -140,7 +141,7 @@
                 </div>
             </div>
         </div>
-        <main class="flex-grow container mx-auto px-4 pt-6 pb-8">
+        <main id="icerik" class="flex-grow container mx-auto px-4 pt-6 pb-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="hb-card" data-yurt-type="erkek">
                     <div class="flex items-start space-x-4">
@@ -160,14 +161,14 @@
                                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
-                                            <a href="https://www.google.com/maps/place/S%C3%B6%C4%9F%C3%BCt%C3%B6z%C3%BC,+Tahsin+Banguo%C4%9Flu+Yurdu,+06510+%C3%87ankaya%2FAnkara/" class="text-red-600 hover:text-red-700" target="_blank">Google Maps</a>
+                                            <a href="https://www.google.com/maps/place/S%C3%B6%C4%9F%C3%BCt%C3%B6z%C3%BC,+Tahsin+Banguo%C4%9Flu+Yurdu,+06510+%C3%87ankaya%2FAnkara/" class="text-red-600 hover:text-red-700" target="_blank" rel="noopener">Google Maps</a>
                                         </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
                                                 <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
                                             <span class="text-gray-600">Toplu Taşıma: <strong class="text-green-600">10.5 km (32 mins)</strong></span>
-                                            <a href="https://www.google.com/maps/dir/?api=1&origin=S%C3%B6%C4%9F%C3%BCt%C3%B6z%C3%BC%20Mah.%20Nizami%20Gencevi%20Cad.%20No%3A15%20%C3%87ankaya/ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank">
+                                            <a href="https://www.google.com/maps/dir/?api=1&origin=S%C3%B6%C4%9F%C3%BCt%C3%B6z%C3%BC%20Mah.%20Nizami%20Gencevi%20Cad.%20No%3A15%20%C3%87ankaya/ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank" rel="noopener">
                                                 <svg class="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none">
                                                     <path d="M9 20L17 4M9 20L3 14M9 20L9 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
@@ -197,14 +198,14 @@
                                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
-                                            <a href="https://www.google.com/maps/search/39.899107,+32.818270" class="text-red-600 hover:text-red-700" target="_blank">Google Maps</a>
+                                            <a href="https://www.google.com/maps/search/39.899107,+32.818270" class="text-red-600 hover:text-red-700" target="_blank" rel="noopener">Google Maps</a>
                                         </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
                                                 <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
                                             <span class="text-gray-600">Toplu Taşıma: <strong class="text-green-600">13.2 km (53 mins)</strong></span>
-                                            <a href="https://www.google.com/maps/dir/?api=1&origin=O%C4%9EUZLAR%20MAH.%20AVUKAT%20%C3%96ZDEM%C4%B0R%20SOKAK%20NO%3A3%20%C3%87ANKAYA/ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank">
+                                            <a href="https://www.google.com/maps/dir/?api=1&origin=O%C4%9EUZLAR%20MAH.%20AVUKAT%20%C3%96ZDEM%C4%B0R%20SOKAK%20NO%3A3%20%C3%87ANKAYA/ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank" rel="noopener">
                                                 <svg class="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none">
                                                     <path d="M9 20L17 4M9 20L3 14M9 20L9 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
@@ -234,14 +235,14 @@
                                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
-                                            <a href="https://www.google.com/maps/place/39%C2%B056'41.4%22N+32%C2%B051'15.8%22E/@39.944843,32.854393,17z/" class="text-red-600 hover:text-red-700" target="_blank">Google Maps</a>
+                                            <a href="https://www.google.com/maps/place/39%C2%B056'41.4%22N+32%C2%B051'15.8%22E/@39.944843,32.854393,17z/" class="text-red-600 hover:text-red-700" target="_blank" rel="noopener">Google Maps</a>
                                         </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
                                                 <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
                                             <span class="text-gray-600">Toplu Taşıma: <strong class="text-green-600">18.4 km (50 mins)</strong></span>
-                                            <a href="https://www.google.com/maps/dir/?api=1&origin=HACI%20BAYRAM%20MAH.%20%C3%87ANKIRI%20CAD.%20NO.33%20ULUS%20ALTINDA%C4%9E%20/%20ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank">
+                                            <a href="https://www.google.com/maps/dir/?api=1&origin=HACI%20BAYRAM%20MAH.%20%C3%87ANKIRI%20CAD.%20NO.33%20ULUS%20ALTINDA%C4%9E%20/%20ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank" rel="noopener">
                                                 <svg class="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none">
                                                     <path d="M9 20L17 4M9 20L3 14M9 20L9 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
@@ -271,14 +272,14 @@
                                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
-                                            <a href="https://www.google.com/maps/place/%C3%87ANKIRI%20CAD.%20HACI%20BAYRAM%20MAH.%20MAL%C4%B0YE%20MESLEK%20SOK.%20NO%3A5%20/%2006030%20ULUS%20ALTINDA%C4%9E/ANKARA" class="text-red-600 hover:text-red-700" target="_blank">Google Maps</a>
+                                            <a href="https://www.google.com/maps/place/%C3%87ANKIRI%20CAD.%20HACI%20BAYRAM%20MAH.%20MAL%C4%B0YE%20MESLEK%20SOK.%20NO%3A5%20/%2006030%20ULUS%20ALTINDA%C4%9E/ANKARA" class="text-red-600 hover:text-red-700" target="_blank" rel="noopener">Google Maps</a>
                                         </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
                                                 <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
                                             <span class="text-gray-600">Toplu Taşıma: <strong class="text-green-600">18.9 km (52 mins)</strong></span>
-                                            <a href="https://www.google.com/maps/dir/?api=1&origin=%C3%87ANKIRI%20CAD.%20HACI%20BAYRAM%20MAH.%20MAL%C4%B0YE%20MESLEK%20SOK.%20NO%3A5%20/%2006030%20ULUS%20ALTINDA%C4%9E/ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank">
+                                            <a href="https://www.google.com/maps/dir/?api=1&origin=%C3%87ANKIRI%20CAD.%20HACI%20BAYRAM%20MAH.%20MAL%C4%B0YE%20MESLEK%20SOK.%20NO%3A5%20/%2006030%20ULUS%20ALTINDA%C4%9E/ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank" rel="noopener">
                                                 <svg class="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none">
                                                     <path d="M9 20L17 4M9 20L3 14M9 20L9 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
@@ -308,14 +309,14 @@
                                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
-                                            <a href="https://www.google.com/maps/place/Z%C3%BCbeyde%20Han%C4%B1m%20Mahallesi%20643%20Sokak%20No%3A%203/19%20Alt%C4%B1nda%C4%9F/ANKARA" class="text-red-600 hover:text-red-700" target="_blank">Google Maps</a>
+                                            <a href="https://www.google.com/maps/place/Z%C3%BCbeyde%20Han%C4%B1m%20Mahallesi%20643%20Sokak%20No%3A%203/19%20Alt%C4%B1nda%C4%9F/ANKARA" class="text-red-600 hover:text-red-700" target="_blank" rel="noopener">Google Maps</a>
                                         </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
                                                 <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
                                             <span class="text-gray-600">Toplu Taşıma: <strong class="text-green-600">19.7 km (51 mins)</strong></span>
-                                            <a href="https://www.google.com/maps/dir/?api=1&origin=Z%C3%BCbeyde%20Han%C4%B1m%20Mahallesi%20643%20Sokak%20No%3A%203/19%20Alt%C4%B1nda%C4%9F/ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank">
+                                            <a href="https://www.google.com/maps/dir/?api=1&origin=Z%C3%BCbeyde%20Han%C4%B1m%20Mahallesi%20643%20Sokak%20No%3A%203/19%20Alt%C4%B1nda%C4%9F/ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank" rel="noopener">
                                                 <svg class="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none">
                                                     <path d="M9 20L17 4M9 20L3 14M9 20L9 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
@@ -345,14 +346,14 @@
                                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
-                                            <a href="https://www.google.com/maps/place/HACETTEPE%20MAHALLES%C4%B0%20HACI%20BAYRAM%20BULVARI%20NO%3A40%20ALTINDA%C4%9E/ANKARA" class="text-red-600 hover:text-red-700" target="_blank">Google Maps</a>
+                                            <a href="https://www.google.com/maps/place/HACETTEPE%20MAHALLES%C4%B0%20HACI%20BAYRAM%20BULVARI%20NO%3A40%20ALTINDA%C4%9E/ANKARA" class="text-red-600 hover:text-red-700" target="_blank" rel="noopener">Google Maps</a>
                                         </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
                                                 <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
                                             <span class="text-gray-600">Toplu Taşıma: <strong class="text-green-600">22.0 km (1 hour 5 mins)</strong></span>
-                                            <a href="https://www.google.com/maps/dir/?api=1&origin=HACETTEPE%20MAHALLES%C4%B0%20HACI%20BAYRAM%20BULVARI%20NO%3A40%20ALTINDA%C4%9E/ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank">
+                                            <a href="https://www.google.com/maps/dir/?api=1&origin=HACETTEPE%20MAHALLES%C4%B0%20HACI%20BAYRAM%20BULVARI%20NO%3A40%20ALTINDA%C4%9E/ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank" rel="noopener">
                                                 <svg class="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none">
                                                     <path d="M9 20L17 4M9 20L3 14M9 20L9 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
@@ -382,14 +383,14 @@
                                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
-                                            <a href="https://www.google.com/maps/place/Mogan+%C3%96%C4%9Frenci+Yurdu/@39.7826639,32.8086255,20.5z/" class="text-red-600 hover:text-red-700" target="_blank">Google Maps</a>
+                                            <a href="https://www.google.com/maps/place/Mogan+%C3%96%C4%9Frenci+Yurdu/@39.7826639,32.8086255,20.5z/" class="text-red-600 hover:text-red-700" target="_blank" rel="noopener">Google Maps</a>
                                         </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
                                                 <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
                                             <span class="text-gray-600">Toplu Taşıma: <strong class="text-green-600">27.3 km (1 hour 20 mins)</strong></span>
-                                            <a href="https://www.google.com/maps/dir/?api=1&origin=Bah%C3%A7eli%20Evler%20Mahallesi%20323%20Sokak%20No%3A8%20G%C3%B6lba%C5%9F%C4%B1-%20ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank">
+                                            <a href="https://www.google.com/maps/dir/?api=1&origin=Bah%C3%A7eli%20Evler%20Mahallesi%20323%20Sokak%20No%3A8%20G%C3%B6lba%C5%9F%C4%B1-%20ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank" rel="noopener">
                                                 <svg class="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none">
                                                     <path d="M9 20L17 4M9 20L3 14M9 20L9 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
@@ -419,14 +420,14 @@
                                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
-                                            <a href="https://www.google.com/maps/search/39.778668,+32.816587" class="text-red-600 hover:text-red-700" target="_blank">Google Maps</a>
+                                            <a href="https://www.google.com/maps/search/39.778668,+32.816587" class="text-red-600 hover:text-red-700" target="_blank" rel="noopener">Google Maps</a>
                                         </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
                                                 <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
                                             <span class="text-gray-600">Toplu Taşıma: <strong class="text-green-600">28.2 km (1 hour 15 mins)</strong></span>
-                                            <a href="https://www.google.com/maps/dir/?api=1&origin=KAMP%C3%9CS%20%C4%B0%C3%87%C4%B0%20BLOKLAR%3AANKARA%20%C3%9CN%C4%B0VERS%C4%B0TES%C4%B0%20G%C3%96LBA%C5%9EI%20YERLE%C5%9EKES%C4%B0%20BAH%C3%87EL%C4%B0EVLER%20MAH.%2035.CADDE%20NO%3A1%20/F%2006830%20G%C3%96LBA%C5%9EI&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank">
+                                            <a href="https://www.google.com/maps/dir/?api=1&origin=KAMP%C3%9CS%20%C4%B0%C3%87%C4%B0%20BLOKLAR%3AANKARA%20%C3%9CN%C4%B0VERS%C4%B0TES%C4%B0%20G%C3%96LBA%C5%9EI%20YERLE%C5%9EKES%C4%B0%20BAH%C3%87EL%C4%B0EVLER%20MAH.%2035.CADDE%20NO%3A1%20/F%2006830%20G%C3%96LBA%C5%9EI&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank" rel="noopener">
                                                 <svg class="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none">
                                                     <path d="M9 20L17 4M9 20L3 14M9 20L9 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
@@ -456,14 +457,14 @@
                                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
-                                            <a href="https://www.google.com/maps/search/39.785116,+32.837457" class="text-red-600 hover:text-red-700" target="_blank">Google Maps</a>
+                                            <a href="https://www.google.com/maps/search/39.785116,+32.837457" class="text-red-600 hover:text-red-700" target="_blank" rel="noopener">Google Maps</a>
                                         </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
                                                 <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
                                             <span class="text-gray-600">Toplu Taşıma: <strong class="text-green-600">29.9 km (1 hour 31 mins)</strong></span>
-                                            <a href="https://www.google.com/maps/dir/Hacettepe+%C3%9Cniversitesi,+%C3%9Cniversiteler,+Hacettepe+Beytepe+Kamp%C3%BCs%C3%BC+25+A,+06800+%C3%87ankaya%2FAnkara/39.785116,32.837457/@39.8474038,32.6859147,12z&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank">
+                                            <a href="https://www.google.com/maps/dir/Hacettepe+%C3%9Cniversitesi,+%C3%9Cniversiteler,+Hacettepe+Beytepe+Kamp%C3%BCs%C3%BC+25+A,+06800+%C3%87ankaya%2FAnkara/39.785116,32.837457/@39.8474038,32.6859147,12z&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank" rel="noopener">
                                                 <svg class="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none">
                                                     <path d="M9 20L17 4M9 20L3 14M9 20L9 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
@@ -493,14 +494,14 @@
                                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
-                                            <a href="https://www.google.com/maps/search/40.132689,+32.951799" class="text-red-600 hover:text-red-700" target="_blank">Google Maps</a>
+                                            <a href="https://www.google.com/maps/search/40.132689,+32.951799" class="text-red-600 hover:text-red-700" target="_blank" rel="noopener">Google Maps</a>
                                         </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
                                                 <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
                                             <span class="text-gray-600">Toplu Taşıma: <strong class="text-green-600">47.2 km (2 hours 7 mins)</strong></span>
-                                            <a href="https://www.google.com/maps/dir/?api=1&origin=DUMLUPINAR%20MAHALLES%C4%B0%20HARMANLAR%20K%C3%9CMEEVLER%C4%B0%20NO%3A76%20YILDIRIM%20BEYAZIT%20%C3%9CN%C4%B0VERS%C4%B0TES%C4%B0%20KAMP%C3%9CS%C3%9C%20%C4%B0%C3%87%C4%B0%20ESENBO%C4%9EA%20YERLE%C5%9EKES%C4%B0%20%C3%87UBUK/ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank">
+                                            <a href="https://www.google.com/maps/dir/?api=1&origin=DUMLUPINAR%20MAHALLES%C4%B0%20HARMANLAR%20K%C3%9CMEEVLER%C4%B0%20NO%3A76%20YILDIRIM%20BEYAZIT%20%C3%9CN%C4%B0VERS%C4%B0TES%C4%B0%20KAMP%C3%9CS%C3%9C%20%C4%B0%C3%87%C4%B0%20ESENBO%C4%9EA%20YERLE%C5%9EKES%C4%B0%20%C3%87UBUK/ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank" rel="noopener">
                                                 <svg class="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none">
                                                     <path d="M9 20L17 4M9 20L3 14M9 20L9 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
@@ -530,14 +531,14 @@
                                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
-                                            <a href="https://www.google.com/maps/place/NASUHPA%C5%9EA%20MAHALLES%C4%B0%20AYHAN%20S%C3%9CMER%20CADDES%C4%B0%20NO.%2012%20NALLIHAN/ANKARA" class="text-red-600 hover:text-red-700" target="_blank">Google Maps</a>
+                                            <a href="https://www.google.com/maps/place/NASUHPA%C5%9EA%20MAHALLES%C4%B0%20AYHAN%20S%C3%9CMER%20CADDES%C4%B0%20NO.%2012%20NALLIHAN/ANKARA" class="text-red-600 hover:text-red-700" target="_blank" rel="noopener">Google Maps</a>
                                         </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
                                                 <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
                                             <span class="text-gray-600">Toplu Taşıma: <strong class="text-green-600">165 km (3 hours 45 mins)</strong></span>
-                                            <a href="https://maps.app.goo.gl/XzQ7PnLgPcURXHTG8" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank">
+                                            <a href="https://maps.app.goo.gl/XzQ7PnLgPcURXHTG8" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank" rel="noopener">
                                                 <svg class="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none">
                                                     <path d="M9 20L17 4M9 20L3 14M9 20L9 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
@@ -581,14 +582,14 @@
                                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
-                                            <a href="https://maps.app.goo.gl/ZewV8ZnmrmBafpdn9" class="text-red-600 hover:text-red-700" target="_blank">Google Maps</a>
+                                            <a href="https://maps.app.goo.gl/ZewV8ZnmrmBafpdn9" class="text-red-600 hover:text-red-700" target="_blank" rel="noopener">Google Maps</a>
                                         </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
                                                 <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
                                             <span class="text-gray-600">Toplu Taşıma: <strong class="text-green-600">2.4 km (8 mins)</strong></span>
-                                            <a href="https://www.google.com/maps/dir/39.8712862,32.733058/Emine+%C5%9Eerife+Han%C4%B1m+KYK+K%C4%B1z+%C3%96%C4%9Frenci+Yurdu,+%C3%9Cniversiteler,+1596.+CAD+HACETTEPE+KAMP%C3%9CS%C3%9C+D:3,+06800+%C3%87ankaya%2FAnkara/@39.8785623,32.7244404,15z/" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank">
+                                            <a href="https://www.google.com/maps/dir/39.8712862,32.733058/Emine+%C5%9Eerife+Han%C4%B1m+KYK+K%C4%B1z+%C3%96%C4%9Frenci+Yurdu,+%C3%9Cniversiteler,+1596.+CAD+HACETTEPE+KAMP%C3%9CS%C3%9C+D:3,+06800+%C3%87ankaya%2FAnkara/@39.8785623,32.7244404,15z/" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank" rel="noopener">
                                                 <svg class="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none">
                                                     <path d="M9 20L17 4M9 20L3 14M9 20L9 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
@@ -618,14 +619,14 @@
                                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
-                                            <a href="https://www.google.com/maps/place/BE%C5%9ETEPE%20MAH.%20ALPARSLAN%20T%C3%9CRKE%C5%9E%20CAD.%20NO%3A3%20YEN%C4%B0MAHALLE-ANKARA" class="text-red-600 hover:text-red-700" target="_blank">Google Maps</a>
+                                            <a href="https://www.google.com/maps/place/BE%C5%9ETEPE%20MAH.%20ALPARSLAN%20T%C3%9CRKE%C5%9E%20CAD.%20NO%3A3%20YEN%C4%B0MAHALLE-ANKARA" class="text-red-600 hover:text-red-700" target="_blank" rel="noopener">Google Maps</a>
                                         </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
                                                 <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
                                             <span class="text-gray-600">Toplu Taşıma: <strong class="text-green-600">13.4 km (47 mins)</strong></span>
-                                            <a href="https://www.google.com/maps/dir/?api=1&origin=BE%C5%9ETEPE%20MAH.%20ALPARSLAN%20T%C3%9CRKE%C5%9E%20CAD.%20NO%3A3%20YEN%C4%B0MAHALLE-ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank">
+                                            <a href="https://www.google.com/maps/dir/?api=1&origin=BE%C5%9ETEPE%20MAH.%20ALPARSLAN%20T%C3%9CRKE%C5%9E%20CAD.%20NO%3A3%20YEN%C4%B0MAHALLE-ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank" rel="noopener">
                                                 <svg class="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none">
                                                     <path d="M9 20L17 4M9 20L3 14M9 20L9 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
@@ -655,14 +656,14 @@
                                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
-                                            <a href="https://www.google.com/maps/place/BE%C5%9ETEPELER%20MAH.%20MER%C4%B0%C3%87%20SOK.%20NO%3A9%20BE%C5%9ETEPE%20YEN%C4%B0MAHALLE/ANKARA" class="text-red-600 hover:text-red-700" target="_blank">Google Maps</a>
+                                            <a href="https://www.google.com/maps/place/BE%C5%9ETEPELER%20MAH.%20MER%C4%B0%C3%87%20SOK.%20NO%3A9%20BE%C5%9ETEPE%20YEN%C4%B0MAHALLE/ANKARA" class="text-red-600 hover:text-red-700" target="_blank" rel="noopener">Google Maps</a>
                                         </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
                                                 <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
                                             <span class="text-gray-600">Toplu Taşıma: <strong class="text-green-600">13.9 km (48 mins)</strong></span>
-                                            <a href="https://www.google.com/maps/dir/?api=1&origin=BE%C5%9ETEPELER%20MAH.%20MER%C4%B0%C3%87%20SOK.%20NO%3A9%20BE%C5%9ETEPE%20YEN%C4%B0MAHALLE/ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank">
+                                            <a href="https://www.google.com/maps/dir/?api=1&origin=BE%C5%9ETEPELER%20MAH.%20MER%C4%B0%C3%87%20SOK.%20NO%3A9%20BE%C5%9ETEPE%20YEN%C4%B0MAHALLE/ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank" rel="noopener">
                                                 <svg class="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none">
                                                     <path d="M9 20L17 4M9 20L3 14M9 20L9 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
@@ -692,14 +693,14 @@
                                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
-                                            <a href="https://www.google.com/maps/place/Be%C5%9Ftepeler%20Mah.%20Meri%C3%A7%20Sok.%20No%3A11%20Yenimahalle/ANKARA" class="text-red-600 hover:text-red-700" target="_blank">Google Maps</a>
+                                            <a href="https://www.google.com/maps/place/Be%C5%9Ftepeler%20Mah.%20Meri%C3%A7%20Sok.%20No%3A11%20Yenimahalle/ANKARA" class="text-red-600 hover:text-red-700" target="_blank" rel="noopener">Google Maps</a>
                                         </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
                                                 <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
                                             <span class="text-gray-600">Toplu Taşıma: <strong class="text-green-600">14.0 km (49 mins)</strong></span>
-                                            <a href="https://www.google.com/maps/dir/?api=1&origin=Be%C5%9Ftepeler%20Mah.%20Meri%C3%A7%20Sok.%20No%3A11%20Yenimahalle/ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank">
+                                            <a href="https://www.google.com/maps/dir/?api=1&origin=Be%C5%9Ftepeler%20Mah.%20Meri%C3%A7%20Sok.%20No%3A11%20Yenimahalle/ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank" rel="noopener">
                                                 <svg class="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none">
                                                     <path d="M9 20L17 4M9 20L3 14M9 20L9 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
@@ -729,14 +730,14 @@
                                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
-                                            <a href="https://maps.app.goo.gl/YvYDdv37fQbdoaFn7" class="text-red-600 hover:text-red-700" target="_blank">Google Maps</a>
+                                            <a href="https://maps.app.goo.gl/YvYDdv37fQbdoaFn7" class="text-red-600 hover:text-red-700" target="_blank" rel="noopener">Google Maps</a>
                                         </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
                                                 <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
                                             <span class="text-gray-600">Toplu Taşıma: <strong class="text-green-600">14.3 km (1 hour 15 mins)</strong></span>
-                                            <a href="https://www.google.com/maps/dir/Hacettepe+%C3%9Cniversitesi,+%C3%9Cniversiteler,+Hacettepe+Beytepe+Kamp%C3%BCs%C3%BC+25+A,+06800+%C3%87ankaya%2FAnkara/Ba%C4%9Fl%C4%B1ca+K%C4%B1z+%C3%96%C4%9Frenci+Yurdu,+Ba%C4%9Fl%C4%B1ca,+Hilal+Cd.,+06790+Etimesgut%2FAnkara/@39.878458,32.6644936,13z" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank">
+                                            <a href="https://www.google.com/maps/dir/Hacettepe+%C3%9Cniversitesi,+%C3%9Cniversiteler,+Hacettepe+Beytepe+Kamp%C3%BCs%C3%BC+25+A,+06800+%C3%87ankaya%2FAnkara/Ba%C4%9Fl%C4%B1ca+K%C4%B1z+%C3%96%C4%9Frenci+Yurdu,+Ba%C4%9Fl%C4%B1ca,+Hilal+Cd.,+06790+Etimesgut%2FAnkara/@39.878458,32.6644936,13z" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank" rel="noopener">
                                                 <svg class="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none">
                                                     <path d="M9 20L17 4M9 20L3 14M9 20L9 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
@@ -766,14 +767,14 @@
                                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
-                                            <a href="https://www.google.com/maps/place/Emniyet%20Mah.%20Mevlana%20Bulvar%C4%B1%20No%3A%2048/1%20Yenimahalle%20/%20ANKARA" class="text-red-600 hover:text-red-700" target="_blank">Google Maps</a>
+                                            <a href="https://www.google.com/maps/place/Emniyet%20Mah.%20Mevlana%20Bulvar%C4%B1%20No%3A%2048/1%20Yenimahalle%20/%20ANKARA" class="text-red-600 hover:text-red-700" target="_blank" rel="noopener">Google Maps</a>
                                         </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
                                                 <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
                                             <span class="text-gray-600">Toplu Taşıma: <strong class="text-green-600">14.8 km (51 mins)</strong></span>
-                                            <a href="https://www.google.com/maps/dir/?api=1&origin=Emniyet%20Mah.%20Mevlana%20Bulvar%C4%B1%20No%3A%2048/1%20Yenimahalle%20/%20ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank">
+                                            <a href="https://www.google.com/maps/dir/?api=1&origin=Emniyet%20Mah.%20Mevlana%20Bulvar%C4%B1%20No%3A%2048/1%20Yenimahalle%20/%20ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank" rel="noopener">
                                                 <svg class="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none">
                                                     <path d="M9 20L17 4M9 20L3 14M9 20L9 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
@@ -803,14 +804,14 @@
                                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
-                                            <a href="https://maps.app.goo.gl/SZkUsXtGvuB8DPDa6" class="text-red-600 hover:text-red-700" target="_blank">Google Maps</a>
+                                            <a href="https://maps.app.goo.gl/SZkUsXtGvuB8DPDa6" class="text-red-600 hover:text-red-700" target="_blank" rel="noopener">Google Maps</a>
                                         </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
                                                 <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
                                             <span class="text-gray-600">Toplu Taşıma: <strong class="text-green-600">15.0 km (49 mins)</strong></span>
-                                            <a href="https://www.google.com/maps/dir/?api=1&origin=EMN%C4%B0YET%20Mah.%20BANDIRMA%20Cad.%201.%20BLOK%20Sit.%20KIZ%20%C3%96%C4%9ER.YURDU%20Apt.%20No%3A%2011%20A%20/%20101%20MERKEZ-MERKEZ%20/%20YEN%C4%B0MAHALLE%20/%20ANKARA%20Bina%20Kodu%3A%20908304&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank">
+                                            <a href="https://www.google.com/maps/dir/?api=1&origin=EMN%C4%B0YET%20Mah.%20BANDIRMA%20Cad.%201.%20BLOK%20Sit.%20KIZ%20%C3%96%C4%9ER.YURDU%20Apt.%20No%3A%2011%20A%20/%20101%20MERKEZ-MERKEZ%20/%20YEN%C4%B0MAHALLE%20/%20ANKARA%20Bina%20Kodu%3A%20908304&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank" rel="noopener">
                                                 <svg class="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none">
                                                     <path d="M9 20L17 4M9 20L3 14M9 20L9 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
@@ -840,14 +841,14 @@
                                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
-                                            <a href="https://www.google.com/maps/place/EMN%C4%B0YET%20MAH.%20BO%C4%9EAZ%C4%B0%C3%87%C4%B0%20SOK.%20NO%3A4%20YEN%C4%B0MAHALLE%20ANKARA" class="text-red-600 hover:text-red-700" target="_blank">Google Maps</a>
+                                            <a href="https://www.google.com/maps/place/EMN%C4%B0YET%20MAH.%20BO%C4%9EAZ%C4%B0%C3%87%C4%B0%20SOK.%20NO%3A4%20YEN%C4%B0MAHALLE%20ANKARA" class="text-red-600 hover:text-red-700" target="_blank" rel="noopener">Google Maps</a>
                                         </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
                                                 <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
                                             <span class="text-gray-600">Toplu Taşıma: <strong class="text-green-600">15.2 km (52 mins)</strong></span>
-                                            <a href="https://www.google.com/maps/dir/?api=1&origin=EMN%C4%B0YET%20MAH.%20BO%C4%9EAZ%C4%B0%C3%87%C4%B0%20SOK.%20NO%3A4%20YEN%C4%B0MAHALLE%20ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank">
+                                            <a href="https://www.google.com/maps/dir/?api=1&origin=EMN%C4%B0YET%20MAH.%20BO%C4%9EAZ%C4%B0%C3%87%C4%B0%20SOK.%20NO%3A4%20YEN%C4%B0MAHALLE%20ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank" rel="noopener">
                                                 <svg class="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none">
                                                     <path d="M9 20L17 4M9 20L3 14M9 20L9 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
@@ -877,14 +878,14 @@
                                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
-                                            <a href="https://www.google.com/maps/place/TOPRAKLIK%20MAHALLES%C4%B0%20%C3%87AMKORU%20CADDES%C4%B0%20NO%3A25-30%20%C3%87ANKAYA/ANKARA" class="text-red-600 hover:text-red-700" target="_blank">Google Maps</a>
+                                            <a href="https://www.google.com/maps/place/TOPRAKLIK%20MAHALLES%C4%B0%20%C3%87AMKORU%20CADDES%C4%B0%20NO%3A25-30%20%C3%87ANKAYA/ANKARA" class="text-red-600 hover:text-red-700" target="_blank" rel="noopener">Google Maps</a>
                                         </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
                                                 <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
                                             <span class="text-gray-600">Toplu Taşıma: <strong class="text-green-600">18.1 km (1 hour 2 mins)</strong></span>
-                                            <a href="https://www.google.com/maps/dir/?api=1&origin=TOPRAKLIK%20MAHALLES%C4%B0%20%C3%87AMKORU%20CADDES%C4%B0%20NO%3A25-30%20%C3%87ANKAYA/ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank">
+                                            <a href="https://www.google.com/maps/dir/?api=1&origin=TOPRAKLIK%20MAHALLES%C4%B0%20%C3%87AMKORU%20CADDES%C4%B0%20NO%3A25-30%20%C3%87ANKAYA/ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank" rel="noopener">
                                                 <svg class="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none">
                                                     <path d="M9 20L17 4M9 20L3 14M9 20L9 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
@@ -914,14 +915,14 @@
                                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
-                                            <a href="https://www.google.com/maps/place/DEM%C4%B0RL%C4%B0BAH%C3%87E%20MAHALLES%C4%B0%20PLEVNE%20CADDES%C4%B0%20NO%3A4%20MAMAK/ANKARA" class="text-red-600 hover:text-red-700" target="_blank">Google Maps</a>
+                                            <a href="https://www.google.com/maps/place/DEM%C4%B0RL%C4%B0BAH%C3%87E%20MAHALLES%C4%B0%20PLEVNE%20CADDES%C4%B0%20NO%3A4%20MAMAK/ANKARA" class="text-red-600 hover:text-red-700" target="_blank" rel="noopener">Google Maps</a>
                                         </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
                                                 <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
                                             <span class="text-gray-600">Toplu Taşıma: <strong class="text-green-600">19.1 km (55 mins)</strong></span>
-                                            <a href="https://www.google.com/maps/dir/?api=1&origin=DEM%C4%B0RL%C4%B0BAH%C3%87E%20MAHALLES%C4%B0%20PLEVNE%20CADDES%C4%B0%20NO%3A4%20MAMAK/ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank">
+                                            <a href="https://www.google.com/maps/dir/?api=1&origin=DEM%C4%B0RL%C4%B0BAH%C3%87E%20MAHALLES%C4%B0%20PLEVNE%20CADDES%C4%B0%20NO%3A4%20MAMAK/ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank" rel="noopener">
                                                 <svg class="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none">
                                                     <path d="M9 20L17 4M9 20L3 14M9 20L9 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
@@ -951,14 +952,14 @@
                                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
-                                            <a href="https://www.google.com/maps/place/Emniyet%20Mahallesi%20Hipodrom%20Cad.No%3A9%20/19%20Ofis/13%20Merkez%20/Yenimahalle%20/ANKARA" class="text-red-600 hover:text-red-700" target="_blank">Google Maps</a>
+                                            <a href="https://www.google.com/maps/place/Emniyet%20Mahallesi%20Hipodrom%20Cad.No%3A9%20/19%20Ofis/13%20Merkez%20/Yenimahalle%20/ANKARA" class="text-red-600 hover:text-red-700" target="_blank" rel="noopener">Google Maps</a>
                                         </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
                                                 <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
                                             <span class="text-gray-600">Toplu Taşıma: <strong class="text-green-600">19.5 km (56 mins)</strong></span>
-                                            <a href="https://www.google.com/maps/dir/?api=1&origin=Emniyet%20Mahallesi%20Hipodrom%20Cad.No%3A9%20/19%20Ofis/13%20Merkez%20/Yenimahalle%20/ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank">
+                                            <a href="https://www.google.com/maps/dir/?api=1&origin=Emniyet%20Mahallesi%20Hipodrom%20Cad.No%3A9%20/19%20Ofis/13%20Merkez%20/Yenimahalle%20/ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank" rel="noopener">
                                                 <svg class="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none">
                                                     <path d="M9 20L17 4M9 20L3 14M9 20L9 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
@@ -988,14 +989,14 @@
                                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
-                                            <a href="https://maps.app.goo.gl/CVXh1w22vVNj6FGw6" class="text-red-600 hover:text-red-700" target="_blank">Google Maps</a>
+                                            <a href="https://maps.app.goo.gl/CVXh1w22vVNj6FGw6" class="text-red-600 hover:text-red-700" target="_blank" rel="noopener">Google Maps</a>
                                         </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
                                                 <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
                                             <span class="text-gray-600">Toplu Taşıma: <strong class="text-green-600">19.7 km (1 hour 6 mins)</strong></span>
-                                            <a href="https://www.google.com/maps/dir/ET%C4%B0MESGUT+ERYAMAN+YURDU,+Eryaman,+4020.+Sk.,+Etimesgut%2FAnkara/39.8712862,32.733058/@39.9668843,32.6098665,21z" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank">
+                                            <a href="https://www.google.com/maps/dir/ET%C4%B0MESGUT+ERYAMAN+YURDU,+Eryaman,+4020.+Sk.,+Etimesgut%2FAnkara/39.8712862,32.733058/@39.9668843,32.6098665,21z" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank" rel="noopener">
                                                 <svg class="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none">
                                                     <path d="M9 20L17 4M9 20L3 14M9 20L9 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
@@ -1025,14 +1026,14 @@
                                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
-                                            <a href="https://www.google.com/maps/place/ALTINEVLER%20MAH.%20PLEVNE%20CAD.%20NO%3A45%20MAMAK/ANKARA" class="text-red-600 hover:text-red-700" target="_blank">Google Maps</a>
+                                            <a href="https://www.google.com/maps/place/ALTINEVLER%20MAH.%20PLEVNE%20CAD.%20NO%3A45%20MAMAK/ANKARA" class="text-red-600 hover:text-red-700" target="_blank" rel="noopener">Google Maps</a>
                                         </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
                                                 <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
                                             <span class="text-gray-600">Toplu Taşıma: <strong class="text-green-600">21.2 km (57 mins)</strong></span>
-                                            <a href="https://www.google.com/maps/dir/?api=1&origin=ALTINEVLER%20MAH.%20PLEVNE%20CAD.%20NO%3A45%20MAMAK/ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank">
+                                            <a href="https://www.google.com/maps/dir/?api=1&origin=ALTINEVLER%20MAH.%20PLEVNE%20CAD.%20NO%3A45%20MAMAK/ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank" rel="noopener">
                                                 <svg class="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none">
                                                     <path d="M9 20L17 4M9 20L3 14M9 20L9 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
@@ -1062,14 +1063,14 @@
                                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
-                                            <a href="https://www.google.com/maps/place/%C3%96rnek%20Mah.%20Ay%C3%A7e%20Sok.%20No%3A4%20ALTINDA%C4%9E/ANKARA" class="text-red-600 hover:text-red-700" target="_blank">Google Maps</a>
+                                            <a href="https://www.google.com/maps/place/%C3%96rnek%20Mah.%20Ay%C3%A7e%20Sok.%20No%3A4%20ALTINDA%C4%9E/ANKARA" class="text-red-600 hover:text-red-700" target="_blank" rel="noopener">Google Maps</a>
                                         </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
                                                 <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
                                             <span class="text-gray-600">Toplu Taşıma: <strong class="text-green-600">21.3 km (1 hour 7 mins)</strong></span>
-                                            <a href="https://www.google.com/maps/dir/?api=1&origin=%C3%96rnek%20Mah.%20Ay%C3%A7e%20Sok.%20No%3A4%20ALTINDA%C4%9E/ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank">
+                                            <a href="https://www.google.com/maps/dir/?api=1&origin=%C3%96rnek%20Mah.%20Ay%C3%A7e%20Sok.%20No%3A4%20ALTINDA%C4%9E/ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank" rel="noopener">
                                                 <svg class="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none">
                                                     <path d="M9 20L17 4M9 20L3 14M9 20L9 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
@@ -1099,14 +1100,14 @@
                                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
-                                            <a href="https://www.google.com/maps/place/%C5%9EEFKAT%20MAHALLES%C4%B0%2060.%20SOK.%20NO%3A18%20SUBAYEVLER%C4%B0/KE%C3%87%C4%B0%C3%96REN/ANKARA" class="text-red-600 hover:text-red-700" target="_blank">Google Maps</a>
+                                            <a href="https://www.google.com/maps/place/%C5%9EEFKAT%20MAHALLES%C4%B0%2060.%20SOK.%20NO%3A18%20SUBAYEVLER%C4%B0/KE%C3%87%C4%B0%C3%96REN/ANKARA" class="text-red-600 hover:text-red-700" target="_blank" rel="noopener">Google Maps</a>
                                         </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
                                                 <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
                                             <span class="text-gray-600">Toplu Taşıma: <strong class="text-green-600">23.6 km (1 hour 0 mins)</strong></span>
-                                            <a href="https://www.google.com/maps/dir/?api=1&origin=%C5%9EEFKAT%20MAHALLES%C4%B0%2060.%20SOK.%20NO%3A18%20SUBAYEVLER%C4%B0/KE%C3%87%C4%B0%C3%96REN/ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank">
+                                            <a href="https://www.google.com/maps/dir/?api=1&origin=%C5%9EEFKAT%20MAHALLES%C4%B0%2060.%20SOK.%20NO%3A18%20SUBAYEVLER%C4%B0/KE%C3%87%C4%B0%C3%96REN/ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank" rel="noopener">
                                                 <svg class="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none">
                                                     <path d="M9 20L17 4M9 20L3 14M9 20L9 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
@@ -1137,14 +1138,14 @@
                                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
-                                            <a href="https://www.google.com/maps/place/Ye%C5%9Filevler%20Mah.%20%C4%B0vedik%20Cad.%20934.%20Sok..%20No%3A%202%20YEN%C4%B0MAHALLE%20/%20ANKARA%20Bina%20Kodu%3A%2029131013" class="text-red-600 hover:text-red-700" target="_blank">Google Maps</a>
+                                            <a href="https://www.google.com/maps/place/Ye%C5%9Filevler%20Mah.%20%C4%B0vedik%20Cad.%20934.%20Sok..%20No%3A%202%20YEN%C4%B0MAHALLE%20/%20ANKARA%20Bina%20Kodu%3A%2029131013" class="text-red-600 hover:text-red-700" target="_blank" rel="noopener">Google Maps</a>
                                         </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
                                                 <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
                                             <span class="text-gray-600">Toplu Taşıma: <strong class="text-green-600">26.2 km (1 hour 20 mins)</strong></span>
-                                            <a href="https://www.google.com/maps/dir/?api=1&origin=Ye%C5%9Filevler%20Mah.%20%C4%B0vedik%20Cad.%20934.%20Sok..%20No%3A%202%20YEN%C4%B0MAHALLE%20/%20ANKARA%20Bina%20Kodu%3A%2029131013&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank">
+                                            <a href="https://www.google.com/maps/dir/?api=1&origin=Ye%C5%9Filevler%20Mah.%20%C4%B0vedik%20Cad.%20934.%20Sok..%20No%3A%202%20YEN%C4%B0MAHALLE%20/%20ANKARA%20Bina%20Kodu%3A%2029131013&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank" rel="noopener">
                                                 <svg class="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none">
                                                     <path d="M9 20L17 4M9 20L3 14M9 20L9 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
@@ -1174,14 +1175,14 @@
                                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
-                                            <a href="https://www.google.com/maps/place/Yukar%C4%B1%20Dikmen%20Mah.%20Ne%C5%9Fet%20Erta%C5%9F%20Cad.%20No%3A4/7%20%C3%87ankaya/ANKARA" class="text-red-600 hover:text-red-700" target="_blank">Google Maps</a>
+                                            <a href="https://www.google.com/maps/place/Yukar%C4%B1%20Dikmen%20Mah.%20Ne%C5%9Fet%20Erta%C5%9F%20Cad.%20No%3A4/7%20%C3%87ankaya/ANKARA" class="text-red-600 hover:text-red-700" target="_blank" rel="noopener">Google Maps</a>
                                         </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
                                                 <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
                                             <span class="text-gray-600">Toplu Taşıma: <strong class="text-green-600">26.9 km (1 hour 26 mins)</strong></span>
-                                            <a href="https://www.google.com/maps/dir/?api=1&origin=Yukar%C4%B1%20Dikmen%20Mah.%20Ne%C5%9Fet%20Erta%C5%9F%20Cad.%20No%3A4/7%20%C3%87ankaya/ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank">
+                                            <a href="https://www.google.com/maps/dir/?api=1&origin=Yukar%C4%B1%20Dikmen%20Mah.%20Ne%C5%9Fet%20Erta%C5%9F%20Cad.%20No%3A4/7%20%C3%87ankaya/ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank" rel="noopener">
                                                 <svg class="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none">
                                                     <path d="M9 20L17 4M9 20L3 14M9 20L9 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
@@ -1211,14 +1212,14 @@
                                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
-                                            <a href="https://maps.app.goo.gl/qx3NjHkaXYvu3UnK8" class="text-red-600 hover:text-red-700" target="_blank">Google Maps</a>
+                                            <a href="https://maps.app.goo.gl/qx3NjHkaXYvu3UnK8" class="text-red-600 hover:text-red-700" target="_blank" rel="noopener">Google Maps</a>
                                         </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
                                                 <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
                                             <span class="text-gray-600">Toplu Taşıma: <strong class="text-green-600">32.5 km (1 hour 37 mins)</strong></span>
-                                            <a href="https://www.google.com/maps/dir/KYK+Milli+%C4%B0rade+K%C4%B1z+%C3%96%C4%9Frenci+Yurdu,+Bah%C3%A7elievler,+D750,+G%C3%B6lba%C5%9F%C4%B1%2FAnkara/39.8712862,32.733058/@39.7764361,32.8167545,21z" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank">
+                                            <a href="https://www.google.com/maps/dir/KYK+Milli+%C4%B0rade+K%C4%B1z+%C3%96%C4%9Frenci+Yurdu,+Bah%C3%A7elievler,+D750,+G%C3%B6lba%C5%9F%C4%B1%2FAnkara/39.8712862,32.733058/@39.7764361,32.8167545,21z" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank" rel="noopener">
                                                 <svg class="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none">
                                                     <path d="M9 20L17 4M9 20L3 14M9 20L9 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
@@ -1248,14 +1249,14 @@
                                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
-                                            <a href="https://maps.app.goo.gl/1AWeEhcNv3cdgBC9A" class="text-red-600 hover:text-red-700" target="_blank">Google Maps</a>
+                                            <a href="https://maps.app.goo.gl/1AWeEhcNv3cdgBC9A" class="text-red-600 hover:text-red-700" target="_blank" rel="noopener">Google Maps</a>
                                         </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
                                                 <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
                                             <span class="text-gray-600">Toplu Taşıma: <strong class="text-green-600">32.5 km (1 hour 37 mins)</strong></span>
-                                            <a href="http://google.com/maps/dir/%C5%9Eehit+%C3%96zel+Harekat%C3%A7%C4%B1lar+K%C4%B1z+%C3%96%C4%9Frenci+Yurdu,+Bah%C3%A7elievler,+G%C3%B6lba%C5%9F%C4%B1%2FAnkara/39.8712862,32.733058/@39.7788313,32.8144646,17.75z" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank">
+                                            <a href="http://google.com/maps/dir/%C5%9Eehit+%C3%96zel+Harekat%C3%A7%C4%B1lar+K%C4%B1z+%C3%96%C4%9Frenci+Yurdu,+Bah%C3%A7elievler,+G%C3%B6lba%C5%9F%C4%B1%2FAnkara/39.8712862,32.733058/@39.7788313,32.8144646,17.75z" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank" rel="noopener">
                                                 <svg class="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none">
                                                     <path d="M9 20L17 4M9 20L3 14M9 20L9 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
@@ -1285,14 +1286,14 @@
                                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
-                                            <a href="https://www.google.com/maps/place/Bat%C4%B1%20Sitesi%20Mah.%202336%20Sok.%20No%3A1%20Yenimahalle/ANKARA" class="text-red-600 hover:text-red-700" target="_blank">Google Maps</a>
+                                            <a href="https://www.google.com/maps/place/Bat%C4%B1%20Sitesi%20Mah.%202336%20Sok.%20No%3A1%20Yenimahalle/ANKARA" class="text-red-600 hover:text-red-700" target="_blank" rel="noopener">Google Maps</a>
                                         </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
                                                 <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
                                             <span class="text-gray-600">Toplu Taşıma: <strong class="text-green-600">34.0 km (1 hour 25 mins)</strong></span>
-                                            <a href="https://www.google.com/maps/dir/?api=1&origin=Bat%C4%B1%20Sitesi%20Mah.%202336%20Sok.%20No%3A1%20Yenimahalle/ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank">
+                                            <a href="https://www.google.com/maps/dir/?api=1&origin=Bat%C4%B1%20Sitesi%20Mah.%202336%20Sok.%20No%3A1%20Yenimahalle/ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank" rel="noopener">
                                                 <svg class="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none">
                                                     <path d="M9 20L17 4M9 20L3 14M9 20L9 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
@@ -1322,14 +1323,14 @@
                                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
-                                            <a href="https://maps.app.goo.gl/AmvCzzwKaKK4XCXo7" class="text-red-600 hover:text-red-700" target="_blank">Google Maps</a>
+                                            <a href="https://maps.app.goo.gl/AmvCzzwKaKK4XCXo7" class="text-red-600 hover:text-red-700" target="_blank" rel="noopener">Google Maps</a>
                                         </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
                                                 <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
                                             <span class="text-gray-600">Toplu Taşıma: <strong class="text-green-600">47.2 km (2 hours 7 mins)</strong></span>
-                                            <a href="https://www.google.com/maps/dir/Gsb+ba%C5%9Fkent+yurtlar%C4%B1+1,+Dumlup%C4%B1nar,+%C3%87ubuk%2FAnkara/39.8712862,32.733058/@40.0034204,32.6914262,11z" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank">
+                                            <a href="https://www.google.com/maps/dir/Gsb+ba%C5%9Fkent+yurtlar%C4%B1+1,+Dumlup%C4%B1nar,+%C3%87ubuk%2FAnkara/39.8712862,32.733058/@40.0034204,32.6914262,11z" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank" rel="noopener">
                                                 <svg class="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none">
                                                     <path d="M9 20L17 4M9 20L3 14M9 20L9 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
@@ -1359,14 +1360,14 @@
                                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
-                                            <a href="https://www.google.com/maps/place/Y%C4%B1ld%C4%B1r%C4%B1m%20Beyaz%C4%B1t%20Mah.%20A%C4%9Fr%C4%B1%20Sok.%20No%3A3%20%C3%87ubuk/ANKARA" class="text-red-600 hover:text-red-700" target="_blank">Google Maps</a>
+                                            <a href="https://www.google.com/maps/place/Y%C4%B1ld%C4%B1r%C4%B1m%20Beyaz%C4%B1t%20Mah.%20A%C4%9Fr%C4%B1%20Sok.%20No%3A3%20%C3%87ubuk/ANKARA" class="text-red-600 hover:text-red-700" target="_blank" rel="noopener">Google Maps</a>
                                         </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
                                                 <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
                                             <span class="text-gray-600">Toplu Taşıma: <strong class="text-green-600">56.7 km (1 hour 55 mins)</strong></span>
-                                            <a href="https://www.google.com/maps/dir/?api=1&origin=Y%C4%B1ld%C4%B1r%C4%B1m%20Beyaz%C4%B1t%20Mah.%20A%C4%9Fr%C4%B1%20Sok.%20No%3A3%20%C3%87ubuk/ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank">
+                                            <a href="https://www.google.com/maps/dir/?api=1&origin=Y%C4%B1ld%C4%B1r%C4%B1m%20Beyaz%C4%B1t%20Mah.%20A%C4%9Fr%C4%B1%20Sok.%20No%3A3%20%C3%87ubuk/ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank" rel="noopener">
                                                 <svg class="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none">
                                                     <path d="M9 20L17 4M9 20L3 14M9 20L9 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
@@ -1396,14 +1397,14 @@
                                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
-                                            <a href="https://maps.app.goo.gl/EoooCvhZ4venBa1q6" class="text-red-600 hover:text-red-700" target="_blank">Google Maps</a>
+                                            <a href="https://maps.app.goo.gl/EoooCvhZ4venBa1q6" class="text-red-600 hover:text-red-700" target="_blank" rel="noopener">Google Maps</a>
                                         </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
                                                 <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
                                             <span class="text-gray-600">Toplu Taşıma: <strong class="text-green-600">57.1 km (3 hour 12 mins)</strong></span>
-                                            <a href="https://www.google.com/maps/dir/?api=1&origin=Yeni%20Mah.%20Eski%20Ankara%20Yolu%20Cad.%20No%3A%2018%20/%201%20Haymana/%20ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank">
+                                            <a href="https://www.google.com/maps/dir/?api=1&origin=Yeni%20Mah.%20Eski%20Ankara%20Yolu%20Cad.%20No%3A%2018%20/%201%20Haymana/%20ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank" rel="noopener">
                                                 <svg class="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none">
                                                     <path d="M9 20L17 4M9 20L3 14M9 20L9 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
@@ -1433,14 +1434,14 @@
                                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
-                                            <a href="https://maps.app.goo.gl/MzN5as52qbVo386s6" class="text-red-600 hover:text-red-700" target="_blank">Google Maps</a>
+                                            <a href="https://maps.app.goo.gl/MzN5as52qbVo386s6" class="text-red-600 hover:text-red-700" target="_blank" rel="noopener">Google Maps</a>
                                         </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
                                                 <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
                                             <span class="text-gray-600">Toplu Taşıma: <strong class="text-green-600">78.8 km (2 hours 42 mins)</strong></span>
-                                            <a href="https://www.google.com/maps/dir/?api=1&origin=%C4%B0SMETPA%C5%9EA%20MAHALLES%C4%B0%20714%20ADA%206%20PARSEL%20KIZILCAHAMAM%20/%20ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank">
+                                            <a href="https://www.google.com/maps/dir/?api=1&origin=%C4%B0SMETPA%C5%9EA%20MAHALLES%C4%B0%20714%20ADA%206%20PARSEL%20KIZILCAHAMAM%20/%20ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank" rel="noopener">
                                                 <svg class="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none">
                                                     <path d="M9 20L17 4M9 20L3 14M9 20L9 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
@@ -1484,14 +1485,14 @@
                                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
-                                            <a href="https://www.google.com/maps/place/Hac%C4%B1%20Veli%20Mahallesi%20Demirli%20%C3%87akmak%20Caddesi%20No%3A4/1%20AYA%C5%9E/ANKARA" class="text-red-600 hover:text-red-700" target="_blank">Google Maps</a>
+                                            <a href="https://www.google.com/maps/place/Hac%C4%B1%20Veli%20Mahallesi%20Demirli%20%C3%87akmak%20Caddesi%20No%3A4/1%20AYA%C5%9E/ANKARA" class="text-red-600 hover:text-red-700" target="_blank" rel="noopener">Google Maps</a>
                                         </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
                                                 <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
                                             <span class="text-gray-600">Toplu Taşıma: <strong class="text-green-600">56.9 km (1 hour 55 mins)</strong></span>
-                                            <a href="https://www.google.com/maps/dir/?api=1&origin=Hac%C4%B1%20Veli%20Mahallesi%20Demirli%20%C3%87akmak%20Caddesi%20No%3A4/1%20AYA%C5%9E/ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank">
+                                            <a href="https://www.google.com/maps/dir/?api=1&origin=Hac%C4%B1%20Veli%20Mahallesi%20Demirli%20%C3%87akmak%20Caddesi%20No%3A4/1%20AYA%C5%9E/ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank" rel="noopener">
                                                 <svg class="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none">
                                                     <path d="M9 20L17 4M9 20L3 14M9 20L9 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
@@ -1521,14 +1522,14 @@
                                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
-                                            <a href="https://www.google.com/maps/place/Mehmet%20Akif%20Mahallesi%20Necmettin%20Erbakan%20Bulvar%C4%B1%20TOK%C4%B0%202.%20Etap%20C1/4%20-%20C1/5%20Polatl%C4%B1/%20ANKARA" class="text-red-600 hover:text-red-700" target="_blank">Google Maps</a>
+                                            <a href="https://www.google.com/maps/place/Mehmet%20Akif%20Mahallesi%20Necmettin%20Erbakan%20Bulvar%C4%B1%20TOK%C4%B0%202.%20Etap%20C1/4%20-%20C1/5%20Polatl%C4%B1/%20ANKARA" class="text-red-600 hover:text-red-700" target="_blank" rel="noopener">Google Maps</a>
                                         </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
                                                 <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
                                             <span class="text-gray-600">Toplu Taşıma: <strong class="text-green-600">77.1 km (2 hours 38 mins)</strong></span>
-                                            <a href="https://www.google.com/maps/dir/?api=1&origin=Mehmet%20Akif%20Mahallesi%20Necmettin%20Erbakan%20Bulvar%C4%B1%20TOK%C4%B0%202.%20Etap%20C1/4%20-%20C1/5%20Polatl%C4%B1/%20ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank">
+                                            <a href="https://www.google.com/maps/dir/?api=1&origin=Mehmet%20Akif%20Mahallesi%20Necmettin%20Erbakan%20Bulvar%C4%B1%20TOK%C4%B0%202.%20Etap%20C1/4%20-%20C1/5%20Polatl%C4%B1/%20ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank" rel="noopener">
                                                 <svg class="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none">
                                                     <path d="M9 20L17 4M9 20L3 14M9 20L9 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
@@ -1558,14 +1559,14 @@
                                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
-                                            <a href="https://www.google.com/maps/place/Gazipa%C5%9Fa%20Mahallesi%20Milli%20Egemenlik%20Caddesi.%20No%3A240%20BEYPAZARI/ANKARA" class="text-red-600 hover:text-red-700" target="_blank">Google Maps</a>
+                                            <a href="https://www.google.com/maps/place/Gazipa%C5%9Fa%20Mahallesi%20Milli%20Egemenlik%20Caddesi.%20No%3A240%20BEYPAZARI/ANKARA" class="text-red-600 hover:text-red-700" target="_blank" rel="noopener">Google Maps</a>
                                         </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
                                                 <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
                                             <span class="text-gray-600">Toplu Taşıma: <strong class="text-green-600">101 km (2 hours 39 mins)</strong></span>
-                                            <a href="https://www.google.com/maps/dir/?api=1&origin=Gazipa%C5%9Fa%20Mahallesi%20Milli%20Egemenlik%20Caddesi.%20No%3A240%20BEYPAZARI/ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank">
+                                            <a href="https://www.google.com/maps/dir/?api=1&origin=Gazipa%C5%9Fa%20Mahallesi%20Milli%20Egemenlik%20Caddesi.%20No%3A240%20BEYPAZARI/ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank" rel="noopener">
                                                 <svg class="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none">
                                                     <path d="M9 20L17 4M9 20L3 14M9 20L9 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
@@ -1595,14 +1596,14 @@
                                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
-                                            <a href="https://www.google.com/maps/place/YE%C5%9E%C4%B0LOVA%20MAHALLES%C4%B0%20BA%C4%9ELAR%20CADDES%C4%B0%20NO%3A20%20%C5%9EEREFL%C4%B0KO%C3%87H%C4%B0SAR/ANKARA" class="text-red-600 hover:text-red-700" target="_blank">Google Maps</a>
+                                            <a href="https://www.google.com/maps/place/YE%C5%9E%C4%B0LOVA%20MAHALLES%C4%B0%20BA%C4%9ELAR%20CADDES%C4%B0%20NO%3A20%20%C5%9EEREFL%C4%B0KO%C3%87H%C4%B0SAR/ANKARA" class="text-red-600 hover:text-red-700" target="_blank" rel="noopener">Google Maps</a>
                                         </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
                                                 <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
                                             <span class="text-gray-600">Toplu Taşıma: <strong class="text-green-600">155 km (3 hours 29 mins)</strong></span>
-                                            <a href="https://www.google.com/maps/dir/?api=1&origin=YE%C5%9E%C4%B0LOVA%20MAHALLES%C4%B0%20BA%C4%9ELAR%20CADDES%C4%B0%20NO%3A20%20%C5%9EEREFL%C4%B0KO%C3%87H%C4%B0SAR/ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank">
+                                            <a href="https://www.google.com/maps/dir/?api=1&origin=YE%C5%9E%C4%B0LOVA%20MAHALLES%C4%B0%20BA%C4%9ELAR%20CADDES%C4%B0%20NO%3A20%20%C5%9EEREFL%C4%B0KO%C3%87H%C4%B0SAR/ANKARA&destination=39.87128624194613%2C32.733057971438676&travelmode=transit" class="ml-3 inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors" target="_blank" rel="noopener">
                                                 <svg class="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none">
                                                     <path d="M9 20L17 4M9 20L3 14M9 20L9 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
@@ -1639,6 +1640,42 @@
                     </ul>
                 </section>
         </main>
+
+        <!-- hbiz Footer -->
+        <footer class="hb-footer" role="contentinfo">
+            <div class="hb-footer-inner">
+                <div class="hb-footer-grid">
+                    <div class="hb-footer-brand">
+                        <img src="../assets/img/logo.png" alt="Hacettepe Bilgilendirme Logosu">
+                        <p>Hacettepe Üniversitesi öğrencileri ve adayları için<br>bağımsız, güncel ve doğru bilgi kaynağı.</p>
+                    </div>
+                    <div>
+                        <h2 class="hb-footer-heading">Hızlı Erişim</h2>
+                        <ul>
+                            <li><a href="/page/ogrenci-isleri.html">Öğrenci İşleri</a></li>
+                            <li><a href="/page/akademik-takvim.html">Akademik Takvim 2026-2027</a></li>
+                            <li><a href="/page/siralamalar.html">Bölüm Sıralamaları</a></li>
+                            <li><a href="/page/barinma.html">Barınma Olanakları</a></li>
+                            <li><a href="/page/kampus-haritasi.html">Kampüs Haritası</a></li>
+                            <li><a href="/page/dumansiz-kampus.html">Dumansız Kampüs</a></li>
+                            <li><a href="/page/ogrenci-topluluklari.html">Öğrenci Toplulukları</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 class="hb-footer-heading">Site</h2>
+                        <ul>
+                            <li><a href="/hakkinda.html">Site Hakkında</a></li>
+                            <li><a href="/page/iletisim.html">İletişim</a></li>
+                            <li><a href="https://github.com/hacettepebilgi/hacettepe.biz" target="_blank" rel="noopener">GitHub</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="hb-footer-bottom">
+                    <span>© 2026 Hacettepe Bilgilendirme · Bağımsız Öğrenci Kaynağı</span>
+                    <a href="/hakkinda.html">Site Hakkında</a>
+                </div>
+            </div>
+        </footer>
     </div>
 
     <script>

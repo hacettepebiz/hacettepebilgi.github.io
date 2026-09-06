@@ -2,113 +2,110 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
+    <link rel="icon" href="/assets/img/favicon.ico">
+    <meta name="theme-color" content="#dc2626">
+    <link rel="stylesheet" href="/assets/hbiz.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #ef4444;
-            --primary-light: #fee2e2;
-            --bg-color: #f9fafb;
-            --text-color: #1f2937;
-        }
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-        }
-        .error-container {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 2rem;
-        }
-        .error-code {
-            font-size: 8rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            line-height: 1;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        .error-message {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            color: var(--text-color);
-        }
-        .home-button {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.75rem 1.5rem;
-            background-color: var(--primary-color);
-            color: white;
-            border-radius: 0.5rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        .home-button:hover {
-            background-color: #dc2626;
-            transform: translateY(-2px);
-        }
-        .home-button svg {
-            margin-right: 0.5rem;
-        }
-    
-        a:focus-visible, button:focus-visible, input:focus-visible {
-            outline: 2px solid #dc2626;
-            outline-offset: 2px;
-        }
+    <meta name="robots" content="noindex, follow">
+    <title>Sayfa Bulunamadı | Hacettepe.biz</title>
+    <meta name="description" content="Aradığınız sayfa bulunamadı. Hacettepe.biz'de bölüm sıralamaları, akademik takvim, barınma ve kampüs bilgilerine ulaşabilirsiniz.">
+    <link rel="stylesheet" href="/assets/tailwind.css">
+</head>
+<body class="bg-pattern min-h-screen">
+    <a href="#icerik" class="skip-link">İçeriğe geç</a>
+    <div class="min-h-screen flex flex-col">
+        <!-- hbiz Navbar -->
+        <nav class="hb-nav" role="navigation" aria-label="Ana menü">
+            <div class="hb-nav-inner">
+                <a href="/" class="hb-nav-logo" aria-label="Ana sayfaya dön">
+                    <img src="/assets/img/logo.png" alt="Hacettepe.biz logosu">
+                    <span>Hacettepe.biz</span>
+                </a>
+                <button class="hb-nav-toggle" aria-label="Menüyü aç/kapat" onclick="this.nextElementSibling.classList.toggle('open')">
+                    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+                <ul class="hb-nav-links">
+                    <li><a href="/">Ana Sayfa</a></li>
+                    <li><a href="/page/akademik-takvim.html">Akademik Takvim</a></li>
+                    <li><a href="/page/barinma.html">Barınma</a></li>
+                    <li><a href="/page/siralamalar.html">Bölüm Sıralamaları</a></li>
+                    <li><a href="/page/kampus-olanaklari.html">Kampüs</a></li>
+                    <li><a href="/page/ogrenci-topluluklari.html">Topluluklar</a></li>
+                </ul>
+            </div>
+        </nav>
 
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-                scroll-behavior: auto !important;
-            }
-        }
-    </style>
+        <main id="icerik" class="flex-grow container mx-auto px-4 pt-12 pb-8">
+            <div class="text-center mb-10">
+                <p class="text-red-600 font-bold" style="font-size:5rem;line-height:1">404</p>
+                <h1 class="text-2xl font-semibold text-gray-900 mb-2">Aradığınız sayfa bulunamadı</h1>
+                <p class="text-gray-700">Sayfa taşınmış veya adres yanlış yazılmış olabilir.</p>
+            </div>
 
-    <title>Sayfa Bulunamadı | Hacettepe Üniversitesi Bilgilendirme</title>
-    <meta name="description" content="Aradığınız sayfa bulunamadı. Hacettepe Üniversitesi öğrenci rehberi ana sayfasına dönün.">
-    <meta name="robots" content="noindex, nofollow">
-    <meta name="author" content="Hacettepe Bilgi">
-    <meta property="og:title" content="Sayfa Bulunamadı | Hacettepe Üniversitesi Bilgilendirme">
-    <meta property="og:description" content="Aradığınız sayfa bulunamadı. Hacettepe Üniversitesi öğrenci rehberi ana sayfasına dönün.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://hacettepe.biz/404.html">
-    <meta property="og:image" content="https://hacettepe.biz/assets/img/og-default.svg">
-    <meta property="og:site_name" content="Hacettepe Bilgilendirme">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Sayfa Bulunamadı | Hacettepe Üniversitesi Bilgilendirme">
-    <meta name="twitter:description" content="Aradığınız sayfa bulunamadı. Hacettepe Üniversitesi öğrenci rehberi ana sayfasına dönün.">
-    <meta name="twitter:image" content="https://hacettepe.biz/assets/img/og-default.svg">
-    <link rel="canonical" href="https://hacettepe.biz/404.html">
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "404",
-  "description": "Aradığınız sayfa bulunamadı. Hacettepe Üniversitesi öğrenci rehberi ana sayfasına dönün.",
-  "url": "https://hacettepe.biz/404.html"
-}
-    </script></head>
-<body>
-    <div class="error-container">
-        <h1 class="error-code">404</h1>
-        <p class="error-message">Aradığınız sayfa bulunamadı</p>
-        <a href="/" class="home-button">
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M9 22V12h6v10" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            Ana Sayfaya Dön
-        </a>
+            <section class="hb-card" aria-labelledby="populer">
+                <h2 id="populer" class="text-xl font-semibold text-gray-900 mb-3">En Çok Aranan Sayfalar</h2>
+                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-gray-700">
+                    <li><a href="/page/siralamalar.html" class="text-red-600 hover:text-red-700">Bölüm Sıralamaları ve Taban Puanlar</a></li>
+                    <li><a href="/page/akademik-takvim.html" class="text-red-600 hover:text-red-700">Akademik Takvim 2026-2027</a></li>
+                    <li><a href="/page/barinma.html" class="text-red-600 hover:text-red-700">Barınma ve Yurt Başvurusu</a></li>
+                    <li><a href="/page/ulasim.html" class="text-red-600 hover:text-red-700">Kampüse Nasıl Gidilir?</a></li>
+                    <li><a href="/page/kampus-haritasi.html" class="text-red-600 hover:text-red-700">Kampüs Haritası</a></li>
+                    <li><a href="/page/iletisim.html" class="text-red-600 hover:text-red-700">Telefon Rehberi ve İletişim</a></li>
+                    <li><a href="/page/cevredeki-kyklar.html" class="text-red-600 hover:text-red-700">Çevredeki KYK Yurtları</a></li>
+                    <li><a href="/page/sss.html" class="text-red-600 hover:text-red-700">Sıkça Sorulan Sorular</a></li>
+                </ul>
+                <p class="mt-6">
+                    <a href="/" class="inline-flex items-center bg-red-600 hover:bg-red-700 text-white font-medium rounded-lg px-4 py-2 transition-colors">
+                        Ana sayfaya dön
+                        <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </p>
+            </section>
+        </main>
+
+        <!-- hbiz Footer -->
+        <footer class="hb-footer" role="contentinfo">
+            <div class="hb-footer-inner">
+                <div class="hb-footer-grid">
+                    <div class="hb-footer-brand">
+                        <img src="/assets/img/logo.png" alt="Hacettepe Bilgilendirme Logosu">
+                        <p>Hacettepe Üniversitesi öğrencileri ve adayları için<br>bağımsız, güncel ve doğru bilgi kaynağı.</p>
+                    </div>
+                    <div>
+                        <h2 class="hb-footer-heading">Hızlı Erişim</h2>
+                        <ul>
+                            <li><a href="/page/ogrenci-isleri.html">Öğrenci İşleri</a></li>
+                            <li><a href="/page/akademik-takvim.html">Akademik Takvim 2026-2027</a></li>
+                            <li><a href="/page/siralamalar.html">Bölüm Sıralamaları</a></li>
+                            <li><a href="/page/barinma.html">Barınma Olanakları</a></li>
+                            <li><a href="/page/kampus-haritasi.html">Kampüs Haritası</a></li>
+                            <li><a href="/page/dumansiz-kampus.html">Dumansız Kampüs</a></li>
+                            <li><a href="/page/ogrenci-topluluklari.html">Öğrenci Toplulukları</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 class="hb-footer-heading">Site</h2>
+                        <ul>
+                            <li><a href="/hakkinda.html">Site Hakkında</a></li>
+                            <li><a href="/page/iletisim.html">İletişim</a></li>
+                            <li><a href="https://github.com/hacettepebilgi/hacettepe.biz" target="_blank" rel="noopener">GitHub</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="hb-footer-bottom">
+                    <span>© 2026 Hacettepe Bilgilendirme · Bağımsız Öğrenci Kaynağı</span>
+                    <a href="/hakkinda.html">Site Hakkında</a>
+                </div>
+            </div>
+        </footer>
     </div>
 </body>
-</html> 
+</html>

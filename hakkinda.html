@@ -2,17 +2,16 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/apple-touch-icon.png">
-    <link rel="icon" href="../assets/img/favicon.ico">
-    <link rel="manifest" href="../assets/img/site.webmanifest">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
+    <link rel="icon" href="/assets/img/favicon.ico">
+    <link rel="manifest" href="/assets/img/site.webmanifest">
     <meta name="theme-color" content="#dc2626">
-    <link rel="stylesheet" href="../assets/hbiz.css">
+    <link rel="stylesheet" href="/assets/hbiz.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -64,18 +63,21 @@
   }
 ]
     </script>
+    <link rel="stylesheet" href="/assets/tailwind.css">
 </head>
 <body class="bg-pattern">
+    <a href="#icerik" class="skip-link">İçeriğe geç</a>
     <div id="app" class="min-h-screen flex flex-col">
         <!-- Navbar -->
             <!-- hbiz Navbar -->
         <nav class="hb-nav" role="navigation" aria-label="Ana menü">
             <div class="hb-nav-inner">
                 <a href="/" class="hb-nav-logo" aria-label="Ana sayfaya dön">
-                    <img src="../assets/img/logo.png" alt="hacettepe.biz logosu">
+                    <img src="/assets/img/logo.png" alt="Hacettepe.biz logosu">
+                    <span>Hacettepe.biz</span>
                 </a>
                 <button class="hb-nav-toggle" aria-label="Menüyü aç/kapat" onclick="this.nextElementSibling.classList.toggle('open')">
-                    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
                 </button>
                 <ul class="hb-nav-links">
                     <li><a href="/">Ana Sayfa</a></li>
@@ -104,7 +106,7 @@
             </div>
         </div>
 
-        <main class="flex-grow container mx-auto px-4 py-8">
+        <main id="icerik" class="flex-grow container mx-auto px-4 py-8">
             <div class="space-y-6">
                 <div class="bg-white rounded-xl border border-gray-100 p-6 card-hover">
                     <div class="flex items-start space-x-4">
@@ -166,25 +168,28 @@
             <div class="hb-footer-inner">
                 <div class="hb-footer-grid">
                     <div class="hb-footer-brand">
-                        <img src="../assets/img/logo.png" alt="Hacettepe Bilgilendirme Logosu">
+                        <img src="/assets/img/logo.png" alt="Hacettepe Bilgilendirme Logosu">
                         <p>Hacettepe Üniversitesi öğrencileri ve adayları için<br>bağımsız, güncel ve doğru bilgi kaynağı.</p>
                     </div>
                     <div>
-                        <h4>Hızlı Erişim</h4>
+                        <h2 class="hb-footer-heading">Hızlı Erişim</h2>
                         <ul>
+                            <li><a href="/page/ogrenci-isleri.html">Öğrenci İşleri</a></li>
                             <li><a href="/page/akademik-takvim.html">Akademik Takvim 2026-2027</a></li>
                             <li><a href="/page/siralamalar.html">Bölüm Sıralamaları</a></li>
                             <li><a href="/page/barinma.html">Barınma Olanakları</a></li>
                             <li><a href="/page/kampus-haritasi.html">Kampüs Haritası</a></li>
+                            <li><a href="/page/dumansiz-kampus.html">Dumansız Kampüs</a></li>
                             <li><a href="/page/ogrenci-topluluklari.html">Öğrenci Toplulukları</a></li>
                         </ul>
                     </div>
                     <div>
-                        <h4>Site</h4>
+                        <h2 class="hb-footer-heading">Site</h2>
                         <ul>
                             <li><a href="/hakkinda.html">Site Hakkında</a></li>
                             <li><a href="/page/iletisim.html">İletişim</a></li>
-                            <li><a href="https://github.com/hacettepebilgi/hacettepe.biz" target="_blank">GitHub</a></li>
+                            <li><a href="https://akiner.net" target="_blank" rel="noopener">Geliştirici</a></li>
+                            <li><a href="https://github.com/hacettepebilgi/hacettepe.biz" target="_blank" rel="noopener">GitHub</a></li>
                         </ul>
                     </div>
                 </div>

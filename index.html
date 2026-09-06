@@ -2,18 +2,17 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
-    <link rel="icon" href="assets/img/favicon.ico">
-    <link rel="manifest" href="assets/img/site.webmanifest">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
+    <link rel="icon" href="/assets/img/favicon.ico">
+    <link rel="manifest" href="/assets/img/site.webmanifest">
     <meta name="theme-color" content="#dc2626">
-    <link rel="stylesheet" href="assets/hbiz.css">
+    <link rel="stylesheet" href="/assets/hbiz.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/vue@3.4.15/dist/vue.global.prod.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -51,15 +50,16 @@
         .info-card:hover .info-card-icon { transform: scale(1.15) rotate(4deg); }
         .info-card:hover .info-card-link { color: var(--primary-dark); }
     </style>
-    <title>Hacettepe Üniversitesi Öğrenci Rehberi | Bölüm Sıralamaları, Yurt ve Takvim</title>
-    <meta name="description" content="Hacettepe Üniversitesi öğrenci ve aday rehberi: 2026 YKS bölüm taban puanları, 2026-2027 akademik takvim, kayıt tarihleri, barınma & KYK yurtları ve kampüs haritası.">
+    <title>Hacettepe Üniversitesi Öğrenci Rehberi | Sıralama, Yurt, Takvim</title>
+    <meta name="description" content="Hacettepe öğrenci ve aday rehberi: 2026 YKS taban puanları, akademik takvim, kayıt tarihleri, barınma, KYK yurtları ve kampüs haritası.">
     <meta name="keywords" content="hacettepe, hacettepe üniversitesi, hacettepe sıralama, hacettepe taban puanları, hacettepe tıp sıralama, hacettepe akademik takvim, beytepe yurtlar">
     <meta property="og:image" content="https://hacettepe.biz/assets/img/logo.png">
-    <meta property="og:title" content="Hacettepe Üniversitesi Öğrenci Rehberi | Bölüm Sıralamaları, Yurt ve Takvim">
-    <meta property="og:description" content="Hacettepe Üniversitesi öğrenci ve aday rehberi: 2026 YKS bölüm taban puanları, 2026-2027 akademik takvim, kayıt tarihleri, barınma & KYK yurtları ve kampüs haritası.">
+    <meta property="og:title" content="Hacettepe Üniversitesi Öğrenci Rehberi | Sıralama, Yurt, Takvim">
+    <meta property="og:description" content="Hacettepe öğrenci ve aday rehberi: 2026 YKS taban puanları, akademik takvim, kayıt tarihleri, barınma, KYK yurtları ve kampüs haritası.">
+    <meta name="twitter:card" content="summary_large_image">
     <meta property="og:url" content="https://hacettepe.biz/">
-    <meta name="twitter:title" content="Hacettepe Üniversitesi Öğrenci Rehberi | Bölüm Sıralamaları, Yurt ve Takvim">
-    <meta name="twitter:description" content="Hacettepe Üniversitesi öğrenci ve aday rehberi: 2026 YKS bölüm taban puanları, 2026-2027 akademik takvim, kayıt tarihleri, barınma & KYK yurtları ve kampüs haritası.">
+    <meta name="twitter:title" content="Hacettepe Üniversitesi Öğrenci Rehberi | Sıralama, Yurt, Takvim">
+    <meta name="twitter:description" content="Hacettepe öğrenci ve aday rehberi: 2026 YKS taban puanları, akademik takvim, kayıt tarihleri, barınma, KYK yurtları ve kampüs haritası.">
     <link rel="canonical" href="https://hacettepe.biz/">
     <link rel="api-catalog" href="/.well-known/api-catalog">
     <link rel="service-doc" href="/docs/api.html">
@@ -70,7 +70,7 @@
   "@type": "WebSite",
   "name": "Hacettepe Bilgilendirme",
   "alternateName": "Hacettepe Üniversitesi Öğrenci Rehberi",
-  "description": "Hacettepe Üniversitesi öğrenci ve aday rehberi: 2026 YKS bölüm taban puanları, 2026-2027 akademik takvim, kayıt tarihleri, barınma & KYK yurtları ve kampüs haritası.",
+  "description": "Hacettepe öğrenci ve aday rehberi: 2026 YKS taban puanları, akademik takvim, kayıt tarihleri, barınma, KYK yurtları ve kampüs haritası.",
   "url": "https://hacettepe.biz/",
   "potentialAction": {
     "@type": "SearchAction",
@@ -79,6 +79,7 @@
   }
 }
     </script>
+    <link rel="stylesheet" href="/assets/tailwind.css">
 </head>
 <body class="bg-pattern min-h-screen">
     <a href="#main-content" class="skip-link">Ana içeriğe git</a>
@@ -88,11 +89,11 @@
         <nav class="hb-nav" role="navigation" aria-label="Ana menü">
             <div class="hb-nav-inner">
                 <a href="/" class="hb-nav-logo" aria-label="Ana sayfaya dön">
-                    <img src="assets/img/logo.png" alt="Hacettepe.biz logosu">
+                    <img src="/assets/img/logo.png" alt="Hacettepe.biz logosu">
                     <span>Hacettepe.biz</span>
                 </a>
                 <button class="hb-nav-toggle" aria-label="Menüyü aç/kapat" onclick="this.nextElementSibling.classList.toggle('open')">
-                    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
                 </button>
                 <ul class="hb-nav-links">
                     <li><a href="/">Ana Sayfa</a></li>
@@ -112,7 +113,7 @@
                 <div class="hb-search-wrapper">
                     <div class="hb-search-box">
                         <svg class="hb-search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                        <input type="search" v-model="searchQuery" placeholder="Hacettepe Üniversitesi hakkında bilgi ara..." class="hb-search-input" aria-label="Sitede arama yap">
+                        <input type="search" v-model="searchQuery" placeholder="Ne aramıştınız?" class="hb-search-input" aria-label="Sitede arama yap">
                     </div>
                 </div>
             </div>
@@ -232,25 +233,27 @@
             <div class="hb-footer-inner">
                 <div class="hb-footer-grid">
                     <div class="hb-footer-brand">
-                        <img src="assets/img/logo.png" alt="Hacettepe Bilgilendirme Logosu">
+                        <img src="/assets/img/logo.png" alt="Hacettepe Bilgilendirme Logosu">
                         <p>Hacettepe Üniversitesi öğrencileri ve adayları için<br>bağımsız, güncel ve doğru bilgi kaynağı.</p>
                     </div>
                     <div>
-                        <h4>Hızlı Erişim</h4>
+                        <h2 class="hb-footer-heading">Hızlı Erişim</h2>
                         <ul>
+                            <li><a href="/page/ogrenci-isleri.html">Öğrenci İşleri</a></li>
                             <li><a href="/page/akademik-takvim.html">Akademik Takvim 2026-2027</a></li>
                             <li><a href="/page/siralamalar.html">Bölüm Sıralamaları</a></li>
                             <li><a href="/page/barinma.html">Barınma Olanakları</a></li>
                             <li><a href="/page/kampus-haritasi.html">Kampüs Haritası</a></li>
+                            <li><a href="/page/dumansiz-kampus.html">Dumansız Kampüs</a></li>
                             <li><a href="/page/ogrenci-topluluklari.html">Öğrenci Toplulukları</a></li>
                         </ul>
                     </div>
                     <div>
-                        <h4>Site</h4>
+                        <h2 class="hb-footer-heading">Site</h2>
                         <ul>
                             <li><a href="/hakkinda.html">Site Hakkında</a></li>
                             <li><a href="/page/iletisim.html">İletişim</a></li>
-                            <li><a href="https://github.com/hacettepebilgi/hacettepe.biz" target="_blank">GitHub</a></li>
+                            <li><a href="https://github.com/hacettepebilgi/hacettepe.biz" target="_blank" rel="noopener">GitHub</a></li>
                         </ul>
                     </div>
                 </div>
@@ -287,7 +290,10 @@
                         { title: 'Kampüs Olanakları', description: 'Kütüphane, yemekhane ve diğer öğrenci hizmetleri.', link: 'page/kampus-olanaklari.html', linkText: 'Hacettepe Kampüs Olanakları', category: 'Kampüs' },
                         { title: 'Öğrenci Toplulukları', description: 'Aktif öğrenci toplulukları ve toplulukların iletişim bilgileri.', link: 'page/ogrenci-topluluklari.html', linkText: 'Hacettepe Öğrenci Toplulukları', category: 'Öğrenci' },
                         { title: 'Kampüs Haritası', description: 'Beytepe ve Sıhhiye kampüslerinin interaktif haritaları ve önemli noktalar.', link: 'page/kampus-haritasi.html', linkText: 'Hacettepe Kampüs Haritası', category: 'Kampüs' },
-                        { title: 'İletişim', description: 'Beytepe ve Sıhhiye kampüslerinin iletişim bilgileri ve sosyal medya hesapları.', link: 'page/iletisim.html', linkText: 'Hacettepe İletişim Bilgileri', category: 'Kampüs' }
+                        { title: 'İletişim', description: 'Beytepe ve Sıhhiye kampüslerinin iletişim bilgileri ve sosyal medya hesapları.', link: 'page/iletisim.html', linkText: 'Hacettepe İletişim Bilgileri', category: 'Kampüs' },
+                        { title: 'Öğrenci İşleri', description: 'Öğrenci İşleri Daire Başkanlığı telefonları ve hangi işlemin nereden yapıldığı.', link: 'page/ogrenci-isleri.html', linkText: 'Hacettepe Öğrenci İşleri', category: 'Öğrenci' },
+                        { title: 'Ulaşım', description: "Kızılay'dan Beytepe ve Sıhhiye kampüslerine metro, Ankaray ve otobüsle ulaşım.", link: 'page/ulasim.html', linkText: "Hacettepe'ye Nasıl Gidilir?", category: 'Kampüs' },
+                        { title: 'Dumansız Kampüs', description: 'Sigara içilebilen alanlar krokisi, kurallar ve ihlal halinde uygulanan yaptırımlar.', link: 'page/dumansiz-kampus.html', linkText: 'Sigara İçilebilen Yerler', category: 'Kampüs' }
                     ]
                 }
             },

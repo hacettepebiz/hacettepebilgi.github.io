@@ -16,7 +16,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         [v-cloak] {
             display: none;
@@ -30,13 +29,13 @@
             font-family: 'Inter', sans-serif;
         }
         #map {
-            height: 600px;
+            height: var(--harita-yuksekligi, 600px);
             width: 100%;
             border-radius: 12px;
             z-index: 1;
         }
         .map-container {
-            height: 600px;
+            height: var(--harita-yuksekligi, 600px);
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
@@ -97,24 +96,26 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://hacettepe.biz/assets/img/logo.png">
     <title>Hacettepe Kampüs Haritası | Beytepe ve Sıhhiye Ulaşım Rehberi</title>
-    <meta name="description" content="Hacettepe kampüs haritası: Beytepe ve Sıhhiye yerleşkelerinde fakülte, durak ve temel noktaların konum bilgileri.">
+    <meta name="description" content="Hacettepe Beytepe ve Sıhhiye kampüs haritası: 72 nokta, fakülte ve yurt konumları, metro ve otobüsle nasıl gidilir (M2 + 130 ring, Ankaray Kurtuluş).">
     <meta property="og:title" content="Hacettepe Kampüs Haritası | Beytepe ve Sıhhiye Ulaşım Rehberi">
-    <meta property="og:description" content="Hacettepe kampüs haritası: Beytepe ve Sıhhiye yerleşkelerinde fakülte, durak ve temel noktaların konum bilgileri.">
+    <meta property="og:description" content="Hacettepe Beytepe ve Sıhhiye kampüs haritası: 72 nokta, fakülte ve yurt konumları, metro ve otobüsle nasıl gidilir (M2 + 130 ring, Ankaray Kurtuluş).">
     <meta property="og:url" content="https://hacettepe.biz/page/kampus-haritasi.html">
     <meta name="twitter:title" content="Hacettepe Kampüs Haritası | Beytepe ve Sıhhiye Ulaşım Rehberi">
-    <meta name="twitter:description" content="Hacettepe kampüs haritası: Beytepe ve Sıhhiye yerleşkelerinde fakülte, durak ve temel noktaların konum bilgileri.">
+    <meta name="twitter:description" content="Hacettepe Beytepe ve Sıhhiye kampüs haritası: 72 nokta, fakülte ve yurt konumları, metro ve otobüsle nasıl gidilir (M2 + 130 ring, Ankaray Kurtuluş).">
     <link rel="canonical" href="https://hacettepe.biz/page/kampus-haritasi.html">
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
   "name": "Hacettepe Kampüs Haritası",
-  "description": "Hacettepe kampüs haritası: Beytepe ve Sıhhiye yerleşkelerinde fakülte, durak ve temel noktaların konum bilgileri.",
+  "description": "Hacettepe Beytepe ve Sıhhiye kampüs haritası: 72 nokta, fakülte ve yurt konumları, metro ve otobüsle nasıl gidilir (M2 + 130 ring, Ankaray Kurtuluş).",
   "url": "https://hacettepe.biz/page/kampus-haritasi.html"
 }
     </script>
+    <link rel="stylesheet" href="../assets/tailwind.css">
 </head>
 <body class="bg-pattern min-h-screen">
+    <a href="#icerik" class="skip-link">İçeriğe geç</a>
     <div id="app" class="min-h-screen flex flex-col" v-cloak>
         <!-- hbiz Navbar -->
         <nav class="hb-nav" role="navigation" aria-label="Ana menü">
@@ -124,7 +125,7 @@
                     <span>Hacettepe.biz</span>
                 </a>
                 <button class="hb-nav-toggle" aria-label="Menüyü aç/kapat" onclick="this.nextElementSibling.classList.toggle('open')">
-                    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
                 </button>
                 <ul class="hb-nav-links">
                     <li><a href="/">Ana Sayfa</a></li>
@@ -153,7 +154,7 @@
             </div>
         </div>
 
-        <main class="flex-grow container mx-auto px-4 pt-6 pb-8">
+        <main id="icerik" class="flex-grow container mx-auto px-4 pt-6 pb-8">
             <a id="beytepe"></a>
 
             <div class="flex justify-center space-x-4 mb-6">
@@ -167,18 +168,18 @@
                 </button>
             </div>
             <a id="sihhiye"></a>
-            <div class="flex gap-6">
+            <div class="flex flex-col md:flex-row gap-6">
                 <!-- Önemli Noktalar (Sol Taraf) -->
-                <div class="w-1/4" v-if="selectedCampus">
+                <div class="w-full md:w-1/4" v-if="selectedCampus">
                     <h2 class="text-xl font-semibold mb-4">Önemli Noktalar</h2>
-                    <div class="flex flex-col gap-2">
+                    <div class="flex flex-col gap-2 hb-nokta-listesi">
                         <button 
                             v-for="location in selectedCampus.locations" 
                             :key="location.name"
                             @click="showLocation(location)"
                             class="location-button p-3 rounded-lg text-left bg-white">
                             <h3 class="font-medium mb-1">{{ location.name }}</h3>
-                            <p>Hacettepe kampüs haritası ile Beytepe ve Sıhhiye yerleşkelerinde aradığınız noktaya hızlıca ulaşın.</p>
+                            <p class="text-xs text-gray-500">{{ location.description }}</p>
                         </button>
                     </div>
                 </div>
@@ -191,9 +192,146 @@
                 </div>
             </div>
         
+            <section class="hb-card mt-8" aria-labelledby="noktalar">
+                <h2 id="noktalar" class="sr-only">Kampüs Noktaları</h2>
+                <h2 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Beytepe Kampüsü&#39;nde Ne Nerede?</h2>
+                <h3 class="text-base font-semibold text-gray-800 mt-5 mb-2">Fakülte ve Bölümler</h3>
+                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-gray-700 list-disc list-inside">
+                    <li>Bilgisayar ve Yapay Zeka Mühendisliği <a href="https://www.openstreetmap.org/?mlat=39.871273&mlon=32.736356#map=18/39.871273/32.736356" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Bilgisayar ve Yapay Zeka Mühendisliği konumu">📍</a></li>
+                    <li>Biyoloji Bölümü <a href="https://www.openstreetmap.org/?mlat=39.871488&mlon=32.735476#map=18/39.871488/32.735476" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Biyoloji Bölümü konumu">📍</a></li>
+                    <li>Doğramacı Binası <a href="https://www.openstreetmap.org/?mlat=39.865803&mlon=32.730178#map=18/39.865803/32.730178" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Doğramacı Binası konumu">📍</a></li>
+                    <li>Elektrik ve Elektronik Mühendisliği Bölümü <a href="https://www.openstreetmap.org/?mlat=39.869835&mlon=32.734624#map=18/39.869835/32.734624" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Elektrik ve Elektronik Mühendisliği Bölümü konumu">📍</a></li>
+                    <li>Endüstri Mühendisliği <a href="https://www.openstreetmap.org/?mlat=39.86824&mlon=32.741602#map=18/39.86824/32.741602" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Endüstri Mühendisliği konumu">📍</a></li>
+                    <li>Eğitim Fakültesi <a href="https://www.openstreetmap.org/?mlat=39.864299&mlon=32.730499#map=18/39.864299/32.730499" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Eğitim Fakültesi konumu">📍</a></li>
+                    <li>Fen Bilimleri Enstitüsü <a href="https://www.openstreetmap.org/?mlat=39.871119&mlon=32.735967#map=18/39.871119/32.735967" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Fen Bilimleri Enstitüsü konumu">📍</a></li>
+                    <li>Fizik Mühendisliği Bölümü <a href="https://www.openstreetmap.org/?mlat=39.869455&mlon=32.734135#map=18/39.869455/32.734135" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Fizik Mühendisliği Bölümü konumu">📍</a></li>
+                    <li>Hacettepe Üniversitesi Güzel Sanatlar Enstitüsü <a href="https://www.openstreetmap.org/?mlat=39.866458&mlon=32.736437#map=18/39.866458/32.736437" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Hacettepe Üniversitesi Güzel Sanatlar Enstitüsü konumu">📍</a></li>
+                    <li>Hacettepe Üniversitesi Güzel Sanatlar Fakültesi <a href="https://www.openstreetmap.org/?mlat=39.86612&mlon=32.735587#map=18/39.86612/32.735587" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Hacettepe Üniversitesi Güzel Sanatlar Fakültesi konumu">📍</a></li>
+                    <li>Hacettepe Üniversitesi Gıda Mühendisliği Bölümü <a href="https://www.openstreetmap.org/?mlat=39.866507&mlon=32.737765#map=18/39.866507/32.737765" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Hacettepe Üniversitesi Gıda Mühendisliği Bölümü konumu">📍</a></li>
+                    <li>Hacettepe Üniversitesi Heykel Bölümü <a href="https://www.openstreetmap.org/?mlat=39.866692&mlon=32.736425#map=18/39.866692/32.736425" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Hacettepe Üniversitesi Heykel Bölümü konumu">📍</a></li>
+                    <li>Hacettepe Üniversitesi Hukuk Fakültesi <a href="https://www.openstreetmap.org/?mlat=39.864025&mlon=32.732156#map=18/39.864025/32.732156" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Hacettepe Üniversitesi Hukuk Fakültesi konumu">📍</a></li>
+                    <li>Hacettepe Üniversitesi Makine Mühendisliği <a href="https://www.openstreetmap.org/?mlat=39.863611&mlon=32.734096#map=18/39.863611/32.734096" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Hacettepe Üniversitesi Makine Mühendisliği konumu">📍</a></li>
+                    <li>Hacettepe Üniversitesi Sosyal Bilimler Meslek Yükek Okulu <a href="https://www.openstreetmap.org/?mlat=39.86424&mlon=32.736048#map=18/39.86424/32.736048" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Hacettepe Üniversitesi Sosyal Bilimler Meslek Yükek Okulu konumu">📍</a></li>
+                    <li>Hacettepe Üniversitesi Yer Bilimleri Binası <a href="https://www.openstreetmap.org/?mlat=39.870809&mlon=32.736168#map=18/39.870809/32.736168" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Hacettepe Üniversitesi Yer Bilimleri Binası konumu">📍</a></li>
+                    <li>Harita Mühendisliği <a href="https://www.openstreetmap.org/?mlat=39.865568&mlon=32.733868#map=18/39.865568/32.733868" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Harita Mühendisliği konumu">📍</a></li>
+                    <li>Jeoloji Mühendisliği <a href="https://www.openstreetmap.org/?mlat=39.87089&mlon=32.736847#map=18/39.87089/32.736847" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Jeoloji Mühendisliği konumu">📍</a></li>
+                    <li>Kimya Mühendisliği <a href="https://www.openstreetmap.org/?mlat=39.869073&mlon=32.737145#map=18/39.869073/32.737145" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Kimya Mühendisliği konumu">📍</a></li>
+                    <li>Nüfus Etütleri Enstitüsü <a href="https://www.openstreetmap.org/?mlat=39.870532&mlon=32.729861#map=18/39.870532/32.729861" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Nüfus Etütleri Enstitüsü konumu">📍</a></li>
+                    <li>Nükleer Enerji Mühendisliği Bölümü <a href="https://www.openstreetmap.org/?mlat=39.868922&mlon=32.734239#map=18/39.868922/32.734239" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Nükleer Enerji Mühendisliği Bölümü konumu">📍</a></li>
+                    <li>Spor Bilimleri Fakültesi <a href="https://www.openstreetmap.org/?mlat=39.872296&mlon=32.730859#map=18/39.872296/32.730859" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Spor Bilimleri Fakültesi konumu">📍</a></li>
+                    <li>Yabancı Diller Yüksekokulu <a href="https://www.openstreetmap.org/?mlat=39.864993&mlon=32.735285#map=18/39.864993/32.735285" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Yabancı Diller Yüksekokulu konumu">📍</a></li>
+                    <li>İktisadi ve İdari Bilimler Fakültesi <a href="https://www.openstreetmap.org/?mlat=39.865289&mlon=32.735902#map=18/39.865289/32.735902" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="İktisadi ve İdari Bilimler Fakültesi konumu">📍</a></li>
+                    <li>İnşaat Mühendisliği <a href="https://www.openstreetmap.org/?mlat=39.864105&mlon=32.734421#map=18/39.864105/32.734421" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="İnşaat Mühendisliği konumu">📍</a></li>
+                </ul>
+                <h3 class="text-base font-semibold text-gray-800 mt-5 mb-2">İdari Birimler</h3>
+                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-gray-700 list-disc list-inside">
+                    <li>Basın ve Halkla İlişkiler Müdürlüğü - Beytepe <a href="https://www.openstreetmap.org/?mlat=39.867055&mlon=32.734213#map=18/39.867055/32.734213" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Basın ve Halkla İlişkiler Müdürlüğü - Beytepe konumu">📍</a></li>
+                    <li>Bilgi İşlem Daire Başkanlığı <a href="https://www.openstreetmap.org/?mlat=39.87104&mlon=32.73626#map=18/39.87104/32.73626" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Bilgi İşlem Daire Başkanlığı konumu">📍</a></li>
+                    <li>Hacettepe Üniversitesi Beytepe Kampüsü <a href="https://www.openstreetmap.org/?mlat=39.868425&mlon=32.735344#map=18/39.868425/32.735344" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Hacettepe Üniversitesi Beytepe Kampüsü konumu">📍</a></li>
+                    <li>Rektörlük <a href="https://www.openstreetmap.org/?mlat=39.867664&mlon=32.7346#map=18/39.867664/32.7346" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Rektörlük konumu">📍</a></li>
+                    <li>Öğrenci İşleri Dairesi <a href="https://www.openstreetmap.org/?mlat=39.867585&mlon=32.734851#map=18/39.867585/32.734851" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Öğrenci İşleri Dairesi konumu">📍</a></li>
+                </ul>
+                <h3 class="text-base font-semibold text-gray-800 mt-5 mb-2">Kütüphane</h3>
+                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-gray-700 list-disc list-inside">
+                    <li>Hacettepe Üniversitesi Beytepe Kampüsü Kütüphanesi <a href="https://www.openstreetmap.org/?mlat=39.87087&mlon=32.734835#map=18/39.87087/32.734835" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Hacettepe Üniversitesi Beytepe Kampüsü Kütüphanesi konumu">📍</a></li>
+                    <li>Hukuk Fakültesi Kütüphanesi <a href="https://www.openstreetmap.org/?mlat=39.863897&mlon=32.731791#map=18/39.863897/32.731791" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Hukuk Fakültesi Kütüphanesi konumu">📍</a></li>
+                </ul>
+                <h3 class="text-base font-semibold text-gray-800 mt-5 mb-2">Yurt ve Öğrenci Evleri</h3>
+                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-gray-700 list-disc list-inside">
+                    <li>Alev Alatlı Kız Öğrenci Yurdu <a href="https://www.openstreetmap.org/?mlat=39.870158&mlon=32.728995#map=18/39.870158/32.728995" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Alev Alatlı Kız Öğrenci Yurdu konumu">📍</a></li>
+                    <li>Asistan Evleri <a href="https://www.openstreetmap.org/?mlat=39.866885&mlon=32.730028#map=18/39.866885/32.730028" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Asistan Evleri konumu">📍</a></li>
+                    <li>Atatepe Öğrenci Yaşam Merkezi <a href="https://www.openstreetmap.org/?mlat=39.867817&mlon=32.732173#map=18/39.867817/32.732173" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Atatepe Öğrenci Yaşam Merkezi konumu">📍</a></li>
+                    <li>Erkek Öğrenci Yurdu <a href="https://www.openstreetmap.org/?mlat=39.870057&mlon=32.731838#map=18/39.870057/32.731838" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Erkek Öğrenci Yurdu konumu">📍</a></li>
+                    <li>Kız Öğrenci Yurdu <a href="https://www.openstreetmap.org/?mlat=39.869374&mlon=32.731431#map=18/39.869374/32.731431" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Kız Öğrenci Yurdu konumu">📍</a></li>
+                    <li>Parlar Kız Öğrenci Evi <a href="https://www.openstreetmap.org/?mlat=39.871226&mlon=32.730372#map=18/39.871226/32.730372" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Parlar Kız Öğrenci Evi konumu">📍</a></li>
+                    <li>Öğrenci Evleri (A–N Blokları) <a href="https://www.openstreetmap.org/?mlat=39.86843&mlon=32.730188#map=18/39.86843/32.730188" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Öğrenci Evleri (A–N Blokları) konumu">📍</a></li>
+                </ul>
+                <h3 class="text-base font-semibold text-gray-800 mt-5 mb-2">Yemek</h3>
+                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-gray-700 list-disc list-inside">
+                    <li>Camlı Yemekhane <a href="https://www.openstreetmap.org/?mlat=39.864851&mlon=32.733793#map=18/39.864851/32.733793" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Camlı Yemekhane konumu">📍</a></li>
+                    <li>Öğrenci Kafeteryası <a href="https://www.openstreetmap.org/?mlat=39.870761&mlon=32.733538#map=18/39.870761/32.733538" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Öğrenci Kafeteryası konumu">📍</a></li>
+                </ul>
+                <h3 class="text-base font-semibold text-gray-800 mt-5 mb-2">Spor</h3>
+                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-gray-700 list-disc list-inside">
+                    <li>Basketbol Sahası <a href="https://www.openstreetmap.org/?mlat=39.869162&mlon=32.733554#map=18/39.869162/32.733554" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Basketbol Sahası konumu">📍</a></li>
+                    <li>Hacettepe Üniversitesi Beytepe Pisti <a href="https://www.openstreetmap.org/?mlat=39.872089&mlon=32.732214#map=18/39.872089/32.732214" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Hacettepe Üniversitesi Beytepe Pisti konumu">📍</a></li>
+                    <li>Kapalı Basketbol ve Tenis Kortu <a href="https://www.openstreetmap.org/?mlat=39.87101&mlon=32.7315#map=18/39.87101/32.7315" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Kapalı Basketbol ve Tenis Kortu konumu">📍</a></li>
+                    <li>Olimpik Yüzme Havuzu <a href="https://www.openstreetmap.org/?mlat=39.88252&mlon=32.73402#map=18/39.88252/32.73402" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Olimpik Yüzme Havuzu konumu">📍</a></li>
+                    <li>Spor Fakültesi Spor Salonu <a href="https://www.openstreetmap.org/?mlat=39.871418&mlon=32.731403#map=18/39.871418/32.731403" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Spor Fakültesi Spor Salonu konumu">📍</a></li>
+                </ul>
+                <h3 class="text-base font-semibold text-gray-800 mt-5 mb-2">Kültür ve Etkinlik</h3>
+                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-gray-700 list-disc list-inside">
+                    <li>Amfi <a href="https://www.openstreetmap.org/?mlat=39.872616&mlon=32.736769#map=18/39.872616/32.736769" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Amfi konumu">📍</a></li>
+                    <li>Amfitiyatro <a href="https://www.openstreetmap.org/?mlat=39.874241&mlon=32.728651#map=18/39.874241/32.728651" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Amfitiyatro konumu">📍</a></li>
+                    <li>Beytepe Kültür ve Kongre Merkezi <a href="https://www.openstreetmap.org/?mlat=39.88112&mlon=32.73417#map=18/39.88112/32.73417" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Beytepe Kültür ve Kongre Merkezi konumu">📍</a></li>
+                    <li>Güneş Saatleri Parkı <a href="https://www.openstreetmap.org/?mlat=39.866903&mlon=32.734007#map=18/39.866903/32.734007" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Güneş Saatleri Parkı konumu">📍</a></li>
+                    <li>Mehmet Akif Ersoy ve K Salonları <a href="https://www.openstreetmap.org/?mlat=39.867946&mlon=32.737277#map=18/39.867946/32.737277" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Mehmet Akif Ersoy ve K Salonları konumu">📍</a></li>
+                    <li>Tiyatro ve Konferans Salonu <a href="https://www.openstreetmap.org/?mlat=39.872515&mlon=32.73677#map=18/39.872515/32.73677" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Tiyatro ve Konferans Salonu konumu">📍</a></li>
+                    <li>Yeşil Vadi <a href="https://www.openstreetmap.org/?mlat=39.869708&mlon=32.739886#map=18/39.869708/32.739886" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Yeşil Vadi konumu">📍</a></li>
+                    <li>Yıldız Amfi <a href="https://www.openstreetmap.org/?mlat=39.87&mlon=32.735614#map=18/39.87/32.735614" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Yıldız Amfi konumu">📍</a></li>
+                </ul>
+                <h3 class="text-base font-semibold text-gray-800 mt-5 mb-2">Hizmetler</h3>
+                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-gray-700 list-disc list-inside">
+                    <li>PTT - Beytepe Şubesi <a href="https://www.openstreetmap.org/?mlat=39.870997&mlon=32.735622#map=18/39.870997/32.735622" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="PTT - Beytepe Şubesi konumu">📍</a></li>
+                </ul>
+                <h2 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Sıhhiye Kampüsü&#39;nde Ne Nerede?</h2>
+                <h3 class="text-base font-semibold text-gray-800 mt-5 mb-2">Fakülte ve Bölümler</h3>
+                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-gray-700 list-disc list-inside">
+                    <li>Diş Hekimliği Fakültesi <a href="https://www.openstreetmap.org/?mlat=39.93205&mlon=32.86496#map=18/39.93205/32.86496" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Diş Hekimliği Fakültesi konumu">📍</a></li>
+                    <li>Hacettepe University Vaccine Institute <a href="https://www.openstreetmap.org/?mlat=39.932852&mlon=32.86188#map=18/39.932852/32.86188" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Hacettepe University Vaccine Institute konumu">📍</a></li>
+                    <li>Sağlık Hizmetleri Meslek Yüksekokulu <a href="https://www.openstreetmap.org/?mlat=39.932771&mlon=32.860775#map=18/39.932771/32.860775" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Sağlık Hizmetleri Meslek Yüksekokulu konumu">📍</a></li>
+                    <li>Sosyal Bilimler Meslek Yüksekokulu <a href="https://www.openstreetmap.org/?mlat=39.93422&mlon=32.85621#map=18/39.93422/32.85621" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Sosyal Bilimler Meslek Yüksekokulu konumu">📍</a></li>
+                    <li>Tıp Fakültesi <a href="https://www.openstreetmap.org/?mlat=39.931578&mlon=32.862567#map=18/39.931578/32.862567" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Tıp Fakültesi konumu">📍</a></li>
+                </ul>
+                <h3 class="text-base font-semibold text-gray-800 mt-5 mb-2">İdari Birimler</h3>
+                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-gray-700 list-disc list-inside">
+                    <li>Hacettepe Üniversitesi Sıhhiye Kampüsü <a href="https://www.openstreetmap.org/?mlat=39.931326&mlon=32.862563#map=18/39.931326/32.862563" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Hacettepe Üniversitesi Sıhhiye Kampüsü konumu">📍</a></li>
+                </ul>
+                <h3 class="text-base font-semibold text-gray-800 mt-5 mb-2">Yurt ve Öğrenci Evleri</h3>
+                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-gray-700 list-disc list-inside">
+                    <li>Hacettepe Öğrenci Yurdu <a href="https://www.openstreetmap.org/?mlat=39.931495&mlon=32.86804#map=18/39.931495/32.86804" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Hacettepe Öğrenci Yurdu konumu">📍</a></li>
+                </ul>
+                <h3 class="text-base font-semibold text-gray-800 mt-5 mb-2">Yemek</h3>
+                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-gray-700 list-disc list-inside">
+                    <li>Öğrenci Yemekhanesi <a href="https://www.openstreetmap.org/?mlat=39.932864&mlon=32.862295#map=18/39.932864/32.862295" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Öğrenci Yemekhanesi konumu">📍</a></li>
+                </ul>
+                <h3 class="text-base font-semibold text-gray-800 mt-5 mb-2">Spor</h3>
+                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-gray-700 list-disc list-inside">
+                    <li>Spor Salonu <a href="https://www.openstreetmap.org/?mlat=39.930571&mlon=32.866146#map=18/39.930571/32.866146" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Spor Salonu konumu">📍</a></li>
+                </ul>
+                <h3 class="text-base font-semibold text-gray-800 mt-5 mb-2">Sağlık</h3>
+                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-gray-700 list-disc list-inside">
+                    <li>Erişkin Hastanesi <a href="https://www.openstreetmap.org/?mlat=39.929856&mlon=32.86131#map=18/39.929856/32.86131" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Erişkin Hastanesi konumu">📍</a></li>
+                    <li>Hacettepe Üniversitesi Hastanesi <a href="https://www.openstreetmap.org/?mlat=39.930688&mlon=32.862409#map=18/39.930688/32.862409" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Hacettepe Üniversitesi Hastanesi konumu">📍</a></li>
+                    <li>Onkoloji Hastanesi <a href="https://www.openstreetmap.org/?mlat=39.930609&mlon=32.866814#map=18/39.930609/32.866814" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Onkoloji Hastanesi konumu">📍</a></li>
+                    <li>Çocuk Hastanesi <a href="https://www.openstreetmap.org/?mlat=39.930323&mlon=32.86066#map=18/39.930323/32.86066" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Çocuk Hastanesi konumu">📍</a></li>
+                    <li>İç Hastalıkları <a href="https://www.openstreetmap.org/?mlat=39.930076&mlon=32.862883#map=18/39.930076/32.862883" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="İç Hastalıkları konumu">📍</a></li>
+                </ul>
+                <h3 class="text-base font-semibold text-gray-800 mt-5 mb-2">Kültür ve Etkinlik</h3>
+                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1 text-sm text-gray-700 list-disc list-inside">
+                    <li>Açık Amfi <a href="https://www.openstreetmap.org/?mlat=39.931262&mlon=32.862016#map=18/39.931262/32.862016" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Açık Amfi konumu">📍</a></li>
+                    <li>Mehmet Akif Ersoy Evi ve Müzesi <a href="https://www.openstreetmap.org/?mlat=39.93264&mlon=32.864869#map=18/39.93264/32.864869" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Mehmet Akif Ersoy Evi ve Müzesi konumu">📍</a></li>
+                    <li>Sanat Müzesi <a href="https://www.openstreetmap.org/?mlat=39.93159&mlon=32.862005#map=18/39.93159/32.862005" target="_blank" rel="noopener" class="text-red-600 hover:text-red-700" title="Sanat Müzesi konumu">📍</a></li>
+                </ul>
+            </section>
+            <section class="hb-card mt-8" aria-labelledby="ulasim-ozet">
+                <h2 id="ulasim-ozet" class="text-xl font-semibold text-gray-900 mb-3">Kampüse Nasıl Gidilir?</h2>
+                <p class="text-gray-700 text-sm mb-3">
+                    <strong>Beytepe:</strong> Kızılay &rarr; M2 metro &rarr; Beytepe istasyonu &rarr; 130 ring otobüsü.<br>
+                    <strong>Sıhhiye:</strong> Kızılay &rarr; Ankaray &rarr; Kurtuluş istasyonu &rarr; 10&ndash;15 dk yürüyüş.
+                </p>
+                <a href="ulasim.html" class="inline-flex items-center text-red-600 hover:text-red-700 font-medium">
+                    Ayrıntılı ulaşım tarifi
+                    <svg class="w-4 h-4 ml-1" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </section>
+
                 <section class="hb-card">
                     <h2 class="text-xl font-semibold text-gray-900 mb-3">İlgili İçerikler</h2>
                     <ul class="space-y-2">
+                    <li><a href="ulasim.html" class="text-red-600 hover:text-red-700">Kampüse Nasıl Gidilir?</a></li>
                     <li><a href="/page/akademik-takvim.html" class="text-red-600 hover:text-red-700">Hacettepe Akademik Takvim 2026-2027</a></li>
                     <li><a href="/page/barinma.html" class="text-red-600 hover:text-red-700">Barınma</a></li>
                     <li><a href="cevredeki-kyklar.html" class="text-red-600 hover:text-red-700">Çevredeki KYK'lar</a></li>
@@ -210,21 +348,23 @@
                         <p>Hacettepe Üniversitesi öğrencileri ve adayları için<br>bağımsız, güncel ve doğru bilgi kaynağı.</p>
                     </div>
                     <div>
-                        <h4>Hızlı Erişim</h4>
+                        <h2 class="hb-footer-heading">Hızlı Erişim</h2>
                         <ul>
+                            <li><a href="/page/ogrenci-isleri.html">Öğrenci İşleri</a></li>
                             <li><a href="/page/akademik-takvim.html">Akademik Takvim 2026-2027</a></li>
                             <li><a href="/page/siralamalar.html">Bölüm Sıralamaları</a></li>
                             <li><a href="/page/barinma.html">Barınma Olanakları</a></li>
                             <li><a href="/page/kampus-haritasi.html">Kampüs Haritası</a></li>
+                            <li><a href="/page/dumansiz-kampus.html">Dumansız Kampüs</a></li>
                             <li><a href="/page/ogrenci-topluluklari.html">Öğrenci Toplulukları</a></li>
                         </ul>
                     </div>
                     <div>
-                        <h4>Site</h4>
+                        <h2 class="hb-footer-heading">Site</h2>
                         <ul>
                             <li><a href="/hakkinda.html">Site Hakkında</a></li>
                             <li><a href="/page/iletisim.html">İletişim</a></li>
-                            <li><a href="https://github.com/hacettepebilgi/hacettepe.biz" target="_blank">GitHub</a></li>
+                            <li><a href="https://github.com/hacettepebilgi/hacettepe.biz" target="_blank" rel="noopener">GitHub</a></li>
                         </ul>
                     </div>
                 </div>
@@ -251,21 +391,61 @@
                             center: [39.868800, 32.742500],
                             zoom: 15,
                             locations: [
-                                {
-                                    name: 'Beytepe Stadyumu',
-                                    description: 'Beytepe Stadyumu',
-                                    coordinates: [39.871899, 32.732458]
-                                },
-                                {
-                                    name: 'Amfi Tiyatro',
-                                    description: 'Açık Hava Tiyatrosu',
-                                    coordinates: [39.874222, 32.728623]
-                                },
-                                {
-                                    name: 'Rektörlük',
-                                    description: 'Rektörlük Binası',
-                                    coordinates: [39.867541, 32.734693]
-                                }
+                                { name: 'Bilgisayar ve Yapay Zeka Mühendisliği', description: 'Fakülte ve Bölümler', coordinates: [39.871273, 32.736356] },
+                                { name: 'Biyoloji Bölümü', description: 'Fakülte ve Bölümler', coordinates: [39.871488, 32.735476] },
+                                { name: 'Doğramacı Binası', description: 'Fakülte ve Bölümler', coordinates: [39.865803, 32.730178] },
+                                { name: 'Elektrik ve Elektronik Mühendisliği Bölümü', description: 'Fakülte ve Bölümler', coordinates: [39.869835, 32.734624] },
+                                { name: 'Endüstri Mühendisliği', description: 'Fakülte ve Bölümler', coordinates: [39.86824, 32.741602] },
+                                { name: 'Eğitim Fakültesi', description: 'Fakülte ve Bölümler', coordinates: [39.864299, 32.730499] },
+                                { name: 'Fen Bilimleri Enstitüsü', description: 'Fakülte ve Bölümler', coordinates: [39.871119, 32.735967] },
+                                { name: 'Fizik Mühendisliği Bölümü', description: 'Fakülte ve Bölümler', coordinates: [39.869455, 32.734135] },
+                                { name: 'Hacettepe Üniversitesi Güzel Sanatlar Enstitüsü', description: 'Fakülte ve Bölümler', coordinates: [39.866458, 32.736437] },
+                                { name: 'Hacettepe Üniversitesi Güzel Sanatlar Fakültesi', description: 'Fakülte ve Bölümler', coordinates: [39.86612, 32.735587] },
+                                { name: 'Hacettepe Üniversitesi Gıda Mühendisliği Bölümü', description: 'Fakülte ve Bölümler', coordinates: [39.866507, 32.737765] },
+                                { name: 'Hacettepe Üniversitesi Heykel Bölümü', description: 'Fakülte ve Bölümler', coordinates: [39.866692, 32.736425] },
+                                { name: 'Hacettepe Üniversitesi Hukuk Fakültesi', description: 'Fakülte ve Bölümler', coordinates: [39.864025, 32.732156] },
+                                { name: 'Hacettepe Üniversitesi Makine Mühendisliği', description: 'Fakülte ve Bölümler', coordinates: [39.863611, 32.734096] },
+                                { name: 'Hacettepe Üniversitesi Sosyal Bilimler Meslek Yükek Okulu', description: 'Fakülte ve Bölümler', coordinates: [39.86424, 32.736048] },
+                                { name: 'Hacettepe Üniversitesi Yer Bilimleri Binası', description: 'Fakülte ve Bölümler', coordinates: [39.870809, 32.736168] },
+                                { name: 'Harita Mühendisliği', description: 'Fakülte ve Bölümler', coordinates: [39.865568, 32.733868] },
+                                { name: 'Jeoloji Mühendisliği', description: 'Fakülte ve Bölümler', coordinates: [39.87089, 32.736847] },
+                                { name: 'Kimya Mühendisliği', description: 'Fakülte ve Bölümler', coordinates: [39.869073, 32.737145] },
+                                { name: 'Nüfus Etütleri Enstitüsü', description: 'Fakülte ve Bölümler', coordinates: [39.870532, 32.729861] },
+                                { name: 'Nükleer Enerji Mühendisliği Bölümü', description: 'Fakülte ve Bölümler', coordinates: [39.868922, 32.734239] },
+                                { name: 'Spor Bilimleri Fakültesi', description: 'Fakülte ve Bölümler', coordinates: [39.872296, 32.730859] },
+                                { name: 'Yabancı Diller Yüksekokulu', description: 'Fakülte ve Bölümler', coordinates: [39.864993, 32.735285] },
+                                { name: 'İktisadi ve İdari Bilimler Fakültesi', description: 'Fakülte ve Bölümler', coordinates: [39.865289, 32.735902] },
+                                { name: 'İnşaat Mühendisliği', description: 'Fakülte ve Bölümler', coordinates: [39.864105, 32.734421] },
+                                { name: 'Basın ve Halkla İlişkiler Müdürlüğü - Beytepe', description: 'İdari Birimler', coordinates: [39.867055, 32.734213] },
+                                { name: 'Bilgi İşlem Daire Başkanlığı', description: 'İdari Birimler', coordinates: [39.87104, 32.73626] },
+                                { name: 'Hacettepe Üniversitesi Beytepe Kampüsü', description: 'İdari Birimler', coordinates: [39.868425, 32.735344] },
+                                { name: 'Rektörlük', description: 'İdari Birimler', coordinates: [39.867664, 32.7346] },
+                                { name: 'Öğrenci İşleri Dairesi', description: 'İdari Birimler', coordinates: [39.867585, 32.734851] },
+                                { name: 'Hacettepe Üniversitesi Beytepe Kampüsü Kütüphanesi', description: 'Kütüphane', coordinates: [39.87087, 32.734835] },
+                                { name: 'Hukuk Fakültesi Kütüphanesi', description: 'Kütüphane', coordinates: [39.863897, 32.731791] },
+                                { name: 'Alev Alatlı Kız Öğrenci Yurdu', description: 'Yurt ve Öğrenci Evleri', coordinates: [39.870158, 32.728995] },
+                                { name: 'Asistan Evleri', description: 'Yurt ve Öğrenci Evleri', coordinates: [39.866885, 32.730028] },
+                                { name: 'Atatepe Öğrenci Yaşam Merkezi', description: 'Yurt ve Öğrenci Evleri', coordinates: [39.867817, 32.732173] },
+                                { name: 'Erkek Öğrenci Yurdu', description: 'Yurt ve Öğrenci Evleri', coordinates: [39.870057, 32.731838] },
+                                { name: 'Kız Öğrenci Yurdu', description: 'Yurt ve Öğrenci Evleri', coordinates: [39.869374, 32.731431] },
+                                { name: 'Parlar Kız Öğrenci Evi', description: 'Yurt ve Öğrenci Evleri', coordinates: [39.871226, 32.730372] },
+                                { name: 'Öğrenci Evleri (A–N Blokları)', description: 'Yurt ve Öğrenci Evleri', coordinates: [39.86843, 32.730188] },
+                                { name: 'Camlı Yemekhane', description: 'Yemek', coordinates: [39.864851, 32.733793] },
+                                { name: 'Öğrenci Kafeteryası', description: 'Yemek', coordinates: [39.870761, 32.733538] },
+                                { name: 'Basketbol Sahası', description: 'Spor', coordinates: [39.869162, 32.733554] },
+                                { name: 'Hacettepe Üniversitesi Beytepe Pisti', description: 'Spor', coordinates: [39.872089, 32.732214] },
+                                { name: 'Kapalı Basketbol ve Tenis Kortu', description: 'Spor', coordinates: [39.87101, 32.7315] },
+                                { name: 'Olimpik Yüzme Havuzu', description: 'Spor', coordinates: [39.88252, 32.73402] },
+                                { name: 'Spor Fakültesi Spor Salonu', description: 'Spor', coordinates: [39.871418, 32.731403] },
+                                { name: 'Amfi', description: 'Kültür ve Etkinlik', coordinates: [39.872616, 32.736769] },
+                                { name: 'Amfitiyatro', description: 'Kültür ve Etkinlik', coordinates: [39.874241, 32.728651] },
+                                { name: 'Beytepe Kültür ve Kongre Merkezi', description: 'Kültür ve Etkinlik', coordinates: [39.88112, 32.73417] },
+                                { name: 'Güneş Saatleri Parkı', description: 'Kültür ve Etkinlik', coordinates: [39.866903, 32.734007] },
+                                { name: 'Mehmet Akif Ersoy ve K Salonları', description: 'Kültür ve Etkinlik', coordinates: [39.867946, 32.737277] },
+                                { name: 'Tiyatro ve Konferans Salonu', description: 'Kültür ve Etkinlik', coordinates: [39.872515, 32.73677] },
+                                { name: 'Yeşil Vadi', description: 'Kültür ve Etkinlik', coordinates: [39.869708, 32.739886] },
+                                { name: 'Yıldız Amfi', description: 'Kültür ve Etkinlik', coordinates: [39.87, 32.735614] },
+                                { name: 'PTT - Beytepe Şubesi', description: 'Hizmetler', coordinates: [39.870997, 32.735622] }
                             ]
                         },
                         {
@@ -274,21 +454,23 @@
                             center: [39.931360, 32.863921],
                             zoom: 17,
                             locations: [
-                                {
-                                    name: 'Tıp Fakültesi',
-                                    description: 'Tıp Fakültesi Ana Binası',
-                                    coordinates: [39.931670, 32.864321]
-                                },
-                                {
-                                    name: 'Diş Hekimliği Fakültesi',
-                                    description: 'Diş Hekimliği Fakültesi Binası',
-                                    coordinates: [39.932037, 32.864914]
-                                },
-                                {
-                                    name: 'Öğrenci Yurtları',
-                                    description: 'Öğrenci Yurtları',
-                                    coordinates: [39.931487, 32.867846]
-                                }
+                                { name: 'Diş Hekimliği Fakültesi', description: 'Fakülte ve Bölümler', coordinates: [39.93205, 32.86496] },
+                                { name: 'Hacettepe University Vaccine Institute', description: 'Fakülte ve Bölümler', coordinates: [39.932852, 32.86188] },
+                                { name: 'Sağlık Hizmetleri Meslek Yüksekokulu', description: 'Fakülte ve Bölümler', coordinates: [39.932771, 32.860775] },
+                                { name: 'Sosyal Bilimler Meslek Yüksekokulu', description: 'Fakülte ve Bölümler', coordinates: [39.93422, 32.85621] },
+                                { name: 'Tıp Fakültesi', description: 'Fakülte ve Bölümler', coordinates: [39.931578, 32.862567] },
+                                { name: 'Hacettepe Üniversitesi Sıhhiye Kampüsü', description: 'İdari Birimler', coordinates: [39.931326, 32.862563] },
+                                { name: 'Hacettepe Öğrenci Yurdu', description: 'Yurt ve Öğrenci Evleri', coordinates: [39.931495, 32.86804] },
+                                { name: 'Öğrenci Yemekhanesi', description: 'Yemek', coordinates: [39.932864, 32.862295] },
+                                { name: 'Spor Salonu', description: 'Spor', coordinates: [39.930571, 32.866146] },
+                                { name: 'Erişkin Hastanesi', description: 'Sağlık', coordinates: [39.929856, 32.86131] },
+                                { name: 'Hacettepe Üniversitesi Hastanesi', description: 'Sağlık', coordinates: [39.930688, 32.862409] },
+                                { name: 'Onkoloji Hastanesi', description: 'Sağlık', coordinates: [39.930609, 32.866814] },
+                                { name: 'Çocuk Hastanesi', description: 'Sağlık', coordinates: [39.930323, 32.86066] },
+                                { name: 'İç Hastalıkları', description: 'Sağlık', coordinates: [39.930076, 32.862883] },
+                                { name: 'Açık Amfi', description: 'Kültür ve Etkinlik', coordinates: [39.931262, 32.862016] },
+                                { name: 'Mehmet Akif Ersoy Evi ve Müzesi', description: 'Kültür ve Etkinlik', coordinates: [39.93264, 32.864869] },
+                                { name: 'Sanat Müzesi', description: 'Kültür ve Etkinlik', coordinates: [39.93159, 32.862005] }
                             ]
                         }
                     ]

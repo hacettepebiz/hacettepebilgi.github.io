@@ -12,7 +12,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/vue@3.4.15/dist/vue.global.prod.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -28,13 +27,13 @@
     <meta property="og:site_name" content="Hacettepe Bilgilendirme">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://hacettepe.biz/assets/img/logo.png">
-    <title>Hacettepe Öğrenci Toplulukları & Kulüpleri Listesi (140+ Aktif Kulüp)</title>
+    <title>Hacettepe Öğrenci Toplulukları | 140+ Aktif Kulüp Listesi</title>
     <meta name="description" content="Hacettepe Üniversitesi aktif 140+ öğrenci topluluğu ve kulübü. Resmi kulüp sayfaları, başvuru ve üyelik bağlantıları, iletişim detayları.">
     <meta name="keywords" content="hacettepe topluluklar, hacettepe öğrenci kulüpleri, hacettepe kulüp listesi, hacettepe acm, hacettepe ieee, hacettepe topluluk kayit">
-    <meta property="og:title" content="Hacettepe Öğrenci Toplulukları & Kulüpleri Listesi (140+ Aktif Kulüp)">
+    <meta property="og:title" content="Hacettepe Öğrenci Toplulukları | 140+ Aktif Kulüp Listesi">
     <meta property="og:description" content="Hacettepe Üniversitesi aktif 140+ öğrenci topluluğu ve kulübü. Resmi kulüp sayfaları, başvuru ve üyelik bağlantıları, iletişim detayları.">
     <meta property="og:url" content="https://hacettepe.biz/page/ogrenci-topluluklari.html">
-    <meta name="twitter:title" content="Hacettepe Öğrenci Toplulukları & Kulüpleri Listesi (140+ Aktif Kulüp)">
+    <meta name="twitter:title" content="Hacettepe Öğrenci Toplulukları | 140+ Aktif Kulüp Listesi">
     <meta name="twitter:description" content="Hacettepe Üniversitesi aktif 140+ öğrenci topluluğu ve kulübü. Resmi kulüp sayfaları, başvuru ve üyelik bağlantıları, iletişim detayları.">
     <link rel="canonical" href="https://hacettepe.biz/page/ogrenci-topluluklari.html">
     <script type="application/ld+json">
@@ -66,8 +65,10 @@
   }
 ]
     </script>
+    <link rel="stylesheet" href="../assets/tailwind.css">
 </head>
 <body class="bg-pattern min-h-screen">
+    <a href="#icerik" class="skip-link">İçeriğe geç</a>
     <div id="app" v-cloak class="min-h-screen flex flex-col">
         <!-- hbiz Navbar -->
         <nav class="hb-nav" role="navigation" aria-label="Ana menü">
@@ -77,7 +78,7 @@
                     <span>Hacettepe.biz</span>
                 </a>
                 <button class="hb-nav-toggle" aria-label="Menüyü aç/kapat" onclick="this.nextElementSibling.classList.toggle('open')">
-                    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
                 </button>
                 <ul class="hb-nav-links">
                     <li><a href="/">Ana Sayfa</a></li>
@@ -112,7 +113,7 @@
             </div>
         </div>
 
-        <main class="flex-grow container mx-auto px-4 pt-6 pb-8">
+        <main id="icerik" class="flex-grow container mx-auto px-4 pt-6 pb-8">
             <p class="text-center text-xs text-gray-500 mb-6">Toplam {{ filteredClubs.length }} topluluk listeleniyor</p>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
                 <div v-for="club in filteredClubs" :key="club.name" 
@@ -136,14 +137,14 @@
                     </div>
 
                     <div class="pt-3 border-t border-gray-100 space-y-2 mt-auto">
-                        <a v-if="club.website && club.website !== '#'" :href="club.website" target="_blank" 
+                        <a v-if="club.website && club.website !== '#'" :href="club.website" target="_blank" rel="noopener" 
                            class="flex items-center text-xs font-semibold text-red-600 hover:text-red-700 transition-colors group">
                             <svg class="w-4 h-4 mr-1.5 transform transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none">
                                 <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                             Resmi Topluluk Sayfası / İncele →
                         </a>
-                        <a v-if="club.instagram" :href="club.instagram" target="_blank" 
+                        <a v-if="club.instagram" :href="club.instagram" target="_blank" rel="noopener" 
                            class="flex items-center text-xs font-medium text-gray-600 hover:text-red-600 transition-colors group">
                             <svg class="w-4 h-4 mr-1.5" viewBox="0 0 24 24" fill="none">
                                 <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -161,7 +162,7 @@
             <!-- Source & Date Badge -->
             <div class="bg-blue-50/70 border border-blue-100 rounded-xl p-4 mb-8 flex flex-col md:flex-row justify-between items-center text-xs text-blue-900 gap-2">
                 <div class="flex items-center space-x-2">
-                    <span>ℹ️ <strong>Kaynak:</strong> <a href="https://topluluklar.hacettepe.edu.tr/topluluk-listesi" target="_blank" class="underline hover:text-blue-700">Hacettepe Üniversitesi Sağlık Kültür ve Spor Daire Başkanlığı (SKSDB) Resmi Portalı</a></span>
+                    <span>ℹ️ <strong>Kaynak:</strong> <a href="https://topluluklar.hacettepe.edu.tr/topluluk-listesi" target="_blank" rel="noopener" class="underline hover:text-blue-700">Hacettepe Üniversitesi Sağlık Kültür ve Spor Daire Başkanlığı (SKSDB) Resmi Portalı</a></span>
                 </div>
                 <div class="text-blue-700 font-medium">
                     📅 Veri Güncelleme Tarihi: 20 Temmuz 2026
@@ -187,21 +188,23 @@
                         <p>Hacettepe Üniversitesi öğrencileri ve adayları için<br>bağımsız, güncel ve doğru bilgi kaynağı.</p>
                     </div>
                     <div>
-                        <h4>Hızlı Erişim</h4>
+                        <h2 class="hb-footer-heading">Hızlı Erişim</h2>
                         <ul>
+                            <li><a href="/page/ogrenci-isleri.html">Öğrenci İşleri</a></li>
                             <li><a href="/page/akademik-takvim.html">Akademik Takvim 2026-2027</a></li>
                             <li><a href="/page/siralamalar.html">Bölüm Sıralamaları</a></li>
                             <li><a href="/page/barinma.html">Barınma Olanakları</a></li>
                             <li><a href="/page/kampus-haritasi.html">Kampüs Haritası</a></li>
+                            <li><a href="/page/dumansiz-kampus.html">Dumansız Kampüs</a></li>
                             <li><a href="/page/ogrenci-topluluklari.html">Öğrenci Toplulukları</a></li>
                         </ul>
                     </div>
                     <div>
-                        <h4>Site</h4>
+                        <h2 class="hb-footer-heading">Site</h2>
                         <ul>
                             <li><a href="/hakkinda.html">Site Hakkında</a></li>
                             <li><a href="/page/iletisim.html">İletişim</a></li>
-                            <li><a href="https://github.com/hacettepebilgi/hacettepe.biz" target="_blank">GitHub</a></li>
+                            <li><a href="https://github.com/hacettepebilgi/hacettepe.biz" target="_blank" rel="noopener">GitHub</a></li>
                         </ul>
                     </div>
                 </div>

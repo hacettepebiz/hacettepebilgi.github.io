@@ -12,7 +12,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -26,13 +25,13 @@
     <meta property="og:site_name" content="Hacettepe Bilgilendirme">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://hacettepe.biz/assets/img/logo.png">
-    <title>Hacettepe İletişim Bilgileri & Telefon Numaraları | Beytepe & Sıhhiye</title>
+    <title>Hacettepe Telefon Rehberi ve İletişim | Beytepe, Sıhhiye</title>
     <meta name="description" content="Hacettepe Üniversitesi telefon rehberi, santral numaraları, Öğrenci İşleri, Rektörlük, Beytepe ve Sıhhiye kampüs iletişim ve e-posta bilgileri.">
     <meta name="keywords" content="hacettepe iletişim, hacettepe telefon rehberi, hacettepe santral, hacettepe öğrenci işleri iletişim, beytepe iletişim, sıhhiye iletişim">
-    <meta property="og:title" content="Hacettepe İletişim Bilgileri & Telefon Numaraları | Beytepe & Sıhhiye">
+    <meta property="og:title" content="Hacettepe Telefon Rehberi ve İletişim | Beytepe, Sıhhiye">
     <meta property="og:description" content="Hacettepe Üniversitesi telefon rehberi, santral numaraları, Öğrenci İşleri, Rektörlük, Beytepe ve Sıhhiye kampüs iletişim ve e-posta bilgileri.">
     <meta property="og:url" content="https://hacettepe.biz/page/iletisim.html">
-    <meta name="twitter:title" content="Hacettepe İletişim Bilgileri & Telefon Numaraları | Beytepe & Sıhhiye">
+    <meta name="twitter:title" content="Hacettepe Telefon Rehberi ve İletişim | Beytepe, Sıhhiye">
     <meta name="twitter:description" content="Hacettepe Üniversitesi telefon rehberi, santral numaraları, Öğrenci İşleri, Rektörlük, Beytepe ve Sıhhiye kampüs iletişim ve e-posta bilgileri.">
     <link rel="canonical" href="https://hacettepe.biz/page/iletisim.html">
     <script type="application/ld+json">
@@ -64,8 +63,10 @@
   }
 ]
     </script>
+    <link rel="stylesheet" href="../assets/tailwind.css">
 </head>
 <body class="bg-pattern min-h-screen">
+    <a href="#icerik" class="skip-link">İçeriğe geç</a>
     <div class="min-h-screen flex flex-col">
         <!-- Navbar -->
         <div id="app" class="min-h-screen flex flex-col">
@@ -77,7 +78,7 @@
                     <span>Hacettepe.biz</span>
                 </a>
                 <button class="hb-nav-toggle" aria-label="Menüyü aç/kapat" onclick="this.nextElementSibling.classList.toggle('open')">
-                    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
                 </button>
                 <ul class="hb-nav-links">
                     <li><a href="/">Ana Sayfa</a></li>
@@ -106,7 +107,15 @@
             </div>
         </div>
 
-        <main class="flex-grow container mx-auto px-4 pt-6 pb-8">
+        <main id="icerik" class="flex-grow container mx-auto px-4 pt-6 pb-8">
+            <div class="hb-card mb-6">
+                <label for="birim-ara" class="block font-medium text-gray-900 mb-2">Birim ara</label>
+                <input id="birim-ara" type="search" inputmode="search" autocomplete="off"
+                       placeholder="Örn: öğrenci işleri, hastane, hukuk fakültesi"
+                       class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-base
+                              focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500">
+                <p id="ara-sonuc" class="text-sm text-gray-500 mt-2" role="status" aria-live="polite"></p>
+            </div>
             <div class="grid grid-cols-1 gap-6">
                 <!-- Genel İletişim -->
                 <div class="hb-card">
@@ -118,12 +127,12 @@
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">Telefon</h3>
-                            <p class="text-gray-600">312 305 5000 (Sıhhiye)</p>
-                            <p class="text-gray-600">312 305 5050 (Beytepe)</p>
+                            <p class="text-gray-600"><a href="tel:+903123055000" class="hover:text-red-600 hover:underline">312 305 5000</a> (Sıhhiye)</p>
+                            <p class="text-gray-600"><a href="tel:+903123055050" class="hover:text-red-600 hover:underline">312 305 5050</a> (Beytepe)</p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">HÜ Hastaneleri Randevu</h3>
-                            <p class="text-gray-600">444 4 444</p>
+                            <p class="text-gray-600"><a href="tel:4444444" class="hover:text-red-600 hover:underline">444 4 444</a></p>
                         </div>
                     </div>
                 </div>
@@ -134,23 +143,23 @@
                     <div class="space-y-4">
                         <div>
                             <h3 class="font-medium text-gray-900">Rektörlük</h3>
-                            <p class="text-gray-600">312 305 1001 - 1002 (Sıhhiye)</p>
-                            <p class="text-gray-600">312 297 6000 - 6001 - 6002 (Beytepe)</p>
+                            <p class="text-gray-600"><a href="tel:+903123051001" class="hover:text-red-600 hover:underline">312 305 1001</a> - <a href="tel:+903123051002" class="hover:text-red-600 hover:underline">1002</a> (Sıhhiye)</p>
+                            <p class="text-gray-600"><a href="tel:+903122976000" class="hover:text-red-600 hover:underline">312 297 6000</a> - <a href="tel:+903122976001" class="hover:text-red-600 hover:underline">6001</a> - <a href="tel:+903122976002" class="hover:text-red-600 hover:underline">6002</a> (Beytepe)</p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">Rektör Yardımcılığı</h3>
-                            <p class="text-gray-600">312 305 2001 - 2002 (Sıhhiye)</p>
-                            <p class="text-gray-600">312 297 6010 - 6020 (Beytepe)</p>
+                            <p class="text-gray-600"><a href="tel:+903123052001" class="hover:text-red-600 hover:underline">312 305 2001</a> - <a href="tel:+903123052002" class="hover:text-red-600 hover:underline">2002</a> (Sıhhiye)</p>
+                            <p class="text-gray-600"><a href="tel:+903122976010" class="hover:text-red-600 hover:underline">312 297 6010</a> - <a href="tel:+903122976020" class="hover:text-red-600 hover:underline">6020</a> (Beytepe)</p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">Genel Sekreterlik</h3>
-                            <p class="text-gray-600">312 305 1003 (Sıhhiye)</p>
-                            <p class="text-gray-600">312 297 6029 - 6030 (Beytepe)</p>
+                            <p class="text-gray-600"><a href="tel:+903123051003" class="hover:text-red-600 hover:underline">312 305 1003</a> (Sıhhiye)</p>
+                            <p class="text-gray-600"><a href="tel:+903122976029" class="hover:text-red-600 hover:underline">312 297 6029</a> - <a href="tel:+903122976030" class="hover:text-red-600 hover:underline">6030</a> (Beytepe)</p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">Genel Sekreter Yardımcılığı</h3>
-                            <p class="text-gray-600">312 305 1004 (Sıhhiye)</p>
-                            <p class="text-gray-600">312 297 6015 - 6025 (Beytepe)</p>
+                            <p class="text-gray-600"><a href="tel:+903123051004" class="hover:text-red-600 hover:underline">312 305 1004</a> (Sıhhiye)</p>
+                            <p class="text-gray-600"><a href="tel:+903122976015" class="hover:text-red-600 hover:underline">312 297 6015</a> - <a href="tel:+903122976025" class="hover:text-red-600 hover:underline">6025</a> (Beytepe)</p>
                         </div>
                     </div>
                 </div>
@@ -161,52 +170,54 @@
                     <div class="space-y-4">
                         <div>
                             <h3 class="font-medium text-gray-900">Bilgi İşlem Daire Başkanlığı</h3>
-                            <p class="text-gray-600">312 297 6200</p>
-                            <p class="text-gray-600">Faks: 312 299 2088</p>
+                            <p class="text-gray-600"><a href="tel:+903122976200" class="hover:text-red-600 hover:underline">312 297 6200</a></p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903122992088" class="hover:text-red-600 hover:underline">312 299 2088</a></p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">İdari ve Mali İşler Daire Başkanlığı</h3>
-                            <p class="text-gray-600">312 305 1041</p>
-                            <p class="text-gray-600">Faks: 312 311 4390</p>
+                            <p class="text-gray-600"><a href="tel:+903123051041" class="hover:text-red-600 hover:underline">312 305 1041</a></p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903123114390" class="hover:text-red-600 hover:underline">312 311 4390</a></p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">Kütüphane ve Dokümantasyon Daire Başkanlığı</h3>
-                            <p class="text-gray-600">312 305 1061</p>
-                            <p class="text-gray-600">Faks: 312 311 7998</p>
+                            <p class="text-gray-600"><a href="tel:+903123051061" class="hover:text-red-600 hover:underline">312 305 1061</a></p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903123117998" class="hover:text-red-600 hover:underline">312 311 7998</a></p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">Öğrenci İşleri Daire Başkanlığı</h3>
-                            <p class="text-gray-600">312 297 6571</p>
-                            <p class="text-gray-600">Faks: 312 299 2090</p>
+                            <p class="text-gray-600"><a href="tel:+903122976570" class="hover:text-red-600 hover:underline">312 297 6570</a> (Beytepe, dahili 71-72-73-77)</p>
+                            <p class="text-gray-600"><a href="tel:+903123052141" class="hover:text-red-600 hover:underline">312 305 2141</a> (Sıhhiye)</p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903122992090" class="hover:text-red-600 hover:underline">312 299 2090</a> (Beytepe) &middot; <a href="tel:+903123102799" class="hover:text-red-600 hover:underline">312 310 2799</a> (Sıhhiye)</p>
+                            <p class="text-gray-600 text-sm"><a href="ogrenci-isleri.html" class="inline-flex text-red-600 hover:text-red-700">Öğrenci İşleri sayfası &rarr;</a></p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">Personel Daire Başkanlığı</h3>
-                            <p class="text-gray-600">312 305 1025</p>
-                            <p class="text-gray-600">Faks: 312 309 0620</p>
+                            <p class="text-gray-600"><a href="tel:+903123051025" class="hover:text-red-600 hover:underline">312 305 1025</a></p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903123090620" class="hover:text-red-600 hover:underline">312 309 0620</a></p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">Sağlık Kültür ve Spor Daire Başkanlığı</h3>
-                            <p class="text-gray-600">312 305 1077</p>
-                            <p class="text-gray-600">Faks: 312 311 6024</p>
+                            <p class="text-gray-600"><a href="tel:+903123051077" class="hover:text-red-600 hover:underline">312 305 1077</a></p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903123116024" class="hover:text-red-600 hover:underline">312 311 6024</a></p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">Strateji Geliştirme Daire Başkanlığı</h3>
-                            <p class="text-gray-600">312 305 1009</p>
+                            <p class="text-gray-600"><a href="tel:+903123051009" class="hover:text-red-600 hover:underline">312 305 1009</a></p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">Yapı İşleri ve Teknik Daire Başkanlığı</h3>
-                            <p class="text-gray-600">312 305 1050</p>
-                            <p class="text-gray-600">Faks: 312 311 3772</p>
+                            <p class="text-gray-600"><a href="tel:+903123051050" class="hover:text-red-600 hover:underline">312 305 1050</a></p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903123113772" class="hover:text-red-600 hover:underline">312 311 3772</a></p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">İç Denetim Birim Başkanlığı</h3>
-                            <p class="text-gray-600">312 305 2552 - 2577</p>
-                            <p class="text-gray-600">Faks: 312 305 3019, 312 305 1708</p>
+                            <p class="text-gray-600"><a href="tel:+903123052552" class="hover:text-red-600 hover:underline">312 305 2552</a> - <a href="tel:+903123052577" class="hover:text-red-600 hover:underline">2577</a></p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903123053019" class="hover:text-red-600 hover:underline">312 305 3019</a>, <a href="tel:+903123051708" class="hover:text-red-600 hover:underline">312 305 1708</a></p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">İş Sağlığı ve Güvenliği Kurulları Koordinasyon Birimi</h3>
-                            <p class="text-gray-600">312 305 3590 (Sıhhiye)</p>
-                            <p class="text-gray-600">312 297 6014 (Beytepe)</p>
+                            <p class="text-gray-600"><a href="tel:+903123053590" class="hover:text-red-600 hover:underline">312 305 3590</a> (Sıhhiye)</p>
+                            <p class="text-gray-600"><a href="tel:+903122976014" class="hover:text-red-600 hover:underline">312 297 6014</a> (Beytepe)</p>
                         </div>
                     </div>
                 </div>
@@ -217,50 +228,50 @@
                     <div class="space-y-4">
                         <div>
                             <h3 class="font-medium text-gray-900">Basın ve Halkla İlişkiler Müdürlüğü</h3>
-                            <p class="text-gray-600">312 305 2144</p>
-                            <p class="text-gray-600">Faks: 312 310 2366</p>
+                            <p class="text-gray-600"><a href="tel:+903123052144" class="hover:text-red-600 hover:underline">312 305 2144</a></p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903123102366" class="hover:text-red-600 hover:underline">312 310 2366</a></p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">Bilimsel Araştırmalar Birimi</h3>
-                            <p class="text-gray-600">312 310 1348</p>
-                            <p class="text-gray-600">Faks: 312 309 3699</p>
+                            <p class="text-gray-600"><a href="tel:+903123101348" class="hover:text-red-600 hover:underline">312 310 1348</a></p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903123093699" class="hover:text-red-600 hover:underline">312 309 3699</a></p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">Büro İşleri Müdürlüğü</h3>
-                            <p class="text-gray-600">312 305 1006</p>
+                            <p class="text-gray-600"><a href="tel:+903123051006" class="hover:text-red-600 hover:underline">312 305 1006</a></p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">Hukuk Müşavirliği</h3>
-                            <p class="text-gray-600">312 305 2346</p>
-                            <p class="text-gray-600">Faks: 312 305 1015</p>
+                            <p class="text-gray-600"><a href="tel:+903123052346" class="hover:text-red-600 hover:underline">312 305 2346</a></p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903123051015" class="hover:text-red-600 hover:underline">312 305 1015</a></p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">Yazı İşleri Müdürlüğü</h3>
-                            <p class="text-gray-600">312 305 1008</p>
-                            <p class="text-gray-600">Faks: 312 310 5552</p>
+                            <p class="text-gray-600"><a href="tel:+903123051008" class="hover:text-red-600 hover:underline">312 305 1008</a></p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903123105552" class="hover:text-red-600 hover:underline">312 310 5552</a></p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">Ulaşım Hizmetleri Müdürlüğü</h3>
-                            <p class="text-gray-600">312 305 1277 (Sıhhiye)</p>
-                            <p class="text-gray-600">312 297 6152 (Beytepe)</p>
-                            <p class="text-gray-600">Faks: 312 305 1274, 312 297 6064</p>
+                            <p class="text-gray-600"><a href="tel:+903123051277" class="hover:text-red-600 hover:underline">312 305 1277</a> (Sıhhiye)</p>
+                            <p class="text-gray-600"><a href="tel:+903122976152" class="hover:text-red-600 hover:underline">312 297 6152</a> (Beytepe)</p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903123051274" class="hover:text-red-600 hover:underline">312 305 1274</a>, <a href="tel:+903122976064" class="hover:text-red-600 hover:underline">312 297 6064</a></p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">Peyzaj Planlama Müdürlüğü</h3>
-                            <p class="text-gray-600">312 297 6060 - 6061</p>
-                            <p class="text-gray-600">Faks: 312 297 6060</p>
+                            <p class="text-gray-600"><a href="tel:+903122976060" class="hover:text-red-600 hover:underline">312 297 6060</a> - <a href="tel:+903122976061" class="hover:text-red-600 hover:underline">6061</a></p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903122976060" class="hover:text-red-600 hover:underline">312 297 6060</a></p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">Koruma ve Güvenlik Müdürlüğü</h3>
-                            <p class="text-gray-600">312 305 1403 - 1650 (Sıhhiye)</p>
-                            <p class="text-gray-600">312 297 6600 (Beytepe)</p>
-                            <p class="text-gray-600">Faks: 312 305 1650, 312 297 6601</p>
+                            <p class="text-gray-600"><a href="tel:+903123051403" class="hover:text-red-600 hover:underline">312 305 1403</a> - <a href="tel:+903123051650" class="hover:text-red-600 hover:underline">1650</a> (Sıhhiye)</p>
+                            <p class="text-gray-600"><a href="tel:+903122976600" class="hover:text-red-600 hover:underline">312 297 6600</a> (Beytepe)</p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903123051650" class="hover:text-red-600 hover:underline">312 305 1650</a>, <a href="tel:+903122976601" class="hover:text-red-600 hover:underline">312 297 6601</a></p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">Destek Hizmetler Müdürlüğü</h3>
-                            <p class="text-gray-600">312 305 2600 (Sıhhiye)</p>
-                            <p class="text-gray-600">312 297 6683 (Beytepe)</p>
-                            <p class="text-gray-600">Faks: 312 305 2777, 312 297 6018</p>
+                            <p class="text-gray-600"><a href="tel:+903123052600" class="hover:text-red-600 hover:underline">312 305 2600</a> (Sıhhiye)</p>
+                            <p class="text-gray-600"><a href="tel:+903122976683" class="hover:text-red-600 hover:underline">312 297 6683</a> (Beytepe)</p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903123052777" class="hover:text-red-600 hover:underline">312 305 2777</a>, <a href="tel:+903122976018" class="hover:text-red-600 hover:underline">312 297 6018</a></p>
                         </div>
                     </div>
                 </div>
@@ -271,78 +282,78 @@
                     <div class="space-y-4">
                         <div>
                             <h3 class="font-medium text-gray-900">Diş Hekimliği Fakültesi</h3>
-                            <p class="text-gray-600">312 311 0016</p>
-                            <p class="text-gray-600">Faks: 312 310 4440</p>
+                            <p class="text-gray-600"><a href="tel:+903123110016" class="hover:text-red-600 hover:underline">312 311 0016</a></p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903123104440" class="hover:text-red-600 hover:underline">312 310 4440</a></p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">Eczacılık Fakültesi</h3>
-                            <p class="text-gray-600">312 310 8831</p>
-                            <p class="text-gray-600">Faks: 312 311 4777</p>
+                            <p class="text-gray-600"><a href="tel:+903123108831" class="hover:text-red-600 hover:underline">312 310 8831</a></p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903123114777" class="hover:text-red-600 hover:underline">312 311 4777</a></p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">Edebiyat Fakültesi</h3>
-                            <p class="text-gray-600">312 297 6811</p>
-                            <p class="text-gray-600">Faks: 312 299 2085</p>
+                            <p class="text-gray-600"><a href="tel:+903122976811" class="hover:text-red-600 hover:underline">312 297 6811</a></p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903122992085" class="hover:text-red-600 hover:underline">312 299 2085</a></p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">Eğitim Fakültesi</h3>
-                            <p class="text-gray-600">312 297 6821</p>
-                            <p class="text-gray-600">Faks: 312 299 2083</p>
+                            <p class="text-gray-600"><a href="tel:+903122976821" class="hover:text-red-600 hover:underline">312 297 6821</a></p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903122992083" class="hover:text-red-600 hover:underline">312 299 2083</a></p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">Fen Fakültesi</h3>
-                            <p class="text-gray-600">312 299 2080</p>
-                            <p class="text-gray-600">Faks: 312 299 2093</p>
+                            <p class="text-gray-600"><a href="tel:+903122992080" class="hover:text-red-600 hover:underline">312 299 2080</a></p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903122992093" class="hover:text-red-600 hover:underline">312 299 2093</a></p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">Fizik Tedavi ve Rehabilitasyon Fakültesi</h3>
-                            <p class="text-gray-600">312 305 1577</p>
-                            <p class="text-gray-600">Faks: 312 305 2012</p>
+                            <p class="text-gray-600"><a href="tel:+903123051577" class="hover:text-red-600 hover:underline">312 305 1577</a></p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903123052012" class="hover:text-red-600 hover:underline">312 305 2012</a></p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">Güzel Sanatlar Fakültesi</h3>
-                            <p class="text-gray-600">312 299 2062</p>
-                            <p class="text-gray-600">Faks: 312 299 2061</p>
+                            <p class="text-gray-600"><a href="tel:+903122992062" class="hover:text-red-600 hover:underline">312 299 2062</a></p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903122992061" class="hover:text-red-600 hover:underline">312 299 2061</a></p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">Hemşirelik Fakültesi</h3>
-                            <p class="text-gray-600">312 305 1580</p>
-                            <p class="text-gray-600">Faks: 312 312 7085</p>
+                            <p class="text-gray-600"><a href="tel:+903123051580" class="hover:text-red-600 hover:underline">312 305 1580</a></p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903123127085" class="hover:text-red-600 hover:underline">312 312 7085</a></p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">Hukuk Fakültesi</h3>
-                            <p class="text-gray-600">312 297 6270</p>
-                            <p class="text-gray-600">Faks: 312 297 6275</p>
+                            <p class="text-gray-600"><a href="tel:+903122976270" class="hover:text-red-600 hover:underline">312 297 6270</a></p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903122976275" class="hover:text-red-600 hover:underline">312 297 6275</a></p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">İktisadi ve İdari Bilimler Fakültesi</h3>
-                            <p class="text-gray-600">312 297 6830</p>
-                            <p class="text-gray-600">Faks: 312 299 2084</p>
+                            <p class="text-gray-600"><a href="tel:+903122976830" class="hover:text-red-600 hover:underline">312 297 6830</a></p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903122992084" class="hover:text-red-600 hover:underline">312 299 2084</a></p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">İletişim Fakültesi</h3>
-                            <p class="text-gray-600">312 297 6225</p>
-                            <p class="text-gray-600">Faks: 312 297 6226</p>
+                            <p class="text-gray-600"><a href="tel:+903122976225" class="hover:text-red-600 hover:underline">312 297 6225</a></p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903122976226" class="hover:text-red-600 hover:underline">312 297 6226</a></p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">Mühendislik Fakültesi</h3>
-                            <p class="text-gray-600">312 297 6800</p>
-                            <p class="text-gray-600">Faks: 312 299 2078</p>
+                            <p class="text-gray-600"><a href="tel:+903122976800" class="hover:text-red-600 hover:underline">312 297 6800</a></p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903122992078" class="hover:text-red-600 hover:underline">312 299 2078</a></p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">Tıp Fakültesi</h3>
-                            <p class="text-gray-600">312 305 1670</p>
-                            <p class="text-gray-600">Faks: 312 310 0580</p>
+                            <p class="text-gray-600"><a href="tel:+903123051670" class="hover:text-red-600 hover:underline">312 305 1670</a></p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903123100580" class="hover:text-red-600 hover:underline">312 310 0580</a></p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">Sağlık Bilimleri Fakültesi</h3>
-                            <p class="text-gray-600">312 305 2051</p>
-                            <p class="text-gray-600">Faks: 312 305 2054</p>
+                            <p class="text-gray-600"><a href="tel:+903123052051" class="hover:text-red-600 hover:underline">312 305 2051</a></p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903123052054" class="hover:text-red-600 hover:underline">312 305 2054</a></p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">Spor Bilimleri Fakültesi</h3>
-                            <p class="text-gray-600">312 297 6890</p>
-                            <p class="text-gray-600">Faks: 312 299 2167</p>
+                            <p class="text-gray-600"><a href="tel:+903122976890" class="hover:text-red-600 hover:underline">312 297 6890</a></p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903122992167" class="hover:text-red-600 hover:underline">312 299 2167</a></p>
                         </div>
                     </div>
                 </div>
@@ -353,78 +364,78 @@
                     <div class="space-y-4">
                         <div>
                             <h3 class="font-medium text-gray-900">Aşı Enstitüsü</h3>
-                            <p class="text-gray-600">312 305 3494</p>
-                            <p class="text-gray-600">Faks: 312 305 3493</p>
+                            <p class="text-gray-600"><a href="tel:+903123053494" class="hover:text-red-600 hover:underline">312 305 3494</a></p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903123053493" class="hover:text-red-600 hover:underline">312 305 3493</a></p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">Atatürk İlkeleri ve İnkılap Tarihi Enstitüsü</h3>
-                            <p class="text-gray-600">312 297 6870</p>
-                            <p class="text-gray-600">Faks: 312 299 2076</p>
+                            <p class="text-gray-600"><a href="tel:+903122976870" class="hover:text-red-600 hover:underline">312 297 6870</a></p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903122992076" class="hover:text-red-600 hover:underline">312 299 2076</a></p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">Bilişim Enstitüsü</h3>
-                            <p class="text-gray-600">312 297 7193</p>
-                            <p class="text-gray-600">Faks: 312 297 7194</p>
+                            <p class="text-gray-600"><a href="tel:+903122977193" class="hover:text-red-600 hover:underline">312 297 7193</a></p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903122977194" class="hover:text-red-600 hover:underline">312 297 7194</a></p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">Çocuk Sağlığı Enstitüsü</h3>
-                            <p class="text-gray-600">312 324 4291</p>
-                            <p class="text-gray-600">Faks: 312 324 3284</p>
+                            <p class="text-gray-600"><a href="tel:+903123244291" class="hover:text-red-600 hover:underline">312 324 4291</a></p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903123243284" class="hover:text-red-600 hover:underline">312 324 3284</a></p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">Eğitim Bilimleri Enstitüsü</h3>
-                            <p class="text-gray-600">312 297 8571</p>
-                            <p class="text-gray-600">Faks: 312 297 8566</p>
+                            <p class="text-gray-600"><a href="tel:+903122978571" class="hover:text-red-600 hover:underline">312 297 8571</a></p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903122978566" class="hover:text-red-600 hover:underline">312 297 8566</a></p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">Fen Bilimleri Enstitüsü</h3>
-                            <p class="text-gray-600">312 297 6867</p>
-                            <p class="text-gray-600">Faks: 312 299 2157</p>
+                            <p class="text-gray-600"><a href="tel:+903122976867" class="hover:text-red-600 hover:underline">312 297 6867</a></p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903122992157" class="hover:text-red-600 hover:underline">312 299 2157</a></p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">Güzel Sanatlar Enstitüsü</h3>
-                            <p class="text-gray-600">312 297 8754</p>
-                            <p class="text-gray-600">Faks: 312 297 8753</p>
+                            <p class="text-gray-600"><a href="tel:+903122978754" class="hover:text-red-600 hover:underline">312 297 8754</a></p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903122978753" class="hover:text-red-600 hover:underline">312 297 8753</a></p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">Halk Sağlığı Enstitüsü</h3>
-                            <p class="text-gray-600">312 305 1590</p>
-                            <p class="text-gray-600">Faks: 312 311 0072</p>
+                            <p class="text-gray-600"><a href="tel:+903123051590" class="hover:text-red-600 hover:underline">312 305 1590</a></p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903123110072" class="hover:text-red-600 hover:underline">312 311 0072</a></p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">Nörolojik Bilimler ve Psikiyatri Enstitüsü</h3>
-                            <p class="text-gray-600">312 305 2130</p>
-                            <p class="text-gray-600">Faks: 312 311 3973</p>
+                            <p class="text-gray-600"><a href="tel:+903123052130" class="hover:text-red-600 hover:underline">312 305 2130</a></p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903123113973" class="hover:text-red-600 hover:underline">312 311 3973</a></p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">Nüfus Etütleri Enstitüsü</h3>
-                            <p class="text-gray-600">312 297 7367</p>
-                            <p class="text-gray-600">Faks: 312 297 7370</p>
+                            <p class="text-gray-600"><a href="tel:+903122977367" class="hover:text-red-600 hover:underline">312 297 7367</a></p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903122977370" class="hover:text-red-600 hover:underline">312 297 7370</a></p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">Nükleer Bilimler Enstitüsü</h3>
-                            <p class="text-gray-600">312 297 6880</p>
-                            <p class="text-gray-600">Faks: 312 297 6880</p>
+                            <p class="text-gray-600"><a href="tel:+903122976880" class="hover:text-red-600 hover:underline">312 297 6880</a></p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903122976880" class="hover:text-red-600 hover:underline">312 297 6880</a></p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">Onkoloji Enstitüsü</h3>
-                            <p class="text-gray-600">312 309 2904</p>
-                            <p class="text-gray-600">Faks: 312 309 2905</p>
+                            <p class="text-gray-600"><a href="tel:+903123092904" class="hover:text-red-600 hover:underline">312 309 2904</a></p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903123092905" class="hover:text-red-600 hover:underline">312 309 2905</a></p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">Sağlık Bilimleri Enstitüsü</h3>
-                            <p class="text-gray-600">312 305 1090</p>
-                            <p class="text-gray-600">Faks: 312 309 3190</p>
+                            <p class="text-gray-600"><a href="tel:+903123051090" class="hover:text-red-600 hover:underline">312 305 1090</a></p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903123093190" class="hover:text-red-600 hover:underline">312 309 3190</a></p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">Sosyal Bilimler Enstitüsü</h3>
-                            <p class="text-gray-600">312 297 6860</p>
-                            <p class="text-gray-600">Faks: 312 299 2147</p>
+                            <p class="text-gray-600"><a href="tel:+903122976860" class="hover:text-red-600 hover:underline">312 297 6860</a></p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903122992147" class="hover:text-red-600 hover:underline">312 299 2147</a></p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">Türkiyat Araştırmaları Enstitüsü</h3>
-                            <p class="text-gray-600">312 297 6771</p>
-                            <p class="text-gray-600">Faks: 312 297 7171</p>
+                            <p class="text-gray-600"><a href="tel:+903122976771" class="hover:text-red-600 hover:underline">312 297 6771</a></p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903122977171" class="hover:text-red-600 hover:underline">312 297 7171</a></p>
                         </div>
                     </div>
                 </div>
@@ -435,8 +446,8 @@
                     <div class="space-y-4">
                         <div>
                             <h3 class="font-medium text-gray-900">Ankara Devlet Konservatuvarı</h3>
-                            <p class="text-gray-600">312 212 6210 - 6211 - 6212</p>
-                            <p class="text-gray-600">Faks: 312 215 8466</p>
+                            <p class="text-gray-600"><a href="tel:+903122126210" class="hover:text-red-600 hover:underline">312 212 6210</a> - <a href="tel:+903122126211" class="hover:text-red-600 hover:underline">6211</a> - <a href="tel:+903122126212" class="hover:text-red-600 hover:underline">6212</a></p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903122158466" class="hover:text-red-600 hover:underline">312 215 8466</a></p>
                         </div>
                     </div>
                 </div>
@@ -447,13 +458,13 @@
                     <div class="space-y-4">
                         <div>
                             <h3 class="font-medium text-gray-900">Yabancı Diller Yüksekokulu</h3>
-                            <p class="text-gray-600">312 297 8085</p>
-                            <p class="text-gray-600">Faks: 312 299 2158</p>
+                            <p class="text-gray-600"><a href="tel:+903122978085" class="hover:text-red-600 hover:underline">312 297 8085</a></p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903122992158" class="hover:text-red-600 hover:underline">312 299 2158</a></p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">Mesleki Teknoloji Yüksek Okulu</h3>
-                            <p class="text-gray-600">312 297 6885</p>
-                            <p class="text-gray-600">Faks: 312 297 6885</p>
+                            <p class="text-gray-600"><a href="tel:+903122976885" class="hover:text-red-600 hover:underline">312 297 6885</a></p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903122976885" class="hover:text-red-600 hover:underline">312 297 6885</a></p>
                         </div>
                     </div>
                 </div>
@@ -464,23 +475,23 @@
                     <div class="space-y-4">
                         <div>
                             <h3 class="font-medium text-gray-900">Hacettepe Ankara Sanayi Odası 1. OSB Meslek Yüksekokulu</h3>
-                            <p class="text-gray-600">312 267 3020</p>
-                            <p class="text-gray-600">Faks: 312 267 2030</p>
+                            <p class="text-gray-600"><a href="tel:+903122673020" class="hover:text-red-600 hover:underline">312 267 3020</a></p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903122672030" class="hover:text-red-600 hover:underline">312 267 2030</a></p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">Başkent OSB Teknik Bilimler Meslek Yüksekokulu</h3>
-                            <p class="text-gray-600">312 502 0469</p>
-                            <p class="text-gray-600">Faks: 312 501 9994</p>
+                            <p class="text-gray-600"><a href="tel:+903125020469" class="hover:text-red-600 hover:underline">312 502 0469</a></p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903125019994" class="hover:text-red-600 hover:underline">312 501 9994</a></p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">Sağlık Hizmetleri Meslek Yüksekokulu</h3>
-                            <p class="text-gray-600">312 305 1587</p>
-                            <p class="text-gray-600">Faks: 312 310 2730</p>
+                            <p class="text-gray-600"><a href="tel:+903123051587" class="hover:text-red-600 hover:underline">312 305 1587</a></p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903123102730" class="hover:text-red-600 hover:underline">312 310 2730</a></p>
                         </div>
                         <div>
                             <h3 class="font-medium text-gray-900">Sosyal Bilimler Meslek Yüksekokulu</h3>
-                            <p class="text-gray-600">312 311 6015</p>
-                            <p class="text-gray-600">Faks: 312 311 6089</p>
+                            <p class="text-gray-600"><a href="tel:+903123116015" class="hover:text-red-600 hover:underline">312 311 6015</a></p>
+                            <p class="text-gray-600">Faks: <a href="tel:+903123116089" class="hover:text-red-600 hover:underline">312 311 6089</a></p>
                         </div>
                     </div>
                 </div>
@@ -509,21 +520,23 @@
                         <p>Hacettepe Üniversitesi öğrencileri ve adayları için<br>bağımsız, güncel ve doğru bilgi kaynağı.</p>
                     </div>
                     <div>
-                        <h4>Hızlı Erişim</h4>
+                        <h2 class="hb-footer-heading">Hızlı Erişim</h2>
                         <ul>
+                            <li><a href="/page/ogrenci-isleri.html">Öğrenci İşleri</a></li>
                             <li><a href="/page/akademik-takvim.html">Akademik Takvim 2026-2027</a></li>
                             <li><a href="/page/siralamalar.html">Bölüm Sıralamaları</a></li>
                             <li><a href="/page/barinma.html">Barınma Olanakları</a></li>
                             <li><a href="/page/kampus-haritasi.html">Kampüs Haritası</a></li>
+                            <li><a href="/page/dumansiz-kampus.html">Dumansız Kampüs</a></li>
                             <li><a href="/page/ogrenci-topluluklari.html">Öğrenci Toplulukları</a></li>
                         </ul>
                     </div>
                     <div>
-                        <h4>Site</h4>
+                        <h2 class="hb-footer-heading">Site</h2>
                         <ul>
                             <li><a href="/hakkinda.html">Site Hakkında</a></li>
                             <li><a href="/page/iletisim.html">İletişim</a></li>
-                            <li><a href="https://github.com/hacettepebilgi/hacettepe.biz" target="_blank">GitHub</a></li>
+                            <li><a href="https://github.com/hacettepebilgi/hacettepe.biz" target="_blank" rel="noopener">GitHub</a></li>
                         </ul>
                     </div>
                 </div>
@@ -534,5 +547,52 @@
             </div>
         </footer>
     </div>
+    </div>
+
+    <script>
+    // Birim arama. Turkce karakter duyarli: "ogrenci" -> "Ogrenci Isleri" bulur.
+    (function () {
+        const kutu = document.getElementById('birim-ara');
+        const sonuc = document.getElementById('ara-sonuc');
+        if (!kutu) return;
+
+        const sadelestir = (t) => t
+            .replace(/İ/g, 'i').replace(/I/g, 'i').replace(/ı/g, 'i')
+            .toLowerCase()
+            .replace(/ş/g, 's').replace(/ğ/g, 'g').replace(/ü/g, 'u')
+            .replace(/ö/g, 'o').replace(/ç/g, 'c')
+            .replace(/\s+/g, ' ').trim();
+
+        // Her birim: h3 iceren div. Karti da bul ki tamamen bosalirsa gizlensin.
+        const birimler = [...document.querySelectorAll('main .hb-card div > h3')].map((h3) => ({
+            el: h3.parentElement,
+            kart: h3.closest('.hb-card'),
+            metin: sadelestir(h3.parentElement.textContent),
+        }));
+        const kartlar = [...new Set(birimler.map((b) => b.kart))];
+
+        kutu.addEventListener('input', () => {
+            const q = sadelestir(kutu.value);
+            if (!q) {
+                birimler.forEach((b) => (b.el.hidden = false));
+                kartlar.forEach((k) => (k.hidden = false));
+                sonuc.textContent = '';
+                return;
+            }
+            let bulunan = 0;
+            birimler.forEach((b) => {
+                const esles = b.metin.includes(q);
+                b.el.hidden = !esles;
+                if (esles) bulunan++;
+            });
+            kartlar.forEach((k) => {
+                k.hidden = !birimler.some((b) => b.kart === k && !b.el.hidden);
+            });
+            sonuc.textContent = bulunan
+                ? bulunan + ' birim bulundu'
+                : 'Eşleşen birim yok. Genel santral: 312 305 5000';
+        });
+    })();
+    </script>
 </body>
 </html> 

@@ -12,7 +12,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -64,8 +63,10 @@
   }
 ]
     </script>
+    <link rel="stylesheet" href="../assets/tailwind.css">
 </head>
 <body class="bg-pattern min-h-screen">
+    <a href="#icerik" class="skip-link">İçeriğe geç</a>
     <div class="min-h-screen flex flex-col">
         <!-- Navbar -->
         <div id="app" class="min-h-screen flex flex-col">
@@ -77,7 +78,7 @@
                     <span>Hacettepe.biz</span>
                 </a>
                 <button class="hb-nav-toggle" aria-label="Menüyü aç/kapat" onclick="this.nextElementSibling.classList.toggle('open')">
-                    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
                 </button>
                 <ul class="hb-nav-links">
                     <li><a href="/">Ana Sayfa</a></li>
@@ -126,7 +127,7 @@
                 </div>
         </div>
 
-        <main class="flex-grow container mx-auto px-4 pt-6 pb-8">
+        <main id="icerik" class="flex-grow container mx-auto px-4 pt-6 pb-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="hb-card">
                     <div class="flex items-start space-x-4">
@@ -146,7 +147,7 @@
                                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                         </svg>
-                                            <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x14d34e4401e01e91:0x273ae666c2ddd327" class="text-red-600 hover:text-red-700" target="_blank">Google Maps</a>
+                                            <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x14d34e4401e01e91:0x273ae666c2ddd327" class="text-red-600 hover:text-red-700" target="_blank" rel="noopener">Google Maps</a>
                                 </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
@@ -154,7 +155,7 @@
                                                 <path d="M8 10h8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
                                             Kampüse uzaklık: 1KM
-                                            <a href="https://www.google.com/maps/dir/Hacettepe,+Hacettepe+%C3%9Cniversitesi+S%C4%B1hh%C4%B1ye+Kamp%C3%BCs%C3%BC,+Alt%C4%B1nda%C4%9F%2FAnkara/Erzurum,+KYK+CEBEC%C4%B0+ERKEK+YURDU+VHB+BLOK,+Ge%C3%A7im+Sk.+No:14,+06590+%C3%87ankaya%2FAnkara" class="ml-2 text-red-600 hover:text-red-700 group-hover:translate-x-1 transition-transform" target="_blank">Haritada gör</a>
+                                            <a href="https://www.google.com/maps/dir/Hacettepe,+Hacettepe+%C3%9Cniversitesi+S%C4%B1hh%C4%B1ye+Kamp%C3%BCs%C3%BC,+Alt%C4%B1nda%C4%9F%2FAnkara/Erzurum,+KYK+CEBEC%C4%B0+ERKEK+YURDU+VHB+BLOK,+Ge%C3%A7im+Sk.+No:14,+06590+%C3%87ankaya%2FAnkara" class="ml-2 text-red-600 hover:text-red-700 group-hover:translate-x-1 transition-transform" target="_blank" rel="noopener">Haritada gör</a>
                                 </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
@@ -172,7 +173,7 @@
                                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
-                                            <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x14d34e88ba10239d:0x3bea34f3e9f3ab69" class="text-red-600 hover:text-red-700" target="_blank">Google Maps</a>
+                                            <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x14d34e88ba10239d:0x3bea34f3e9f3ab69" class="text-red-600 hover:text-red-700" target="_blank" rel="noopener">Google Maps</a>
                                 </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
@@ -180,7 +181,7 @@
                                                 <path d="M8 10h8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
                                             Kampüse uzaklık: 4KM
-                                            <a href="https://www.google.com/maps/dir/Hacettepe,+Hacettepe+%C3%9Cniversitesi+S%C4%B1hh%C4%B1ye+Kamp%C3%BCs%C3%BC,+Alt%C4%B1nda%C4%9F%2FAnkara/Z%C3%BCbeyde+Han%C4%B1m,+KYK+H%C3%BCseyin+Gazi+Erkek+%C3%96%C4%9Frenci+Yurdu,+643.+Sk.+No:2%2FA,+06070+Alt%C4%B1nda%C4%9F%2FAnkara" class="ml-2 text-red-600 hover:text-red-700 group-hover:translate-x-1 transition-transform" target="_blank">Haritada gör</a>
+                                            <a href="https://www.google.com/maps/dir/Hacettepe,+Hacettepe+%C3%9Cniversitesi+S%C4%B1hh%C4%B1ye+Kamp%C3%BCs%C3%BC,+Alt%C4%B1nda%C4%9F%2FAnkara/Z%C3%BCbeyde+Han%C4%B1m,+KYK+H%C3%BCseyin+Gazi+Erkek+%C3%96%C4%9Frenci+Yurdu,+643.+Sk.+No:2%2FA,+06070+Alt%C4%B1nda%C4%9F%2FAnkara" class="ml-2 text-red-600 hover:text-red-700 group-hover:translate-x-1 transition-transform" target="_blank" rel="noopener">Haritada gör</a>
                                 </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
@@ -198,7 +199,7 @@
                                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
-                                            <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x14d34f6b4c98765f:0x39e05813a6250683" class="text-red-600 hover:text-red-700" target="_blank">Google Maps</a>
+                                            <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x14d34f6b4c98765f:0x39e05813a6250683" class="text-red-600 hover:text-red-700" target="_blank" rel="noopener">Google Maps</a>
                                 </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
@@ -206,7 +207,7 @@
                                                 <path d="M8 10h8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
                                             Kampüse uzaklık: 10KM
-                                            <a href="https://www.google.com/maps/dir/Hacettepe,+Hacettepe+%C3%9Cniversitesi+S%C4%B1hh%C4%B1ye+Kamp%C3%BCs%C3%BC,+Alt%C4%B1nda%C4%9F%2FAnkara/Balgat,+GSB+%2F+KYK+Osman+Tan+Erkek+%C3%96%C4%9Frenci+Yurdu,+Av.+%C3%96zdemir+%C3%96zok+Sk.+No:3,+06520+%C3%87ankaya%2FAnkara" class="ml-2 text-red-600 hover:text-red-700 group-hover:translate-x-1 transition-transform" target="_blank">Haritada gör</a>
+                                            <a href="https://www.google.com/maps/dir/Hacettepe,+Hacettepe+%C3%9Cniversitesi+S%C4%B1hh%C4%B1ye+Kamp%C3%BCs%C3%BC,+Alt%C4%B1nda%C4%9F%2FAnkara/Balgat,+GSB+%2F+KYK+Osman+Tan+Erkek+%C3%96%C4%9Frenci+Yurdu,+Av.+%C3%96zdemir+%C3%96zok+Sk.+No:3,+06520+%C3%87ankaya%2FAnkara" class="ml-2 text-red-600 hover:text-red-700 group-hover:translate-x-1 transition-transform" target="_blank" rel="noopener">Haritada gör</a>
                                 </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
@@ -239,7 +240,7 @@
                                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                         </svg>
-                                            <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x14d34e148f8a6563:0x609e2795f47c67f3" class="text-red-600 hover:text-red-700" target="_blank">Google Maps</a>
+                                            <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x14d34e148f8a6563:0x609e2795f47c67f3" class="text-red-600 hover:text-red-700" target="_blank" rel="noopener">Google Maps</a>
                                 </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
@@ -247,7 +248,7 @@
                                                 <path d="M8 10h8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
                                             Kampüse uzaklık: 2KM
-                                            <a href="https://www.google.com/maps/dir/Hacettepe,+Hacettepe+%C3%9Cniversitesi+S%C4%B1hh%C4%B1ye+Kamp%C3%BCs%C3%BC,+Alt%C4%B1nda%C4%9F%2FAnkara/Demirlibah%C3%A7e,+Atat%C3%BCrk+Yurdu,+Plevne+Cd.+No:4,+06340+Mamak%2FAnkara" class="ml-2 text-red-600 hover:text-red-700 group-hover:translate-x-1 transition-transform" target="_blank">Haritada gör</a>
+                                            <a href="https://www.google.com/maps/dir/Hacettepe,+Hacettepe+%C3%9Cniversitesi+S%C4%B1hh%C4%B1ye+Kamp%C3%BCs%C3%BC,+Alt%C4%B1nda%C4%9F%2FAnkara/Demirlibah%C3%A7e,+Atat%C3%BCrk+Yurdu,+Plevne+Cd.+No:4,+06340+Mamak%2FAnkara" class="ml-2 text-red-600 hover:text-red-700 group-hover:translate-x-1 transition-transform" target="_blank" rel="noopener">Haritada gör</a>
                                 </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
@@ -265,7 +266,7 @@
                                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
-                                            <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x14d34e40f2a59403:0x2c55cd87ecbd7654" class="text-red-600 hover:text-red-700" target="_blank">Google Maps</a>
+                                            <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x14d34e40f2a59403:0x2c55cd87ecbd7654" class="text-red-600 hover:text-red-700" target="_blank" rel="noopener">Google Maps</a>
                                         </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
@@ -273,7 +274,7 @@
                                                 <path d="M8 10h8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                         </svg>
                                             Kampüse uzaklık: 3KM
-                                            <a href="https://www.google.com/maps/dir/Hacettepe,+Hacettepe+%C3%9Cniversitesi+S%C4%B1hh%C4%B1ye+Kamp%C3%BCs%C3%BC,+Alt%C4%B1nda%C4%9F%2FAnkara/Sakarya,+Ankara+Hst.,+06230+Alt%C4%B1nda%C4%9F%2FAnkara" class="ml-2 text-red-600 hover:text-red-700 group-hover:translate-x-1 transition-transform" target="_blank">Haritada gör</a>
+                                            <a href="https://www.google.com/maps/dir/Hacettepe,+Hacettepe+%C3%9Cniversitesi+S%C4%B1hh%C4%B1ye+Kamp%C3%BCs%C3%BC,+Alt%C4%B1nda%C4%9F%2FAnkara/Sakarya,+Ankara+Hst.,+06230+Alt%C4%B1nda%C4%9F%2FAnkara" class="ml-2 text-red-600 hover:text-red-700 group-hover:translate-x-1 transition-transform" target="_blank" rel="noopener">Haritada gör</a>
                                 </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
@@ -292,7 +293,7 @@
                                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
-                                            <a href="https://www.google.com/maps/place/Yeni%C5%9Fehir+K%C4%B1z+%C3%96%C4%9Frenci+Yurdu/@39.9139285,32.8558661,17z/data=!3m1!4b1!4m6!3m5!1s0x14d34fa8523eb295:0x5a039a2d183cc233!8m2!3d39.9139285!4d32.8558661!16s%2Fg%2F1tdhxcl3" class="text-red-600 hover:text-red-700" target="_blank">Google Maps</a>
+                                            <a href="https://www.google.com/maps/place/Yeni%C5%9Fehir+K%C4%B1z+%C3%96%C4%9Frenci+Yurdu/@39.9139285,32.8558661,17z/data=!3m1!4b1!4m6!3m5!1s0x14d34fa8523eb295:0x5a039a2d183cc233!8m2!3d39.9139285!4d32.8558661!16s%2Fg%2F1tdhxcl3" class="text-red-600 hover:text-red-700" target="_blank" rel="noopener">Google Maps</a>
                                 </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
@@ -300,7 +301,7 @@
                                                 <path d="M8 10h8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
                                             Kampüse uzaklık: 3.3KM
-                                            <a href="https://www.google.com/maps/dir/Hacettepe,+Hacettepe+%C3%9Cniversitesi+S%C4%B1hh%C4%B1ye+Kamp%C3%BCs%C3%BC,+Alt%C4%B1nda%C4%9F%2FAnkara/Kavakl%C4%B1dere,+Yeni%C5%9Fehir+K%C4%B1z+%C3%96%C4%9Frenci+Yurdu,+06700+%C3%87ankaya%2FAnkara" class="ml-2 text-red-600 hover:text-red-700 group-hover:translate-x-1 transition-transform" target="_blank">Haritada gör</a>
+                                            <a href="https://www.google.com/maps/dir/Hacettepe,+Hacettepe+%C3%9Cniversitesi+S%C4%B1hh%C4%B1ye+Kamp%C3%BCs%C3%BC,+Alt%C4%B1nda%C4%9F%2FAnkara/Kavakl%C4%B1dere,+Yeni%C5%9Fehir+K%C4%B1z+%C3%96%C4%9Frenci+Yurdu,+06700+%C3%87ankaya%2FAnkara" class="ml-2 text-red-600 hover:text-red-700 group-hover:translate-x-1 transition-transform" target="_blank" rel="noopener">Haritada gör</a>
                             </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
@@ -318,7 +319,7 @@
                                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                         </svg>
-                                            <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x14d34f2c6b3a6aa5:0x8350305d22876a1f" class="text-red-600 hover:text-red-700" target="_blank">Google Maps</a>
+                                            <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x14d34f2c6b3a6aa5:0x8350305d22876a1f" class="text-red-600 hover:text-red-700" target="_blank" rel="noopener">Google Maps</a>
                                 </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
@@ -326,7 +327,7 @@
                                                 <path d="M8 10h8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
                                             Kampüse uzaklık: 4KM
-                                            <a href="https://www.google.com/maps/dir/Hacettepe,+Hacettepe+%C3%9Cniversitesi+S%C4%B1hh%C4%B1ye+Kamp%C3%BCs%C3%BC,+Alt%C4%B1nda%C4%9F%2FAnkara/Alt%C4%B1nevler,+Saime+Kad%C4%B1n+KYK+K%C4%B1z+%C3%96%C4%9Frenci+Yurdu,+06350+Mamak%2FAnkara" class="ml-2 text-red-600 hover:text-red-700 group-hover:translate-x-1 transition-transform" target="_blank">Haritada gör</a>
+                                            <a href="https://www.google.com/maps/dir/Hacettepe,+Hacettepe+%C3%9Cniversitesi+S%C4%B1hh%C4%B1ye+Kamp%C3%BCs%C3%BC,+Alt%C4%B1nda%C4%9F%2FAnkara/Alt%C4%B1nevler,+Saime+Kad%C4%B1n+KYK+K%C4%B1z+%C3%96%C4%9Frenci+Yurdu,+06350+Mamak%2FAnkara" class="ml-2 text-red-600 hover:text-red-700 group-hover:translate-x-1 transition-transform" target="_blank" rel="noopener">Haritada gör</a>
                                 </div>
                                         <div class="flex items-center text-gray-600">
                                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
@@ -361,21 +362,23 @@
                         <p>Hacettepe Üniversitesi öğrencileri ve adayları için<br>bağımsız, güncel ve doğru bilgi kaynağı.</p>
                     </div>
                     <div>
-                        <h4>Hızlı Erişim</h4>
+                        <h2 class="hb-footer-heading">Hızlı Erişim</h2>
                         <ul>
+                            <li><a href="/page/ogrenci-isleri.html">Öğrenci İşleri</a></li>
                             <li><a href="/page/akademik-takvim.html">Akademik Takvim 2026-2027</a></li>
                             <li><a href="/page/siralamalar.html">Bölüm Sıralamaları</a></li>
                             <li><a href="/page/barinma.html">Barınma Olanakları</a></li>
                             <li><a href="/page/kampus-haritasi.html">Kampüs Haritası</a></li>
+                            <li><a href="/page/dumansiz-kampus.html">Dumansız Kampüs</a></li>
                             <li><a href="/page/ogrenci-topluluklari.html">Öğrenci Toplulukları</a></li>
                         </ul>
                     </div>
                     <div>
-                        <h4>Site</h4>
+                        <h2 class="hb-footer-heading">Site</h2>
                         <ul>
                             <li><a href="/hakkinda.html">Site Hakkında</a></li>
                             <li><a href="/page/iletisim.html">İletişim</a></li>
-                            <li><a href="https://github.com/hacettepebilgi/hacettepe.biz" target="_blank">GitHub</a></li>
+                            <li><a href="https://github.com/hacettepebilgi/hacettepe.biz" target="_blank" rel="noopener">GitHub</a></li>
                         </ul>
                     </div>
                 </div>

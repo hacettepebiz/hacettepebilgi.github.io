@@ -13,7 +13,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -33,13 +32,13 @@
     <meta property="og:site_name" content="Hacettepe Bilgilendirme">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://hacettepe.biz/assets/img/logo.png">
-    <title>Hacettepe Yeni Kazananlar Rehberi 2026-2027 | E-Devlet Kayıt & Oryantasyon</title>
+    <title>Hacettepe Yeni Kazananlar 2026-2027 | E-Devlet Kayıt Rehberi</title>
     <meta name="description" content="Hacettepe Üniversitesini yeni kazanan öğrenciler için e-Devlet kayıt adımları, öğrenci numarası alma, oryantasyon, yurt başvurusu ve kampüs başlangıç rehberi.">
     <meta name="keywords" content="hacettepe yeni kazananlar, hacettepe öğrenci numarası sorgulama, hacettepe oryantasyon, hacettepe ilk kayıt, hacettepe e-kayıt 2026">
-    <meta property="og:title" content="Hacettepe Yeni Kazananlar Rehberi 2026-2027 | E-Devlet Kayıt & Oryantasyon">
+    <meta property="og:title" content="Hacettepe Yeni Kazananlar 2026-2027 | E-Devlet Kayıt Rehberi">
     <meta property="og:description" content="Hacettepe Üniversitesini yeni kazanan öğrenciler için e-Devlet kayıt adımları, öğrenci numarası alma, oryantasyon, yurt başvurusu ve kampüs başlangıç rehberi.">
     <meta property="og:url" content="https://hacettepe.biz/page/yeni-kazananlar-2026.html">
-    <meta name="twitter:title" content="Hacettepe Yeni Kazananlar Rehberi 2026-2027 | E-Devlet Kayıt & Oryantasyon">
+    <meta name="twitter:title" content="Hacettepe Yeni Kazananlar 2026-2027 | E-Devlet Kayıt Rehberi">
     <meta name="twitter:description" content="Hacettepe Üniversitesini yeni kazanan öğrenciler için e-Devlet kayıt adımları, öğrenci numarası alma, oryantasyon, yurt başvurusu ve kampüs başlangıç rehberi.">
     <link rel="canonical" href="https://hacettepe.biz/page/yeni-kazananlar-2026.html">
     <script type="application/ld+json">
@@ -71,8 +70,10 @@
   }
 ]
     </script>
+    <link rel="stylesheet" href="../assets/tailwind.css">
 </head>
 <body class="bg-pattern">
+    <a href="#icerik" class="skip-link">İçeriğe geç</a>
     <div id="app" class="min-h-screen flex flex-col">
         <!-- Navbar -->
             <!-- hbiz Navbar -->
@@ -83,7 +84,7 @@
                     <span>Hacettepe.biz</span>
                 </a>
                 <button class="hb-nav-toggle" aria-label="Menüyü aç/kapat" onclick="this.nextElementSibling.classList.toggle('open')">
-                    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
                 </button>
                 <ul class="hb-nav-links">
                     <li><a href="/">Ana Sayfa</a></li>
@@ -116,7 +117,7 @@
             </div>
         </div>
 
-        <main class="flex-grow container mx-auto px-4 pt-6 pb-8">
+        <main id="icerik" class="flex-grow container mx-auto px-4 pt-6 pb-8">
             <section class="bg-red-50 border border-red-100 rounded-xl p-5 mb-6" aria-label="Hızlı özet">
                 <h2 class="text-lg font-semibold text-gray-900 mb-2">Hızlı Özet</h2>
                 <p class="text-gray-700 text-sm">Bu sayfada kayıt tarihleri, e-devlet adımları, şahsi kayıt durumları ve kayıt sonrası ilk işlemleri tek akışta bulabilirsiniz.</p>
@@ -130,7 +131,7 @@
                 <!-- Kaynak -->
                 <div class="bg-gray-50 rounded-lg p-4 text-center">
                     <p class="text-sm text-gray-600">
-                        Kaynak: <a href="https://yenikazanan.hacettepe.edu.tr/" target="_blank" class="text-blue-600 hover:text-blue-800 underline">Hacettepe Üniversitesi Yeni Kazananlar Portalı</a>
+                        Kaynak: <a href="https://yenikazanan.hacettepe.edu.tr/" target="_blank" rel="noopener" class="text-blue-600 hover:text-blue-800 underline">Hacettepe Üniversitesi Yeni Kazananlar Portalı</a>
                     </p>
                 </div>
 
@@ -150,7 +151,7 @@
                         </div>
                     </div>
                     <div class="p-6 text-center">
-                        <a href="https://bilsis.hacettepe.edu.tr/oibs/ogrsis/no_query.aspx" target="_blank" class="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors">
+                        <a href="https://bilsis.hacettepe.edu.tr/oibs/ogrsis/no_query.aspx" target="_blank" rel="noopener" class="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors">
                             <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none">
                                 <path d="M21 21L16.514 16.506L21 21ZM19 10.5C19 15.194 15.194 19 10.5 19C5.806 19 2 15.194 2 10.5C2 5.806 5.806 2 10.5 2C15.194 2 19 5.806 19 10.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
@@ -240,7 +241,7 @@
                             <p class="text-gray-700 leading-relaxed">
                                 Üniversitemize yeni yerleşen adaylar E-Devlet üzerinden elektronik kayıtlarını, 
                                 <strong class="text-red-600">24-26 Ağustos 2026</strong> tarihleri arasında 
-                                <a href="https://turkiye.gov.tr" target="_blank" class="text-blue-600 hover:text-blue-800 underline">turkiye.gov.tr</a> 
+                                <a href="https://turkiye.gov.tr" target="_blank" rel="noopener" class="text-blue-600 hover:text-blue-800 underline">turkiye.gov.tr</a> 
                                 web adresinde, "Yükseköğretim Kurulu Başkanlığı" başlığı altındaki "Üniversite E-Kayıt" 
                                 seçeneğinden E-Devlet şifresiyle gerçekleştirebileceklerdir.
                             </p>
@@ -356,7 +357,7 @@
                             <div class="grid md:grid-cols-2 gap-6">
                                 <div class="space-y-3">
                                     <h4 class="font-semibold text-gray-900">🔑 Şifre İşlemleri</h4>
-                                    <p class="text-gray-700 text-sm">Üniversite kayıtlarından sonra BİLSİS şifresi alma işlemleri için <a href="https://oidb.hacettepe.edu.tr/tr/menu/sifre_islemleri-60" target="_blank" class="text-blue-600 hover:text-blue-800 underline">Şifre İşlemleri Kılavuzu</a> sayfasını inceleyiniz.</p>
+                                    <p class="text-gray-700 text-sm">Üniversite kayıtlarından sonra BİLSİS şifresi alma işlemleri için <a href="https://oidb.hacettepe.edu.tr/tr/menu/sifre_islemleri-60" target="_blank" rel="noopener" class="text-blue-600 hover:text-blue-800 underline">Şifre İşlemleri Kılavuzu</a> sayfasını inceleyiniz.</p>
                                     
                                     <h4 class="font-semibold text-gray-900">📧 E-posta Adresi</h4>
                                     <p class="text-gray-700 text-sm">@hacettepe.edu.tr uzantılı e-posta adresleriniz kayıt işleminden sonra otomatik olarak oluşturulacaktır.</p>
@@ -366,7 +367,7 @@
                                     <p class="text-gray-700 text-sm">Öğrenci kimlik kartlarınızı ilerleyen günlerde kayıtlı olduğunuz bölümden/programdan alabilirsiniz.</p>
                                     
                                     <h4 class="font-semibold text-gray-900">🏠 Barınma</h4>
-                                    <p class="text-gray-700 text-sm">Barınma olanakları hakkında detaylı bilgi için <a href="https://www.sksdb.hacettepe.edu.tr/" target="_blank" class="text-blue-600 hover:text-blue-800 underline">sksdb.hacettepe.edu.tr</a> adresini ziyaret ediniz.</p>
+                                    <p class="text-gray-700 text-sm">Barınma olanakları hakkında detaylı bilgi için <a href="https://www.sksdb.hacettepe.edu.tr/" target="_blank" rel="noopener" class="text-blue-600 hover:text-blue-800 underline">sksdb.hacettepe.edu.tr</a> adresini ziyaret ediniz.</p>
                                 </div>
                             </div>
                         </div>
@@ -378,22 +379,22 @@
                     <div class="text-center">
                         <h3 class="text-xl font-semibold text-gray-900 mb-4">🔗 Faydalı Linkler</h3>
                         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                            <a href="https://www.ydyo.hacettepe.edu.tr/" target="_blank" class="inline-flex items-center justify-center px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors">
+                            <a href="https://www.ydyo.hacettepe.edu.tr/" target="_blank" rel="noopener" class="inline-flex items-center justify-center px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors">
                                 <span>Yabancı Diller Yüksekokulu</span>
                             </a>
-                            <a href="https://www.uni101.hacettepe.edu.tr" target="_blank" class="inline-flex items-center justify-center px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors">
+                            <a href="https://www.uni101.hacettepe.edu.tr" target="_blank" rel="noopener" class="inline-flex items-center justify-center px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors">
                                 <span>ÜNİ101</span>
                             </a>
-                            <a href="https://bilisim.hacettepe.edu.tr/" target="_blank" class="inline-flex items-center justify-center px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors">
+                            <a href="https://bilisim.hacettepe.edu.tr/" target="_blank" rel="noopener" class="inline-flex items-center justify-center px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors">
                                 <span>Bilişim</span>
                             </a>
-                            <a href="https://www.sksdb.hacettepe.edu.tr/" target="_blank" class="inline-flex items-center justify-center px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors">
+                            <a href="https://www.sksdb.hacettepe.edu.tr/" target="_blank" rel="noopener" class="inline-flex items-center justify-center px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors">
                                 <span>Öğrenci Yurtları</span>
                             </a>
-                            <a href="https://universitem.hacettepe.edu.tr/" target="_blank" class="inline-flex items-center justify-center px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors">
+                            <a href="https://universitem.hacettepe.edu.tr/" target="_blank" rel="noopener" class="inline-flex items-center justify-center px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors">
                                 <span>Aday Öğrenci</span>
                             </a>
-                            <a href="https://geribildirim.hacettepe.edu.tr/" target="_blank" class="inline-flex items-center justify-center px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors">
+                            <a href="https://geribildirim.hacettepe.edu.tr/" target="_blank" rel="noopener" class="inline-flex items-center justify-center px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors">
                                 <span>Geri Bildirim</span>
                             </a>
                         </div>
@@ -431,21 +432,23 @@
                         <p>Hacettepe Üniversitesi öğrencileri ve adayları için<br>bağımsız, güncel ve doğru bilgi kaynağı.</p>
                     </div>
                     <div>
-                        <h4>Hızlı Erişim</h4>
+                        <h2 class="hb-footer-heading">Hızlı Erişim</h2>
                         <ul>
+                            <li><a href="/page/ogrenci-isleri.html">Öğrenci İşleri</a></li>
                             <li><a href="/page/akademik-takvim.html">Akademik Takvim 2026-2027</a></li>
                             <li><a href="/page/siralamalar.html">Bölüm Sıralamaları</a></li>
                             <li><a href="/page/barinma.html">Barınma Olanakları</a></li>
                             <li><a href="/page/kampus-haritasi.html">Kampüs Haritası</a></li>
+                            <li><a href="/page/dumansiz-kampus.html">Dumansız Kampüs</a></li>
                             <li><a href="/page/ogrenci-topluluklari.html">Öğrenci Toplulukları</a></li>
                         </ul>
                     </div>
                     <div>
-                        <h4>Site</h4>
+                        <h2 class="hb-footer-heading">Site</h2>
                         <ul>
                             <li><a href="/hakkinda.html">Site Hakkında</a></li>
                             <li><a href="/page/iletisim.html">İletişim</a></li>
-                            <li><a href="https://github.com/hacettepebilgi/hacettepe.biz" target="_blank">GitHub</a></li>
+                            <li><a href="https://github.com/hacettepebilgi/hacettepe.biz" target="_blank" rel="noopener">GitHub</a></li>
                         </ul>
                     </div>
                 </div>

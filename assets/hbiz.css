@@ -180,20 +180,20 @@ a:focus-visible, button:focus-visible, input:focus-visible {
     height: 44px; width: auto; object-fit: contain;
     margin-bottom: 12px;
 }
-.hb-footer-brand p { font-size: 13px; color: #6b7280; line-height: 1.6; margin: 0; }
-.hb-footer h4 {
+.hb-footer-brand p { font-size: 13px; color: #9ca3af; line-height: 1.6; margin: 0; }
+.hb-footer h4, .hb-footer-heading {
     font-size: 11px; font-weight: 700; color: #f3f4f6;
     text-transform: uppercase; letter-spacing: .8px; margin: 0 0 14px;
 }
 .hb-footer ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
-.hb-footer ul a { font-size: 13.5px; color: #6b7280; text-decoration: none; transition: var(--transition); }
+.hb-footer ul a { font-size: 13.5px; color: #9ca3af; text-decoration: none; transition: var(--transition); }
 .hb-footer ul a:hover { color: #fca5a5; padding-left: 4px; }
 .hb-footer-bottom {
     border-top: 1px solid #1f2937; padding-top: 20px;
     display: flex; justify-content: space-between; align-items: center;
     gap: 12px; flex-wrap: wrap;
 }
-.hb-footer-bottom span, .hb-footer-bottom a { font-size: 12px; color: #4b5563; text-decoration: none; transition: var(--transition); }
+.hb-footer-bottom span, .hb-footer-bottom a { font-size: 12px; color: #9ca3af; text-decoration: none; transition: var(--transition); }
 .hb-footer-bottom a:hover { color: #fca5a5; }
 
 /* Util */
@@ -241,3 +241,131 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 }
 .hb-search-input:focus { outline: none; }
 .hb-search-input::placeholder { color: #9ca3af; font-weight: 400; }
+
+/* =============================================
+   Tanimsiz kalan siniflar
+   `bg-pattern` 15 sayfanin <body>'sinde kullaniliyordu ama hicbir yerde
+   tanimli degildi; `container` ise yalniz Tailwind CDN sagliyordu.
+   ============================================= */
+
+/* Cok hafif doku: metin kontrastini bozmayacak kadar silik. */
+.bg-pattern {
+    background-color: var(--gray-50);
+    background-image:
+        radial-gradient(circle at 1px 1px, rgba(17,24,39,.045) 1px, transparent 0);
+    background-size: 22px 22px;
+    background-attachment: fixed;
+}
+
+/* Tailwind'in `container` karsiligi; CDN kalksa da bozulmaz. */
+.container { width: 100%; margin-right: auto; margin-left: auto; }
+@media (min-width: 640px)  { .container { max-width: 640px; } }
+@media (min-width: 768px)  { .container { max-width: 768px; } }
+@media (min-width: 1024px) { .container { max-width: 1024px; } }
+@media (min-width: 1280px) { .container { max-width: 1280px; } }
+
+/* Dokunma hedefi: mobilde 44x44 CSS px altina dusmesin (WCAG 2.5.8). */
+.hb-nav-links a, .hb-footer ul a, .skip-link { display: inline-block; min-height: 26px; }
+@media (max-width: 768px) {
+    .hb-nav-links a { padding-top: 10px; padding-bottom: 10px; }
+}
+
+/* NOT: burada bir zamanlar `.hb-card + .hb-card { margin-top: 1.5rem }` vardi.
+   Dikey yigin dusunulerek eklenmisti ama bitisik kardes secicisi GRID icinde
+   de calisiyor: satirdaki ilk kart margin almiyor, sonrakiler 24px asagi
+   kayiyor, grid stretch yapinca ilk kart daha buyuk gorunuyordu. Yedi sayfada
+   ayni 24px'lik hizasizligin sebebi buydu. Grid/flex kapsayicilarda zaten
+   `gap` var; kural kaldirildi. */
+
+/* =============================================
+   Dokunma hedefi ve baglanti gorunurlugu
+   ============================================= */
+
+/* WCAG 2.5.8: gezinme amacli baglantilar en az 24px yuksek olsun.
+   Paragraf ICI baglantilar muaftir, o yuzden kapsam dar tutuldu. */
+.hb-breadcrumb a,
+main li > a,
+main .hb-card > ul a,
+.hb-footer ul a {
+    display: inline-block;
+    min-height: 26px;
+    line-height: 1.55;
+    padding-block: 2px;
+}
+
+/* Telefon baglantilari: duz metin gibi duruyordu.
+   Mobilde hover yok, tiklanabildigi gorunurde belli olmali. */
+a[href^="tel:"] {
+    display: inline-block;
+    min-height: 26px;
+    padding-block: 2px;
+    color: var(--red);
+    font-variant-numeric: tabular-nums;
+    text-decoration: underline;
+    text-decoration-color: rgba(220, 38, 38, .35);
+    text-underline-offset: 3px;
+}
+a[href^="tel:"]:hover { text-decoration-color: var(--red); }
+
+/* Kart tamami baglanti oldugunda: tiklanabilir oldugu anlasilsin. */
+a.hb-card, .hb-card > a:only-child { display: block; text-decoration: none; }
+a.hb-card:hover, a.hb-card:focus-visible { border-color: #fca5a5; }
+
+/* Konum simgesi baglantilari (kampus haritasi listesi) kucuk kaliyordu. */
+main li > a[title] {
+    min-width: 24px;
+    text-align: center;
+}
+
+/* E2E gezisinde 390px'de olculen kalan kucuk hedefler.
+   Kart ici eylem baglantilari `flex` + `text-xs` oldugu icin ~16px kaliyordu. */
+.hb-footer-bottom a,
+main a[href^="#"],
+main a.flex,
+main a.inline-flex {
+    min-height: 26px;
+    padding-block: 2px;
+}
+main a.flex, main a.inline-flex { align-items: center; }
+
+/* Karti tamamen saran baglantilar (ana sayfadaki hizli baslangic kartlari)
+   metinle ayni renkte ve alt cizgisizdi; tiklanabildikleri belli olmuyordu.
+   Masaustunde hover ipucu vardi, mobilde hicbir ipucu yoktu. */
+a.hb-card { position: relative; }
+a.hb-card h2::after {
+    content: " →";
+    color: var(--red);
+    font-weight: 600;
+    white-space: nowrap;
+}
+a.hb-card:hover h2::after { padding-left: 3px; }
+
+/* Bazi sayfalar (ornegin siralamalar.html) site sablonu yerine kendi
+   nav/footer'ini kullaniyor. Dokunma hedefi kurali oradaki baglantilari da
+   kapsasin diye etiket bazli yedek. */
+nav li > a, footer a {
+    display: inline-block;
+    min-height: 26px;
+    padding-block: 2px;
+}
+
+/* Kampus haritasi: nokta listesi ile harita ayni yukseklikte kalmali.
+   72 nokta eklendikten sonra liste masaustunde 4572px'e cikip haritayi
+   (600px) 4000 piksel geride birakiyordu; sayfa asiri uzuyordu. */
+:root { --harita-yuksekligi: 600px; }
+.hb-nokta-listesi {
+    max-height: 20rem;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+@media (min-width: 768px) {
+    .hb-nokta-listesi { max-height: var(--harita-yuksekligi); }
+}
+
+/* DIKKAT — buraya tasinmamasi gereken sinif adlari
+   `.active`, `.search-box`, `.search-input`, `.search-icon` sayfa ici
+   <style> bloklarinda tanimli ve AYNI ADLA FARKLI ISLER yapiyorlar:
+     .active  -> index: dolgu buton | kampus-haritasi: secili kart
+                 siralamalar: dolgu buton | sss: akordeon acma (display:block)
+   Sayfa ici tanimlar bunlari izole ediyor. Global hale getirmek dort sayfayi
+   ayni anda bozar. Ortak bir stil gerekiyorsa yeni ve benzersiz bir ad verin. */
