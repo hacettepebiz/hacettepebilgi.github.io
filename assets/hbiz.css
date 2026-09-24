@@ -437,3 +437,30 @@ nav li > a, footer a {
    boslugunu ve rengini ezmesin. */
 .hb-hero details { margin-top: 20px; }
 .hb-hero details p { margin-top: 8px; font-size: 15px; color: inherit; max-width: none; }
+
+/* Bolum sayfasi SSS (details) */
+.hb-sss { background: #fff; border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: 14px 18px; margin-bottom: 8px; }
+.hb-sss summary { cursor: pointer; font-weight: 600; min-height: 24px; }
+.hb-sss p { margin: 8px 0 0; color: var(--gray-600); }
+
+/* Siralama hesaplama formu */
+.hb-hesap { display: flex; flex-wrap: wrap; gap: 12px 16px; margin-bottom: 12px; }
+.hb-hesap label { display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600; color: var(--gray-900); }
+.hb-hesap input, .hb-hesap select {
+    font: inherit; font-size: 17px; font-weight: 400; padding: 10px 12px; min-width: 12rem;
+    border: 1.5px solid #d1d5db; border-radius: var(--radius-lg); background: #fff; color: var(--gray-900);
+}
+.hb-hesap input:focus, .hb-hesap select:focus { outline: none; border-color: var(--red); box-shadow: 0 0 0 4px rgba(220,38,38,.12); }
+.hb-hesap-sonuc { color: var(--gray-600); margin: 0 0 16px; max-width: 75ch; }
+.hb-tablo tr.hb-sinirda td { background: #fffbeb; }
+.hb-tablo tr.hb-sinirda td:first-child::after { content: " sınırda"; font-size: 12px; font-weight: 600; color: #92400e; }
+/* Kart icindeki dis baglanti ve e-posta: mobilde 24px dokunma hedefi */
+main .hb-card a[target="_blank"], main .hb-card a[href^="mailto:"] { display: inline-block; min-height: 24px; padding-block: 2px; }
+/* Flex ogesi icindeki kaydirilabilir tablo: min-width:auto yuzunden ebeveyni tasiriyordu */
+.flex-1:has(> .hb-tablo-kap) { min-width: 0; }
+/* Onceden derlenmis tailwind.css'te yok; tablo caption'lari gorunur kaliyordu. */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+/* Flex satirlarinda ikon ve buton kuculmesin (KYK listelerinde ikon noktaya,
+   "Yolu Goruntule" iki satira iniyordu). */
+main .flex > svg { flex-shrink: 0; }
+main .flex > a.inline-flex { flex-shrink: 0; white-space: nowrap; }
