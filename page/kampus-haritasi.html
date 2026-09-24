@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/vue@3.4.15/dist/vue.global.prod.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <style>
@@ -26,7 +26,7 @@
             --border-color: #e5e7eb;
         }
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: var(--font);
         }
         #map {
             height: var(--harita-yuksekligi, 600px);
@@ -68,7 +68,7 @@
         }
         .leaflet-popup-content {
             margin: 12px;
-            font-family: 'Inter', sans-serif;
+            font-family: var(--font);
         }
         .leaflet-popup-content b {
             color: var(--primary-color);
