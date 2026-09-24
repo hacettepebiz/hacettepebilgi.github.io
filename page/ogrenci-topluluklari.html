@@ -1094,10 +1094,10 @@
             computed: {
                 filteredClubs() {
                     if (!this.searchQuery) return this.clubs;
-                    const q = this.searchQuery.toLowerCase();
+                    const q = this.searchQuery.toLocaleLowerCase('tr-TR');
                     return this.clubs.filter(c => 
-                        c.name.toLowerCase().includes(q) || 
-                        (c.description && c.description.toLowerCase().includes(q))
+                        c.name.toLocaleLowerCase('tr-TR').includes(q) || 
+                        (c.description && c.description.toLocaleLowerCase('tr-TR').includes(q))
                     );
                 }
             }

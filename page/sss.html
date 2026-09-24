@@ -411,10 +411,10 @@
         }
 
         searchInput.addEventListener('input', (e) => {
-            const searchTerm = e.target.value.toLowerCase();
+            const searchTerm = e.target.value.toLocaleLowerCase('tr-TR');
             const filteredFAQs = faqData.filter(faq => 
-                faq.question.toLowerCase().includes(searchTerm) || 
-                faq.answer.toLowerCase().includes(searchTerm)
+                faq.question.toLocaleLowerCase('tr-TR').includes(searchTerm) || 
+                faq.answer.toLocaleLowerCase('tr-TR').includes(searchTerm)
             );
             renderFAQs(filteredFAQs);
         });

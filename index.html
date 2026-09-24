@@ -71,12 +71,7 @@
   "name": "Hacettepe Bilgilendirme",
   "alternateName": "Hacettepe Üniversitesi Öğrenci Rehberi",
   "description": "Hacettepe öğrenci ve aday rehberi: 2026 YKS taban puanları, akademik takvim, kayıt tarihleri, barınma, KYK yurtları ve kampüs haritası.",
-  "url": "https://hacettepe.biz/",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://hacettepe.biz/?s={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
+  "url": "https://hacettepe.biz/"
 }
     </script>
     <link rel="stylesheet" href="/assets/tailwind.css">
@@ -123,13 +118,13 @@
             <div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8" aria-label="Hızlı başlangıç yolları">
+                    <a href="/page/siralamalar.html" class="hb-card block no-underline">
+                        <h2 class="font-semibold text-gray-900 mb-1 text-base">Bölüm Sıralamaları 2026</h2>
+                        <p class="text-sm text-gray-600">Taban puanları, başarı sıraları ve 2022-2026 karşılaştırması.</p>
+                    </a>
                     <a href="/page/yeni-kazananlar-2026.html" class="hb-card block no-underline">
                         <h2 class="font-semibold text-gray-900 mb-1 text-base">Yeni Kazananlar</h2>
                         <p class="text-sm text-gray-600">Kayıt tarihleri, e-devlet adımları ve ilk hafta bilgileri.</p>
-                    </a>
-                    <a href="/page/kayit-islemleri.html" class="hb-card block no-underline">
-                        <h2 class="font-semibold text-gray-900 mb-1 text-base">Kayıt Süreci</h2>
-                        <p class="text-sm text-gray-600">Gerekli belgeler, süreç akışı ve kritik noktalar.</p>
                     </a>
                     <a href="/page/barinma.html" class="hb-card block no-underline">
                         <h2 class="font-semibold text-gray-900 mb-1 text-base">Barınma ve Kampüs</h2>
@@ -306,10 +301,10 @@
                     }
                     
                     if (this.searchQuery) {
-                        const query = this.searchQuery.toLowerCase();
+                        const query = this.searchQuery.toLocaleLowerCase('tr-TR');
                         filtered = filtered.filter(info => 
-                            info.title.toLowerCase().includes(query) || 
-                            info.description.toLowerCase().includes(query)
+                            info.title.toLocaleLowerCase('tr-TR').includes(query) || 
+                            info.description.toLocaleLowerCase('tr-TR').includes(query)
                         );
                     }
                     
