@@ -53,6 +53,7 @@
             font-weight: 600;
             white-space: normal;
         }
+        .uni, .bolum, th.uni, th.bolum-baslik { text-align: left; }
         /* Mobil: fakulte, kontenjan ve yerlesen gizlenir; bolum / yil / puan /
            sira tek ekrana sigar. Fakulte bilgisi bolumler.html'de. */
         @media (max-width: 767px) {
@@ -148,10 +149,10 @@
             </div>
         </nav>
 
-        <header class="bg-white border-b border-gray-100 py-8">
-            <div class="container mx-auto px-4">
-                <h1 class="text-3xl font-bold text-gray-900">Hacettepe Bölüm Sıralamaları ve Taban Puanları 2026</h1>
-                <p class="text-gray-600 mt-4 max-w-2xl">Hacettepe bölüm sıralamaları için 2022-2026 taban puan ve başarı sırası karşılaştırmasını yapabilirsiniz.</p>
+        <header class="hb-hero">
+            <div class="hb-hero-inner">
+                <h1>Hacettepe Bölüm Sıralamaları ve Taban Puanları 2026</h1>
+                <p>Hacettepe bölüm sıralamaları için 2022-2026 taban puan ve başarı sırası karşılaştırmasını yapabilirsiniz.</p>
                 <div class="mt-6 mb-2">
                     <details class="bg-yellow-50 border-l-4 border-yellow-400 text-yellow-800 p-4 rounded-md shadow-sm max-w-2xl w-full">
                         <summary style="cursor:pointer"><strong>2026 verileri</strong> ÖSYM'nin 18 Ağustos 2026 yerleştirme sonuçlarından alınmıştır. <span class="underline">Ayrıntılar</span></summary>
@@ -180,7 +181,7 @@
                     <thead>
                         <tr>
                             <th class="uni">Fakülte / Yüksekokul</th>
-                            <th>Bölüm Adı</th>
+                            <th class="bolum-baslik">Bölüm Adı</th>
                             <th>Puan Türü</th>
                             <th>Yıl</th>
                             <th class="ky">Kont.</th>

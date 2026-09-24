@@ -433,3 +433,7 @@ nav li > a, footer a {
 .hb-tablo tbody tr:first-child th { border-top: 0; }
 /* Tablo ici bolum baglantilari mobilde 24px dokunma hedefinin altinda kaliyordu. */
 .hb-tablo a { display: inline-block; min-height: 24px; padding-block: 2px; }
+/* Hero icindeki not kutusu (siralamalar): .hb-hero p kurali ic paragraflarin
+   boslugunu ve rengini ezmesin. */
+.hb-hero details { margin-top: 20px; }
+.hb-hero details p { margin-top: 8px; font-size: 15px; color: inherit; max-width: none; }
