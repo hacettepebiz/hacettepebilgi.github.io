@@ -63,12 +63,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visibl
     outline: 2px solid var(--red); outline-offset: 2px; border-radius: 4px;
 }
 
-/* Navbar — ustte ince kurumsal kirmizi serit */
+/* Navbar */
 .hb-nav {
     position: sticky; top: 0; z-index: 100;
     background: rgba(255,255,255,.96);
     backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-    border-top: 3px solid var(--red);
     border-bottom: 1px solid var(--gray-200);
     height: 64px; display: flex; align-items: center;
 }
@@ -96,6 +95,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visibl
     transition: var(--transition); white-space: nowrap;
 }
 .hb-nav-links a:hover { background: var(--red-50); color: var(--red-dark); }
+/* Bulunulan sayfa: ince kirmizi alt cizgi (masaustu), acik zemin (mobil menu). */
+.hb-nav-links a[aria-current="page"] { color: var(--gray-900); font-weight: 600; box-shadow: inset 0 -2px 0 var(--red); border-radius: 0; }
 .hb-nav-toggle {
     display: none; background: none; border: none; cursor: pointer;
     padding: 6px; color: var(--gray-600); align-items: center;
@@ -103,13 +104,14 @@ a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visibl
 @media (max-width: 860px) {
     .hb-nav-toggle { display: flex; }
     .hb-nav-links {
-        display: none; position: absolute; top: 61px; left: 0; right: 0;
+        display: none; position: absolute; top: 64px; left: 0; right: 0;
         background: #fff; border-bottom: 1px solid var(--gray-200);
         flex-direction: column; align-items: stretch;
         padding: 8px var(--gutter) 16px; box-shadow: var(--shadow-md); gap: 2px; z-index: 99;
     }
     .hb-nav-links.open { display: flex; }
-    .hb-nav-links a { padding: 10px 12px; font-size: 15px; }
+    .hb-nav .hb-nav-links a { padding: 12px 12px; font-size: 16px; display: block; }
+    .hb-nav .hb-nav-links a[aria-current="page"] { box-shadow: none; background: var(--red-50); border-radius: 8px; }
 }
 
 /* Breadcrumb */
@@ -340,3 +342,94 @@ nav li > a, footer a {
                  siralamalar: dolgu buton | sss: akordeon acma (display:block)
    Sayfa ici tanimlar bunlari izole ediyor. Global hale getirmek dort sayfayi
    ayni anda bozar. Ortak bir stil gerekiyorsa yeni ve benzersiz bir ad verin. */
+
+/* `hidden` ozniteligi, display veren siniflar (.hb-card{display:block}) tarafindan
+   eziliyordu; JS ile gizlenen kart gorunur kaliyordu. */
+[hidden] { display: none !important; }
+
+/* =============================================
+   Ana sayfa: gruplu baglanti kartlari
+   Kartin tamami baglanti; ikon + baslik + tek cumle. Gruplama (Aday / Yeni
+   kayit / Kampus) eski kategori ciplerinin isini goruyor.
+   ============================================= */
+/* .hb-hero p kuralini ezmek icin hero kapsamiyla yazildi. */
+.hb-hero .hb-populer { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; margin: 14px 0 0; font-size: 14px; line-height: 1.4; color: var(--gray-600); max-width: none; }
+.hb-hero .hb-populer a {
+    color: var(--gray-900); text-decoration: none; font-weight: 500;
+    padding: 4px 12px; border: 1px solid var(--gray-200); border-radius: 999px; background: #fff;
+    transition: var(--transition);
+}
+.hb-hero .hb-populer a:hover { border-color: var(--red); color: var(--red-dark); }
+
+.hb-grup { margin: 8px 0 40px; }
+.hb-grup > h2 { font-size: clamp(20px, 2.4vw, 24px); font-weight: 800; margin: 0 0 4px; letter-spacing: -.02em; }
+.hb-grup > p { font-size: 15px; color: var(--gray-600); margin: 0 0 16px; max-width: 60ch; }
+.hb-kartlar { display: grid; gap: 12px; grid-template-columns: 1fr; }
+@media (min-width: 640px)  { .hb-kartlar { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .hb-kartlar { grid-template-columns: repeat(3, 1fr); } }
+
+.hb-link-card {
+    display: flex; gap: 14px; align-items: flex-start;
+    background: #fff; border: 1px solid var(--gray-200); border-radius: var(--radius-lg);
+    padding: 16px 18px; text-decoration: none; color: inherit;
+    transition: var(--transition);
+}
+.hb-link-card:hover, .hb-link-card:focus-visible { border-color: var(--red); }
+.hb-link-card h3 { font-size: 17px; font-weight: 700; margin: 0 0 2px; color: var(--gray-900); letter-spacing: -.01em; }
+.hb-link-card:hover h3 { color: var(--red-dark); }
+.hb-link-card p { font-size: 14.5px; line-height: 1.5; color: var(--gray-600); margin: 0; }
+.hb-link-ikon {
+    flex: none; width: 40px; height: 40px; border-radius: 10px;
+    background: var(--red-50); color: var(--red);
+    display: grid; place-items: center;
+}
+.hb-link-ikon svg { width: 22px; height: 22px; }
+.hb-ara-bos { padding: 24px 0 40px; color: var(--gray-600); }
+
+/* =============================================
+   Veri tablosu + sayfa ici yardimcilar (bolumler.html)
+   ============================================= */
+.hb-ozet { background: #fff; border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: 16px 20px; margin-bottom: 20px; }
+.hb-ozet p { margin: 0; max-width: 75ch; }
+.hb-ozet p + p { margin-top: 8px; }
+.hb-ozet a, .hb-tablo a { color: var(--red-dark); text-decoration: underline; text-decoration-color: rgba(185,28,28,.35); text-underline-offset: 3px; }
+.hb-ozet a:hover, .hb-tablo a:hover { text-decoration-color: currentColor; }
+
+.hb-atla { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 32px; }
+.hb-atla a {
+    font-size: 13.5px; color: var(--red-dark); text-decoration: none; font-weight: 500;
+    padding: 4px 10px; border: 1px solid var(--gray-200); border-radius: 999px; background: #fff;
+    transition: var(--transition);
+}
+.hb-atla a:hover { border-color: var(--red); color: var(--red-dark); }
+
+.hb-bolum-grup { margin-bottom: 44px; }
+.hb-bolum-grup > h2 { font-size: clamp(22px, 2.6vw, 28px); font-weight: 800; margin: 0 0 4px; letter-spacing: -.02em; }
+.hb-bolum-grup > p { color: var(--gray-600); margin: 0 0 20px; }
+.hb-fakulte { margin-bottom: 28px; scroll-margin-top: 80px; }
+.hb-fakulte > h3 { font-size: 18px; font-weight: 700; margin: 0 0 10px; }
+.hb-not { font-size: 13px; font-weight: 500; color: var(--gray-500); }
+.hb-ikincil { color: var(--gray-600); font-size: 14px; }
+
+.hb-tablo-kap { overflow-x: auto; border: 1px solid var(--gray-200); border-radius: var(--radius-lg); background: #fff; }
+.hb-tablo { width: 100%; border-collapse: collapse; font-size: 15px; }
+.hb-tablo th {
+    text-align: left; font-size: 13px; font-weight: 600; color: var(--gray-600);
+    background: var(--gray-50); padding: 10px 14px; border-bottom: 1px solid var(--gray-200); white-space: nowrap;
+}
+.hb-tablo td { padding: 10px 14px; border-top: 1px solid var(--gray-100); vertical-align: top; }
+.hb-tablo tr:first-child td { border-top: 0; }
+.hb-tablo .sayi { text-align: right; white-space: nowrap; }
+@media (max-width: 640px) {
+    .hb-tablo { font-size: 14px; }
+    .hb-tablo th, .hb-tablo td { padding: 8px 10px; }
+}
+/* Satir basligi olan gruplu tablo (barinma ucretleri) */
+.hb-tablo tbody th {
+    text-align: left; vertical-align: top; white-space: normal;
+    background: #fff; color: var(--gray-900); font-size: 15px; font-weight: 600;
+    border-top: 1px solid var(--gray-200); border-bottom: 0; padding: 10px 14px;
+}
+.hb-tablo tbody tr:first-child th { border-top: 0; }
+/* Tablo ici bolum baglantilari mobilde 24px dokunma hedefinin altinda kaliyordu. */
+.hb-tablo a { display: inline-block; min-height: 24px; padding-block: 2px; }

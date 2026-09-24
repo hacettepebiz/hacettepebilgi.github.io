@@ -12,48 +12,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://unpkg.com/vue@3.4.15/dist/vue.global.prod.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #ef4444;
-            --primary-light: #fee2e2;
-            --primary-dark: #dc2626;
-            --transition-smooth: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-            --transition-elastic: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        }
-        .category-tag {
-            display: inline-block;
-            padding: 8px 16px;
-            border-radius: 9999px;
-            font-size: 14px;
-            font-weight: 500;
-            transition: var(--transition-elastic);
-            cursor: pointer;
-            background-color: #f3f4f6;
-            color: #6b7280;
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-        }
-        .category-tag:hover {
-            background-color: var(--primary-light);
-            color: var(--primary-color);
-            transform: translateY(-3px);
-            box-shadow: 0 4px 6px -1px rgba(239, 68, 68, 0.1);
-        }
-        .category-tag.active {
-            background-color: var(--primary-color);
-            color: white;
-            box-shadow: 0 4px 6px -1px rgba(239, 68, 68, 0.2);
-            transform: translateY(-2px);
-        }
-        .info-card-icon { transition: var(--transition-elastic); }
-        .info-card:hover .info-card-icon { transform: scale(1.15) rotate(4deg); }
-        .info-card:hover .info-card-link { color: var(--primary-dark); }
-    </style>
     <title>Hacettepe Üniversitesi Öğrenci Rehberi | Sıralama, Yurt, Takvim</title>
     <meta name="description" content="Hacettepe öğrenci ve aday rehberi: 2026 YKS taban puanları, akademik takvim, kayıt tarihleri, barınma, KYK yurtları ve kampüs haritası.">
     <meta name="keywords" content="hacettepe, hacettepe üniversitesi, hacettepe sıralama, hacettepe taban puanları, hacettepe tıp sıralama, hacettepe akademik takvim, beytepe yurtlar">
-    <meta property="og:image" content="https://hacettepe.biz/assets/img/logo.png">
+    <meta property="og:image" content="https://hacettepe.biz/assets/img/og-image.png">
     <meta property="og:title" content="Hacettepe Üniversitesi Öğrenci Rehberi | Sıralama, Yurt, Takvim">
     <meta property="og:description" content="Hacettepe öğrenci ve aday rehberi: 2026 YKS taban puanları, akademik takvim, kayıt tarihleri, barınma, KYK yurtları ve kampüs haritası.">
     <meta name="twitter:card" content="summary_large_image">
@@ -79,7 +42,7 @@
 <body class="bg-pattern min-h-screen">
     <a href="#main-content" class="skip-link">Ana içeriğe git</a>
 
-    <div id="app" class="min-h-screen flex flex-col">
+    <div class="min-h-screen flex flex-col">
         <!-- hbiz Navbar -->
         <nav class="hb-nav" role="navigation" aria-label="Ana menü">
             <div class="hb-nav-inner">
@@ -91,10 +54,11 @@
                     <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
                 </button>
                 <ul class="hb-nav-links">
-                    <li><a href="/">Ana Sayfa</a></li>
+                    <li><a href="/" aria-current="page">Ana Sayfa</a></li>
                     <li><a href="/page/akademik-takvim.html">Akademik Takvim</a></li>
                     <li><a href="/page/barinma.html">Barınma</a></li>
                     <li><a href="/page/siralamalar.html">Bölüm Sıralamaları</a></li>
+                    <li><a href="/page/bolumler.html">Bölümler</a></li>
                     <li><a href="/page/kampus-olanaklari.html">Kampüs</a></li>
                     <li><a href="/page/ogrenci-topluluklari.html">Topluluklar</a></li>
                 </ul>
@@ -108,119 +72,118 @@
                 <div class="hb-search-wrapper">
                     <div class="hb-search-box">
                         <svg class="hb-search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                        <input type="search" v-model="searchQuery" placeholder="Ne aramıştınız?" class="hb-search-input" aria-label="Sitede arama yap">
+                        <input id="ara" type="search" placeholder="Yurt, takvim, tıp…" class="hb-search-input" aria-label="Sitede arama yap" autocomplete="off">
                     </div>
                 </div>
+                <p class="hb-populer">Sık aranan:
+                    <a href="/page/siralamalar.html?ara=Tıp">Tıp sıralaması</a>
+                    <a href="/page/akademik-takvim.html">Akademik takvim</a>
+                    <a href="/page/barinma.html">Yurt başvurusu</a>
+                    <a href="/page/bolumler.html">Bölümler</a>
+                </p>
             </div>
         </header>
 
-        <main id="main-content" class="flex-grow container mx-auto px-4 pt-6 pb-8" role="main">
-            <div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8" aria-label="Hızlı başlangıç yolları">
-                    <a href="/page/siralamalar.html" class="hb-card block no-underline">
-                        <h2 class="font-semibold text-gray-900 mb-1 text-base">Bölüm Sıralamaları 2026</h2>
-                        <p class="text-sm text-gray-600">Taban puanları, başarı sıraları ve 2022-2026 karşılaştırması.</p>
-                    </a>
-                    <a href="/page/yeni-kazananlar-2026.html" class="hb-card block no-underline">
-                        <h2 class="font-semibold text-gray-900 mb-1 text-base">Yeni Kazananlar</h2>
-                        <p class="text-sm text-gray-600">Kayıt tarihleri, e-devlet adımları ve ilk hafta bilgileri.</p>
-                    </a>
-                    <a href="/page/barinma.html" class="hb-card block no-underline">
-                        <h2 class="font-semibold text-gray-900 mb-1 text-base">Barınma ve Kampüs</h2>
-                        <p class="text-sm text-gray-600">Yurt, KYK ve kampüs içi yaşam seçenekleri.</p>
-                    </a>
-                </div>
-                <div class="mb-6 flex flex-wrap gap-3 justify-center">
-                    <button v-for="category in categories" 
-                            :key="category"
-                            @click="filterByCategory(category)"
-                            :class="{'category-tag active': selectedCategory === category, 'category-tag': selectedCategory !== category}">
-                        {{ category }}
-                    </button>
-                </div>
-                
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12" id="info-container">
-                    <div v-for="(info, index) in filteredInfoBoxes" 
-                         :key="info.title" 
-                         class="hb-card info-card">
-                        <div class="mb-5">
-                            <div class="bg-red-50 rounded-xl p-3 w-fit info-card-icon">
-                                <!-- Yeni Kazananlar -->
-                                <svg v-if="info.title.includes('Kazanan')" class="w-7 h-7 text-red-600" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                    <path d="M6 9V2H18V9C18 12.3137 15.3137 15 12 15C8.68629 15 6 12.3137 6 9ZM6 9H3.5C2.67157 9 2 8.32843 2 7.5C2 6.67157 2.67157 6 3.5 6H6M18 9H20.5C21.3284 9 22 8.32843 22 7.5C22 6.67157 21.3284 6 20.5 6H18M12 15V18M8 21H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                <!-- Akademik Takvim -->
-                                <svg v-else-if="info.title.includes('Akademik')" class="w-7 h-7 text-red-600" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                    <path d="M8 7V3M16 7V3M7 11H17M5 21H19C20.1046 21 21 20.1046 21 19V7C21 5.89543 20.1046 5 19 5H5C3.89543 5 3 5.89543 3 7V19C3 20.1046 3.89543 21 5 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                <!-- Sıkça Sorulan Sorular -->
-                                <svg v-else-if="info.title.includes('Sıkça')" class="w-7 h-7 text-red-600" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                    <path d="M8.228 9C8.656 7.655 10.105 6.85 11.525 7.06C12.945 7.27 14.001 8.52 14.001 10C14.001 11.667 12.668 12.667 11.001 13M12 17H12.01M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                <!-- Tercih Dönemi -->
-                                <svg v-else-if="info.title.includes('Tercih')" class="w-7 h-7 text-red-600" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                    <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                <!-- Fakülte / Lokasyon -->
-                                <svg v-else-if="info.title.includes('Fakülte') || info.title.includes('Lokasyon')" class="w-7 h-7 text-red-600" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                    <path d="M17.6569 16.6569C16.7202 17.5935 14.7616 19.5521 13.4138 20.8999C12.6327 21.6809 11.3677 21.6814 10.5866 20.9003C9.26234 19.5761 7.34159 17.6553 6.34315 16.6569C3.21895 13.5327 3.21895 8.46734 6.34315 5.34315C9.46734 2.21895 14.5327 2.21895 17.6569 5.34315C20.781 8.46734 20.781 13.5327 17.6569 16.6569ZM15 11C15 12.6569 13.6569 14 12 14C10.3431 14 9 12.6569 9 11C9 9.34315 10.3431 8 12 8C13.6569 8 15 9.34315 15 11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                <!-- Bölüm Sıralamaları -->
-                                <svg v-else-if="info.title.includes('Sıralama')" class="w-7 h-7 text-red-600" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                    <path d="M18 20V10M12 20V4M6 20V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                <!-- Kayıt İşlemleri -->
-                                <svg v-else-if="info.title.includes('Kayıt')" class="w-7 h-7 text-red-600" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                    <path d="M9 12H15M9 16H15M17 21H7C5.89543 21 5 20.1046 5 19V5C5 3.89543 5.89543 3 7 3H12.5858C12.851 3 13.1054 3.10536 13.2929 3.29289L18.7071 8.70711C18.8946 8.89464 19 9.149 19 9.41421V19C19 20.1046 18.1046 21 17 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                <!-- Barınma / KYK -->
-                                <svg v-else-if="info.title.includes('Barınma') || info.title.includes('KYK')" class="w-7 h-7 text-red-600" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                    <path d="M3 21H21M6 18V9.99998M6 10L12 5L18 10M18 18V10M10 18V14C10 13.4477 10.4477 13 11 13H13C13.5523 13 14 13.4477 14 14V18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                <!-- Spor Olanakları -->
-                                <svg v-else-if="info.title.includes('Spor')" class="w-7 h-7 text-red-600" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                    <path d="M22 12H18L15 21L9 3L6 12H2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                <!-- Hazırlık Sınıfı -->
-                                <svg v-else-if="info.title.includes('Hazırlık')" class="w-7 h-7 text-red-600" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                    <path d="M12 14L6.16237 10.8377M12 14L17.8376 10.8377M12 14V21M2 10.5L12 3L22 10.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                <!-- Kampüs Olanakları -->
-                                <svg v-else-if="info.title.includes('Kampüs Ola')" class="w-7 h-7 text-red-600" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                    <path d="M3 21H21M5 21V7L12 3L19 7V21M9 21V15H15V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                <!-- Öğrenci Toplulukları -->
-                                <svg v-else-if="info.title.includes('Topluluk')" class="w-7 h-7 text-red-600" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                    <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13M16 3.13C16.8604 3.35031 17.623 3.85071 18.1676 4.55232C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89317 18.7122 8.75608 18.1676 9.45768C17.623 10.1593 16.8604 10.6597 16 10.88M13 7C13 9.20914 11.2091 11 9 11C6.79086 11 5 9.20914 5 7C5 4.79086 6.79086 3 9 3C11.2091 3 13 4.79086 13 7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                <!-- Kampüs Haritası -->
-                                <svg v-else-if="info.title.includes('Harita')" class="w-7 h-7 text-red-600" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                    <path d="M3 6L10 3L14 5L21 3V18L14 21L10 19L3 21V6ZM10 3V19M14 5V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                <!-- İletişim -->
-                                <svg v-else-if="info.title.includes('İletişim')" class="w-7 h-7 text-red-600" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                    <path d="M3 5C3 3.89543 3.89543 3 5 3H8.27924C8.70967 3 9.09181 3.27543 9.22792 3.68377L10.7257 8.17721C10.8831 8.64932 10.6694 9.16531 10.2243 9.38787L7.96701 10.5165C9.06925 12.9612 11.0388 14.9308 13.4835 16.033L14.6121 13.7757C14.8347 13.3306 15.3507 13.1169 15.8228 13.2743L20.3162 14.7721C20.7246 14.9082 21 15.2903 21 15.7208V19C21 20.1046 20.1046 21 19 21H18C9.71573 21 3 14.2843 3 6V5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                <!-- fallback -->
-                                <svg v-else class="w-7 h-7 text-red-600" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                    <path d="M12 6V12L16 14M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <h2 class="text-lg font-semibold text-gray-900 mb-3">{{ info.title }}</h2>
-                        <p class="text-gray-600 text-sm flex-grow">{{ info.description }}</p>
-                        <a :href="info.link" 
-                           class="mt-5 inline-flex items-center text-red-600 hover:text-red-700 text-sm font-medium group info-card-link"
-                           :aria-label="info.linkText">
-                            {{ info.linkText }}
-                            <svg class="w-4 h-4 ml-1 transform transition-transform group-hover:translate-x-3" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
+        <main id="main-content" class="flex-grow container mx-auto px-4 pt-8 pb-8" role="main">
+                <section class="hb-grup">
+                    <h2>Aday öğrenciler için</h2>
+                    <p>Tercih yapmadan önce puanları, bölümleri ve kampüsleri karşılaştır.</p>
+                    <div class="hb-kartlar">
+                        <a class="hb-link-card" href="/page/siralamalar.html" data-ara="Bölüm Sıralamaları 2026 2022-2026 taban puanları, başarı sıraları ve kontenjanlar. taban puan tıp diş hukuk mühendislik kaç bin yks">
+                            <span class="hb-link-ikon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 20V10M12 20V4M6 20V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                            <span><h3>Bölüm Sıralamaları 2026</h3><p>2022-2026 taban puanları, başarı sıraları ve kontenjanlar.</p></span>
+                        </a>
+                        <a class="hb-link-card" href="/page/bolumler.html" data-ara="Hacettepe Bölümleri Fakülte fakülte tüm lisans ve önlisans programları. bölüm program fakülte önlisans 2 yıllık dil">
+                            <span class="hb-link-ikon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 12H15M9 16H15M17 21H7C5.89543 21 5 20.1046 5 19V5C5 3.89543 5.89543 3 7 3H12.5858C12.851 3 13.1054 3.10536 13.2929 3.29289L18.7071 8.70711C18.8946 8.89464 19 9.149 19 9.41421V19C19 20.1046 18.1046 21 17 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                            <span><h3>Hacettepe Bölümleri</h3><p>Fakülte fakülte tüm lisans ve önlisans programları.</p></span>
+                        </a>
+                        <a class="hb-link-card" href="/page/tercih-donemi.html" data-ara="Tercih Dönemi Tercih takvimi ve dikkat edilmesi gerekenler. tercih yks ösym">
+                            <span class="hb-link-ikon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                            <span><h3>Tercih Dönemi</h3><p>Tercih takvimi ve dikkat edilmesi gerekenler.</p></span>
+                        </a>
+                        <a class="hb-link-card" href="/page/fakulte-yuksekokul-lokasyonlari.html" data-ara="Fakülteler Hangi Kampüste? Beytepe, Sıhhiye ve diğer yerleşkelere göre fakülteler. kampüs lokasyon beytepe sıhhiye yer">
+                            <span class="hb-link-ikon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M17.6569 16.6569C16.7202 17.5935 14.7616 19.5521 13.4138 20.8999C12.6327 21.6809 11.3677 21.6814 10.5866 20.9003C9.26234 19.5761 7.34159 17.6553 6.34315 16.6569C3.21895 13.5327 3.21895 8.46734 6.34315 5.34315C9.46734 2.21895 14.5327 2.21895 17.6569 5.34315C20.781 8.46734 20.781 13.5327 17.6569 16.6569ZM15 11C15 12.6569 13.6569 14 12 14C10.3431 14 9 12.6569 9 11C9 9.34315 10.3431 8 12 8C13.6569 8 15 9.34315 15 11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                            <span><h3>Fakülteler Hangi Kampüste?</h3><p>Beytepe, Sıhhiye ve diğer yerleşkelere göre fakülteler.</p></span>
                         </a>
                     </div>
-                </div>
-            </div>
+                </section>
+                <section class="hb-grup">
+                    <h2>Yeni kayıt olanlar için</h2>
+                    <p>Kazandıktan sonraki ilk haftalarda gereken her şey.</p>
+                    <div class="hb-kartlar">
+                        <a class="hb-link-card" href="/page/yeni-kazananlar-2026.html" data-ara="Yeni Kazananlar 2026 Kayıt tarihleri, e-Devlet adımları ve ilk hafta. kayıt e-devlet ilk hafta oryantasyon">
+                            <span class="hb-link-ikon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9V2H18V9C18 12.3137 15.3137 15 12 15C8.68629 15 6 12.3137 6 9ZM6 9H3.5C2.67157 9 2 8.32843 2 7.5C2 6.67157 2.67157 6 3.5 6H6M18 9H20.5C21.3284 9 22 8.32843 22 7.5C22 6.67157 21.3284 6 20.5 6H18M12 15V18M8 21H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                            <span><h3>Yeni Kazananlar 2026</h3><p>Kayıt tarihleri, e-Devlet adımları ve ilk hafta.</p></span>
+                        </a>
+                        <a class="hb-link-card" href="/page/kayit-islemleri.html" data-ara="Kayıt İşlemleri Gerekli belgeler ve kayıt süreci adım adım. belge evrak kayıt">
+                            <span class="hb-link-ikon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 12H15M9 16H15M17 21H7C5.89543 21 5 20.1046 5 19V5C5 3.89543 5.89543 3 7 3H12.5858C12.851 3 13.1054 3.10536 13.2929 3.29289L18.7071 8.70711C18.8946 8.89464 19 9.149 19 9.41421V19C19 20.1046 18.1046 21 17 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                            <span><h3>Kayıt İşlemleri</h3><p>Gerekli belgeler ve kayıt süreci adım adım.</p></span>
+                        </a>
+                        <a class="hb-link-card" href="/page/hazirlik.html" data-ara="Hazırlık Sınıfı İngilizce hazırlık, muafiyet ve düzey belirleme sınavı. ingilizce muafiyet yabancı dil ydyo">
+                            <span class="hb-link-ikon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 14L6.16237 10.8377M12 14L17.8376 10.8377M12 14V21M2 10.5L12 3L22 10.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                            <span><h3>Hazırlık Sınıfı</h3><p>İngilizce hazırlık, muafiyet ve düzey belirleme sınavı.</p></span>
+                        </a>
+                        <a class="hb-link-card" href="/page/barinma.html" data-ara="Barınma ve Yurtlar Üniversite yurtları, başvuru ve ücretsiz barınma şartları. yurt barınma kyk başvuru ücret">
+                            <span class="hb-link-ikon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 21H21M6 18V9.99998M6 10L12 5L18 10M18 18V10M10 18V14C10 13.4477 10.4477 13 11 13H13C13.5523 13 14 13.4477 14 14V18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                            <span><h3>Barınma ve Yurtlar</h3><p>Üniversite yurtları, başvuru ve ücretsiz barınma şartları.</p></span>
+                        </a>
+                        <a class="hb-link-card" href="/page/cevredeki-kyklar.html" data-ara="Beytepe Çevresindeki KYK'lar Beytepe kampüsüne yakın KYK yurtları ve ulaşım. yurt kyk beytepe">
+                            <span class="hb-link-ikon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 21H21M6 18V9.99998M6 10L12 5L18 10M18 18V10M10 18V14C10 13.4477 10.4477 13 11 13H13C13.5523 13 14 13.4477 14 14V18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                            <span><h3>Beytepe Çevresindeki KYK'lar</h3><p>Beytepe kampüsüne yakın KYK yurtları ve ulaşım.</p></span>
+                        </a>
+                        <a class="hb-link-card" href="/page/s-cevredeki-kyklar.html" data-ara="Sıhhiye Çevresindeki KYK'lar Sıhhiye kampüsüne yakın KYK yurtları ve ulaşım. yurt kyk sıhhiye">
+                            <span class="hb-link-ikon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 21H21M6 18V9.99998M6 10L12 5L18 10M18 18V10M10 18V14C10 13.4477 10.4477 13 11 13H13C13.5523 13 14 13.4477 14 14V18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                            <span><h3>Sıhhiye Çevresindeki KYK'lar</h3><p>Sıhhiye kampüsüne yakın KYK yurtları ve ulaşım.</p></span>
+                        </a>
+                    </div>
+                </section>
+                <section class="hb-grup">
+                    <h2>Kampüste</h2>
+                    <p>Takvim, işlemler, ulaşım ve kampüs hayatı.</p>
+                    <div class="hb-kartlar">
+                        <a class="hb-link-card" href="/page/akademik-takvim.html" data-ara="Akademik Takvim 2026-2027 Ders kayıtları, sınav haftaları ve tatiller. takvim vize final bütünleme sınav tarih ekle sil">
+                            <span class="hb-link-ikon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 7V3M16 7V3M7 11H17M5 21H19C20.1046 21 21 20.1046 21 19V7C21 5.89543 20.1046 5 19 5H5C3.89543 5 3 5.89543 3 7V19C3 20.1046 3.89543 21 5 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                            <span><h3>Akademik Takvim 2026-2027</h3><p>Ders kayıtları, sınav haftaları ve tatiller.</p></span>
+                        </a>
+                        <a class="hb-link-card" href="/page/ogrenci-isleri.html" data-ara="Öğrenci İşleri Telefonlar ve hangi işlemin nereden yapıldığı. belge transkript öğrenci belgesi mail">
+                            <span class="hb-link-ikon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7zM8 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM13 10h5M13 14h3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                            <span><h3>Öğrenci İşleri</h3><p>Telefonlar ve hangi işlemin nereden yapıldığı.</p></span>
+                        </a>
+                        <a class="hb-link-card" href="/page/ulasim.html" data-ara="Ulaşım Kızılay'dan Beytepe ve Sıhhiye'ye metro, Ankaray ve otobüs. nerede nasıl gidilir metro otobüs ego">
+                            <span class="hb-link-ikon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 16V6a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v10M6 16h12M6 16v3M18 16v3M6 11h12M9 13.5h.01M15 13.5h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                            <span><h3>Ulaşım</h3><p>Kızılay'dan Beytepe ve Sıhhiye'ye metro, Ankaray ve otobüs.</p></span>
+                        </a>
+                        <a class="hb-link-card" href="/page/kampus-haritasi.html" data-ara="Kampüs Haritası Beytepe ve Sıhhiye haritası, önemli noktalar. harita konum yer">
+                            <span class="hb-link-ikon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6L10 3L14 5L21 3V18L14 21L10 19L3 21V6ZM10 3V19M14 5V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                            <span><h3>Kampüs Haritası</h3><p>Beytepe ve Sıhhiye haritası, önemli noktalar.</p></span>
+                        </a>
+                        <a class="hb-link-card" href="/page/kampus-olanaklari.html" data-ara="Kampüs Olanakları Kütüphane, yemekhane ve diğer hizmetler. kütüphane yemekhane yemek">
+                            <span class="hb-link-ikon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 21H21M5 21V7L12 3L19 7V21M9 21V15H15V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                            <span><h3>Kampüs Olanakları</h3><p>Kütüphane, yemekhane ve diğer hizmetler.</p></span>
+                        </a>
+                        <a class="hb-link-card" href="/page/spor-olanaklari.html" data-ara="Spor Olanakları Hacettepe'deki spor tesisleri ve etkinlikler. spor havuz fitness">
+                            <span class="hb-link-ikon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 12H18L15 21L9 3L6 12H2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                            <span><h3>Spor Olanakları</h3><p>Hacettepe'deki spor tesisleri ve etkinlikler.</p></span>
+                        </a>
+                        <a class="hb-link-card" href="/page/ogrenci-topluluklari.html" data-ara="Öğrenci Toplulukları Aktif topluluklar ve iletişim bilgileri. kulüp topluluk">
+                            <span class="hb-link-ikon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13M16 3.13C16.8604 3.35031 17.623 3.85071 18.1676 4.55232C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89317 18.7122 8.75608 18.1676 9.45768C17.623 10.1593 16.8604 10.6597 16 10.88M13 7C13 9.20914 11.2091 11 9 11C6.79086 11 5 9.20914 5 7C5 4.79086 6.79086 3 9 3C11.2091 3 13 4.79086 13 7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                            <span><h3>Öğrenci Toplulukları</h3><p>Aktif topluluklar ve iletişim bilgileri.</p></span>
+                        </a>
+                        <a class="hb-link-card" href="/page/dumansiz-kampus.html" data-ara="Dumansız Kampüs Sigara içilebilen alanlar ve kurallar. sigara">
+                            <span class="hb-link-ikon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM5.6 5.6l12.8 12.8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                            <span><h3>Dumansız Kampüs</h3><p>Sigara içilebilen alanlar ve kurallar.</p></span>
+                        </a>
+                        <a class="hb-link-card" href="/page/iletisim.html" data-ara="İletişim Santral, birim telefonları ve e-posta adresleri. telefon numara adres dahili hastane">
+                            <span class="hb-link-ikon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 5C3 3.89543 3.89543 3 5 3H8.27924C8.70967 3 9.09181 3.27543 9.22792 3.68377L10.7257 8.17721C10.8831 8.64932 10.6694 9.16531 10.2243 9.38787L7.96701 10.5165C9.06925 12.9612 11.0388 14.9308 13.4835 16.033L14.6121 13.7757C14.8347 13.3306 15.3507 13.1169 15.8228 13.2743L20.3162 14.7721C20.7246 14.9082 21 15.2903 21 15.7208V19C21 20.1046 20.1046 21 19 21H18C9.71573 21 3 14.2843 3 6V5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                            <span><h3>İletişim</h3><p>Santral, birim telefonları ve e-posta adresleri.</p></span>
+                        </a>
+                        <a class="hb-link-card" href="/page/sss.html" data-ara="Sıkça Sorulan Sorular En çok merak edilen konulara kısa cevaplar. soru cevap sss">
+                            <span class="hb-link-ikon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8.228 9C8.656 7.655 10.105 6.85 11.525 7.06C12.945 7.27 14.001 8.52 14.001 10C14.001 11.667 12.668 12.667 11.001 13M12 17H12.01M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                            <span><h3>Sıkça Sorulan Sorular</h3><p>En çok merak edilen konulara kısa cevaplar.</p></span>
+                        </a>
+                    </div>
+                </section>
+                <p id="ara-bos" class="hb-ara-bos" hidden>Bu aramayla eşleşen sayfa yok. <a href="/page/sss.html" class="text-red-600 underline">Sıkça sorulan sorulara</a> göz atabilirsiniz.</p>
         </main>
 
         <!-- hbiz Footer -->
@@ -237,6 +200,7 @@
                             <li><a href="/page/ogrenci-isleri.html">Öğrenci İşleri</a></li>
                             <li><a href="/page/akademik-takvim.html">Akademik Takvim 2026-2027</a></li>
                             <li><a href="/page/siralamalar.html">Bölüm Sıralamaları</a></li>
+                            <li><a href="/page/bolumler.html">Bölümler</a></li>
                             <li><a href="/page/barinma.html">Barınma Olanakları</a></li>
                             <li><a href="/page/kampus-haritasi.html">Kampüs Haritası</a></li>
                             <li><a href="/page/dumansiz-kampus.html">Dumansız Kampüs</a></li>
@@ -261,62 +225,26 @@
     </div>
 
     <script>
-        const { createApp } = Vue
-
-        createApp({
-            data() {
-                return {
-                    searchQuery: '',
-                    selectedCategory: 'Tümü',
-                    categories: ['Tümü', 'Kayıt', 'Barınma', 'Akademik', 'Kampüs', 'Öğrenci'],
-                    infoBoxes: [ 
-                        { title: 'Yeni Kazananlar 2026', description: 'Hacettepe yeni kazananlar 2026 için kayıt adımları, e-devlet süreci ve önemli tarihler.', link: 'page/yeni-kazananlar-2026.html', linkText: 'Hacettepe Yeni Kazananlar 2026 Rehberi', category: 'Kayıt' },
-                        { title: 'Akademik Takvim', description: 'Hacettepe akademik takvim, ders kayıt tarihleri ve sınav dönemleri.', link: 'page/akademik-takvim.html', linkText: 'Hacettepe Akademik Takvim 2026-2027', category: 'Akademik' },
-                        { title: 'Sıkça Sorulan Sorular', description: 'Öğrencilerin en çok merak ettiği konular hakkında bilgiler.', link: 'page/sss.html', linkText: 'Hacettepe Sıkça Sorulan Sorular', category: 'Akademik' },
-                        { title: 'Tercih Dönemi', description: 'Üniversite tercih dönemine ilişkin önemli bilgiler ve tarihler.', link: 'page/tercih-donemi.html', linkText: 'Hacettepe Tercih Dönemi Rehberi', category: 'Kayıt' },
-                        { title: 'Fakülte ve Yüksekokul Lokasyonları', description: 'Tüm fakülte ve yüksekokulların kampüs bazlı listesi.', link: 'page/fakulte-yuksekokul-lokasyonlari.html', linkText: 'Hacettepe Fakülte Lokasyonları', category: 'Kayıt' },
-                        { title: 'Bölüm Sıralamaları', description: '2026 YKS bölüm taban puanları ve kontenjanları.', link: 'page/siralamalar.html', linkText: 'Hacettepe Bölüm Sıralamaları 2026', category: 'Kayıt' },
-                        { title: 'Kayıt İşlemleri', description: 'Hacettepe kayıt işlemleri, gerekli belgeler ve öğrenci işleri süreçleri.', link: 'page/kayit-islemleri.html', linkText: 'Hacettepe Kayıt İşlemleri Rehberi', category: 'Kayıt' },
-                        { title: 'Barınma Olanakları', description: 'Hacettepe barınma olanakları, yurt seçenekleri ve başvuru bağlantıları.', link: 'page/barinma.html', linkText: 'Hacettepe Barınma Olanakları Rehberi', category: 'Barınma' },
-                        { title: "Beytepe Çevresindeki KYK'lar", description: 'Beytepe kampüsü çevresindeki KYK yurtlarını inceleyin', link: 'page/cevredeki-kyklar.html', linkText: "Beytepe ve Sıhhiye KYK Yurtları", category: 'Barınma' },
-                        { title: "Sıhhiye Çevresindeki KYK'lar", description: 'Sıhhiye kampüsü çevresindeki KYK yurtlarını inceleyin', link: 'page/s-cevredeki-kyklar.html', linkText: "Beytepe ve Sıhhiye KYK Yurtları", category: 'Barınma' },
-                        { title: 'Spor Olanakları', description: 'Üniversitemizdeki spor tesisleri ve aktiviteleri.', link: 'page/spor-olanaklari.html', linkText: 'Hacettepe Spor Olanakları', category: 'Kampüs' },
-                        { title: 'Hazırlık Sınıfı', description: 'Yabancı dil hazırlık eğitimi hakkında bilgiler ve program detayları.', link: 'page/hazirlik.html', linkText: 'Hacettepe Hazırlık Sınıfı Rehberi', category: 'Akademik' },
-                        { title: 'Kampüs Olanakları', description: 'Kütüphane, yemekhane ve diğer öğrenci hizmetleri.', link: 'page/kampus-olanaklari.html', linkText: 'Hacettepe Kampüs Olanakları', category: 'Kampüs' },
-                        { title: 'Öğrenci Toplulukları', description: 'Aktif öğrenci toplulukları ve toplulukların iletişim bilgileri.', link: 'page/ogrenci-topluluklari.html', linkText: 'Hacettepe Öğrenci Toplulukları', category: 'Öğrenci' },
-                        { title: 'Kampüs Haritası', description: 'Beytepe ve Sıhhiye kampüslerinin interaktif haritaları ve önemli noktalar.', link: 'page/kampus-haritasi.html', linkText: 'Hacettepe Kampüs Haritası', category: 'Kampüs' },
-                        { title: 'İletişim', description: 'Beytepe ve Sıhhiye kampüslerinin iletişim bilgileri ve sosyal medya hesapları.', link: 'page/iletisim.html', linkText: 'Hacettepe İletişim Bilgileri', category: 'Kampüs' },
-                        { title: 'Öğrenci İşleri', description: 'Öğrenci İşleri Daire Başkanlığı telefonları ve hangi işlemin nereden yapıldığı.', link: 'page/ogrenci-isleri.html', linkText: 'Hacettepe Öğrenci İşleri', category: 'Öğrenci' },
-                        { title: 'Ulaşım', description: "Kızılay'dan Beytepe ve Sıhhiye kampüslerine metro, Ankaray ve otobüsle ulaşım.", link: 'page/ulasim.html', linkText: "Hacettepe'ye Nasıl Gidilir?", category: 'Kampüs' },
-                        { title: 'Dumansız Kampüs', description: 'Sigara içilebilen alanlar krokisi, kurallar ve ihlal halinde uygulanan yaptırımlar.', link: 'page/dumansiz-kampus.html', linkText: 'Sigara İçilebilen Yerler', category: 'Kampüs' }
-                    ]
-                }
-            },
-            computed: {
-                filteredInfoBoxes() {
-                    let filtered = this.infoBoxes;
-                    
-                    if (this.selectedCategory !== 'Tümü') {
-                        filtered = filtered.filter(info => info.category === this.selectedCategory);
-                    }
-                    
-                    if (this.searchQuery) {
-                        const query = this.searchQuery.toLocaleLowerCase('tr-TR');
-                        filtered = filtered.filter(info => 
-                            info.title.toLocaleLowerCase('tr-TR').includes(query) || 
-                            info.description.toLocaleLowerCase('tr-TR').includes(query)
-                        );
-                    }
-                    
-                    return filtered;
-                }
-            },
-            methods: {
-                filterByCategory(category) {
-                    this.selectedCategory = category;
-                }
-            }
-        }).mount('#app')
+        // Ana sayfa aramasi: kartlari data-ara metnine gore suzer, bos gruplari gizler.
+        (function () {
+            const kutu = document.getElementById('ara');
+            const kartlar = [...document.querySelectorAll('[data-ara]')];
+            const bos = document.getElementById('ara-bos');
+            const kucuk = (t) => t.toLocaleLowerCase('tr-TR');
+            kutu.addEventListener('input', () => {
+                const q = kucuk(kutu.value.trim());
+                let gorunen = 0;
+                kartlar.forEach((k) => {
+                    const eslesti = !q || kucuk(k.dataset.ara).includes(q);
+                    k.hidden = !eslesti;
+                    if (eslesti) gorunen++;
+                });
+                document.querySelectorAll('.hb-grup').forEach((g) => {
+                    g.hidden = !g.querySelector('[data-ara]:not([hidden])');
+                });
+                bos.hidden = gorunen > 0;
+            });
+        })();
     </script>
 </body>
 </html>
