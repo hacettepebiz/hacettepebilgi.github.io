@@ -455,7 +455,7 @@ nav li > a, footer a {
 .hb-tablo tr.hb-sinirda td { background: #fffbeb; }
 .hb-tablo tr.hb-sinirda td:first-child::after { content: " sınırda"; font-size: 12px; font-weight: 600; color: #92400e; }
 /* Kart icindeki dis baglanti ve e-posta: mobilde 24px dokunma hedefi */
-main .hb-card a[target="_blank"], main .hb-card a[href^="mailto:"] { display: inline-block; min-height: 24px; padding-block: 2px; }
+main .hb-card a[target="_blank"]:not(.flex):not(.inline-flex), main .hb-card a[href^="mailto:"] { display: inline-block; min-height: 24px; padding-block: 2px; }
 /* Flex ogesi icindeki kaydirilabilir tablo: min-width:auto yuzunden ebeveyni tasiriyordu */
 .flex-1:has(> .hb-tablo-kap) { min-width: 0; }
 /* Onceden derlenmis tailwind.css'te yok; tablo caption'lari gorunur kaliyordu. */
@@ -478,4 +478,9 @@ main a[href^="/page/kyk-"] { display: inline-block; min-height: 24px; padding-bl
     .hb-tablo-yigin thead { display: none; }
     .hb-tablo-yigin tr, .hb-tablo-yigin th, .hb-tablo-yigin td { display: block; }
     .hb-tablo-yigin tbody td { border-top: 0; padding-top: 2px; }
+}
+/* Mobilde kartin solundaki dekoratif ikon rozeti yer kapliyordu (KYK listesinde icerik 95px'ten basliyordu). */
+@media (max-width: 640px) {
+    .hb-card > .flex.items-start > .bg-red-50:first-child { display: none; }
+    .hb-card > .flex.items-start > .flex-1 { margin-left: 0 !important; }
 }
