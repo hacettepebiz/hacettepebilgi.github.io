@@ -470,3 +470,12 @@ main .flex > a.inline-flex { flex-shrink: 0; white-space: nowrap; }
 .hb-liste a { color: var(--red-dark); text-decoration: underline; text-decoration-color: rgba(185,28,28,.35); text-underline-offset: 3px; }
 /* KYK listelerindeki "Ayrintilar" baglantisi: mobilde 24px dokunma hedefi */
 main a[href^="/page/kyk-"] { display: inline-block; min-height: 24px; padding-block: 2px; }
+/* Alt basliklari olan metin yigini (tailwind.css'te space-y-5 yok) */
+.hb-yigin > * + * { margin-top: 18px; }
+.hb-yigin h3 + p, .hb-yigin p + p { margin-top: 4px; }
+/* Dar ekranda satirlari alt alta diz (uzun adresler sutunu genisletiyordu) */
+@media (max-width: 640px) {
+    .hb-tablo-yigin thead { display: none; }
+    .hb-tablo-yigin tr, .hb-tablo-yigin th, .hb-tablo-yigin td { display: block; }
+    .hb-tablo-yigin tbody td { border-top: 0; padding-top: 2px; }
+}
