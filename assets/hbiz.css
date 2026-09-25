@@ -464,3 +464,9 @@ main .hb-card a[target="_blank"], main .hb-card a[href^="mailto:"] { display: in
    "Yolu Goruntule" iki satira iniyordu). */
 main .flex > svg { flex-shrink: 0; }
 main .flex > a.inline-flex { flex-shrink: 0; white-space: nowrap; }
+
+/* Kampus sayfalari: kart ici baglanti listesi */
+.hb-liste { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap: 8px; }
+.hb-liste a { color: var(--red-dark); text-decoration: underline; text-decoration-color: rgba(185,28,28,.35); text-underline-offset: 3px; }
+/* KYK listelerindeki "Ayrintilar" baglantisi: mobilde 24px dokunma hedefi */
+main a[href^="/page/kyk-"] { display: inline-block; min-height: 24px; padding-block: 2px; }
